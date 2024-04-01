@@ -25,6 +25,7 @@
 - '진행 중' 으로 상태 바꾸기 : #{ISSUE_NUM} #in-progress #comment "{detail info}"
 - ISSUE_NUM - PROJ_N (Jira 에 해당 티켓에 대한 Number 쓰면됨)
 - detail info - 해당 커밋이 어떤 내용인지 적으면됨,.
+- ex) PROJ_4 #done #comment feat: 조도 센서 데이터 받아오는거까지 완료 
 ## :white_check_mark: 커밋 메시지 규칙
 
 - `feat` : 새로운 기능에 대한 커밋
