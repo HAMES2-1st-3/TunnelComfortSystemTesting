@@ -1,5 +1,24 @@
 # TunnelComfortSystem
 터널 운행 내부 환경 설정 시스템
+## :sparkles:참여자
+<table>
+ <tr>
+    <td align="center"><a href="https://github.com/re-ag"><img src="https://avatars.githubusercontent.com/re-ag" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/shintaewon"><img src="https://avatars.githubusercontent.com/shintaewon" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/GeoChoi"><img src="https://avatars.githubusercontent.com/GeoChoi" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/chanik-s"><img src="https://avatars.githubusercontent.com/chanik-s" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/howonu"><img src="https://avatars.githubusercontent.com/howonu" width="130px;" alt=""></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/re-ag"><b>re-ag</b></a></td>
+    <td align="center"><a href="https://github.com/shintaewon"><b>qkrtpcks</b></a></td>
+    <td align="center"><a href="https://github.com/GeoChoi"><b>obsidian0402</b></a></td>
+    <td align="center"><a href="https://github.com/chanik-s"><b>obsidian0402</b></a></td>
+    <td align="center"><a href="https://github.com/howonu"><b>obsidian0402</b></a></td>
+  </tr>
+</table>
+
+<br />
 
 ## 커밋 메시지 규칙
 - feat : 새로운 기능에 대한 커밋
