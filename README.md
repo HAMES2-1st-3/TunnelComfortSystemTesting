@@ -11,10 +11,10 @@
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/re-ag"><b>re-ag</b></a></td>
-    <td align="center"><a href="https://github.com/shintaewon"><b>qkrtpcks</b></a></td>
-    <td align="center"><a href="https://github.com/GeoChoi"><b>obsidian0402</b></a></td>
-    <td align="center"><a href="https://github.com/chanik-s"><b>obsidian0402</b></a></td>
-    <td align="center"><a href="https://github.com/howonu"><b>obsidian0402</b></a></td>
+    <td align="center"><a href="https://github.com/shintaewon"><b>shintaewon</b></a></td>
+    <td align="center"><a href="https://github.com/GeoChoi"><b>GeoChoi</b></a></td>
+    <td align="center"><a href="https://github.com/chanik-s"><b>chanik-s</b></a></td>
+    <td align="center"><a href="https://github.com/howonu"><b>howonu</b></a></td>
   </tr>
 </table>
 
