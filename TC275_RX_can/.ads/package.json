@@ -1,0 +1,12 @@
+{
+	"group"					: "project-initializer",
+	"name"					: "tricore-tc2xx",
+	"releaseTimestamp"		: 1701429003,
+	"version"				: 9,
+	"versionName"			: "1.8",
+	"versionCompatibility"	: [],
+	"info"					: {
+		"illd_version"		: "1.0.1.17.0",
+		"release_reason"	: "Updated iLLDs to v1.0.1.17.0 for AURIX(TM) TC2xx devices"
+	}
+}

@@ -1,0 +1,252 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc9036a --dep-file=AppMode_Operation.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Configurations -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\PwmHl -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Timer -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Can -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o AppMode_Operation.src ../AppMode_Operation.c"
+	.compiler_name		"ctc"
+	;source	'../AppMode_Operation.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.AppMode_Operation.Unit_ModeOperation',code,cluster('Unit_ModeOperation')
+	.sect	'.text.AppMode_Operation.Unit_ModeOperation'
+	.align	2
+	
+	.global	Unit_ModeOperation
+; Function Unit_ModeOperation
+.L4:
+Unit_ModeOperation:	.type	func
+	ld.w	d15,[a4]2
+.L25:
+	add	d15,#1
+	st.w	[a4]2,d15
+.L26:
+	ld.bu	d15,[a4]1
+.L27:
+	jne	d15,#4,.L2
+.L28:
+	mov	d15,#3
+.L29:
+	st.b	[a4],d15
+.L30:
+	mov	d15,#0
+.L31:
+	st.w	[a4]2,d15
+.L2:
+	ret
+.L14:
+	
+__Unit_ModeOperation_function_end:
+	.size	Unit_ModeOperation,__Unit_ModeOperation_function_end-Unit_ModeOperation
+.L13:
+	; End of function
+	
+	.calls	'Unit_ModeOperation','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L6:
+	.word	771
+	.half	3
+	.word	.L7
+	.byte	4
+.L5:
+	.byte	1
+	.byte	'../AppMode_Operation.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\user\\AURIX-v1.9.20-workspace\\TC275_RX_can\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L8
+	.byte	2,1,12,9,1,3
+	.byte	'INIT_MODE',0,0,3
+	.byte	'IDLE_MODE',0,1,3
+	.byte	'OPER_MODE',0,2,3
+	.byte	'ERROR_MODE',0,3,3
+	.byte	'MAX_MODE',0,4,0,4
+	.byte	'unsigned char',0,1,8,4
+	.byte	'unsigned long int',0,4,7,5,1,21,9,6,6
+	.byte	'enuCurMode',0
+	.word	194
+	.byte	1,2,35,0,6
+	.byte	'u8nuTestModeTrigger',0
+	.word	260
+	.byte	1,2,35,1,6
+	.byte	'u32nuModeCnt',0
+	.word	277
+	.byte	4,2,35,2,0
+.L15:
+	.byte	7
+	.word	298
+	.byte	4
+	.byte	'short int',0,2,5,8
+	.byte	'__wchar_t',0,2,1,1
+	.word	380
+	.byte	4
+	.byte	'unsigned int',0,4,7,8
+	.byte	'__size_t',0,2,1,1
+	.word	411
+	.byte	4
+	.byte	'int',0,4,5,8
+	.byte	'__ptrdiff_t',0,2,1,1
+	.word	444
+	.byte	9,1,7
+	.word	471
+	.byte	8
+	.byte	'__codeptr',0,2,1,1
+	.word	473
+	.byte	8
+	.byte	'uint8_t',0,3,101,23
+	.word	260
+	.byte	8
+	.byte	'uint32_t',0,3,105,23
+	.word	277
+	.byte	8
+	.byte	'uint8',0,3,115,29
+	.word	260
+	.byte	4
+	.byte	'unsigned short int',0,2,7,8
+	.byte	'uint16',0,3,119,29
+	.word	543
+	.byte	8
+	.byte	'uint32',0,3,123,29
+	.word	277
+	.byte	8
+	.byte	'sint16',0,3,136,1,29
+	.word	380
+	.byte	4
+	.byte	'long int',0,4,5,8
+	.byte	'sint32',0,3,141,1,29
+	.word	611
+	.byte	4
+	.byte	'long long int',0,8,5,8
+	.byte	'sint64',0,3,148,1,29
+	.word	639
+	.byte	4
+	.byte	'float',0,4,4,8
+	.byte	'float32',0,3,177,1,29
+	.word	672
+	.byte	10
+	.byte	'void',0,7
+	.word	698
+	.byte	8
+	.byte	'pvoid',0,4,54,28
+	.word	704
+	.byte	8
+	.byte	'Ifx_TickTime',0,4,76,28
+	.word	639
+	.byte	8
+	.byte	'MODE',0,1,19,2
+	.word	194
+	.byte	8
+	.byte	'ModeInfo',0,1,26,2
+	.word	298
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L7:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,4,1,58,15,59,15,57,15,11,15,0,0,3,40,0,3,8,28,13,0,0,4
+	.byte	36,0,3,8,11,15,62,15,0,0,5,19,1,58,15,59,15,57,15,11,15,0,0,6,13,0,3,8,73,19,11,15,56,9,0,0,7,15,0,73
+	.byte	19,0,0,8,22,0,3,8,58,15,59,15,57,15,73,19,0,0,9,21,0,54,15,0,0,10,59,0,3,8,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L8:
+	.word	.L18-.L17
+.L17:
+	.half	3
+	.word	.L20-.L19
+.L19:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std',0
+	.byte	0
+	.byte	'..\\AppMode.h',0,0,0,0
+	.byte	'../AppMode_Operation.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'Ifx_Types.h',0,1,0,0,0
+.L20:
+.L18:
+	.sdecl	'.debug_info',debug,cluster('Unit_ModeOperation')
+	.sect	'.debug_info'
+.L9:
+	.word	270
+	.half	3
+	.word	.L10
+	.byte	4,1
+	.byte	'../AppMode_Operation.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\user\\AURIX-v1.9.20-workspace\\TC275_RX_can\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L12,.L11
+	.byte	2
+	.word	.L5
+	.byte	3
+	.byte	'Unit_ModeOperation',0,1,26,6,1,1,1
+	.word	.L4,.L14,.L3
+	.byte	4
+	.byte	'pModeInfo',0,1,26,35
+	.word	.L15,.L16
+	.byte	5
+	.word	.L4,.L14
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Unit_ModeOperation')
+	.sect	'.debug_abbrev'
+.L10:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Unit_ModeOperation')
+	.sect	'.debug_line'
+.L11:
+	.word	.L22-.L21
+.L21:
+	.half	3
+	.word	.L24-.L23
+.L23:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../AppMode_Operation.c',0,0,0,0,0
+.L24:
+	.byte	5,14,7,0,5,2
+	.word	.L4
+	.byte	3,27,1,5,28,9
+	.half	.L25-.L4
+	.byte	1,5,17,9
+	.half	.L26-.L25
+	.byte	3,2,1,5,5,9
+	.half	.L27-.L26
+	.byte	1,5,33,7,9
+	.half	.L28-.L27
+	.byte	3,2,1,5,31,9
+	.half	.L29-.L28
+	.byte	1,5,35,9
+	.half	.L30-.L29
+	.byte	3,1,1,5,33,9
+	.half	.L31-.L30
+	.byte	1,5,1,9
+	.half	.L2-.L31
+	.byte	3,2,1,7,9
+	.half	.L13-.L2
+	.byte	0,1,1
+.L22:
+	.sdecl	'.debug_ranges',debug,cluster('Unit_ModeOperation')
+	.sect	'.debug_ranges'
+.L12:
+	.word	-1,.L4,0,.L13-.L4,0,0
+	.sdecl	'.debug_loc',debug,cluster('Unit_ModeOperation')
+	.sect	'.debug_loc'
+.L3:
+	.word	-1,.L4,0,.L14-.L4
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L16:
+	.word	-1,.L4,0,.L14-.L4
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L32:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Unit_ModeOperation')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L32,.L4,.L14-.L4
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	; Module end

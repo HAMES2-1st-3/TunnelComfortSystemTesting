@@ -1,0 +1,46 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc16856a --dep-file=Libraries/iLLD/TC27D/Tricore/_Impl/IfxPsi5_cfg.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Configurations -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\PwmHl -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Timer -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Can -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\user\\\\AURIX-v1.9.20-workspace\\\\TC275_RX_can\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o Libraries/iLLD/TC27D/Tricore/_Impl/IfxPsi5_cfg.src ../Libraries/iLLD/TC27D/Tricore/_Impl/IfxPsi5_cfg.c"
+	.compiler_name		"ctc"
+	;source	'../Libraries/iLLD/TC27D/Tricore/_Impl/IfxPsi5_cfg.c'
+
+	
+$TC16X
+	
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	245
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'../Libraries/iLLD/TC27D/Tricore/_Impl/IfxPsi5_cfg.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\user\\AURIX-v1.9.20-workspace\\TC275_RX_can\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L5
+	.byte	2,1,3
+	.word	223
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	225
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15
+	.byte	57,15,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L7-.L6
+.L6:
+	.half	3
+	.word	.L9-.L8
+.L8:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../Libraries/iLLD/TC27D/Tricore/_Impl/IfxPsi5_cfg.c',0,0,0,0,0
+.L9:
+.L7:
+	; Module end
