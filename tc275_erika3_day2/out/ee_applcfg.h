@@ -55,7 +55,7 @@ extern "C" {
  * TASKs declaration
  *
  **************************************************************************/
-#define Blink_LED (1U)
+#define CAN_Tx (1U)
 #define UART_Echo (2U)
 #define DCMotor_Example (3U)
 #define Timer_Example (4U)

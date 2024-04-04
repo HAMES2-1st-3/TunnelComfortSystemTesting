@@ -5,19 +5,19 @@
 
 void StartupHook(void)
 {
-	my_printf("Hello aaaorld!\n");
+//	my_printf("Hello world!\n");
 	//ActivateTask(Task_Motor);
-	ActivateTask(Blink_LED);
+	ActivateTask(CAN_Tx);
 
 }
 
 /* Task Declaration */
-DeclareTask(Blink_LED);
+DeclareTask(CAN_Tx);
 DeclareTask(UART_Echo);
 DeclareTask(DCMotor_Example);
 DeclareTask(Timer_Example);
 DeclareTask(Ultrasonic_Example);
-DeclareTask(Buzzer_Example);
+//DeclareTask(Buzzer_Example);
 DeclareTask(TOF_Example);
 DeclareTask(ADC_Example);
 DeclareTask(OS_EE_Task_Init);
@@ -55,12 +55,16 @@ TASK(Task_Motor){
 	TerminateTask();
 }
 TASK(Task_AEB){
-	toggleLED2();
+	while(1){
+		toggleLED2();
+		delay_ms(1000);
+	}
 	TerminateTask();
 }
-TASK(Blink_LED)
+TASK(CAN_Tx)
 {
 	while(1){
+		delay_ms(1000);
 		Driver_Can_TxTest();
 	}
 	TerminateTask();
@@ -177,7 +181,6 @@ TASK(OS_EE_Task_Init)
 {
 	TerminateTask();
 }
-
 int main(void)
 {
 	SYSTEM_Init();
@@ -186,7 +189,7 @@ int main(void)
 	Init_GPIO();
 	Driver_Can_Init();
 
-	_init_uart3();
+//	_init_uart3();
 //	Init_DCMotor();
 //	Init_DCMotorPWM();
 //	init_gpt2();

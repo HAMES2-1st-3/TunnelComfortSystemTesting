@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_cfg.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\IfxPort_cfg.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,8 +241,8 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_cfg.c"
-# 47 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_cfg.c"
+# 1 "C:\\TC275_~2\\bsw\\IfxPort_cfg.c"
+# 47 "C:\\TC275_~2\\bsw\\IfxPort_cfg.c"
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_cfg.h" 1 3
 # 51 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_cfg.h" 3
 #define IFXPORT_CFG_H 1
@@ -5142,7 +5142,7 @@ typedef struct
 extern const IfxPort_Esr_Masks IfxPort_cfg_esrMasks[(16)];
 
 extern const IfxModule_IndexMap IfxPort_cfg_indexMap[(16)];
-# 48 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_cfg.c" 2
+# 48 "C:\\TC275_~2\\bsw\\IfxPort_cfg.c" 2
 
 
 

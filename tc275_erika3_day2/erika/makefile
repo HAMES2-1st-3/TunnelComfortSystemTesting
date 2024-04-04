@@ -48,7 +48,7 @@ export OS_EE_OPT
 ############################################################################
 # Overwrite the ERIKA_FILES variable (if set) with the value
 # configured in RT-druid.
-ERIKA_FILES := $(shell cygpath `cygpath -ms "C:\Users\user\Downloads\eclipse-rtdruid3-photon-win32-x86_64_20190524_gh65\RT-Druid\plugins\com.eu.evidence.ee3_3.0.1.20190524_gh65\ee_files"`)
+ERIKA_FILES := $(shell cygpath `cygpath -ms "C:\RT-Druid\plugins\com.eu.evidence.ee3_3.0.1.20190524_gh65\ee_files"`)
 export ERIKA_FILES
 
 $(info ERIKA_FILES=$(ERIKA_FILES))

@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\Ultrasonic.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,8 +241,8 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\Ultrasonic.c"
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\Ultrasonic.h" 1
+# 1 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.c"
+# 1 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.h" 1
 
 #define BSW_IO_ULTRASONIC_H_ 
 
@@ -251,8 +251,8 @@ double ReadUltrasonic_noFilt(void);
 double ReadUltrasonic_Filt(void);
 
 #define FILT_SIZE 5
-# 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\Ultrasonic.c" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\../drivers/gpt12.h" 1
+# 2 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.c" 2
+# 1 "C:\\TC275_~2\\bsw\\io\\../drivers/gpt12.h" 1
 
 #define BSW_DRIVERS_GPT12_H_ 
 
@@ -277,18 +277,18 @@ void runGpt12_T4(void);
 void stopGpt12_T4(void);
 void setGpt12_T4(unsigned short value);
 unsigned int getGpt12_T4(void);
-# 3 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\Ultrasonic.c" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 1
+# 3 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.c" 2
+# 1 "C:\\TC275_~2/main.h" 1
 
 #define MAIN_H_ 
 
 
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/system_tc2x.h" 1
-# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/system_tc2x.h"
+# 1 "C:\\TC275_~2/bsw/system/system_tc2x.h" 1
+# 9 "C:\\TC275_~2/bsw/system/system_tc2x.h"
 #define __SYSTEM_TC2X_H__ 
 
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/system.h" 1
-# 20 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/system.h"
+# 1 "C:\\TC275_~2/bsw/system/system.h" 1
+# 20 "C:\\TC275_~2/bsw/system/system.h"
 #define __SYSTEM_H__ 
 
 
@@ -357,7 +357,7 @@ int SYSTEM_Sleep(void);
 
 
 void SYSTEM_DbgBreak(void);
-# 12 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/system_tc2x.h" 2
+# 12 "C:\\TC275_~2/bsw/system/system_tc2x.h" 2
 
 
 
@@ -379,9 +379,9 @@ void SYSTEM_DisableSecProtection(void);
 unsigned long SYSTEM_GetStmClock(void);
 
 unsigned long SYSTEM_GetCanClock(void);
-# 6 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/interrupts.h" 1
-# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/interrupts.h"
+# 6 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/system/interrupts.h" 1
+# 9 "C:\\TC275_~2/bsw/system/interrupts.h"
 #define __INTERRUPTS_H__ 
 
 
@@ -888,13 +888,13 @@ unsigned long SYSTEM_GetCanClock(void);
 #define SRC_ID_GTMATOM43 1907
 
 #define IRQ_ID_MAX_NUM 1908
-# 523 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/interrupts.h"
+# 523 "C:\\TC275_~2/bsw/system/interrupts.h"
 typedef void (*isrhnd_t)(int arg);
-# 532 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/interrupts.h"
+# 532 "C:\\TC275_~2/bsw/system/interrupts.h"
 void InterruptInit(void);
-# 543 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/system/interrupts.h"
+# 543 "C:\\TC275_~2/bsw/system/interrupts.h"
 void InterruptInstall(int irqNum, isrhnd_t isrProc, int prio, int arg);
-# 7 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
+# 7 "C:\\TC275_~2/main.h" 2
 
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_reg.h" 1 3
@@ -141530,10 +141530,10 @@ typedef volatile struct _Ifx_XBAR
 
 #define XBAR_INTSAT (*(volatile Ifx_XBAR_INTSAT*)0xF8700410u)
 # 67 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_reg.h" 2 3
-# 10 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
+# 10 "C:\\TC275_~2/main.h" 2
 
 
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 1
+# 1 "C:\\TC275_~2/bsw/drivers/asclin.h" 1
 
 #define BSW_DRIVERS_ASCLIN_H_ 
 
@@ -141700,7 +141700,7 @@ void _restore (const int irqs_on)
 #define __CTZ(val) __builtin_ctz (val)
 
 #define __ABS(val) __builtin_abs (val)
-# 5 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 2
+# 5 "C:\\TC275_~2/bsw/drivers/asclin.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\lib\\gcc\\tricore\\4.9.4\\include\\stdarg.h" 1 3 4
 # 31 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\lib\\gcc\\tricore\\4.9.4\\include\\stdarg.h" 3 4
 #define _STDARG_H 
@@ -141746,9 +141746,9 @@ typedef __gnuc_va_list va_list;
 
 
 #define __va_list__ 
-# 6 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 2
+# 6 "C:\\TC275_~2/bsw/drivers/asclin.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_reg.h" 1 3
-# 7 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 2
+# 7 "C:\\TC275_~2/bsw/drivers/asclin.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_bf.h" 1 3
 # 28 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_bf.h" 3
 #define IFXPORT_BF_H 1
@@ -144141,13 +144141,13 @@ typedef __gnuc_va_list va_list;
 
 
 #define IFX_P_PDR1_PL9_OFF (7u)
-# 8 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 2
+# 8 "C:\\TC275_~2/bsw/drivers/asclin.h" 2
 
 
 
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxasclin_reg.h" 1 3
-# 13 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 2
+# 13 "C:\\TC275_~2/bsw/drivers/asclin.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxasclin_bf.h" 1 3
 # 28 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxasclin_bf.h" 3
 #define IFXASCLIN_BF_H 1
@@ -145883,7 +145883,7 @@ typedef __gnuc_va_list va_list;
 
 
 #define IFX_ASCLIN_TXFIFOCON_INW_OFF (6u)
-# 14 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/asclin.h" 2
+# 14 "C:\\TC275_~2/bsw/drivers/asclin.h" 2
 
 static Ifx_ASCLIN * const asclin3 = (Ifx_ASCLIN *)&(*(Ifx_ASCLIN*)0xF0000900u);
 
@@ -145970,18 +145970,18 @@ int _poll_uart0(unsigned char *chr);
 unsigned char _in_uart0(void);
 void _init_uart0(void);
 void _out_uart0(const unsigned char chr);
-# 13 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/gpt12.h" 1
-# 14 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/vadc.h" 1
+# 13 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/drivers/gpt12.h" 1
+# 14 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/drivers/vadc.h" 1
 
 #define BSW_DRIVERS_VADC_INT_H_ 
 
 void init_VADC(void);
 void VADC_startConversion(void);
 unsigned int VADC_readResult(void);
-# 15 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 1
+# 15 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 1
 
 #define DRIVER_CAN 
 
@@ -146589,7 +146589,7 @@ typedef struct
 #define IFX_SQRT_TWO (1.4142135623730950488016887242097f)
 #define IFX_SQRT_THREE (1.7320508075688772935274463415059f)
 #define IFX_UNUSED_PARAMETER(x) if(x){}
-# 8 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 8 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxcpu.h" 1 3
 # 63 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxcpu.h" 3
 #define IFXCPU_H 1
@@ -159746,7 +159746,7 @@ static inline __attribute__ ((always_inline)) void IfxCpu_updatePerformanceCount
     cctrl.B.CE = enableBit;
     do { unsigned __newval = (unsigned) (cctrl.U); __asm__ volatile ("mtcr LO:" "0xFC00" ", %0" :: "d" (__newval) : "memory"); } while (0);
 }
-# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 9 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican_can.h" 1 3
 # 766 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican_can.h" 3
 #define IFXMULTICAN_CAN_H 1
@@ -159949,7 +159949,7 @@ static inline __attribute__ ((always_inline)) void IfxSrc_setRequest(volatile If
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican_pinmap.h" 1 3
 # 46 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican_pinmap.h" 3
 #define IFXMULTICAN_PINMAP_H 
-# 56 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican_pinmap.h" 3
+# 57 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican_pinmap.h" 3
 typedef const struct
 {
     Ifx_CAN* module;
@@ -163979,13 +163979,13 @@ static inline __attribute__ ((always_inline)) void IfxMultican_Can_deinit(IfxMul
 {
     IfxMultican_deinit(mcan->mcan);
 }
-# 10 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 10 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxcan_regdef.h" 1 3
-# 13 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 13 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\platform_types.h" 1 3
-# 14 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 14 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\compilergcc.h" 1 3
 # 41 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\compilergcc.h" 3
@@ -164043,22 +164043,43 @@ static inline __attribute__ ((always_inline)) void IfxMultican_Can_deinit(IfxMul
 #define IFX_INTERRUPT_FAST IFX_INTERRUPT
 # 153 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\compilergcc.h" 3
 #define IFX_ALIGN(n) __attribute__ ((aligned(n)))
-# 16 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 16 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
 
 
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\compilergnuc.h" 1 3
-# 21 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 21 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_typesgnuc.h" 1 3
-# 22 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h" 2
+# 22 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
+
+# 1 "C:\\TC275_~2/bsw/io/GPIO.h" 1
+
+#define BSW_IO_GPIO_H_ 
+
+
+
+void Init_GPIO(void);
+
+void setLED1(int onoff);
+void setLED2(int onoff);
+void toggleLED1(void);
+void toggleLED2(void);
+
+int getSW1(void);
+int getSW2(void);
+int getSW1_Debounce(void);
+int getSW2_Debounce(void);
+# 25 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
+# 1 "C:\\TC275_~2/bsw/system/interrupts.h" 1
+# 26 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
 
 
 #define ECU1_TX_OBJ_NUM 10u
 #define ECU1_RX_OBJ_NUM 10u
-# 40 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/Driver_Can.h"
+# 43 "C:\\TC275_~2/bsw/drivers/Driver_Can.h"
 typedef struct
 {
     IfxMultican_Can CanEcu1;
@@ -164080,17 +164101,17 @@ extern Ecu1Can stEcu1Can;
 extern void Driver_Can_Init(void);
 extern void Driver_Can_TxTest(void);
 void CAN_RxInt0Handler(void);
-# 16 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
+# 16 "C:\\TC275_~2/main.h" 2
 
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/etc/etc.h" 1
+# 1 "C:\\TC275_~2/bsw/etc/etc.h" 1
 
 #define BSW_ETC_ETC_H_ 
 
 void delay_ms(unsigned int delay_time);
-# 18 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
+# 18 "C:\\TC275_~2/main.h" 2
 
 
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Buzzer.h" 1
+# 1 "C:\\TC275_~2/bsw/io/Buzzer.h" 1
 
 #define BSW_IO_BUZZER_H_ 
 
@@ -164098,26 +164119,10 @@ void Init_Buzzer(void);
 void Init_Buzzer_PWM(void);
 void setBeepCycle(int cycle);
 void Beep(unsigned int hz);
-# 21 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/GPIO.h" 1
-
-#define BSW_IO_GPIO_H_ 
-
-
-
-void Init_GPIO(void);
-
-void setLED1(int onoff);
-void setLED2(int onoff);
-void toggleLED1(void);
-void toggleLED2(void);
-
-int getSW1(void);
-int getSW2(void);
-int getSW1_Debounce(void);
-int getSW2_Debounce(void);
-# 22 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Motor.h" 1
+# 21 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/io/GPIO.h" 1
+# 22 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/io/Motor.h" 1
 
 #define BSW_IO_MOTOR_H_ 
 
@@ -164132,17 +164137,17 @@ void stopChB(void);
 
 void movChA_PWM(int duty, int dir);
 void movChB_PWM(int duty, int dir);
-# 23 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/ToF.h" 1
+# 23 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/io/ToF.h" 1
 
 #define BSW_IO_TOF_H_ 
 
 void Init_ToF(void);
 void IsrUart1RxHandler_tof(void);
 int getTofDistance(void);
-# 24 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Ultrasonic.h" 1
-# 25 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
+# 24 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/io/Ultrasonic.h" 1
+# 25 "C:\\TC275_~2/main.h" 2
 
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3
@@ -165355,7 +165360,7 @@ int __swbuf_r (struct _reent *, int, FILE *);
 #define putchar(x) putc(x, stdout)
 
 
-# 28 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/main.h" 2
+# 28 "C:\\TC275_~2/main.h" 2
 
 
 extern unsigned char cmd_clr_scr[8];
@@ -165366,7 +165371,7 @@ extern unsigned char cmd;
 #define CLR_SCR() my_printf("%s", cmd_clr_scr)
 #define CLR_LINE() my_printf("%s", cmd_clr_line)
 #define MOV_CUR_UP() my_printf("%s", cmd_mov_cur_up)
-# 4 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\Ultrasonic.c" 2
+# 4 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.c" 2
 
 
 void Init_Ultrasonics(void)

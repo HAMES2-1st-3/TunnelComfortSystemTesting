@@ -35,7 +35,6 @@ OS_EE_OPT += OS_EE_BUILD_DEBUG
 OS_EE_OPT += OSEE_ARCH_TRICORE
 OS_EE_OPT += OSEE_CPU_CLOCK (200000000U)
 OS_EE_OPT += OSEE_HAS_ALARMS
-OS_EE_OPT += OSEE_HAS_AUTOSTART_TRIGGER
 OS_EE_OPT += OSEE_HAS_COUNTERS
 OS_EE_OPT += OSEE_HAS_EVENTS
 OS_EE_OPT += OSEE_HAS_RESOURCES
@@ -69,7 +68,7 @@ OS_EE_OPT += OS_EE_RTD_DISABLE_OS_EE_OPT_DEFINES
 # HighTec GCC Compiler path
 #
 ############################################################################
-$(eval $(call check_and_set_cygwin_compiler_path,BINDIR,C:\HighTec\toolchains\tricore\v4.9.3.0-infineon-1.0/bin/))
+$(eval $(call check_and_set_cygwin_compiler_path,BINDIR,))
 
 
 OSEE_TRICORE_MCU    := tc27x

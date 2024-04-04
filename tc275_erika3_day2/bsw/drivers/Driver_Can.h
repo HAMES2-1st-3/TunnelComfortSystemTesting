@@ -20,6 +20,9 @@
 #include "tc27xd/CompilerGnuc.h"
 #include "tc27xd/Ifx_TypesGnuc.h"
 #include "tc27xd/IfxCpu_cfg.h"
+
+#include "bsw/io/GPIO.h"
+#include "bsw/system/interrupts.h"
 /***********************************************************************/
 /*Define*/ 
 /***********************************************************************/

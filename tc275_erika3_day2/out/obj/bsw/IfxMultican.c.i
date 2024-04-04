@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\IfxMultican.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,8 +241,8 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
-# 48 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
+# 1 "C:\\TC275_~2\\bsw\\IfxMultican.c"
+# 48 "C:\\TC275_~2\\bsw\\IfxMultican.c"
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican.h" 1 3
 # 58 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxmultican.h" 3
 #define IFXMULTICAN_H 1
@@ -59170,9 +59170,9 @@ static inline __attribute__ ((always_inline)) uint32 IfxMultican_Node_getDataLen
 
     return numBytes;
 }
-# 49 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c" 2
+# 49 "C:\\TC275_~2\\bsw\\IfxMultican.c" 2
 #define NULL_PTR ((void *)0)
-# 61 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
+# 61 "C:\\TC275_~2\\bsw\\IfxMultican.c"
 static void IfxMultican_MsgObj_doReadLongFrame(Ifx_CAN *mcan, IfxMultican_MsgObjId msgObjId, IfxMultican_Message *msg, uint32 *data);
 
 
@@ -59813,7 +59813,7 @@ void IfxMultican_Node_setBitTiming(Ifx_CAN_N *hwNode, float32 moduleFreq, uint32
     sint32 tempBRP, tempSJW, tempTSEG1, tempTBAUD;
     sint32 bestBRP = 0, bestSJW = 1, bestTBAUD = 8, bestTSEG1 = 3, bestTSEG2 = 2;
     float32 bestError = 10000.0f;
-# 719 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
+# 719 "C:\\TC275_~2\\bsw\\IfxMultican.c"
     bestError = baudrate * 0.05f;
 
     for (tempBRP = 1; tempBRP <= maxBRP; tempBRP++)
@@ -59956,7 +59956,7 @@ void IfxMultican_Node_setFastBitTiming(Ifx_CAN_N *hwNode, float32 moduleFreq, ui
     sint32 tempBRP, tempSJW, tempTSEG1, tempTBAUD;
     sint32 bestBRP = 0, bestSJW = 1, bestTBAUD = 8, bestTSEG1 = 3, bestTSEG2 = 2;
     float32 bestError = 10000.0f;
-# 878 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
+# 878 "C:\\TC275_~2\\bsw\\IfxMultican.c"
     bestError = baudrate * 0.05f;
 
     for (tempBRP = 1; tempBRP <= maxBRP; tempBRP++)
@@ -60097,7 +60097,7 @@ void IfxMultican_Node_setNominalBitTiming(Ifx_CAN_N *hwNode, float32 moduleFreq,
     sint32 tempBRP, tempSJW, tempTSEG1, tempTBAUD;
     sint32 bestBRP = 0, bestSJW = 1, bestTBAUD = 8, bestTSEG1 = 3, bestTSEG2 = 2;
     float32 bestError = 10000.0f;
-# 1035 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxMultican.c"
+# 1035 "C:\\TC275_~2\\bsw\\IfxMultican.c"
     bestError = baudrate * 0.05f;
 
     for (tempBRP = 1; tempBRP <= maxBRP; tempBRP++)

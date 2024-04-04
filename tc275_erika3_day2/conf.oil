@@ -52,6 +52,51 @@ CPU tc275_shieldbuddy
 	
 	
 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 ALARM alarm1 {
 		ACTION = ACTIVATETASK {
 			TASK = Ultrasonic_Example;
@@ -72,23 +117,22 @@ ALARM alarm1 {
 		APP_SRC = "bsw/io/Ultrasonic.c";
 		APP_SRC = "bsw/system/interrupts.c";
 		APP_SRC = "bsw/system/system_tc27x.c";
-		APP_SRC ="bsw/drivers/Driver_Can.c";
-		
-		APP_SRC="bsw/CompilerGcc.c";
-		APP_SRC="bsw/CompilerGhs.c";
-		APP_SRC="bsw/CompilerGnuc.c";
-		APP_SRC="bsw/CompilerTasking.c";
-		APP_SRC="bsw/IfxCpu_cfg.c";
-		APP_SRC="bsw/IfxMultican_Can.c";
-		APP_SRC="bsw/IfxMultican_PinMap.c";
-		APP_SRC="bsw/IfxMultican.c";
-		APP_SRC="bsw/IfxPort_cfg.c";
-		APP_SRC="bsw/IfxScu_cfg.c";
-		APP_SRC="bsw/IfxPort.c";
-		APP_SRC="bsw/IfxScuWdt.c";
-		APP_SRC="bsw/IfxPort_PinMap.c";
-		APP_SRC="bsw/IfxMultican_cfg.c";
-		APP_SRC="bsw/IfxScuCcu.c";
+		APP_SRC = "bsw/drivers/Driver_Can.c";
+		APP_SRC = "bsw/CompilerGcc.c";
+		APP_SRC = "bsw/CompilerGhs.c";
+		APP_SRC = "bsw/CompilerGnuc.c";
+		APP_SRC = "bsw/CompilerTasking.c";
+		APP_SRC = "bsw/IfxCpu_cfg.c";
+		APP_SRC = "bsw/IfxMultican_Can.c";
+		APP_SRC = "bsw/IfxMultican_PinMap.c";
+		APP_SRC = "bsw/IfxMultican.c";
+		APP_SRC = "bsw/IfxPort_cfg.c";
+		APP_SRC = "bsw/IfxScu_cfg.c";
+		APP_SRC = "bsw/IfxPort.c";
+		APP_SRC = "bsw/IfxScuWdt.c";
+		APP_SRC = "bsw/IfxPort_PinMap.c";
+		APP_SRC = "bsw/IfxMultican_cfg.c";
+		APP_SRC = "bsw/IfxScuCcu.c";
 	};
 	COUNTER systimer {
 		MINCYCLE = 1;
@@ -138,7 +182,7 @@ ALARM alarm1 {
 		USEEXTENSIONAPI = FALSE;
 		STACKMONITORING = FALSE;
 	};
-	TASK Blink_LED {
+	TASK CAN_Tx {
 		PRIORITY = 1;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;

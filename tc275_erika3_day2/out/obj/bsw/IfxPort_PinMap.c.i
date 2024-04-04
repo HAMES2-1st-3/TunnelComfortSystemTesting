@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_PinMap.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\IfxPort_PinMap.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,8 +241,8 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_PinMap.c"
-# 43 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_PinMap.c"
+# 1 "C:\\TC275_~2\\bsw\\IfxPort_PinMap.c"
+# 43 "C:\\TC275_~2\\bsw\\IfxPort_PinMap.c"
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 1 3
 # 46 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 3
 #define IFXPORT_PINMAP_H 
@@ -16679,7 +16679,7 @@ extern IfxPort_Pin IfxPort_P40_9;
 
 
 extern const IfxPort_Pin *IfxPort_Pin_pinTable[41][16];
-# 44 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort_PinMap.c" 2
+# 44 "C:\\TC275_~2\\bsw\\IfxPort_PinMap.c" 2
 #define NULL_PTR ((void *)0)
 IfxPort_Pin IfxPort_P00_0 = {&(*(Ifx_P*)0xF003A000u), 0};
 IfxPort_Pin IfxPort_P00_1 = {&(*(Ifx_P*)0xF003A000u), 1};

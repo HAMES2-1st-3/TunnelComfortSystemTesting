@@ -6,7 +6,7 @@
 	.type	IfxPort_disableEmergencyStop, @function
 IfxPort_disableEmergencyStop:
 .LFB181:
-	.file 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort.c"
+	.file 1 "C:\\TC275_~2\\bsw\\IfxPort.c"
 	.loc 1 53 0
 .LVL0:
 	.loc 1 59 0
@@ -1474,7 +1474,7 @@ IfxPort_setPinPadDriver:
 	.file 8 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxscuwdt.h"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x3c4e
+	.uaword	0x3c3a
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -1486,7 +1486,7 @@ IfxPort_setPinPadDriver:
 	.ascii	"t-volatile-bitfields"
 	.string	" -finline-functions -fzero-initialized-in-bss -fno-common -fgcse-after-reload -ffast-math -funswitch-loops -fpredictive-commoning -ftree-vectorize -fipa-cp-clone -fpeel-loops -fmove-loop-invariants -frename-registers -fira-algorithm=priority -fshort-double"
 	.byte	0x1
-	.string	"C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxPort.c"
+	.string	"C:\\TC275_~2\\bsw\\IfxPort.c"
 	.uaword	.Ltext0
 	.uaword	.Letext0
 	.uaword	.Ldebug_line0
@@ -1531,22 +1531,22 @@ IfxPort_setPinPadDriver:
 	.string	"boolean"
 	.byte	0x3
 	.byte	0x6f
-	.uaword	0x281
+	.uaword	0x26d
 	.uleb128 0x3
 	.string	"uint8"
 	.byte	0x3
 	.byte	0x73
-	.uaword	0x281
+	.uaword	0x26d
 	.uleb128 0x3
 	.string	"uint16"
 	.byte	0x3
 	.byte	0x77
-	.uaword	0x29f
+	.uaword	0x28b
 	.uleb128 0x3
 	.string	"uint32"
 	.byte	0x3
 	.byte	0x7b
-	.uaword	0x256
+	.uaword	0x242
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
@@ -1555,7 +1555,7 @@ IfxPort_setPinPadDriver:
 	.string	"sint32"
 	.byte	0x3
 	.byte	0x8d
-	.uaword	0x24a
+	.uaword	0x236
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x5
@@ -1566,42 +1566,42 @@ IfxPort_setPinPadDriver:
 	.string	"char"
 	.uleb128 0x4
 	.byte	0x4
-	.uaword	0x347
+	.uaword	0x333
 	.uleb128 0x5
 	.uleb128 0x6
 	.byte	0x8
 	.byte	0x4
 	.byte	0x8c
-	.uaword	0x36c
+	.uaword	0x358
 	.uleb128 0x7
 	.string	"module"
 	.byte	0x4
 	.byte	0x8e
-	.uaword	0x341
+	.uaword	0x32d
 	.byte	0
 	.uleb128 0x8
 	.uaword	.LASF0
 	.byte	0x4
 	.byte	0x8f
-	.uaword	0x31a
+	.uaword	0x306
 	.byte	0x4
 	.byte	0
 	.uleb128 0x3
 	.string	"IfxModule_IndexMap"
 	.byte	0x4
 	.byte	0x90
-	.uaword	0x348
+	.uaword	0x334
 	.uleb128 0x9
 	.string	"_Ifx_P_ACCEN0_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x2d
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0xa
 	.string	"EN0"
 	.byte	0x5
 	.byte	0x2f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -1610,7 +1610,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN1"
 	.byte	0x5
 	.byte	0x30
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -1619,7 +1619,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN2"
 	.byte	0x5
 	.byte	0x31
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -1628,7 +1628,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN3"
 	.byte	0x5
 	.byte	0x32
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -1637,7 +1637,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN4"
 	.byte	0x5
 	.byte	0x33
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -1646,7 +1646,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN5"
 	.byte	0x5
 	.byte	0x34
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -1655,7 +1655,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN6"
 	.byte	0x5
 	.byte	0x35
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -1664,7 +1664,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN7"
 	.byte	0x5
 	.byte	0x36
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -1673,7 +1673,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN8"
 	.byte	0x5
 	.byte	0x37
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -1682,7 +1682,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN9"
 	.byte	0x5
 	.byte	0x38
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -1691,7 +1691,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN10"
 	.byte	0x5
 	.byte	0x39
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -1700,7 +1700,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN11"
 	.byte	0x5
 	.byte	0x3a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -1709,7 +1709,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN12"
 	.byte	0x5
 	.byte	0x3b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -1718,7 +1718,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN13"
 	.byte	0x5
 	.byte	0x3c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -1727,7 +1727,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN14"
 	.byte	0x5
 	.byte	0x3d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -1736,7 +1736,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN15"
 	.byte	0x5
 	.byte	0x3e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -1745,7 +1745,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN16"
 	.byte	0x5
 	.byte	0x3f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xf
@@ -1754,7 +1754,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN17"
 	.byte	0x5
 	.byte	0x40
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xe
@@ -1763,7 +1763,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN18"
 	.byte	0x5
 	.byte	0x41
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xd
@@ -1772,7 +1772,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN19"
 	.byte	0x5
 	.byte	0x42
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xc
@@ -1781,7 +1781,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN20"
 	.byte	0x5
 	.byte	0x43
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xb
@@ -1790,7 +1790,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN21"
 	.byte	0x5
 	.byte	0x44
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xa
@@ -1799,7 +1799,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN22"
 	.byte	0x5
 	.byte	0x45
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x9
@@ -1808,7 +1808,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN23"
 	.byte	0x5
 	.byte	0x46
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x8
@@ -1817,7 +1817,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN24"
 	.byte	0x5
 	.byte	0x47
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x7
@@ -1826,7 +1826,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN25"
 	.byte	0x5
 	.byte	0x48
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x6
@@ -1835,7 +1835,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN26"
 	.byte	0x5
 	.byte	0x49
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x5
@@ -1844,7 +1844,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN27"
 	.byte	0x5
 	.byte	0x4a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x4
@@ -1853,7 +1853,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN28"
 	.byte	0x5
 	.byte	0x4b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x3
@@ -1862,7 +1862,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN29"
 	.byte	0x5
 	.byte	0x4c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x2
@@ -1871,7 +1871,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN30"
 	.byte	0x5
 	.byte	0x4d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
@@ -1880,7 +1880,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN31"
 	.byte	0x5
 	.byte	0x4e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -1894,18 +1894,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_ACCEN0_Bits"
 	.byte	0x5
 	.byte	0x4f
-	.uaword	0x386
+	.uaword	0x372
 	.uleb128 0x9
 	.string	"_Ifx_P_ACCEN1_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x52
-	.uaword	0x5ec
+	.uaword	0x5d8
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0x54
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x20
 	.byte	0
@@ -1915,18 +1915,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_ACCEN1_Bits"
 	.byte	0x5
 	.byte	0x55
-	.uaword	0x5c1
+	.uaword	0x5ad
 	.uleb128 0x9
 	.string	"_Ifx_P_ESR_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x58
-	.uaword	0x723
+	.uaword	0x70f
 	.uleb128 0xa
 	.string	"EN0"
 	.byte	0x5
 	.byte	0x5a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -1935,7 +1935,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN1"
 	.byte	0x5
 	.byte	0x5b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -1944,7 +1944,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN2"
 	.byte	0x5
 	.byte	0x5c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -1953,7 +1953,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN3"
 	.byte	0x5
 	.byte	0x5d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -1962,7 +1962,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN4"
 	.byte	0x5
 	.byte	0x5e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -1971,7 +1971,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN5"
 	.byte	0x5
 	.byte	0x5f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -1980,7 +1980,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN6"
 	.byte	0x5
 	.byte	0x60
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -1989,7 +1989,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN7"
 	.byte	0x5
 	.byte	0x61
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -1998,7 +1998,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN8"
 	.byte	0x5
 	.byte	0x62
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -2007,7 +2007,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN9"
 	.byte	0x5
 	.byte	0x63
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -2016,7 +2016,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN10"
 	.byte	0x5
 	.byte	0x64
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -2025,7 +2025,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN11"
 	.byte	0x5
 	.byte	0x65
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -2034,7 +2034,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN12"
 	.byte	0x5
 	.byte	0x66
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -2043,7 +2043,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN13"
 	.byte	0x5
 	.byte	0x67
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -2052,7 +2052,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN14"
 	.byte	0x5
 	.byte	0x68
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -2061,7 +2061,7 @@ IfxPort_setPinPadDriver:
 	.string	"EN15"
 	.byte	0x5
 	.byte	0x69
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -2070,7 +2070,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0x6a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -2080,18 +2080,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_ESR_Bits"
 	.byte	0x5
 	.byte	0x6b
-	.uaword	0x605
+	.uaword	0x5f1
 	.uleb128 0x9
 	.string	"_Ifx_P_ID_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x6e
-	.uaword	0x78b
+	.uaword	0x777
 	.uleb128 0xa
 	.string	"MODREV"
 	.byte	0x5
 	.byte	0x70
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x8
 	.byte	0x18
@@ -2100,7 +2100,7 @@ IfxPort_setPinPadDriver:
 	.string	"MODTYPE"
 	.byte	0x5
 	.byte	0x71
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x8
 	.byte	0x10
@@ -2109,7 +2109,7 @@ IfxPort_setPinPadDriver:
 	.string	"MODNUMBER"
 	.byte	0x5
 	.byte	0x72
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -2119,18 +2119,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_ID_Bits"
 	.byte	0x5
 	.byte	0x73
-	.uaword	0x739
+	.uaword	0x725
 	.uleb128 0x9
 	.string	"_Ifx_P_IN_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x76
-	.uaword	0x8ad
+	.uaword	0x899
 	.uleb128 0xa
 	.string	"P0"
 	.byte	0x5
 	.byte	0x78
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -2139,7 +2139,7 @@ IfxPort_setPinPadDriver:
 	.string	"P1"
 	.byte	0x5
 	.byte	0x79
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -2148,7 +2148,7 @@ IfxPort_setPinPadDriver:
 	.string	"P2"
 	.byte	0x5
 	.byte	0x7a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -2157,7 +2157,7 @@ IfxPort_setPinPadDriver:
 	.string	"P3"
 	.byte	0x5
 	.byte	0x7b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -2166,7 +2166,7 @@ IfxPort_setPinPadDriver:
 	.string	"P4"
 	.byte	0x5
 	.byte	0x7c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -2175,7 +2175,7 @@ IfxPort_setPinPadDriver:
 	.string	"P5"
 	.byte	0x5
 	.byte	0x7d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -2184,7 +2184,7 @@ IfxPort_setPinPadDriver:
 	.string	"P6"
 	.byte	0x5
 	.byte	0x7e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -2193,7 +2193,7 @@ IfxPort_setPinPadDriver:
 	.string	"P7"
 	.byte	0x5
 	.byte	0x7f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -2202,7 +2202,7 @@ IfxPort_setPinPadDriver:
 	.string	"P8"
 	.byte	0x5
 	.byte	0x80
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -2211,7 +2211,7 @@ IfxPort_setPinPadDriver:
 	.string	"P9"
 	.byte	0x5
 	.byte	0x81
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -2220,7 +2220,7 @@ IfxPort_setPinPadDriver:
 	.string	"P10"
 	.byte	0x5
 	.byte	0x82
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -2229,7 +2229,7 @@ IfxPort_setPinPadDriver:
 	.string	"P11"
 	.byte	0x5
 	.byte	0x83
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -2238,7 +2238,7 @@ IfxPort_setPinPadDriver:
 	.string	"P12"
 	.byte	0x5
 	.byte	0x84
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -2247,7 +2247,7 @@ IfxPort_setPinPadDriver:
 	.string	"P13"
 	.byte	0x5
 	.byte	0x85
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -2256,7 +2256,7 @@ IfxPort_setPinPadDriver:
 	.string	"P14"
 	.byte	0x5
 	.byte	0x86
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -2265,7 +2265,7 @@ IfxPort_setPinPadDriver:
 	.string	"P15"
 	.byte	0x5
 	.byte	0x87
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -2274,7 +2274,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0x88
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -2284,18 +2284,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_IN_Bits"
 	.byte	0x5
 	.byte	0x89
-	.uaword	0x7a0
+	.uaword	0x78c
 	.uleb128 0x9
 	.string	"_Ifx_P_IOCR0_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x8c
-	.uaword	0x955
+	.uaword	0x941
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0x8e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1d
@@ -2304,7 +2304,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC0"
 	.byte	0x5
 	.byte	0x8f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x18
@@ -2313,7 +2313,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF3
 	.byte	0x5
 	.byte	0x90
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x15
@@ -2322,7 +2322,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC1"
 	.byte	0x5
 	.byte	0x91
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x10
@@ -2331,7 +2331,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0x92
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0xd
@@ -2340,7 +2340,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC2"
 	.byte	0x5
 	.byte	0x93
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x8
@@ -2349,7 +2349,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF4
 	.byte	0x5
 	.byte	0x94
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x5
@@ -2358,7 +2358,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC3"
 	.byte	0x5
 	.byte	0x95
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0
@@ -2368,18 +2368,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_IOCR0_Bits"
 	.byte	0x5
 	.byte	0x96
-	.uaword	0x8c2
+	.uaword	0x8ae
 	.uleb128 0x9
 	.string	"_Ifx_P_IOCR12_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0x99
-	.uaword	0xa05
+	.uaword	0x9f1
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0x9b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1d
@@ -2388,7 +2388,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC12"
 	.byte	0x5
 	.byte	0x9c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x18
@@ -2397,7 +2397,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF3
 	.byte	0x5
 	.byte	0x9d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x15
@@ -2406,7 +2406,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC13"
 	.byte	0x5
 	.byte	0x9e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x10
@@ -2415,7 +2415,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0x9f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0xd
@@ -2424,7 +2424,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC14"
 	.byte	0x5
 	.byte	0xa0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x8
@@ -2433,7 +2433,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF4
 	.byte	0x5
 	.byte	0xa1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x5
@@ -2442,7 +2442,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC15"
 	.byte	0x5
 	.byte	0xa2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0
@@ -2452,18 +2452,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_IOCR12_Bits"
 	.byte	0x5
 	.byte	0xa3
-	.uaword	0x96d
+	.uaword	0x959
 	.uleb128 0x9
 	.string	"_Ifx_P_IOCR4_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xa6
-	.uaword	0xab1
+	.uaword	0xa9d
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xa8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1d
@@ -2472,7 +2472,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC4"
 	.byte	0x5
 	.byte	0xa9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x18
@@ -2481,7 +2481,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF3
 	.byte	0x5
 	.byte	0xaa
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x15
@@ -2490,7 +2490,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC5"
 	.byte	0x5
 	.byte	0xab
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x10
@@ -2499,7 +2499,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0xac
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0xd
@@ -2508,7 +2508,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC6"
 	.byte	0x5
 	.byte	0xad
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x8
@@ -2517,7 +2517,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF4
 	.byte	0x5
 	.byte	0xae
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x5
@@ -2526,7 +2526,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC7"
 	.byte	0x5
 	.byte	0xaf
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0
@@ -2536,18 +2536,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_IOCR4_Bits"
 	.byte	0x5
 	.byte	0xb0
-	.uaword	0xa1e
+	.uaword	0xa0a
 	.uleb128 0x9
 	.string	"_Ifx_P_IOCR8_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xb3
-	.uaword	0xb5e
+	.uaword	0xb4a
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xb5
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1d
@@ -2556,7 +2556,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC8"
 	.byte	0x5
 	.byte	0xb6
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x18
@@ -2565,7 +2565,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF3
 	.byte	0x5
 	.byte	0xb7
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x15
@@ -2574,7 +2574,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC9"
 	.byte	0x5
 	.byte	0xb8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x10
@@ -2583,7 +2583,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0xb9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0xd
@@ -2592,7 +2592,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC10"
 	.byte	0x5
 	.byte	0xba
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x8
@@ -2601,7 +2601,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF4
 	.byte	0x5
 	.byte	0xbb
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x5
@@ -2610,7 +2610,7 @@ IfxPort_setPinPadDriver:
 	.string	"PC11"
 	.byte	0x5
 	.byte	0xbc
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0
@@ -2620,18 +2620,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_IOCR8_Bits"
 	.byte	0x5
 	.byte	0xbd
-	.uaword	0xac9
+	.uaword	0xab5
 	.uleb128 0x9
 	.string	"_Ifx_P_LPCR0_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xc0
-	.uaword	0xbbe
+	.uaword	0xbaa
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xc2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -2640,7 +2640,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS1"
 	.byte	0x5
 	.byte	0xc3
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -2649,7 +2649,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF5
 	.byte	0x5
 	.byte	0xc4
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1e
 	.byte	0
@@ -2659,18 +2659,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_LPCR0_Bits"
 	.byte	0x5
 	.byte	0xc5
-	.uaword	0xb76
+	.uaword	0xb62
 	.uleb128 0x9
 	.string	"_Ifx_P_LPCR1_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xc8
-	.uaword	0xc1e
+	.uaword	0xc0a
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xca
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -2679,7 +2679,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS1"
 	.byte	0x5
 	.byte	0xcb
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -2688,7 +2688,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF5
 	.byte	0x5
 	.byte	0xcc
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1e
 	.byte	0
@@ -2698,18 +2698,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_LPCR1_Bits"
 	.byte	0x5
 	.byte	0xcd
-	.uaword	0xbd6
+	.uaword	0xbc2
 	.uleb128 0x9
 	.string	"_Ifx_P_LPCR1_P21_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xd0
-	.uaword	0xcae
+	.uaword	0xc9a
 	.uleb128 0xa
 	.string	"RDIS_CTRL"
 	.byte	0x5
 	.byte	0xd2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -2718,7 +2718,7 @@ IfxPort_setPinPadDriver:
 	.string	"RX_DIS"
 	.byte	0x5
 	.byte	0xd3
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -2727,7 +2727,7 @@ IfxPort_setPinPadDriver:
 	.string	"TERM"
 	.byte	0x5
 	.byte	0xd4
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -2736,7 +2736,7 @@ IfxPort_setPinPadDriver:
 	.string	"LRXTERM"
 	.byte	0x5
 	.byte	0xd5
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x5
 	.byte	0x18
@@ -2745,7 +2745,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF3
 	.byte	0x5
 	.byte	0xd6
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x18
 	.byte	0
@@ -2755,18 +2755,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_LPCR1_P21_Bits"
 	.byte	0x5
 	.byte	0xd7
-	.uaword	0xc36
+	.uaword	0xc22
 	.uleb128 0x9
 	.string	"_Ifx_P_LPCR2_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xda
-	.uaword	0xd89
+	.uaword	0xd75
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xdc
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x8
 	.byte	0x18
@@ -2775,7 +2775,7 @@ IfxPort_setPinPadDriver:
 	.string	"LVDSR"
 	.byte	0x5
 	.byte	0xdd
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -2784,7 +2784,7 @@ IfxPort_setPinPadDriver:
 	.string	"LVDSRL"
 	.byte	0x5
 	.byte	0xde
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -2793,7 +2793,7 @@ IfxPort_setPinPadDriver:
 	.string	"reserved_10"
 	.byte	0x5
 	.byte	0xdf
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x2
 	.byte	0x14
@@ -2802,7 +2802,7 @@ IfxPort_setPinPadDriver:
 	.string	"TDIS_CTRL"
 	.byte	0x5
 	.byte	0xe0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -2811,7 +2811,7 @@ IfxPort_setPinPadDriver:
 	.string	"TX_DIS"
 	.byte	0x5
 	.byte	0xe1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -2820,7 +2820,7 @@ IfxPort_setPinPadDriver:
 	.string	"TX_PD"
 	.byte	0x5
 	.byte	0xe2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -2829,7 +2829,7 @@ IfxPort_setPinPadDriver:
 	.string	"TX_PWDPD"
 	.byte	0x5
 	.byte	0xe3
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -2838,7 +2838,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.byte	0xe4
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -2848,18 +2848,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_LPCR2_Bits"
 	.byte	0x5
 	.byte	0xe5
-	.uaword	0xcca
+	.uaword	0xcb6
 	.uleb128 0x9
 	.string	"_Ifx_P_OMCR0_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xe8
-	.uaword	0xe1a
+	.uaword	0xe06
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xea
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0x10
@@ -2868,7 +2868,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL0"
 	.byte	0x5
 	.byte	0xeb
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xf
@@ -2877,7 +2877,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL1"
 	.byte	0x5
 	.byte	0xec
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xe
@@ -2886,7 +2886,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL2"
 	.byte	0x5
 	.byte	0xed
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xd
@@ -2895,7 +2895,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL3"
 	.byte	0x5
 	.byte	0xee
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xc
@@ -2904,7 +2904,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF6
 	.byte	0x5
 	.byte	0xef
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0xc
 	.byte	0
@@ -2914,18 +2914,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMCR0_Bits"
 	.byte	0x5
 	.byte	0xf0
-	.uaword	0xda1
+	.uaword	0xd8d
 	.uleb128 0x9
 	.string	"_Ifx_P_OMCR12_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xf3
-	.uaword	0xea1
+	.uaword	0xe8d
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xf5
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1c
 	.byte	0x4
@@ -2934,7 +2934,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL12"
 	.byte	0x5
 	.byte	0xf6
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x3
@@ -2943,7 +2943,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL13"
 	.byte	0x5
 	.byte	0xf7
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x2
@@ -2952,7 +2952,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL14"
 	.byte	0x5
 	.byte	0xf8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
@@ -2961,7 +2961,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL15"
 	.byte	0x5
 	.byte	0xf9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -2971,18 +2971,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMCR12_Bits"
 	.byte	0x5
 	.byte	0xfa
-	.uaword	0xe32
+	.uaword	0xe1e
 	.uleb128 0x9
 	.string	"_Ifx_P_OMCR4_Bits"
 	.byte	0x4
 	.byte	0x5
 	.byte	0xfd
-	.uaword	0xf38
+	.uaword	0xf24
 	.uleb128 0xb
 	.uaword	.LASF1
 	.byte	0x5
 	.byte	0xff
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x14
 	.byte	0xc
@@ -2991,7 +2991,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL4"
 	.byte	0x5
 	.uahalf	0x100
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xb
@@ -3000,7 +3000,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL5"
 	.byte	0x5
 	.uahalf	0x101
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xa
@@ -3009,7 +3009,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL6"
 	.byte	0x5
 	.uahalf	0x102
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x9
@@ -3018,7 +3018,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL7"
 	.byte	0x5
 	.uahalf	0x103
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x8
@@ -3027,7 +3027,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF4
 	.byte	0x5
 	.uahalf	0x104
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x8
 	.byte	0
@@ -3037,18 +3037,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMCR4_Bits"
 	.byte	0x5
 	.uahalf	0x105
-	.uaword	0xeba
+	.uaword	0xea6
 	.uleb128 0xf
 	.string	"_Ifx_P_OMCR8_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x108
-	.uaword	0xfd3
+	.uaword	0xfbf
 	.uleb128 0xd
 	.uaword	.LASF1
 	.byte	0x5
 	.uahalf	0x10a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x18
 	.byte	0x8
@@ -3057,7 +3057,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL8"
 	.byte	0x5
 	.uahalf	0x10b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x7
@@ -3066,7 +3066,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL9"
 	.byte	0x5
 	.uahalf	0x10c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x6
@@ -3075,7 +3075,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL10"
 	.byte	0x5
 	.uahalf	0x10d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x5
@@ -3084,7 +3084,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL11"
 	.byte	0x5
 	.uahalf	0x10e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x4
@@ -3093,7 +3093,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF7
 	.byte	0x5
 	.uahalf	0x10f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x4
 	.byte	0
@@ -3103,18 +3103,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMCR8_Bits"
 	.byte	0x5
 	.uahalf	0x110
-	.uaword	0xf51
+	.uaword	0xf3d
 	.uleb128 0xf
 	.string	"_Ifx_P_OMCR_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x113
-	.uaword	0x112d
+	.uaword	0x1119
 	.uleb128 0xd
 	.uaword	.LASF1
 	.byte	0x5
 	.uahalf	0x115
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0x10
@@ -3123,7 +3123,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL0"
 	.byte	0x5
 	.uahalf	0x116
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xf
@@ -3132,7 +3132,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL1"
 	.byte	0x5
 	.uahalf	0x117
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xe
@@ -3141,7 +3141,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL2"
 	.byte	0x5
 	.uahalf	0x118
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xd
@@ -3150,7 +3150,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL3"
 	.byte	0x5
 	.uahalf	0x119
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xc
@@ -3159,7 +3159,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL4"
 	.byte	0x5
 	.uahalf	0x11a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xb
@@ -3168,7 +3168,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL5"
 	.byte	0x5
 	.uahalf	0x11b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xa
@@ -3177,7 +3177,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL6"
 	.byte	0x5
 	.uahalf	0x11c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x9
@@ -3186,7 +3186,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL7"
 	.byte	0x5
 	.uahalf	0x11d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x8
@@ -3195,7 +3195,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL8"
 	.byte	0x5
 	.uahalf	0x11e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x7
@@ -3204,7 +3204,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL9"
 	.byte	0x5
 	.uahalf	0x11f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x6
@@ -3213,7 +3213,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL10"
 	.byte	0x5
 	.uahalf	0x120
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x5
@@ -3222,7 +3222,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL11"
 	.byte	0x5
 	.uahalf	0x121
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x4
@@ -3231,7 +3231,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL12"
 	.byte	0x5
 	.uahalf	0x122
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x3
@@ -3240,7 +3240,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL13"
 	.byte	0x5
 	.uahalf	0x123
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x2
@@ -3249,7 +3249,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL14"
 	.byte	0x5
 	.uahalf	0x124
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
@@ -3258,7 +3258,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL15"
 	.byte	0x5
 	.uahalf	0x125
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -3268,18 +3268,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMCR_Bits"
 	.byte	0x5
 	.uahalf	0x126
-	.uaword	0xfec
+	.uaword	0xfd8
 	.uleb128 0xf
 	.string	"_Ifx_P_OMR_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x129
-	.uaword	0x137b
+	.uaword	0x1367
 	.uleb128 0xc
 	.string	"PS0"
 	.byte	0x5
 	.uahalf	0x12b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -3288,7 +3288,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS1"
 	.byte	0x5
 	.uahalf	0x12c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -3297,7 +3297,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS2"
 	.byte	0x5
 	.uahalf	0x12d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -3306,7 +3306,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS3"
 	.byte	0x5
 	.uahalf	0x12e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -3315,7 +3315,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS4"
 	.byte	0x5
 	.uahalf	0x12f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -3324,7 +3324,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS5"
 	.byte	0x5
 	.uahalf	0x130
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -3333,7 +3333,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS6"
 	.byte	0x5
 	.uahalf	0x131
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -3342,7 +3342,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS7"
 	.byte	0x5
 	.uahalf	0x132
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -3351,7 +3351,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS8"
 	.byte	0x5
 	.uahalf	0x133
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -3360,7 +3360,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS9"
 	.byte	0x5
 	.uahalf	0x134
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -3369,7 +3369,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS10"
 	.byte	0x5
 	.uahalf	0x135
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -3378,7 +3378,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS11"
 	.byte	0x5
 	.uahalf	0x136
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -3387,7 +3387,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS12"
 	.byte	0x5
 	.uahalf	0x137
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -3396,7 +3396,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS13"
 	.byte	0x5
 	.uahalf	0x138
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -3405,7 +3405,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS14"
 	.byte	0x5
 	.uahalf	0x139
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -3414,7 +3414,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS15"
 	.byte	0x5
 	.uahalf	0x13a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -3423,7 +3423,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL0"
 	.byte	0x5
 	.uahalf	0x13b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xf
@@ -3432,7 +3432,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL1"
 	.byte	0x5
 	.uahalf	0x13c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xe
@@ -3441,7 +3441,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL2"
 	.byte	0x5
 	.uahalf	0x13d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xd
@@ -3450,7 +3450,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL3"
 	.byte	0x5
 	.uahalf	0x13e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xc
@@ -3459,7 +3459,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL4"
 	.byte	0x5
 	.uahalf	0x13f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xb
@@ -3468,7 +3468,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL5"
 	.byte	0x5
 	.uahalf	0x140
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xa
@@ -3477,7 +3477,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL6"
 	.byte	0x5
 	.uahalf	0x141
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x9
@@ -3486,7 +3486,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL7"
 	.byte	0x5
 	.uahalf	0x142
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x8
@@ -3495,7 +3495,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL8"
 	.byte	0x5
 	.uahalf	0x143
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x7
@@ -3504,7 +3504,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL9"
 	.byte	0x5
 	.uahalf	0x144
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x6
@@ -3513,7 +3513,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL10"
 	.byte	0x5
 	.uahalf	0x145
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x5
@@ -3522,7 +3522,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL11"
 	.byte	0x5
 	.uahalf	0x146
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x4
@@ -3531,7 +3531,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL12"
 	.byte	0x5
 	.uahalf	0x147
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x3
@@ -3540,7 +3540,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL13"
 	.byte	0x5
 	.uahalf	0x148
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x2
@@ -3549,7 +3549,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL14"
 	.byte	0x5
 	.uahalf	0x149
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
@@ -3558,7 +3558,7 @@ IfxPort_setPinPadDriver:
 	.string	"PCL15"
 	.byte	0x5
 	.uahalf	0x14a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -3568,18 +3568,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMR_Bits"
 	.byte	0x5
 	.uahalf	0x14b
-	.uaword	0x1145
+	.uaword	0x1131
 	.uleb128 0xf
 	.string	"_Ifx_P_OMSR0_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x14e
-	.uaword	0x1405
+	.uaword	0x13f1
 	.uleb128 0xc
 	.string	"PS0"
 	.byte	0x5
 	.uahalf	0x150
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -3588,7 +3588,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS1"
 	.byte	0x5
 	.uahalf	0x151
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -3597,7 +3597,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS2"
 	.byte	0x5
 	.uahalf	0x152
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -3606,7 +3606,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS3"
 	.byte	0x5
 	.uahalf	0x153
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -3615,7 +3615,7 @@ IfxPort_setPinPadDriver:
 	.string	"reserved_4"
 	.byte	0x5
 	.uahalf	0x154
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1c
 	.byte	0
@@ -3625,18 +3625,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMSR0_Bits"
 	.byte	0x5
 	.uahalf	0x155
-	.uaword	0x1392
+	.uaword	0x137e
 	.uleb128 0xf
 	.string	"_Ifx_P_OMSR12_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x158
-	.uaword	0x149f
+	.uaword	0x148b
 	.uleb128 0xd
 	.uaword	.LASF1
 	.byte	0x5
 	.uahalf	0x15a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0xc
 	.byte	0x14
@@ -3645,7 +3645,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS12"
 	.byte	0x5
 	.uahalf	0x15b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -3654,7 +3654,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS13"
 	.byte	0x5
 	.uahalf	0x15c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -3663,7 +3663,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS14"
 	.byte	0x5
 	.uahalf	0x15d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -3672,7 +3672,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS15"
 	.byte	0x5
 	.uahalf	0x15e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -3681,7 +3681,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.uahalf	0x15f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -3691,18 +3691,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMSR12_Bits"
 	.byte	0x5
 	.uahalf	0x160
-	.uaword	0x141e
+	.uaword	0x140a
 	.uleb128 0xf
 	.string	"_Ifx_P_OMSR4_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x163
-	.uaword	0x1535
+	.uaword	0x1521
 	.uleb128 0xd
 	.uaword	.LASF1
 	.byte	0x5
 	.uahalf	0x165
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x4
 	.byte	0x1c
@@ -3711,7 +3711,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS4"
 	.byte	0x5
 	.uahalf	0x166
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -3720,7 +3720,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS5"
 	.byte	0x5
 	.uahalf	0x167
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -3729,7 +3729,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS6"
 	.byte	0x5
 	.uahalf	0x168
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -3738,7 +3738,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS7"
 	.byte	0x5
 	.uahalf	0x169
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -3747,7 +3747,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF3
 	.byte	0x5
 	.uahalf	0x16a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x18
 	.byte	0
@@ -3757,18 +3757,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMSR4_Bits"
 	.byte	0x5
 	.uahalf	0x16b
-	.uaword	0x14b9
+	.uaword	0x14a5
 	.uleb128 0xf
 	.string	"_Ifx_P_OMSR8_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x16e
-	.uaword	0x15cc
+	.uaword	0x15b8
 	.uleb128 0xd
 	.uaword	.LASF1
 	.byte	0x5
 	.uahalf	0x170
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x8
 	.byte	0x18
@@ -3777,7 +3777,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS8"
 	.byte	0x5
 	.uahalf	0x171
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -3786,7 +3786,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS9"
 	.byte	0x5
 	.uahalf	0x172
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -3795,7 +3795,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS10"
 	.byte	0x5
 	.uahalf	0x173
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -3804,7 +3804,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS11"
 	.byte	0x5
 	.uahalf	0x174
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -3813,7 +3813,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF8
 	.byte	0x5
 	.uahalf	0x175
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x14
 	.byte	0
@@ -3823,18 +3823,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMSR8_Bits"
 	.byte	0x5
 	.uahalf	0x176
-	.uaword	0x154e
+	.uaword	0x153a
 	.uleb128 0xf
 	.string	"_Ifx_P_OMSR_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x179
-	.uaword	0x1716
+	.uaword	0x1702
 	.uleb128 0xc
 	.string	"PS0"
 	.byte	0x5
 	.uahalf	0x17b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -3843,7 +3843,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS1"
 	.byte	0x5
 	.uahalf	0x17c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -3852,7 +3852,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS2"
 	.byte	0x5
 	.uahalf	0x17d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -3861,7 +3861,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS3"
 	.byte	0x5
 	.uahalf	0x17e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -3870,7 +3870,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS4"
 	.byte	0x5
 	.uahalf	0x17f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -3879,7 +3879,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS5"
 	.byte	0x5
 	.uahalf	0x180
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -3888,7 +3888,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS6"
 	.byte	0x5
 	.uahalf	0x181
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -3897,7 +3897,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS7"
 	.byte	0x5
 	.uahalf	0x182
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -3906,7 +3906,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS8"
 	.byte	0x5
 	.uahalf	0x183
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -3915,7 +3915,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS9"
 	.byte	0x5
 	.uahalf	0x184
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -3924,7 +3924,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS10"
 	.byte	0x5
 	.uahalf	0x185
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -3933,7 +3933,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS11"
 	.byte	0x5
 	.uahalf	0x186
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -3942,7 +3942,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS12"
 	.byte	0x5
 	.uahalf	0x187
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -3951,7 +3951,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS13"
 	.byte	0x5
 	.uahalf	0x188
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -3960,7 +3960,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS14"
 	.byte	0x5
 	.uahalf	0x189
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -3969,7 +3969,7 @@ IfxPort_setPinPadDriver:
 	.string	"PS15"
 	.byte	0x5
 	.uahalf	0x18a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -3978,7 +3978,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.uahalf	0x18b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -3988,18 +3988,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OMSR_Bits"
 	.byte	0x5
 	.uahalf	0x18c
-	.uaword	0x15e5
+	.uaword	0x15d1
 	.uleb128 0xf
 	.string	"_Ifx_P_OUT_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x18f
-	.uaword	0x184e
+	.uaword	0x183a
 	.uleb128 0xc
 	.string	"P0"
 	.byte	0x5
 	.uahalf	0x191
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -4008,7 +4008,7 @@ IfxPort_setPinPadDriver:
 	.string	"P1"
 	.byte	0x5
 	.uahalf	0x192
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -4017,7 +4017,7 @@ IfxPort_setPinPadDriver:
 	.string	"P2"
 	.byte	0x5
 	.uahalf	0x193
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -4026,7 +4026,7 @@ IfxPort_setPinPadDriver:
 	.string	"P3"
 	.byte	0x5
 	.uahalf	0x194
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -4035,7 +4035,7 @@ IfxPort_setPinPadDriver:
 	.string	"P4"
 	.byte	0x5
 	.uahalf	0x195
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -4044,7 +4044,7 @@ IfxPort_setPinPadDriver:
 	.string	"P5"
 	.byte	0x5
 	.uahalf	0x196
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -4053,7 +4053,7 @@ IfxPort_setPinPadDriver:
 	.string	"P6"
 	.byte	0x5
 	.uahalf	0x197
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -4062,7 +4062,7 @@ IfxPort_setPinPadDriver:
 	.string	"P7"
 	.byte	0x5
 	.uahalf	0x198
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -4071,7 +4071,7 @@ IfxPort_setPinPadDriver:
 	.string	"P8"
 	.byte	0x5
 	.uahalf	0x199
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -4080,7 +4080,7 @@ IfxPort_setPinPadDriver:
 	.string	"P9"
 	.byte	0x5
 	.uahalf	0x19a
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -4089,7 +4089,7 @@ IfxPort_setPinPadDriver:
 	.string	"P10"
 	.byte	0x5
 	.uahalf	0x19b
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -4098,7 +4098,7 @@ IfxPort_setPinPadDriver:
 	.string	"P11"
 	.byte	0x5
 	.uahalf	0x19c
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -4107,7 +4107,7 @@ IfxPort_setPinPadDriver:
 	.string	"P12"
 	.byte	0x5
 	.uahalf	0x19d
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -4116,7 +4116,7 @@ IfxPort_setPinPadDriver:
 	.string	"P13"
 	.byte	0x5
 	.uahalf	0x19e
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -4125,7 +4125,7 @@ IfxPort_setPinPadDriver:
 	.string	"P14"
 	.byte	0x5
 	.uahalf	0x19f
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -4134,7 +4134,7 @@ IfxPort_setPinPadDriver:
 	.string	"P15"
 	.byte	0x5
 	.uahalf	0x1a0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -4143,7 +4143,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.uahalf	0x1a1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -4153,18 +4153,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_OUT_Bits"
 	.byte	0x5
 	.uahalf	0x1a2
-	.uaword	0x172e
+	.uaword	0x171a
 	.uleb128 0xf
 	.string	"_Ifx_P_PCSR_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x1a5
-	.uaword	0x1952
+	.uaword	0x193e
 	.uleb128 0xc
 	.string	"SEL0"
 	.byte	0x5
 	.uahalf	0x1a7
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -4173,7 +4173,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL1"
 	.byte	0x5
 	.uahalf	0x1a8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -4182,7 +4182,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL2"
 	.byte	0x5
 	.uahalf	0x1a9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -4191,7 +4191,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL3"
 	.byte	0x5
 	.uahalf	0x1aa
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -4200,7 +4200,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL4"
 	.byte	0x5
 	.uahalf	0x1ab
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -4209,7 +4209,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL5"
 	.byte	0x5
 	.uahalf	0x1ac
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -4218,7 +4218,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL6"
 	.byte	0x5
 	.uahalf	0x1ad
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -4227,7 +4227,7 @@ IfxPort_setPinPadDriver:
 	.string	"reserved_7"
 	.byte	0x5
 	.uahalf	0x1ae
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x16
@@ -4236,7 +4236,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL10"
 	.byte	0x5
 	.uahalf	0x1af
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -4245,7 +4245,7 @@ IfxPort_setPinPadDriver:
 	.string	"SEL11"
 	.byte	0x5
 	.uahalf	0x1b0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -4254,7 +4254,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF8
 	.byte	0x5
 	.uahalf	0x1b1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x13
 	.byte	0x1
@@ -4263,7 +4263,7 @@ IfxPort_setPinPadDriver:
 	.string	"LCK"
 	.byte	0x5
 	.uahalf	0x1b2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -4273,18 +4273,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_PCSR_Bits"
 	.byte	0x5
 	.uahalf	0x1b3
-	.uaword	0x1865
+	.uaword	0x1851
 	.uleb128 0xf
 	.string	"_Ifx_P_PDISC_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x1b6
-	.uaword	0x1abc
+	.uaword	0x1aa8
 	.uleb128 0xc
 	.string	"PDIS0"
 	.byte	0x5
 	.uahalf	0x1b8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1f
@@ -4293,7 +4293,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS1"
 	.byte	0x5
 	.uahalf	0x1b9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1e
@@ -4302,7 +4302,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS2"
 	.byte	0x5
 	.uahalf	0x1ba
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1d
@@ -4311,7 +4311,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS3"
 	.byte	0x5
 	.uahalf	0x1bb
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -4320,7 +4320,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS4"
 	.byte	0x5
 	.uahalf	0x1bc
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1b
@@ -4329,7 +4329,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS5"
 	.byte	0x5
 	.uahalf	0x1bd
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1a
@@ -4338,7 +4338,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS6"
 	.byte	0x5
 	.uahalf	0x1be
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x19
@@ -4347,7 +4347,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS7"
 	.byte	0x5
 	.uahalf	0x1bf
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -4356,7 +4356,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS8"
 	.byte	0x5
 	.uahalf	0x1c0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x17
@@ -4365,7 +4365,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS9"
 	.byte	0x5
 	.uahalf	0x1c1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x16
@@ -4374,7 +4374,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS10"
 	.byte	0x5
 	.uahalf	0x1c2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x15
@@ -4383,7 +4383,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS11"
 	.byte	0x5
 	.uahalf	0x1c3
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -4392,7 +4392,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS12"
 	.byte	0x5
 	.uahalf	0x1c4
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x13
@@ -4401,7 +4401,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS13"
 	.byte	0x5
 	.uahalf	0x1c5
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x12
@@ -4410,7 +4410,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS14"
 	.byte	0x5
 	.uahalf	0x1c6
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x11
@@ -4419,7 +4419,7 @@ IfxPort_setPinPadDriver:
 	.string	"PDIS15"
 	.byte	0x5
 	.uahalf	0x1c7
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -4428,7 +4428,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF2
 	.byte	0x5
 	.uahalf	0x1c8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x10
 	.byte	0
@@ -4438,18 +4438,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_PDISC_Bits"
 	.byte	0x5
 	.uahalf	0x1c9
-	.uaword	0x196a
+	.uaword	0x1956
 	.uleb128 0xf
 	.string	"_Ifx_P_PDR0_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x1cc
-	.uaword	0x1bf0
+	.uaword	0x1bdc
 	.uleb128 0xc
 	.string	"PD0"
 	.byte	0x5
 	.uahalf	0x1ce
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1d
@@ -4458,7 +4458,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL0"
 	.byte	0x5
 	.uahalf	0x1cf
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -4467,7 +4467,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD1"
 	.byte	0x5
 	.uahalf	0x1d0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x19
@@ -4476,7 +4476,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL1"
 	.byte	0x5
 	.uahalf	0x1d1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -4485,7 +4485,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD2"
 	.byte	0x5
 	.uahalf	0x1d2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x15
@@ -4494,7 +4494,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL2"
 	.byte	0x5
 	.uahalf	0x1d3
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -4503,7 +4503,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD3"
 	.byte	0x5
 	.uahalf	0x1d4
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x11
@@ -4512,7 +4512,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL3"
 	.byte	0x5
 	.uahalf	0x1d5
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -4521,7 +4521,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD4"
 	.byte	0x5
 	.uahalf	0x1d6
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0xd
@@ -4530,7 +4530,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL4"
 	.byte	0x5
 	.uahalf	0x1d7
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xc
@@ -4539,7 +4539,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD5"
 	.byte	0x5
 	.uahalf	0x1d8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x9
@@ -4548,7 +4548,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL5"
 	.byte	0x5
 	.uahalf	0x1d9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x8
@@ -4557,7 +4557,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD6"
 	.byte	0x5
 	.uahalf	0x1da
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x5
@@ -4566,7 +4566,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL6"
 	.byte	0x5
 	.uahalf	0x1db
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x4
@@ -4575,7 +4575,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD7"
 	.byte	0x5
 	.uahalf	0x1dc
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1
@@ -4584,7 +4584,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL7"
 	.byte	0x5
 	.uahalf	0x1dd
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -4594,18 +4594,18 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_PDR0_Bits"
 	.byte	0x5
 	.uahalf	0x1de
-	.uaword	0x1ad5
+	.uaword	0x1ac1
 	.uleb128 0xf
 	.string	"_Ifx_P_PDR1_Bits"
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x1e1
-	.uaword	0x1d2f
+	.uaword	0x1d1b
 	.uleb128 0xc
 	.string	"PD8"
 	.byte	0x5
 	.uahalf	0x1e3
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1d
@@ -4614,7 +4614,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL8"
 	.byte	0x5
 	.uahalf	0x1e4
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1c
@@ -4623,7 +4623,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD9"
 	.byte	0x5
 	.uahalf	0x1e5
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x19
@@ -4632,7 +4632,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL9"
 	.byte	0x5
 	.uahalf	0x1e6
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x18
@@ -4641,7 +4641,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD10"
 	.byte	0x5
 	.uahalf	0x1e7
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x15
@@ -4650,7 +4650,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL10"
 	.byte	0x5
 	.uahalf	0x1e8
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x14
@@ -4659,7 +4659,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD11"
 	.byte	0x5
 	.uahalf	0x1e9
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x11
@@ -4668,7 +4668,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL11"
 	.byte	0x5
 	.uahalf	0x1ea
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x10
@@ -4677,7 +4677,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD12"
 	.byte	0x5
 	.uahalf	0x1eb
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0xd
@@ -4686,7 +4686,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL12"
 	.byte	0x5
 	.uahalf	0x1ec
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0xc
@@ -4695,7 +4695,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD13"
 	.byte	0x5
 	.uahalf	0x1ed
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x9
@@ -4704,7 +4704,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL13"
 	.byte	0x5
 	.uahalf	0x1ee
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x8
@@ -4713,7 +4713,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD14"
 	.byte	0x5
 	.uahalf	0x1ef
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x5
@@ -4722,7 +4722,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL14"
 	.byte	0x5
 	.uahalf	0x1f0
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0x4
@@ -4731,7 +4731,7 @@ IfxPort_setPinPadDriver:
 	.string	"PD15"
 	.byte	0x5
 	.uahalf	0x1f1
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x3
 	.byte	0x1
@@ -4740,7 +4740,7 @@ IfxPort_setPinPadDriver:
 	.string	"PL15"
 	.byte	0x5
 	.uahalf	0x1f2
-	.uaword	0x598
+	.uaword	0x584
 	.byte	0x4
 	.byte	0x1
 	.byte	0
@@ -4750,968 +4750,968 @@ IfxPort_setPinPadDriver:
 	.string	"Ifx_P_PDR1_Bits"
 	.byte	0x5
 	.uahalf	0x1f3
-	.uaword	0x1c08
+	.uaword	0x1bf4
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x1fb
-	.uaword	0x1d6f
+	.uaword	0x1d5b
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x1fd
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x1fe
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x1ff
-	.uaword	0x5a8
+	.uaword	0x594
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_ACCEN0"
 	.byte	0x5
 	.uahalf	0x200
-	.uaword	0x1d47
+	.uaword	0x1d33
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x203
-	.uaword	0x1dac
+	.uaword	0x1d98
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x205
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x206
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x207
-	.uaword	0x5ec
+	.uaword	0x5d8
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_ACCEN1"
 	.byte	0x5
 	.uahalf	0x208
-	.uaword	0x1d84
+	.uaword	0x1d70
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x20b
-	.uaword	0x1de9
+	.uaword	0x1dd5
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x20d
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x20e
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x20f
-	.uaword	0x723
+	.uaword	0x70f
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_ESR"
 	.byte	0x5
 	.uahalf	0x210
-	.uaword	0x1dc1
+	.uaword	0x1dad
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x213
-	.uaword	0x1e23
+	.uaword	0x1e0f
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x215
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x216
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x217
-	.uaword	0x78b
+	.uaword	0x777
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_ID"
 	.byte	0x5
 	.uahalf	0x218
-	.uaword	0x1dfb
+	.uaword	0x1de7
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x21b
-	.uaword	0x1e5c
+	.uaword	0x1e48
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x21d
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x21e
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x21f
-	.uaword	0x8ad
+	.uaword	0x899
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_IN"
 	.byte	0x5
 	.uahalf	0x220
-	.uaword	0x1e34
+	.uaword	0x1e20
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x223
-	.uaword	0x1e95
+	.uaword	0x1e81
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x225
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x226
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x227
-	.uaword	0x955
+	.uaword	0x941
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_IOCR0"
 	.byte	0x5
 	.uahalf	0x228
-	.uaword	0x1e6d
+	.uaword	0x1e59
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x22b
-	.uaword	0x1ed1
+	.uaword	0x1ebd
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x22d
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x22e
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x22f
-	.uaword	0xa05
+	.uaword	0x9f1
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_IOCR12"
 	.byte	0x5
 	.uahalf	0x230
-	.uaword	0x1ea9
+	.uaword	0x1e95
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x233
-	.uaword	0x1f0e
+	.uaword	0x1efa
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x235
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x236
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x237
-	.uaword	0xab1
+	.uaword	0xa9d
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_IOCR4"
 	.byte	0x5
 	.uahalf	0x238
-	.uaword	0x1ee6
+	.uaword	0x1ed2
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x23b
-	.uaword	0x1f4a
+	.uaword	0x1f36
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x23d
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x23e
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x23f
-	.uaword	0xb5e
+	.uaword	0xb4a
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_IOCR8"
 	.byte	0x5
 	.uahalf	0x240
-	.uaword	0x1f22
+	.uaword	0x1f0e
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x243
-	.uaword	0x1f86
+	.uaword	0x1f72
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x245
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x246
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x247
-	.uaword	0xbbe
+	.uaword	0xbaa
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_LPCR0"
 	.byte	0x5
 	.uahalf	0x248
-	.uaword	0x1f5e
+	.uaword	0x1f4a
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x24b
-	.uaword	0x1fd0
+	.uaword	0x1fbc
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x24d
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x24e
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x24f
-	.uaword	0xc1e
+	.uaword	0xc0a
 	.uleb128 0x11
 	.string	"B_P21"
 	.byte	0x5
 	.uahalf	0x250
-	.uaword	0xcae
+	.uaword	0xc9a
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_LPCR1"
 	.byte	0x5
 	.uahalf	0x251
-	.uaword	0x1f9a
+	.uaword	0x1f86
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x254
-	.uaword	0x200c
+	.uaword	0x1ff8
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x256
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x257
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x258
-	.uaword	0xd89
+	.uaword	0xd75
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_LPCR2"
 	.byte	0x5
 	.uahalf	0x259
-	.uaword	0x1fe4
+	.uaword	0x1fd0
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x25c
-	.uaword	0x2048
+	.uaword	0x2034
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x25e
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x25f
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x260
-	.uaword	0x112d
+	.uaword	0x1119
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMCR"
 	.byte	0x5
 	.uahalf	0x261
-	.uaword	0x2020
+	.uaword	0x200c
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x264
-	.uaword	0x2083
+	.uaword	0x206f
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x266
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x267
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x268
-	.uaword	0xe1a
+	.uaword	0xe06
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMCR0"
 	.byte	0x5
 	.uahalf	0x269
-	.uaword	0x205b
+	.uaword	0x2047
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x26c
-	.uaword	0x20bf
+	.uaword	0x20ab
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x26e
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x26f
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x270
-	.uaword	0xea1
+	.uaword	0xe8d
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMCR12"
 	.byte	0x5
 	.uahalf	0x271
-	.uaword	0x2097
+	.uaword	0x2083
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x274
-	.uaword	0x20fc
+	.uaword	0x20e8
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x276
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x277
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x278
-	.uaword	0xf38
+	.uaword	0xf24
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMCR4"
 	.byte	0x5
 	.uahalf	0x279
-	.uaword	0x20d4
+	.uaword	0x20c0
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x27c
-	.uaword	0x2138
+	.uaword	0x2124
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x27e
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x27f
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x280
-	.uaword	0xfd3
+	.uaword	0xfbf
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMCR8"
 	.byte	0x5
 	.uahalf	0x281
-	.uaword	0x2110
+	.uaword	0x20fc
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x284
-	.uaword	0x2174
+	.uaword	0x2160
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x286
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x287
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x288
-	.uaword	0x137b
+	.uaword	0x1367
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMR"
 	.byte	0x5
 	.uahalf	0x289
-	.uaword	0x214c
+	.uaword	0x2138
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x28c
-	.uaword	0x21ae
+	.uaword	0x219a
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x28e
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x28f
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x290
-	.uaword	0x1716
+	.uaword	0x1702
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMSR"
 	.byte	0x5
 	.uahalf	0x291
-	.uaword	0x2186
+	.uaword	0x2172
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x294
-	.uaword	0x21e9
+	.uaword	0x21d5
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x296
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x297
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x298
-	.uaword	0x1405
+	.uaword	0x13f1
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMSR0"
 	.byte	0x5
 	.uahalf	0x299
-	.uaword	0x21c1
+	.uaword	0x21ad
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x29c
-	.uaword	0x2225
+	.uaword	0x2211
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x29e
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x29f
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2a0
-	.uaword	0x149f
+	.uaword	0x148b
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMSR12"
 	.byte	0x5
 	.uahalf	0x2a1
-	.uaword	0x21fd
+	.uaword	0x21e9
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2a4
-	.uaword	0x2262
+	.uaword	0x224e
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2a6
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2a7
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2a8
-	.uaword	0x1535
+	.uaword	0x1521
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMSR4"
 	.byte	0x5
 	.uahalf	0x2a9
-	.uaword	0x223a
+	.uaword	0x2226
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2ac
-	.uaword	0x229e
+	.uaword	0x228a
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2ae
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2af
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2b0
-	.uaword	0x15cc
+	.uaword	0x15b8
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OMSR8"
 	.byte	0x5
 	.uahalf	0x2b1
-	.uaword	0x2276
+	.uaword	0x2262
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2b4
-	.uaword	0x22da
+	.uaword	0x22c6
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2b6
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2b7
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2b8
-	.uaword	0x184e
+	.uaword	0x183a
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_OUT"
 	.byte	0x5
 	.uahalf	0x2b9
-	.uaword	0x22b2
+	.uaword	0x229e
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2bc
-	.uaword	0x2314
+	.uaword	0x2300
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2be
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2bf
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2c0
-	.uaword	0x1952
+	.uaword	0x193e
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_PCSR"
 	.byte	0x5
 	.uahalf	0x2c1
-	.uaword	0x22ec
+	.uaword	0x22d8
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2c4
-	.uaword	0x234f
+	.uaword	0x233b
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2c6
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2c7
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2c8
-	.uaword	0x1abc
+	.uaword	0x1aa8
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_PDISC"
 	.byte	0x5
 	.uahalf	0x2c9
-	.uaword	0x2327
+	.uaword	0x2313
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2cc
-	.uaword	0x238b
+	.uaword	0x2377
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2ce
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2cf
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2d0
-	.uaword	0x1bf0
+	.uaword	0x1bdc
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_PDR0"
 	.byte	0x5
 	.uahalf	0x2d1
-	.uaword	0x2363
+	.uaword	0x234f
 	.uleb128 0x10
 	.byte	0x4
 	.byte	0x5
 	.uahalf	0x2d4
-	.uaword	0x23c6
+	.uaword	0x23b2
 	.uleb128 0x11
 	.string	"U"
 	.byte	0x5
 	.uahalf	0x2d6
-	.uaword	0x598
+	.uaword	0x584
 	.uleb128 0x11
 	.string	"I"
 	.byte	0x5
 	.uahalf	0x2d7
-	.uaword	0x26b
+	.uaword	0x257
 	.uleb128 0x11
 	.string	"B"
 	.byte	0x5
 	.uahalf	0x2d8
-	.uaword	0x1d2f
+	.uaword	0x1d1b
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P_PDR1"
 	.byte	0x5
 	.uahalf	0x2d9
-	.uaword	0x239e
+	.uaword	0x238a
 	.uleb128 0x12
 	.string	"_Ifx_P"
 	.uahalf	0x100
 	.byte	0x5
 	.uahalf	0x2e4
-	.uaword	0x261a
+	.uaword	0x2606
 	.uleb128 0x13
 	.string	"OUT"
 	.byte	0x5
 	.uahalf	0x2e6
-	.uaword	0x22da
+	.uaword	0x22c6
 	.byte	0
 	.uleb128 0x13
 	.string	"OMR"
 	.byte	0x5
 	.uahalf	0x2e7
-	.uaword	0x2174
+	.uaword	0x2160
 	.byte	0x4
 	.uleb128 0x13
 	.string	"ID"
 	.byte	0x5
 	.uahalf	0x2e8
-	.uaword	0x1e23
+	.uaword	0x1e0f
 	.byte	0x8
 	.uleb128 0x13
 	.string	"reserved_C"
 	.byte	0x5
 	.uahalf	0x2e9
-	.uaword	0x261a
+	.uaword	0x2606
 	.byte	0xc
 	.uleb128 0x13
 	.string	"IOCR0"
 	.byte	0x5
 	.uahalf	0x2ea
-	.uaword	0x1e95
+	.uaword	0x1e81
 	.byte	0x10
 	.uleb128 0x13
 	.string	"IOCR4"
 	.byte	0x5
 	.uahalf	0x2eb
-	.uaword	0x1f0e
+	.uaword	0x1efa
 	.byte	0x14
 	.uleb128 0x13
 	.string	"IOCR8"
 	.byte	0x5
 	.uahalf	0x2ec
-	.uaword	0x1f4a
+	.uaword	0x1f36
 	.byte	0x18
 	.uleb128 0x13
 	.string	"IOCR12"
 	.byte	0x5
 	.uahalf	0x2ed
-	.uaword	0x1ed1
+	.uaword	0x1ebd
 	.byte	0x1c
 	.uleb128 0x14
 	.uaword	.LASF6
 	.byte	0x5
 	.uahalf	0x2ee
-	.uaword	0x261a
+	.uaword	0x2606
 	.byte	0x20
 	.uleb128 0x13
 	.string	"IN"
 	.byte	0x5
 	.uahalf	0x2ef
-	.uaword	0x1e5c
+	.uaword	0x1e48
 	.byte	0x24
 	.uleb128 0x14
 	.uaword	.LASF7
 	.byte	0x5
 	.uahalf	0x2f0
-	.uaword	0x2636
+	.uaword	0x2622
 	.byte	0x28
 	.uleb128 0x13
 	.string	"PDR0"
 	.byte	0x5
 	.uahalf	0x2f1
-	.uaword	0x238b
+	.uaword	0x2377
 	.byte	0x40
 	.uleb128 0x13
 	.string	"PDR1"
 	.byte	0x5
 	.uahalf	0x2f2
-	.uaword	0x23c6
+	.uaword	0x23b2
 	.byte	0x44
 	.uleb128 0x13
 	.string	"reserved_48"
 	.byte	0x5
 	.uahalf	0x2f3
-	.uaword	0x2646
+	.uaword	0x2632
 	.byte	0x48
 	.uleb128 0x13
 	.string	"ESR"
 	.byte	0x5
 	.uahalf	0x2f4
-	.uaword	0x1de9
+	.uaword	0x1dd5
 	.byte	0x50
 	.uleb128 0x13
 	.string	"reserved_54"
 	.byte	0x5
 	.uahalf	0x2f5
-	.uaword	0x2656
+	.uaword	0x2642
 	.byte	0x54
 	.uleb128 0x13
 	.string	"PDISC"
 	.byte	0x5
 	.uahalf	0x2f6
-	.uaword	0x234f
+	.uaword	0x233b
 	.byte	0x60
 	.uleb128 0x13
 	.string	"PCSR"
 	.byte	0x5
 	.uahalf	0x2f7
-	.uaword	0x2314
+	.uaword	0x2300
 	.byte	0x64
 	.uleb128 0x13
 	.string	"reserved_68"
 	.byte	0x5
 	.uahalf	0x2f8
-	.uaword	0x2646
+	.uaword	0x2632
 	.byte	0x68
 	.uleb128 0x13
 	.string	"OMSR0"
 	.byte	0x5
 	.uahalf	0x2f9
-	.uaword	0x21e9
+	.uaword	0x21d5
 	.byte	0x70
 	.uleb128 0x13
 	.string	"OMSR4"
 	.byte	0x5
 	.uahalf	0x2fa
-	.uaword	0x2262
+	.uaword	0x224e
 	.byte	0x74
 	.uleb128 0x13
 	.string	"OMSR8"
 	.byte	0x5
 	.uahalf	0x2fb
-	.uaword	0x229e
+	.uaword	0x228a
 	.byte	0x78
 	.uleb128 0x13
 	.string	"OMSR12"
 	.byte	0x5
 	.uahalf	0x2fc
-	.uaword	0x2225
+	.uaword	0x2211
 	.byte	0x7c
 	.uleb128 0x13
 	.string	"OMCR0"
 	.byte	0x5
 	.uahalf	0x2fd
-	.uaword	0x2083
+	.uaword	0x206f
 	.byte	0x80
 	.uleb128 0x13
 	.string	"OMCR4"
 	.byte	0x5
 	.uahalf	0x2fe
-	.uaword	0x20fc
+	.uaword	0x20e8
 	.byte	0x84
 	.uleb128 0x13
 	.string	"OMCR8"
 	.byte	0x5
 	.uahalf	0x2ff
-	.uaword	0x2138
+	.uaword	0x2124
 	.byte	0x88
 	.uleb128 0x13
 	.string	"OMCR12"
 	.byte	0x5
 	.uahalf	0x300
-	.uaword	0x20bf
+	.uaword	0x20ab
 	.byte	0x8c
 	.uleb128 0x13
 	.string	"OMSR"
 	.byte	0x5
 	.uahalf	0x301
-	.uaword	0x21ae
+	.uaword	0x219a
 	.byte	0x90
 	.uleb128 0x13
 	.string	"OMCR"
 	.byte	0x5
 	.uahalf	0x302
-	.uaword	0x2048
+	.uaword	0x2034
 	.byte	0x94
 	.uleb128 0x13
 	.string	"reserved_98"
 	.byte	0x5
 	.uahalf	0x303
-	.uaword	0x2646
+	.uaword	0x2632
 	.byte	0x98
 	.uleb128 0x13
 	.string	"LPCR0"
 	.byte	0x5
 	.uahalf	0x304
-	.uaword	0x1f86
+	.uaword	0x1f72
 	.byte	0xa0
 	.uleb128 0x13
 	.string	"LPCR1"
 	.byte	0x5
 	.uahalf	0x305
-	.uaword	0x1fd0
+	.uaword	0x1fbc
 	.byte	0xa4
 	.uleb128 0x13
 	.string	"LPCR2"
 	.byte	0x5
 	.uahalf	0x306
-	.uaword	0x200c
+	.uaword	0x1ff8
 	.byte	0xa8
 	.uleb128 0x13
 	.string	"reserved_A4"
 	.byte	0x5
 	.uahalf	0x307
-	.uaword	0x2666
+	.uaword	0x2652
 	.byte	0xac
 	.uleb128 0x13
 	.string	"ACCEN1"
 	.byte	0x5
 	.uahalf	0x308
-	.uaword	0x1dac
+	.uaword	0x1d98
 	.byte	0xf8
 	.uleb128 0x13
 	.string	"ACCEN0"
 	.byte	0x5
 	.uahalf	0x309
-	.uaword	0x1d6f
+	.uaword	0x1d5b
 	.byte	0xfc
 	.byte	0
 	.uleb128 0x15
-	.uaword	0x281
-	.uaword	0x262a
+	.uaword	0x26d
+	.uaword	0x2616
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0x3
 	.byte	0
 	.uleb128 0x2
@@ -5719,45 +5719,45 @@ IfxPort_setPinPadDriver:
 	.byte	0x7
 	.string	"sizetype"
 	.uleb128 0x15
-	.uaword	0x281
-	.uaword	0x2646
+	.uaword	0x26d
+	.uaword	0x2632
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0x17
 	.byte	0
 	.uleb128 0x15
-	.uaword	0x281
-	.uaword	0x2656
+	.uaword	0x26d
+	.uaword	0x2642
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0x7
 	.byte	0
 	.uleb128 0x15
-	.uaword	0x281
-	.uaword	0x2666
+	.uaword	0x26d
+	.uaword	0x2652
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0xb
 	.byte	0
 	.uleb128 0x15
-	.uaword	0x281
-	.uaword	0x2676
+	.uaword	0x26d
+	.uaword	0x2662
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0x4b
 	.byte	0
 	.uleb128 0xe
 	.string	"Ifx_P"
 	.byte	0x5
 	.uahalf	0x30a
-	.uaword	0x2684
+	.uaword	0x2670
 	.uleb128 0x17
-	.uaword	0x23d9
+	.uaword	0x23c5
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x6
 	.byte	0x4d
-	.uaword	0x27d7
+	.uaword	0x27c3
 	.uleb128 0x19
 	.string	"IfxPort_Index_00"
 	.sleb128 0
@@ -5814,38 +5814,38 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_Index"
 	.byte	0x6
 	.byte	0x5f
-	.uaword	0x2689
+	.uaword	0x2675
 	.uleb128 0x6
 	.byte	0x8
 	.byte	0x6
 	.byte	0x67
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uleb128 0x8
 	.uaword	.LASF9
 	.byte	0x6
 	.byte	0x69
-	.uaword	0x280f
+	.uaword	0x27fb
 	.byte	0
 	.uleb128 0x7
 	.string	"masks"
 	.byte	0x6
 	.byte	0x6a
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.byte	0x4
 	.byte	0
 	.uleb128 0x4
 	.byte	0x4
-	.uaword	0x2676
+	.uaword	0x2662
 	.uleb128 0x3
 	.string	"IfxPort_Esr_Masks"
 	.byte	0x6
 	.byte	0x6b
-	.uaword	0x27ec
+	.uaword	0x27d8
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0x49
-	.uaword	0x286f
+	.uaword	0x285b
 	.uleb128 0x19
 	.string	"IfxPort_ControlledBy_port"
 	.sleb128 0
@@ -5857,12 +5857,12 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_ControlledBy"
 	.byte	0x7
 	.byte	0x4c
-	.uaword	0x282e
+	.uaword	0x281a
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0x51
-	.uaword	0x290b
+	.uaword	0x28f7
 	.uleb128 0x19
 	.string	"IfxPort_InputMode_undefined"
 	.sleb128 -1
@@ -5880,12 +5880,12 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_InputMode"
 	.byte	0x7
 	.byte	0x56
-	.uaword	0x288b
+	.uaword	0x2877
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0x5d
-	.uaword	0x2bc4
+	.uaword	0x2bb0
 	.uleb128 0x19
 	.string	"IfxPort_Mode_inputNoPullDevice"
 	.sleb128 0
@@ -5948,12 +5948,12 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_Mode"
 	.byte	0x7
 	.byte	0x71
-	.uaword	0x2924
+	.uaword	0x2910
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0x76
-	.uaword	0x2cb4
+	.uaword	0x2ca0
 	.uleb128 0x19
 	.string	"IfxPort_OutputIdx_general"
 	.sleb128 128
@@ -5983,12 +5983,12 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_OutputIdx"
 	.byte	0x7
 	.byte	0x7f
-	.uaword	0x2bd8
+	.uaword	0x2bc4
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0x84
-	.uaword	0x2d2f
+	.uaword	0x2d1b
 	.uleb128 0x19
 	.string	"IfxPort_OutputMode_pushPull"
 	.sleb128 128
@@ -6003,12 +6003,12 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_OutputMode"
 	.byte	0x7
 	.byte	0x88
-	.uaword	0x2ccd
+	.uaword	0x2cb9
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0x8f
-	.uaword	0x2eea
+	.uaword	0x2ed6
 	.uleb128 0x19
 	.string	"IfxPort_PadDriver_cmosAutomotiveSpeed1"
 	.sleb128 0
@@ -6050,12 +6050,12 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_PadDriver"
 	.byte	0x7
 	.byte	0x9c
-	.uaword	0x2d49
+	.uaword	0x2d35
 	.uleb128 0x18
 	.byte	0x1
 	.byte	0x7
 	.byte	0xa1
-	.uaword	0x2f3a
+	.uaword	0x2f26
 	.uleb128 0x19
 	.string	"IfxPort_PadSupply_5v"
 	.sleb128 0
@@ -6067,29 +6067,29 @@ IfxPort_setPinPadDriver:
 	.string	"IfxPort_PadSupply"
 	.byte	0x7
 	.byte	0xa4
-	.uaword	0x2f03
+	.uaword	0x2eef
 	.uleb128 0x1a
 	.string	"Ifx__ldmst"
 	.byte	0x2
 	.uahalf	0x5aa
 	.byte	0x1
 	.byte	0x3
-	.uaword	0x2f94
+	.uaword	0x2f80
 	.uleb128 0x1b
 	.string	"address"
 	.byte	0x2
 	.uahalf	0x5aa
-	.uaword	0x341
+	.uaword	0x32d
 	.uleb128 0x1b
 	.string	"mask"
 	.byte	0x2
 	.uahalf	0x5aa
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uleb128 0x1b
 	.string	"value"
 	.byte	0x2
 	.uahalf	0x5aa
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0
 	.uleb128 0x1c
 	.byte	0x1
@@ -6098,22 +6098,22 @@ IfxPort_setPinPadDriver:
 	.uahalf	0x213
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x2fd2
+	.uaword	0x2fbe
 	.uleb128 0x1d
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x87
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uleb128 0x1d
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0x87
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uleb128 0x1e
 	.uaword	.LASF13
 	.byte	0x1
 	.byte	0x89
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.byte	0
 	.uleb128 0x1f
 	.byte	0x1
@@ -6121,79 +6121,79 @@ IfxPort_setPinPadDriver:
 	.byte	0x7
 	.uahalf	0x153
 	.byte	0x1
-	.uaword	0x2c8
+	.uaword	0x2b4
 	.uaword	.LFB181
 	.uaword	.LFE181
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x30d6
+	.uaword	0x30c2
 	.uleb128 0x20
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x34
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST0
 	.uleb128 0x20
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0x34
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST1
 	.uleb128 0x21
 	.uaword	.LASF11
 	.byte	0x1
 	.byte	0x36
-	.uaword	0x31a
+	.uaword	0x306
 	.uaword	.LLST2
 	.uleb128 0x21
 	.uaword	.LASF12
 	.byte	0x1
 	.byte	0x37
-	.uaword	0x2c8
+	.uaword	0x2b4
 	.uaword	.LLST3
 	.uleb128 0x22
-	.uaword	0x2f94
+	.uaword	0x2f80
 	.uaword	.LBB26
 	.uaword	.LBE26
 	.byte	0x1
 	.byte	0x3f
 	.uleb128 0x23
-	.uaword	0x2fbb
+	.uaword	0x2fa7
 	.uaword	.LLST4
 	.uleb128 0x23
-	.uaword	0x2fb0
+	.uaword	0x2f9c
 	.uaword	.LLST5
 	.uleb128 0x24
 	.uaword	.LBB27
 	.uaword	.LBE27
 	.uleb128 0x25
-	.uaword	0x2fc6
+	.uaword	0x2fb2
 	.uaword	.LLST6
 	.uleb128 0x26
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB28
 	.uaword	.LBE28
 	.byte	0x1
 	.byte	0x8c
-	.uaword	0x30a6
+	.uaword	0x3092
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST7
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST8
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST9
 	.byte	0
 	.uleb128 0x27
 	.uaword	.LVL20
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL22
-	.uaword	0x3c03
-	.uaword	0x30c3
+	.uaword	0x3bef
+	.uaword	0x30af
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6203,7 +6203,7 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.uleb128 0x2a
 	.uaword	.LVL25
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6221,22 +6221,22 @@ IfxPort_setPinPadDriver:
 	.uahalf	0x21e
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x3112
+	.uaword	0x30fe
 	.uleb128 0x1d
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x91
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uleb128 0x1d
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0x91
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uleb128 0x1e
 	.uaword	.LASF13
 	.byte	0x1
 	.byte	0x93
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.byte	0
 	.uleb128 0x1f
 	.byte	0x1
@@ -6244,73 +6244,73 @@ IfxPort_setPinPadDriver:
 	.byte	0x7
 	.uahalf	0x165
 	.byte	0x1
-	.uaword	0x2c8
+	.uaword	0x2b4
 	.uaword	.LFB182
 	.uaword	.LFE182
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x31fd
+	.uaword	0x31e9
 	.uleb128 0x20
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x4b
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST10
 	.uleb128 0x20
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0x4b
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST11
 	.uleb128 0x21
 	.uaword	.LASF11
 	.byte	0x1
 	.byte	0x4d
-	.uaword	0x31a
+	.uaword	0x306
 	.uaword	.LLST12
 	.uleb128 0x21
 	.uaword	.LASF12
 	.byte	0x1
 	.byte	0x4e
-	.uaword	0x2c8
+	.uaword	0x2b4
 	.uaword	.LLST13
 	.uleb128 0x2b
-	.uaword	0x30d6
+	.uaword	0x30c2
 	.uaword	.LBB34
 	.uaword	.Ldebug_ranges0+0
 	.byte	0x1
 	.byte	0x56
 	.uleb128 0x2c
-	.uaword	0x30fb
+	.uaword	0x30e7
 	.uleb128 0x2c
-	.uaword	0x30f0
+	.uaword	0x30dc
 	.uleb128 0x2d
 	.uaword	.Ldebug_ranges0+0
 	.uleb128 0x25
-	.uaword	0x3106
+	.uaword	0x30f2
 	.uaword	.LLST14
 	.uleb128 0x2e
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB36
 	.uaword	.Ldebug_ranges0+0x20
 	.byte	0x1
 	.byte	0x96
-	.uaword	0x31cd
+	.uaword	0x31b9
 	.uleb128 0x2c
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uleb128 0x2c
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uleb128 0x2c
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.byte	0
 	.uleb128 0x27
 	.uaword	.LVL47
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL49
-	.uaword	0x3c03
-	.uaword	0x31ea
+	.uaword	0x3bef
+	.uaword	0x31d6
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6320,7 +6320,7 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.uleb128 0x2a
 	.uaword	.LVL50
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6337,31 +6337,31 @@ IfxPort_setPinPadDriver:
 	.byte	0x7
 	.uahalf	0x1b9
 	.byte	0x1
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LFB183
 	.uaword	.LFE183
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x3256
+	.uaword	0x3242
 	.uleb128 0x2f
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x60
-	.uaword	0x27d7
+	.uaword	0x27c3
 	.byte	0x1
 	.byte	0x54
 	.uleb128 0x30
 	.string	"module"
 	.byte	0x1
 	.byte	0x62
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST15
 	.uleb128 0x30
 	.string	"i"
 	.byte	0x1
 	.byte	0x63
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST16
 	.byte	0
 	.uleb128 0x1f
@@ -6370,62 +6370,62 @@ IfxPort_setPinPadDriver:
 	.byte	0x7
 	.uahalf	0x1bf
 	.byte	0x1
-	.uaword	0x27d7
+	.uaword	0x27c3
 	.uaword	.LFB184
 	.uaword	.LFE184
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x32ac
+	.uaword	0x3298
 	.uleb128 0x2f
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x73
-	.uaword	0x280f
+	.uaword	0x27fb
 	.byte	0x1
 	.byte	0x64
 	.uleb128 0x21
 	.uaword	.LASF0
 	.byte	0x1
 	.byte	0x75
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST17
 	.uleb128 0x21
 	.uaword	.LASF12
 	.byte	0x1
 	.byte	0x76
-	.uaword	0x27d7
+	.uaword	0x27c3
 	.uaword	.LLST18
 	.byte	0
 	.uleb128 0x31
-	.uaword	0x2f94
+	.uaword	0x2f80
 	.uaword	.LFB185
 	.uaword	.LFE185
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x333b
+	.uaword	0x3327
 	.uleb128 0x23
-	.uaword	0x2fb0
+	.uaword	0x2f9c
 	.uaword	.LLST19
 	.uleb128 0x23
-	.uaword	0x2fbb
+	.uaword	0x2fa7
 	.uaword	.LLST20
 	.uleb128 0x25
-	.uaword	0x2fc6
+	.uaword	0x2fb2
 	.uaword	.LLST21
 	.uleb128 0x26
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB44
 	.uaword	.LBE44
 	.byte	0x1
 	.byte	0x8c
-	.uaword	0x330c
+	.uaword	0x32f8
 	.uleb128 0x32
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.byte	0
 	.uleb128 0x33
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.byte	0x8
 	.byte	0x31
 	.byte	0x78
@@ -6436,16 +6436,16 @@ IfxPort_setPinPadDriver:
 	.byte	0x24
 	.byte	0x9f
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST22
 	.byte	0
 	.uleb128 0x27
 	.uaword	.LVL98
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL100
-	.uaword	0x3c03
-	.uaword	0x3329
+	.uaword	0x3bef
+	.uaword	0x3315
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6456,7 +6456,7 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x34
 	.uaword	.LVL102
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6466,46 +6466,46 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.byte	0
 	.uleb128 0x31
-	.uaword	0x30d6
+	.uaword	0x30c2
 	.uaword	.LFB186
 	.uaword	.LFE186
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x33c8
+	.uaword	0x33b4
 	.uleb128 0x23
-	.uaword	0x30f0
+	.uaword	0x30dc
 	.uaword	.LLST23
 	.uleb128 0x23
-	.uaword	0x30fb
+	.uaword	0x30e7
 	.uaword	.LLST24
 	.uleb128 0x25
-	.uaword	0x3106
+	.uaword	0x30f2
 	.uaword	.LLST25
 	.uleb128 0x26
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB46
 	.uaword	.LBE46
 	.byte	0x1
 	.byte	0x96
-	.uaword	0x3399
+	.uaword	0x3385
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST26
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST26
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST28
 	.byte	0
 	.uleb128 0x27
 	.uaword	.LVL104
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL106
-	.uaword	0x3c03
-	.uaword	0x33b6
+	.uaword	0x3bef
+	.uaword	0x33a2
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6516,7 +6516,7 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x34
 	.uaword	.LVL109
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6536,43 +6536,43 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x34c3
+	.uaword	0x34af
 	.uleb128 0x20
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0x9b
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST29
 	.uleb128 0x20
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0x9b
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST30
 	.uleb128 0x36
 	.string	"mask"
 	.byte	0x1
 	.byte	0x9b
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST31
 	.uleb128 0x37
 	.string	"mode"
 	.byte	0x1
 	.byte	0x9b
-	.uaword	0x290b
+	.uaword	0x28f7
 	.byte	0x1
 	.byte	0x56
 	.uleb128 0x30
 	.string	"i"
 	.byte	0x1
 	.byte	0x9d
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST32
 	.uleb128 0x38
 	.string	"iocrVal"
 	.byte	0x1
 	.byte	0x9e
-	.uaword	0x34c3
+	.uaword	0x34af
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -32
@@ -6580,7 +6580,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF14
 	.byte	0x1
 	.byte	0x9f
-	.uaword	0x34c3
+	.uaword	0x34af
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -16
@@ -6588,47 +6588,47 @@ IfxPort_setPinPadDriver:
 	.string	"imask"
 	.byte	0x1
 	.byte	0xa9
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0x1
 	.byte	0x55
 	.uleb128 0x3a
 	.uaword	.Ldebug_ranges0+0x38
-	.uaword	0x3497
+	.uaword	0x3483
 	.uleb128 0x21
 	.uaword	.LASF0
 	.byte	0x1
 	.byte	0xaf
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST33
 	.uleb128 0x21
 	.uaword	.LASF15
 	.byte	0x1
 	.byte	0xb0
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST34
 	.byte	0
 	.uleb128 0x2b
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB50
 	.uaword	.Ldebug_ranges0+0x50
 	.byte	0x1
 	.byte	0xbb
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST35
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST36
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST37
 	.byte	0
 	.byte	0
 	.uleb128 0x15
-	.uaword	0x2f2
-	.uaword	0x34d3
+	.uaword	0x2de
+	.uaword	0x34bf
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0x3
 	.byte	0
 	.uleb128 0x35
@@ -6642,49 +6642,49 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x35dc
+	.uaword	0x35c8
 	.uleb128 0x20
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0xc1
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST38
 	.uleb128 0x20
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0xc1
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST39
 	.uleb128 0x36
 	.string	"mask"
 	.byte	0x1
 	.byte	0xc1
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST40
 	.uleb128 0x37
 	.string	"mode"
 	.byte	0x1
 	.byte	0xc1
-	.uaword	0x2d2f
+	.uaword	0x2d1b
 	.byte	0x1
 	.byte	0x56
 	.uleb128 0x20
 	.uaword	.LASF0
 	.byte	0x1
 	.byte	0xc1
-	.uaword	0x2cb4
+	.uaword	0x2ca0
 	.uaword	.LLST41
 	.uleb128 0x30
 	.string	"i"
 	.byte	0x1
 	.byte	0xc3
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST42
 	.uleb128 0x38
 	.string	"iocrVal"
 	.byte	0x1
 	.byte	0xc4
-	.uaword	0x34c3
+	.uaword	0x34af
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -32
@@ -6692,7 +6692,7 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF14
 	.byte	0x1
 	.byte	0xc5
-	.uaword	0x34c3
+	.uaword	0x34af
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -16
@@ -6700,40 +6700,40 @@ IfxPort_setPinPadDriver:
 	.string	"imask"
 	.byte	0x1
 	.byte	0xd1
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0x1
 	.byte	0x55
 	.uleb128 0x3a
 	.uaword	.Ldebug_ranges0+0x78
-	.uaword	0x35b0
+	.uaword	0x359c
 	.uleb128 0x39
 	.uaword	.LASF0
 	.byte	0x1
 	.byte	0xd7
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0x1
 	.byte	0x52
 	.uleb128 0x21
 	.uaword	.LASF15
 	.byte	0x1
 	.byte	0xd8
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST43
 	.byte	0
 	.uleb128 0x2b
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB60
 	.uaword	.Ldebug_ranges0+0x90
 	.byte	0x1
 	.byte	0xe3
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST44
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST45
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST46
 	.byte	0
 	.byte	0
@@ -6748,52 +6748,52 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x3729
+	.uaword	0x3715
 	.uleb128 0x20
 	.uaword	.LASF9
 	.byte	0x1
 	.byte	0xe9
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST47
 	.uleb128 0x20
 	.uaword	.LASF10
 	.byte	0x1
 	.byte	0xe9
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST48
 	.uleb128 0x36
 	.string	"mask"
 	.byte	0x1
 	.byte	0xe9
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST49
 	.uleb128 0x20
 	.uaword	.LASF16
 	.byte	0x1
 	.byte	0xe9
-	.uaword	0x2eea
+	.uaword	0x2ed6
 	.uaword	.LLST50
 	.uleb128 0x21
 	.uaword	.LASF13
 	.byte	0x1
 	.byte	0xeb
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST51
 	.uleb128 0x3b
 	.uaword	.LBB68
 	.uaword	.LBE68
-	.uaword	0x36fa
+	.uaword	0x36e6
 	.uleb128 0x30
 	.string	"i"
 	.byte	0x1
 	.byte	0xef
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST52
 	.uleb128 0x38
 	.string	"pdrVal"
 	.byte	0x1
 	.byte	0xf0
-	.uaword	0x3729
+	.uaword	0x3715
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -16
@@ -6801,7 +6801,7 @@ IfxPort_setPinPadDriver:
 	.string	"pdrMask"
 	.byte	0x1
 	.byte	0xf1
-	.uaword	0x3729
+	.uaword	0x3715
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -8
@@ -6809,49 +6809,49 @@ IfxPort_setPinPadDriver:
 	.string	"imask"
 	.byte	0x1
 	.byte	0xfb
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST53
 	.uleb128 0x3a
 	.uaword	.Ldebug_ranges0+0xb8
-	.uaword	0x36cd
+	.uaword	0x36b9
 	.uleb128 0x3c
 	.uaword	.LASF0
 	.byte	0x1
 	.uahalf	0x101
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0x1
 	.byte	0x57
 	.uleb128 0x3d
 	.uaword	.LASF15
 	.byte	0x1
 	.uahalf	0x102
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST54
 	.byte	0
 	.uleb128 0x3e
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB71
 	.uaword	.Ldebug_ranges0+0xd0
 	.byte	0x1
 	.uahalf	0x10d
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST55
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST56
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST57
 	.byte	0
 	.byte	0
 	.uleb128 0x27
 	.uaword	.LVL163
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL165
-	.uaword	0x3c03
-	.uaword	0x3717
+	.uaword	0x3bef
+	.uaword	0x3703
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6862,7 +6862,7 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x34
 	.uaword	.LVL181
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6872,10 +6872,10 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.byte	0
 	.uleb128 0x15
-	.uaword	0x2f2
-	.uaword	0x3739
+	.uaword	0x2de
+	.uaword	0x3725
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0x1
 	.byte	0
 	.uleb128 0x35
@@ -6889,60 +6889,60 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x383d
+	.uaword	0x3829
 	.uleb128 0x3f
 	.uaword	.LASF9
 	.byte	0x1
 	.uahalf	0x115
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST58
 	.uleb128 0x3f
 	.uaword	.LASF10
 	.byte	0x1
 	.uahalf	0x115
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST59
 	.uleb128 0x40
 	.string	"mode"
 	.byte	0x1
 	.uahalf	0x115
-	.uaword	0x2bc4
+	.uaword	0x2bb0
 	.uaword	.LLST60
 	.uleb128 0x41
 	.string	"iocr"
 	.byte	0x1
 	.uahalf	0x117
-	.uaword	0x383d
+	.uaword	0x3829
 	.uaword	.LLST61
 	.uleb128 0x42
 	.string	"iocrIndex"
 	.byte	0x1
 	.uahalf	0x118
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.byte	0x1
 	.byte	0x59
 	.uleb128 0x3c
 	.uaword	.LASF15
 	.byte	0x1
 	.uahalf	0x119
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.byte	0x1
 	.byte	0x58
 	.uleb128 0x43
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB75
 	.uaword	.LBE75
 	.byte	0x1
 	.uahalf	0x123
-	.uaword	0x37f5
+	.uaword	0x37e1
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST62
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST63
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST64
 	.byte	0
 	.uleb128 0x24
@@ -6952,15 +6952,15 @@ IfxPort_setPinPadDriver:
 	.uaword	.LASF13
 	.byte	0x1
 	.uahalf	0x11d
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST65
 	.uleb128 0x27
 	.uaword	.LVL190
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL192
-	.uaword	0x3c03
-	.uaword	0x382b
+	.uaword	0x3bef
+	.uaword	0x3817
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6970,7 +6970,7 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.uleb128 0x2a
 	.uaword	.LVL193
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -6982,9 +6982,9 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.uleb128 0x4
 	.byte	0x4
-	.uaword	0x3843
+	.uaword	0x382f
 	.uleb128 0x17
-	.uaword	0x1e95
+	.uaword	0x1e81
 	.uleb128 0x35
 	.byte	0x1
 	.string	"IfxPort_setPinModeLvdsHigh"
@@ -6996,44 +6996,44 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x391e
+	.uaword	0x390a
 	.uleb128 0x3f
 	.uaword	.LASF9
 	.byte	0x1
 	.uahalf	0x127
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST66
 	.uleb128 0x3f
 	.uaword	.LASF10
 	.byte	0x1
 	.uahalf	0x127
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST67
 	.uleb128 0x40
 	.string	"mode"
 	.byte	0x1
 	.uahalf	0x127
-	.uaword	0x2bc4
+	.uaword	0x2bb0
 	.uaword	.LLST68
 	.uleb128 0x40
 	.string	"enablePortControlled"
 	.byte	0x1
 	.uahalf	0x127
-	.uaword	0x286f
+	.uaword	0x285b
 	.uaword	.LLST69
 	.uleb128 0x3d
 	.uaword	.LASF13
 	.byte	0x1
 	.uahalf	0x129
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST70
 	.uleb128 0x27
 	.uaword	.LVL195
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL197
-	.uaword	0x3c03
-	.uaword	0x38f7
+	.uaword	0x3bef
+	.uaword	0x38e3
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7044,8 +7044,8 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x44
 	.uaword	.LVL198
 	.byte	0x1
-	.uaword	0x3c2d
-	.uaword	0x390c
+	.uaword	0x3c19
+	.uaword	0x38f8
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7056,7 +7056,7 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x34
 	.uaword	.LVL199
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7076,42 +7076,42 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x3a45
+	.uaword	0x3a31
 	.uleb128 0x3f
 	.uaword	.LASF9
 	.byte	0x1
 	.uahalf	0x142
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST71
 	.uleb128 0x3f
 	.uaword	.LASF10
 	.byte	0x1
 	.uahalf	0x142
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST72
 	.uleb128 0x40
 	.string	"lvdsPadDriver"
 	.byte	0x1
 	.uahalf	0x142
-	.uaword	0x2eea
+	.uaword	0x2ed6
 	.uaword	.LLST73
 	.uleb128 0x40
 	.string	"padSupply"
 	.byte	0x1
 	.uahalf	0x142
-	.uaword	0x2f3a
+	.uaword	0x2f26
 	.uaword	.LLST74
 	.uleb128 0x41
 	.string	"pdrOffset"
 	.byte	0x1
 	.uahalf	0x144
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uaword	.LLST75
 	.uleb128 0x3c
 	.uaword	.LASF15
 	.byte	0x1
 	.uahalf	0x145
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0x8
 	.byte	0x79
 	.sleb128 0
@@ -7125,7 +7125,7 @@ IfxPort_setPinPadDriver:
 	.string	"lpcrOffset"
 	.byte	0x1
 	.uahalf	0x146
-	.uaword	0x2f2
+	.uaword	0x2de
 	.byte	0x6
 	.byte	0x79
 	.sleb128 0
@@ -7137,27 +7137,27 @@ IfxPort_setPinPadDriver:
 	.string	"pdr"
 	.byte	0x1
 	.uahalf	0x147
-	.uaword	0x3a45
+	.uaword	0x3a31
 	.uaword	.LLST76
 	.uleb128 0x41
 	.string	"lpcr"
 	.byte	0x1
 	.uahalf	0x148
-	.uaword	0x3a50
+	.uaword	0x3a3c
 	.uaword	.LLST77
 	.uleb128 0x3d
 	.uaword	.LASF13
 	.byte	0x1
 	.uahalf	0x149
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST78
 	.uleb128 0x27
 	.uaword	.LVL202
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL204
-	.uaword	0x3c03
-	.uaword	0x3a33
+	.uaword	0x3bef
+	.uaword	0x3a1f
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7168,7 +7168,7 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x34
 	.uaword	.LVL210
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7179,14 +7179,14 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.uleb128 0x4
 	.byte	0x4
-	.uaword	0x3a4b
+	.uaword	0x3a37
 	.uleb128 0x17
-	.uaword	0x238b
+	.uaword	0x2377
 	.uleb128 0x4
 	.byte	0x4
-	.uaword	0x3a56
+	.uaword	0x3a42
 	.uleb128 0x17
-	.uaword	0x1f86
+	.uaword	0x1f72
 	.uleb128 0x35
 	.byte	0x1
 	.string	"IfxPort_setPinPadDriver"
@@ -7198,77 +7198,77 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x3b66
+	.uaword	0x3b52
 	.uleb128 0x3f
 	.uaword	.LASF9
 	.byte	0x1
 	.uahalf	0x154
-	.uaword	0x280f
+	.uaword	0x27fb
 	.uaword	.LLST79
 	.uleb128 0x3f
 	.uaword	.LASF10
 	.byte	0x1
 	.uahalf	0x154
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST80
 	.uleb128 0x3f
 	.uaword	.LASF16
 	.byte	0x1
 	.uahalf	0x154
-	.uaword	0x2eea
+	.uaword	0x2ed6
 	.uaword	.LLST81
 	.uleb128 0x3d
 	.uaword	.LASF13
 	.byte	0x1
 	.uahalf	0x156
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.uaword	.LLST82
 	.uleb128 0x3b
 	.uaword	.LBB78
 	.uaword	.LBE78
-	.uaword	0x3b37
+	.uaword	0x3b23
 	.uleb128 0x41
 	.string	"pdr"
 	.byte	0x1
 	.uahalf	0x15a
-	.uaword	0x3b66
+	.uaword	0x3b52
 	.uaword	.LLST83
 	.uleb128 0x41
 	.string	"pdrIndex"
 	.byte	0x1
 	.uahalf	0x15b
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST84
 	.uleb128 0x3d
 	.uaword	.LASF15
 	.byte	0x1
 	.uahalf	0x15c
-	.uaword	0x2d7
+	.uaword	0x2c3
 	.uaword	.LLST85
 	.uleb128 0x45
-	.uaword	0x2f53
+	.uaword	0x2f3f
 	.uaword	.LBB79
 	.uaword	.LBE79
 	.byte	0x1
 	.uahalf	0x15d
 	.uleb128 0x23
-	.uaword	0x2f85
+	.uaword	0x2f71
 	.uaword	.LLST86
 	.uleb128 0x23
-	.uaword	0x2f78
+	.uaword	0x2f64
 	.uaword	.LLST87
 	.uleb128 0x23
-	.uaword	0x2f68
+	.uaword	0x2f54
 	.uaword	.LLST88
 	.byte	0
 	.byte	0
 	.uleb128 0x27
 	.uaword	.LVL212
-	.uaword	0x3bd7
+	.uaword	0x3bc3
 	.uleb128 0x28
 	.uaword	.LVL214
-	.uaword	0x3c03
-	.uaword	0x3b54
+	.uaword	0x3bef
+	.uaword	0x3b40
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7279,7 +7279,7 @@ IfxPort_setPinPadDriver:
 	.uleb128 0x34
 	.uaword	.LVL220
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x29
 	.byte	0x1
 	.byte	0x54
@@ -7290,48 +7290,48 @@ IfxPort_setPinPadDriver:
 	.byte	0
 	.uleb128 0x4
 	.byte	0x4
-	.uaword	0x3b6c
+	.uaword	0x3b58
 	.uleb128 0x17
-	.uaword	0x2f2
+	.uaword	0x2de
 	.uleb128 0x15
-	.uaword	0x2815
-	.uaword	0x3b81
+	.uaword	0x2801
+	.uaword	0x3b6d
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0xf
 	.byte	0
 	.uleb128 0x46
 	.string	"IfxPort_cfg_esrMasks"
 	.byte	0x6
 	.byte	0x71
-	.uaword	0x3b9f
+	.uaword	0x3b8b
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x47
-	.uaword	0x3b71
+	.uaword	0x3b5d
 	.uleb128 0x15
-	.uaword	0x36c
-	.uaword	0x3bb4
+	.uaword	0x358
+	.uaword	0x3ba0
 	.uleb128 0x16
-	.uaword	0x262a
+	.uaword	0x2616
 	.byte	0xf
 	.byte	0
 	.uleb128 0x46
 	.string	"IfxPort_cfg_indexMap"
 	.byte	0x6
 	.byte	0x73
-	.uaword	0x3bd2
+	.uaword	0x3bbe
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x47
-	.uaword	0x3ba4
+	.uaword	0x3b90
 	.uleb128 0x48
 	.byte	0x1
 	.string	"IfxScuWdt_getCpuWatchdogPassword"
 	.byte	0x8
 	.uahalf	0x180
 	.byte	0x1
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.byte	0x1
 	.uleb128 0x49
 	.byte	0x1
@@ -7340,9 +7340,9 @@ IfxPort_setPinPadDriver:
 	.byte	0xd8
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x3c2d
+	.uaword	0x3c19
 	.uleb128 0x4a
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.byte	0
 	.uleb128 0x4b
 	.byte	0x1
@@ -7352,7 +7352,7 @@ IfxPort_setPinPadDriver:
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x4a
-	.uaword	0x2e4
+	.uaword	0x2d0
 	.byte	0
 	.byte	0
 .section .debug_abbrev,"",@progbits
@@ -22162,10 +22162,9 @@ IfxPort_setPinPadDriver:
 	.ascii	"\n"
 
 	.ascii	"\ndriver options: \n"
-	.ascii	" -IC:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1\\\\erika\\\\i"
-	.ascii	"nc"
-	.ascii	" -IC:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1"
-	.ascii	" -IC:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1\\\\out"
+	.ascii	" -IC:\\\\TC275_~2\\\\erika\\\\inc"
+	.ascii	" -IC:\\\\TC275_~2"
+	.ascii	" -IC:\\\\TC275_~2\\\\out"
 	.ascii	" -c"
 	.ascii	" -Wall"
 	.ascii	" -Wextra"
@@ -22219,8 +22218,7 @@ IfxPort_setPinPadDriver:
 	.ascii	" obj\\\\bsw\\\\IfxPort.c.d_tmp"
 	.ascii	" -o"
 	.ascii	" obj\\\\bsw\\\\IfxPort.c.o"
-	.ascii	" C:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1\\\\bsw\\\\IfxPo"
-	.ascii	"rt.c"
+	.ascii	" C:\\\\TC275_~2\\\\bsw\\\\IfxPort.c"
 
 	.ascii	"\noptions passed: \n"
 	.ascii	" -fpreprocessed"

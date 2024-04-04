@@ -4,7 +4,7 @@
 .Letext0:
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x2f4
+	.uaword	0x2e0
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -16,7 +16,7 @@
 	.ascii	"t-volatile-bitfields"
 	.string	" -finline-functions -fzero-initialized-in-bss -fno-common -fgcse-after-reload -ffast-math -funswitch-loops -fpredictive-commoning -ftree-vectorize -fipa-cp-clone -fpeel-loops -fmove-loop-invariants -frename-registers -fira-algorithm=priority -fshort-double"
 	.byte	0x1
-	.string	"C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\CompilerGhs.c"
+	.string	"C:\\TC275_~2\\bsw\\CompilerGhs.c"
 	.uaword	.Ldebug_line0
 	.uaword	.Ldebug_macro0
 	.uleb128 0x2
@@ -112,7 +112,7 @@
 	.uahalf	0x4
 	.byte	0x2
 	.uaword	.Ldebug_line0
-	.file 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\CompilerGhs.c"
+	.file 1 "C:\\TC275_~2\\bsw\\CompilerGhs.c"
 	.byte	0x3
 	.uleb128 0
 	.uleb128 0x1
@@ -1398,10 +1398,9 @@
 	.ascii	"\n"
 
 	.ascii	"\ndriver options: \n"
-	.ascii	" -IC:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1\\\\erika\\\\i"
-	.ascii	"nc"
-	.ascii	" -IC:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1"
-	.ascii	" -IC:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1\\\\out"
+	.ascii	" -IC:\\\\TC275_~2\\\\erika\\\\inc"
+	.ascii	" -IC:\\\\TC275_~2"
+	.ascii	" -IC:\\\\TC275_~2\\\\out"
 	.ascii	" -c"
 	.ascii	" -Wall"
 	.ascii	" -Wextra"
@@ -1455,8 +1454,7 @@
 	.ascii	" obj\\\\bsw\\\\CompilerGhs.c.d_tmp"
 	.ascii	" -o"
 	.ascii	" obj\\\\bsw\\\\CompilerGhs.c.o"
-	.ascii	" C:\\\\Users\\\\user\\\\ECLIPS~1\\\\TC275_~1\\\\bsw\\\\Compi"
-	.ascii	"lerGhs.c"
+	.ascii	" C:\\\\TC275_~2\\\\bsw\\\\CompilerGhs.c"
 
 	.ascii	"\noptions passed: \n"
 	.ascii	" -fpreprocessed"

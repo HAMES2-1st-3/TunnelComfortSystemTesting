@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuWdt.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\IfxScuWdt.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,8 +241,8 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuWdt.c"
-# 49 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuWdt.c"
+# 1 "C:\\TC275_~2\\bsw\\IfxScuWdt.c"
+# 49 "C:\\TC275_~2\\bsw\\IfxScuWdt.c"
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxscuwdt.h" 1 3
 # 59 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxscuwdt.h" 3
 #define IFXSCUWDT_H 1
@@ -14379,7 +14379,7 @@ static inline __attribute__ ((always_inline)) void IfxScuWdt_setSafetyEndinitInl
     while ((*(volatile Ifx_SCU_WDTS_CON0*)0xF00360F0u).B.ENDINIT == 0)
     {}
 }
-# 50 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuWdt.c" 2
+# 50 "C:\\TC275_~2\\bsw\\IfxScuWdt.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxcpu.h" 1 3
 # 63 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxcpu.h" 3
 #define IFXCPU_H 1
@@ -29340,7 +29340,7 @@ static inline __attribute__ ((always_inline)) void IfxCpu_updatePerformanceCount
     cctrl.B.CE = enableBit;
     do { unsigned __newval = (unsigned) (cctrl.U); __asm__ volatile ("mtcr LO:" "0xFC00" ", %0" :: "d" (__newval) : "memory"); } while (0);
 }
-# 51 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuWdt.c" 2
+# 51 "C:\\TC275_~2\\bsw\\IfxScuWdt.c" 2
 
 
 

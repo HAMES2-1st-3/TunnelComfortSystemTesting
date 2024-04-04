@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuCcu.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\IfxScuCcu.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,8 +241,8 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuCcu.c"
-# 49 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuCcu.c"
+# 1 "C:\\TC275_~2\\bsw\\IfxScuCcu.c"
+# 49 "C:\\TC275_~2\\bsw\\IfxScuCcu.c"
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxscuccu.h" 1 3
 # 118 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxscuccu.h" 3
 #define IFXSCUCCU_H 1
@@ -29339,8 +29339,8 @@ static inline __attribute__ ((always_inline)) float32 IfxScuCcu_getCanFrequency(
 
     return canFrequency;
 }
-# 50 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuCcu.c" 2
-# 63 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuCcu.c"
+# 50 "C:\\TC275_~2\\bsw\\IfxScuCcu.c" 2
+# 63 "C:\\TC275_~2\\bsw\\IfxScuCcu.c"
 static boolean IfxScuCcu_isOscillatorStable(void);
 
 
@@ -29348,7 +29348,7 @@ static boolean IfxScuCcu_isOscillatorStable(void);
 
 
 static void IfxScuCcu_wait(float32 timeSec);
-# 80 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\IfxScuCcu.c"
+# 80 "C:\\TC275_~2\\bsw\\IfxScuCcu.c"
 static const IfxScuCcu_PllStepsConfig IfxScuCcu_aDefaultPllConfigSteps[] = {
     { (5 - 1), 0.000100, 0 }, { (4 - 1), 0.000100, 0 }, { (3 - 1), 0.000100, 0 }
 };

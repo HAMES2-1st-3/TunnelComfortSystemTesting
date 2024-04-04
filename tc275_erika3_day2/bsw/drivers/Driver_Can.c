@@ -37,7 +37,7 @@ const uint32 dataHigh = 0x9abc0000;
 IfxMultican_Message stRxMsgData[10];
 
 
-IFX_INTERRUPT(CAN_RxInt0Handler, 0, 30);
+//IFX_INTERRUPT(CAN_RxInt0Handler, 0, 30);
 
 void CAN_RxInt0Handler(void){
 
@@ -49,6 +49,8 @@ void CAN_RxInt0Handler(void){
     readStatus=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
 
     if(readStatus==IfxMultican_Status_newData){
+
+    	toggleLED2();
         u32nuTemp1=stRxMsgData[0].data[0]; //dataLow
         u32nuTemp2=stRxMsgData[0].data[1]; //dataHigh
         u32nuCanRxCnt++;
@@ -58,6 +60,9 @@ void CAN_RxInt0Handler(void){
 void Driver_Can_Init(void)
 {
     /* create module config */
+    InterruptInstall(SRC_ID_CANINT0, (void(*)(void))CAN_RxInt0Handler,5,0);
+	setLED1(0);
+	setLED2(0);
     IfxMultican_Can_Config canConfig;
     IfxMultican_Can_initModuleConfig(&canConfig, &MODULE_CAN);
 
@@ -85,10 +90,10 @@ void Driver_Can_Init(void)
 
     //�삤釉뚯젥�듃 �벑濡�(ecu2媛� �뿰寃�)
     /*Object Enrollment*/
-       Driver_Can_EnrollObject(0u, 0x100, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[0]);
+       Driver_Can_EnrollObject(0u, 0x200, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[0]);
        //Driver_Can_EnrollObject(1u, 0x101, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[1]);
        //Driver_Can_EnrollObject(2u, 0x102, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[2]);
-       Driver_Can_EnrollObject(10u, 0x200, IfxMultican_Frame_receive,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgRxObj[0]);
+       Driver_Can_EnrollObject(10u, 0x100, IfxMultican_Frame_receive,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgRxObj[0]);
 }
 
 static void Driver_Can_EnrollObject(int32_t msgObjId,  uint32_t msgId, uint8_t frameType, uint8_t msgDlc,  uint32_t extendedFrame, IfxMultican_Can_MsgObj* pArrObjNum)
@@ -104,13 +109,11 @@ static void Driver_Can_EnrollObject(int32_t msgObjId,  uint32_t msgId, uint8_t f
     canMsgObjConfig.control.extendedFrame = extendedFrame;
     canMsgObjConfig.acceptanceMask        = 0x7FFFFFFFUL;
     canMsgObjConfig.control.matchingId    = TRUE;
-
     if(frameType==IfxMultican_Frame_receive)
     {
         canMsgObjConfig.rxInterrupt.enabled=TRUE;
         canMsgObjConfig.rxInterrupt.srcId=0u; //source id 0
-        //諛� 3媛�吏��뒗 �씤�꽣�읇�듃
-        SRC_CAN_CAN0_INT0.B.SRPN=30u;
+        SRC_CAN_CAN0_INT0.B.SRPN=5u;
         SRC_CAN_CAN0_INT0.B.TOS=0u;
         SRC_CAN_CAN0_INT0.B.SRE=1u;
     }
@@ -125,8 +128,9 @@ void Driver_Can_TxTest(void)
 
     /* Transmit Data */
     {
+    	toggleLED1();
         IfxMultican_Message msg;
-        IfxMultican_Message_init(&msg, 0x100, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
+        IfxMultican_Message_init(&msg, 0x200, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
 
         //1媛쒖쓽 硫붿떆吏� 蹂대궪�븣 1媛쒖쓽 �삤釉뚯젥�듃 �궗�슜
         while (IfxMultican_Can_MsgObj_sendMessage(&stEcu1Can.CanEcu1MsgTxObj[0], &msg) == IfxMultican_Status_notSentBusy)

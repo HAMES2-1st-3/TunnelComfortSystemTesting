@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\drivers\\vadc.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,15 +241,15 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.c"
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.h" 1
+# 1 "C:\\TC275_~2\\bsw\\drivers\\vadc.c"
+# 1 "C:\\TC275_~2\\bsw\\drivers\\vadc.h" 1
 
 #define BSW_DRIVERS_VADC_INT_H_ 
 
 void init_VADC(void);
 void VADC_startConversion(void);
 unsigned int VADC_readResult(void);
-# 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.c" 2
+# 2 "C:\\TC275_~2\\bsw\\drivers\\vadc.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_reg.h" 1 3
 # 26 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_reg.h" 3
 #define IFX_REG_H 1
@@ -140883,7 +140883,7 @@ typedef volatile struct _Ifx_XBAR
 
 #define XBAR_INTSAT (*(volatile Ifx_XBAR_INTSAT*)0xF8700410u)
 # 67 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_reg.h" 2 3
-# 3 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.c" 2
+# 3 "C:\\TC275_~2\\bsw\\drivers\\vadc.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\wdtcon.h" 1 3
 # 28 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\wdtcon.h" 3
 #define __wdtcon_h 
@@ -140897,7 +140897,7 @@ extern void WDT_Modify (unsigned long modify, unsigned long mask);
 
 extern void lock_safety_wdtcon (void);
 extern void unlock_safety_wdtcon (void);
-# 4 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.c" 2
+# 4 "C:\\TC275_~2\\bsw\\drivers\\vadc.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\intrinsics.h" 1 3
 # 28 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\intrinsics.h" 3
 #define __INTRINSICS_H__ 
@@ -141061,7 +141061,7 @@ void _restore (const int irqs_on)
 #define __CTZ(val) __builtin_ctz (val)
 
 #define __ABS(val) __builtin_abs (val)
-# 5 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\vadc.c" 2
+# 5 "C:\\TC275_~2\\bsw\\drivers\\vadc.c" 2
 
 void init_VADC(void)
 {

@@ -1,5 +1,5 @@
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\etc\\etc.c"
-# 1 "C:\\Users\\user\\eclipse-workspace\\tc275_erika3_day2\\out//"
+# 1 "C:\\TC275_~2\\bsw\\etc\\etc.c"
+# 1 "C:\\tc275_erika3_day2\\out//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -241,13 +241,13 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __HAVE_SHORT_DOUBLE__ 1
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\etc\\etc.c"
-# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\etc\\etc.h" 1
+# 1 "C:\\TC275_~2\\bsw\\etc\\etc.c"
+# 1 "C:\\TC275_~2\\bsw\\etc\\etc.h" 1
 
 #define BSW_ETC_ETC_H_ 
 
 void delay_ms(unsigned int delay_time);
-# 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\etc\\etc.c" 2
+# 2 "C:\\TC275_~2\\bsw\\etc\\etc.c" 2
 
 void delay_ms(unsigned int delay_time)
 {
