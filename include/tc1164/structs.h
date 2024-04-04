@@ -1,0 +1,12 @@
+#include <tc1164/port0-struct.h>
+#include <tc1164/port1-struct.h>
+#include <tc1164/port2-struct.h>
+#include <tc1164/port3-struct.h>
+#include <tc1164/port4-struct.h>
+#include <tc1164/port5-struct.h>
+#include <tc1164/asc0-struct.h>
+#include <tc1164/asc1-struct.h>
+#include <tc1164/ssc-struct.h>
+#include <tc1164/gpta0-struct.h>
+#include <tc1164/mli0-struct.h>
+#include <tc1164/dma-struct.h>

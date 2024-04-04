@@ -1,0 +1,12 @@
+#include <tc1165/port0-struct.h>
+#include <tc1165/port1-struct.h>
+#include <tc1165/port2-struct.h>
+#include <tc1165/port3-struct.h>
+#include <tc1165/port4-struct.h>
+#include <tc1165/port5-struct.h>
+#include <tc1165/asc0-struct.h>
+#include <tc1165/asc1-struct.h>
+#include <tc1165/ssc-struct.h>
+#include <tc1165/gpta0-struct.h>
+#include <tc1165/mli-struct.h>
+#include <tc1165/dma-struct.h>

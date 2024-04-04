@@ -1,0 +1,13 @@
+#include <tc1764/port0-struct.h>
+#include <tc1764/port1-struct.h>
+#include <tc1764/port2-struct.h>
+#include <tc1764/port3-struct.h>
+#include <tc1764/port4-struct.h>
+#include <tc1764/port5-struct.h>
+#include <tc1764/asc0-struct.h>
+#include <tc1764/asc1-struct.h>
+#include <tc1764/ssc-struct.h>
+#include <tc1764/gpta0-struct.h>
+#include <tc1764/mli0-struct.h>
+#include <tc1764/dma-struct.h>
+#include <tc1764/can-struct.h>

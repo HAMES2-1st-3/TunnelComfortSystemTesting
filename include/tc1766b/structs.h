@@ -1,0 +1,13 @@
+#include <tc1766b/port0-struct.h>
+#include <tc1766b/port1-struct.h>
+#include <tc1766b/port2-struct.h>
+#include <tc1766b/port3-struct.h>
+#include <tc1766b/port4-struct.h>
+#include <tc1766b/port5-struct.h>
+#include <tc1766b/asc0-struct.h>
+#include <tc1766b/asc1-struct.h>
+#include <tc1766b/ssc-struct.h>
+#include <tc1766b/gpta0-struct.h>
+#include <tc1766b/mli-struct.h>
+#include <tc1766b/dma-struct.h>
+#include <tc1766b/can-struct.h>

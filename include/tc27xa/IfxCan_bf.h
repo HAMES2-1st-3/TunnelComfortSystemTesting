@@ -1,0 +1,2799 @@
+/**
+ * \file IfxCan_bf.h
+ * \brief
+ * \copyright Copyright (c) 2014 Infineon Technologies AG. All rights reserved.
+ *
+ * Version: TC27XA_TS_V3.0.1.R2
+ * Specification: TC27xA_TS_V3.0.1_SFR_OPEN_MARKET.xml (Revision: V3.0.1)
+ * MAY BE CHANGED BY USER [yes/no]: No
+ *
+ *                                 IMPORTANT NOTICE
+ *
+ * Infineon Technologies AG (Infineon) is supplying this file for use
+ * exclusively with Infineon's microcontroller products. This file can be freely
+ * distributed within development tools that are supporting such microcontroller
+ * products.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+ * OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+ * INFINEON SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,
+ * OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+ *
+ * \defgroup IfxLld_Can_BitfieldsMask Bitfields mask and offset
+ * \ingroup IfxLld_Can
+ * 
+ */
+#ifndef IFXCAN_BF_H
+#define IFXCAN_BF_H 1
+/******************************************************************************/
+/******************************************************************************/
+/** \addtogroup IfxLld_Can_BitfieldsMask
+ * \{  */
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN0 */
+#define IFX_CAN_ACCEN0_EN0_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN0 */
+#define IFX_CAN_ACCEN0_EN0_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN0 */
+#define IFX_CAN_ACCEN0_EN0_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN10 */
+#define IFX_CAN_ACCEN0_EN10_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN10 */
+#define IFX_CAN_ACCEN0_EN10_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN10 */
+#define IFX_CAN_ACCEN0_EN10_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN11 */
+#define IFX_CAN_ACCEN0_EN11_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN11 */
+#define IFX_CAN_ACCEN0_EN11_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN11 */
+#define IFX_CAN_ACCEN0_EN11_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN12 */
+#define IFX_CAN_ACCEN0_EN12_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN12 */
+#define IFX_CAN_ACCEN0_EN12_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN12 */
+#define IFX_CAN_ACCEN0_EN12_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN13 */
+#define IFX_CAN_ACCEN0_EN13_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN13 */
+#define IFX_CAN_ACCEN0_EN13_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN13 */
+#define IFX_CAN_ACCEN0_EN13_OFF (13)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN14 */
+#define IFX_CAN_ACCEN0_EN14_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN14 */
+#define IFX_CAN_ACCEN0_EN14_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN14 */
+#define IFX_CAN_ACCEN0_EN14_OFF (14)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN15 */
+#define IFX_CAN_ACCEN0_EN15_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN15 */
+#define IFX_CAN_ACCEN0_EN15_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN15 */
+#define IFX_CAN_ACCEN0_EN15_OFF (15)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN16 */
+#define IFX_CAN_ACCEN0_EN16_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN16 */
+#define IFX_CAN_ACCEN0_EN16_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN16 */
+#define IFX_CAN_ACCEN0_EN16_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN17 */
+#define IFX_CAN_ACCEN0_EN17_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN17 */
+#define IFX_CAN_ACCEN0_EN17_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN17 */
+#define IFX_CAN_ACCEN0_EN17_OFF (17)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN18 */
+#define IFX_CAN_ACCEN0_EN18_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN18 */
+#define IFX_CAN_ACCEN0_EN18_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN18 */
+#define IFX_CAN_ACCEN0_EN18_OFF (18)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN19 */
+#define IFX_CAN_ACCEN0_EN19_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN19 */
+#define IFX_CAN_ACCEN0_EN19_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN19 */
+#define IFX_CAN_ACCEN0_EN19_OFF (19)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN1 */
+#define IFX_CAN_ACCEN0_EN1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN1 */
+#define IFX_CAN_ACCEN0_EN1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN1 */
+#define IFX_CAN_ACCEN0_EN1_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN20 */
+#define IFX_CAN_ACCEN0_EN20_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN20 */
+#define IFX_CAN_ACCEN0_EN20_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN20 */
+#define IFX_CAN_ACCEN0_EN20_OFF (20)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN21 */
+#define IFX_CAN_ACCEN0_EN21_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN21 */
+#define IFX_CAN_ACCEN0_EN21_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN21 */
+#define IFX_CAN_ACCEN0_EN21_OFF (21)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN22 */
+#define IFX_CAN_ACCEN0_EN22_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN22 */
+#define IFX_CAN_ACCEN0_EN22_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN22 */
+#define IFX_CAN_ACCEN0_EN22_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN23 */
+#define IFX_CAN_ACCEN0_EN23_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN23 */
+#define IFX_CAN_ACCEN0_EN23_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN23 */
+#define IFX_CAN_ACCEN0_EN23_OFF (23)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN24 */
+#define IFX_CAN_ACCEN0_EN24_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN24 */
+#define IFX_CAN_ACCEN0_EN24_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN24 */
+#define IFX_CAN_ACCEN0_EN24_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN25 */
+#define IFX_CAN_ACCEN0_EN25_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN25 */
+#define IFX_CAN_ACCEN0_EN25_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN25 */
+#define IFX_CAN_ACCEN0_EN25_OFF (25)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN26 */
+#define IFX_CAN_ACCEN0_EN26_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN26 */
+#define IFX_CAN_ACCEN0_EN26_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN26 */
+#define IFX_CAN_ACCEN0_EN26_OFF (26)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN27 */
+#define IFX_CAN_ACCEN0_EN27_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN27 */
+#define IFX_CAN_ACCEN0_EN27_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN27 */
+#define IFX_CAN_ACCEN0_EN27_OFF (27)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN28 */
+#define IFX_CAN_ACCEN0_EN28_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN28 */
+#define IFX_CAN_ACCEN0_EN28_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN28 */
+#define IFX_CAN_ACCEN0_EN28_OFF (28)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN29 */
+#define IFX_CAN_ACCEN0_EN29_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN29 */
+#define IFX_CAN_ACCEN0_EN29_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN29 */
+#define IFX_CAN_ACCEN0_EN29_OFF (29)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN2 */
+#define IFX_CAN_ACCEN0_EN2_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN2 */
+#define IFX_CAN_ACCEN0_EN2_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN2 */
+#define IFX_CAN_ACCEN0_EN2_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN30 */
+#define IFX_CAN_ACCEN0_EN30_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN30 */
+#define IFX_CAN_ACCEN0_EN30_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN30 */
+#define IFX_CAN_ACCEN0_EN30_OFF (30)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN31 */
+#define IFX_CAN_ACCEN0_EN31_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN31 */
+#define IFX_CAN_ACCEN0_EN31_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN31 */
+#define IFX_CAN_ACCEN0_EN31_OFF (31)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN3 */
+#define IFX_CAN_ACCEN0_EN3_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN3 */
+#define IFX_CAN_ACCEN0_EN3_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN3 */
+#define IFX_CAN_ACCEN0_EN3_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN4 */
+#define IFX_CAN_ACCEN0_EN4_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN4 */
+#define IFX_CAN_ACCEN0_EN4_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN4 */
+#define IFX_CAN_ACCEN0_EN4_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN5 */
+#define IFX_CAN_ACCEN0_EN5_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN5 */
+#define IFX_CAN_ACCEN0_EN5_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN5 */
+#define IFX_CAN_ACCEN0_EN5_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN6 */
+#define IFX_CAN_ACCEN0_EN6_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN6 */
+#define IFX_CAN_ACCEN0_EN6_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN6 */
+#define IFX_CAN_ACCEN0_EN6_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN7 */
+#define IFX_CAN_ACCEN0_EN7_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN7 */
+#define IFX_CAN_ACCEN0_EN7_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN7 */
+#define IFX_CAN_ACCEN0_EN7_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN8 */
+#define IFX_CAN_ACCEN0_EN8_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN8 */
+#define IFX_CAN_ACCEN0_EN8_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN8 */
+#define IFX_CAN_ACCEN0_EN8_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_ACCEN0_Bits.EN9 */
+#define IFX_CAN_ACCEN0_EN9_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_ACCEN0_Bits.EN9 */
+#define IFX_CAN_ACCEN0_EN9_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_ACCEN0_Bits.EN9 */
+#define IFX_CAN_ACCEN0_EN9_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_AWDR_Bits.AWDV */
+#define IFX_CAN_AWDR_AWDV_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_AWDR_Bits.AWDV */
+#define IFX_CAN_AWDR_AWDV_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_AWDR_Bits.AWDV */
+#define IFX_CAN_AWDR_AWDV_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_CLC_Bits.DISR */
+#define IFX_CAN_CLC_DISR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_CLC_Bits.DISR */
+#define IFX_CAN_CLC_DISR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_CLC_Bits.DISR */
+#define IFX_CAN_CLC_DISR_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_CLC_Bits.DISS */
+#define IFX_CAN_CLC_DISS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_CLC_Bits.DISS */
+#define IFX_CAN_CLC_DISS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_CLC_Bits.DISS */
+#define IFX_CAN_CLC_DISS_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_CLC_Bits.EDIS */
+#define IFX_CAN_CLC_EDIS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_CLC_Bits.EDIS */
+#define IFX_CAN_CLC_EDIS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_CLC_Bits.EDIS */
+#define IFX_CAN_CLC_EDIS_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_CYCTMR_Bits.BCC */
+#define IFX_CAN_CYCTMR_BCC_LEN (6)
+
+/** \\brief  Mask for Ifx_CAN_CYCTMR_Bits.BCC */
+#define IFX_CAN_CYCTMR_BCC_MSK (0x3f)
+
+/** \\brief  Offset for Ifx_CAN_CYCTMR_Bits.BCC */
+#define IFX_CAN_CYCTMR_BCC_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_CYCTMR_Bits.CSM */
+#define IFX_CAN_CYCTMR_CSM_LEN (6)
+
+/** \\brief  Mask for Ifx_CAN_CYCTMR_Bits.CSM */
+#define IFX_CAN_CYCTMR_CSM_MSK (0x3f)
+
+/** \\brief  Offset for Ifx_CAN_CYCTMR_Bits.CSM */
+#define IFX_CAN_CYCTMR_CSM_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_CYCTMR_Bits.CYCTM */
+#define IFX_CAN_CYCTMR_CYCTM_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_CYCTMR_Bits.CYCTM */
+#define IFX_CAN_CYCTMR_CYCTM_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_CYCTMR_Bits.CYCTM */
+#define IFX_CAN_CYCTMR_CYCTM_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_FDR_Bits.DM */
+#define IFX_CAN_FDR_DM_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_FDR_Bits.DM */
+#define IFX_CAN_FDR_DM_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_FDR_Bits.DM */
+#define IFX_CAN_FDR_DM_OFF (14)
+
+/** \\brief  Length for Ifx_CAN_FDR_Bits.STEP */
+#define IFX_CAN_FDR_STEP_LEN (10)
+
+/** \\brief  Mask for Ifx_CAN_FDR_Bits.STEP */
+#define IFX_CAN_FDR_STEP_MSK (0x3ff)
+
+/** \\brief  Offset for Ifx_CAN_FDR_Bits.STEP */
+#define IFX_CAN_FDR_STEP_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_GMR_Bits.GM */
+#define IFX_CAN_GMR_GM_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_GMR_Bits.GM */
+#define IFX_CAN_GMR_GM_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_GMR_Bits.GM */
+#define IFX_CAN_GMR_GM_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_GMR_Bits.GMFR */
+#define IFX_CAN_GMR_GMFR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_GMR_Bits.GMFR */
+#define IFX_CAN_GMR_GMFR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_GMR_Bits.GMFR */
+#define IFX_CAN_GMR_GMFR_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_ID_Bits.MODNUMBER */
+#define IFX_CAN_ID_MODNUMBER_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_ID_Bits.MODNUMBER */
+#define IFX_CAN_ID_MODNUMBER_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_ID_Bits.MODNUMBER */
+#define IFX_CAN_ID_MODNUMBER_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_ID_Bits.MODREV */
+#define IFX_CAN_ID_MODREV_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_ID_Bits.MODREV */
+#define IFX_CAN_ID_MODREV_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_ID_Bits.MODREV */
+#define IFX_CAN_ID_MODREV_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_ID_Bits.MODTYPE */
+#define IFX_CAN_ID_MODTYPE_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_ID_Bits.MODTYPE */
+#define IFX_CAN_ID_MODTYPE_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_ID_Bits.MODTYPE */
+#define IFX_CAN_ID_MODTYPE_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_KRST0_Bits.RST */
+#define IFX_CAN_KRST0_RST_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_KRST0_Bits.RST */
+#define IFX_CAN_KRST0_RST_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_KRST0_Bits.RST */
+#define IFX_CAN_KRST0_RST_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_KRST0_Bits.RSTSTAT */
+#define IFX_CAN_KRST0_RSTSTAT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_KRST0_Bits.RSTSTAT */
+#define IFX_CAN_KRST0_RSTSTAT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_KRST0_Bits.RSTSTAT */
+#define IFX_CAN_KRST0_RSTSTAT_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_KRST1_Bits.RST */
+#define IFX_CAN_KRST1_RST_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_KRST1_Bits.RST */
+#define IFX_CAN_KRST1_RST_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_KRST1_Bits.RST */
+#define IFX_CAN_KRST1_RST_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_KRSTCLR_Bits.CLR */
+#define IFX_CAN_KRSTCLR_CLR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_KRSTCLR_Bits.CLR */
+#define IFX_CAN_KRSTCLR_CLR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_KRSTCLR_Bits.CLR */
+#define IFX_CAN_KRSTCLR_CLR_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_LGMR_Bits.LGM */
+#define IFX_CAN_LGMR_LGM_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_LGMR_Bits.LGM */
+#define IFX_CAN_LGMR_LGM_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_LGMR_Bits.LGM */
+#define IFX_CAN_LGMR_LGM_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_LGMR_Bits.LGMFR */
+#define IFX_CAN_LGMR_LGMFR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_LGMR_Bits.LGMFR */
+#define IFX_CAN_LGMR_LGMFR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_LGMR_Bits.LGMFR */
+#define IFX_CAN_LGMR_LGMFR_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_LIST_Bits.BEGIN */
+#define IFX_CAN_LIST_BEGIN_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_LIST_Bits.BEGIN */
+#define IFX_CAN_LIST_BEGIN_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_LIST_Bits.BEGIN */
+#define IFX_CAN_LIST_BEGIN_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_LIST_Bits.EMPTY */
+#define IFX_CAN_LIST_EMPTY_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_LIST_Bits.EMPTY */
+#define IFX_CAN_LIST_EMPTY_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_LIST_Bits.EMPTY */
+#define IFX_CAN_LIST_EMPTY_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_LIST_Bits.END */
+#define IFX_CAN_LIST_END_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_LIST_Bits.END */
+#define IFX_CAN_LIST_END_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_LIST_Bits.END */
+#define IFX_CAN_LIST_END_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_LIST_Bits.SIZE */
+#define IFX_CAN_LIST_SIZE_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_LIST_Bits.SIZE */
+#define IFX_CAN_LIST_SIZE_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_LIST_Bits.SIZE */
+#define IFX_CAN_LIST_SIZE_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_LOR_Bits.DISC */
+#define IFX_CAN_LOR_DISC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_LOR_Bits.DISC */
+#define IFX_CAN_LOR_DISC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_LOR_Bits.DISC */
+#define IFX_CAN_LOR_DISC_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_LOR_Bits.LOF */
+#define IFX_CAN_LOR_LOF_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_LOR_Bits.LOF */
+#define IFX_CAN_LOR_LOF_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_LOR_Bits.LOF */
+#define IFX_CAN_LOR_LOF_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_LOR_Bits.LOFFR */
+#define IFX_CAN_LOR_LOFFR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_LOR_Bits.LOFFR */
+#define IFX_CAN_LOR_LOFFR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_LOR_Bits.LOFFR */
+#define IFX_CAN_LOR_LOFFR_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_LOR_Bits.NEWDISC */
+#define IFX_CAN_LOR_NEWDISC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_LOR_Bits.NEWDISC */
+#define IFX_CAN_LOR_NEWDISC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_LOR_Bits.NEWDISC */
+#define IFX_CAN_LOR_NEWDISC_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_LREFMR_Bits.LREFM */
+#define IFX_CAN_LREFMR_LREFM_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_LREFMR_Bits.LREFM */
+#define IFX_CAN_LREFMR_LREFM_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_LREFMR_Bits.LREFM */
+#define IFX_CAN_LREFMR_LREFM_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_LREFMR_Bits.LREFMFR */
+#define IFX_CAN_LREFMR_LREFMFR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_LREFMR_Bits.LREFMFR */
+#define IFX_CAN_LREFMR_LREFMFR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_LREFMR_Bits.LREFMFR */
+#define IFX_CAN_LREFMR_LREFMFR_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_LTCR_Bits.LTC */
+#define IFX_CAN_LTCR_LTC_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_LTCR_Bits.LTC */
+#define IFX_CAN_LTCR_LTC_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_LTCR_Bits.LTC */
+#define IFX_CAN_LTCR_LTC_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_LTCR_Bits.LTFRC */
+#define IFX_CAN_LTCR_LTFRC_LEN (10)
+
+/** \\brief  Mask for Ifx_CAN_LTCR_Bits.LTFRC */
+#define IFX_CAN_LTCR_LTFRC_MSK (0x3ff)
+
+/** \\brief  Offset for Ifx_CAN_LTCR_Bits.LTFRC */
+#define IFX_CAN_LTCR_LTFRC_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_LTR_Bits.LT */
+#define IFX_CAN_LTR_LT_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_LTR_Bits.LT */
+#define IFX_CAN_LTR_LT_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_LTR_Bits.LT */
+#define IFX_CAN_LTR_LT_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_LTR_Bits.LTFR */
+#define IFX_CAN_LTR_LTFR_LEN (10)
+
+/** \\brief  Mask for Ifx_CAN_LTR_Bits.LTFR */
+#define IFX_CAN_LTR_LTFR_MSK (0x3ff)
+
+/** \\brief  Offset for Ifx_CAN_LTR_Bits.LTFR */
+#define IFX_CAN_LTR_LTFR_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_MCR_Bits.CLKSEL */
+#define IFX_CAN_MCR_CLKSEL_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MCR_Bits.CLKSEL */
+#define IFX_CAN_MCR_CLKSEL_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MCR_Bits.CLKSEL */
+#define IFX_CAN_MCR_CLKSEL_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MCR_Bits.MPSEL */
+#define IFX_CAN_MCR_MPSEL_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MCR_Bits.MPSEL */
+#define IFX_CAN_MCR_MPSEL_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MCR_Bits.MPSEL */
+#define IFX_CAN_MCR_MPSEL_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_MITR_Bits.IT */
+#define IFX_CAN_MITR_IT_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_MITR_Bits.IT */
+#define IFX_CAN_MITR_IT_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_MITR_Bits.IT */
+#define IFX_CAN_MITR_IT_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_AMR_Bits.AM */
+#define IFX_CAN_MO_AMR_AM_LEN (29)
+
+/** \\brief  Mask for Ifx_CAN_MO_AMR_Bits.AM */
+#define IFX_CAN_MO_AMR_AM_MSK (0x1fffffff)
+
+/** \\brief  Offset for Ifx_CAN_MO_AMR_Bits.AM */
+#define IFX_CAN_MO_AMR_AM_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_AMR_Bits.MIDE */
+#define IFX_CAN_MO_AMR_MIDE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_AMR_Bits.MIDE */
+#define IFX_CAN_MO_AMR_MIDE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_AMR_Bits.MIDE */
+#define IFX_CAN_MO_AMR_MIDE_OFF (29)
+
+/** \\brief  Length for Ifx_CAN_MO_AR_Bits.ID */
+#define IFX_CAN_MO_AR_ID_LEN (29)
+
+/** \\brief  Mask for Ifx_CAN_MO_AR_Bits.ID */
+#define IFX_CAN_MO_AR_ID_MSK (0x1fffffff)
+
+/** \\brief  Offset for Ifx_CAN_MO_AR_Bits.ID */
+#define IFX_CAN_MO_AR_ID_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_AR_Bits.IDE */
+#define IFX_CAN_MO_AR_IDE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_AR_Bits.IDE */
+#define IFX_CAN_MO_AR_IDE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_AR_Bits.IDE */
+#define IFX_CAN_MO_AR_IDE_OFF (29)
+
+/** \\brief  Length for Ifx_CAN_MO_AR_Bits.PRI */
+#define IFX_CAN_MO_AR_PRI_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_MO_AR_Bits.PRI */
+#define IFX_CAN_MO_AR_PRI_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_MO_AR_Bits.PRI */
+#define IFX_CAN_MO_AR_PRI_OFF (30)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESDIR */
+#define IFX_CAN_MO_CTR_RESDIR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESDIR */
+#define IFX_CAN_MO_CTR_RESDIR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESDIR */
+#define IFX_CAN_MO_CTR_RESDIR_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESMSGLST */
+#define IFX_CAN_MO_CTR_RESMSGLST_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESMSGLST */
+#define IFX_CAN_MO_CTR_RESMSGLST_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESMSGLST */
+#define IFX_CAN_MO_CTR_RESMSGLST_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESMSGVAL */
+#define IFX_CAN_MO_CTR_RESMSGVAL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESMSGVAL */
+#define IFX_CAN_MO_CTR_RESMSGVAL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESMSGVAL */
+#define IFX_CAN_MO_CTR_RESMSGVAL_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESNEWDAT */
+#define IFX_CAN_MO_CTR_RESNEWDAT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESNEWDAT */
+#define IFX_CAN_MO_CTR_RESNEWDAT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESNEWDAT */
+#define IFX_CAN_MO_CTR_RESNEWDAT_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESRTSEL */
+#define IFX_CAN_MO_CTR_RESRTSEL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESRTSEL */
+#define IFX_CAN_MO_CTR_RESRTSEL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESRTSEL */
+#define IFX_CAN_MO_CTR_RESRTSEL_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESRXEN */
+#define IFX_CAN_MO_CTR_RESRXEN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESRXEN */
+#define IFX_CAN_MO_CTR_RESRXEN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESRXEN */
+#define IFX_CAN_MO_CTR_RESRXEN_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESRXPND */
+#define IFX_CAN_MO_CTR_RESRXPND_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESRXPND */
+#define IFX_CAN_MO_CTR_RESRXPND_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESRXPND */
+#define IFX_CAN_MO_CTR_RESRXPND_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESRXUPD */
+#define IFX_CAN_MO_CTR_RESRXUPD_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESRXUPD */
+#define IFX_CAN_MO_CTR_RESRXUPD_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESRXUPD */
+#define IFX_CAN_MO_CTR_RESRXUPD_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESTXEN0 */
+#define IFX_CAN_MO_CTR_RESTXEN0_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESTXEN0 */
+#define IFX_CAN_MO_CTR_RESTXEN0_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESTXEN0 */
+#define IFX_CAN_MO_CTR_RESTXEN0_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESTXEN1 */
+#define IFX_CAN_MO_CTR_RESTXEN1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESTXEN1 */
+#define IFX_CAN_MO_CTR_RESTXEN1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESTXEN1 */
+#define IFX_CAN_MO_CTR_RESTXEN1_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESTXPND */
+#define IFX_CAN_MO_CTR_RESTXPND_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESTXPND */
+#define IFX_CAN_MO_CTR_RESTXPND_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESTXPND */
+#define IFX_CAN_MO_CTR_RESTXPND_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.RESTXRQ */
+#define IFX_CAN_MO_CTR_RESTXRQ_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.RESTXRQ */
+#define IFX_CAN_MO_CTR_RESTXRQ_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.RESTXRQ */
+#define IFX_CAN_MO_CTR_RESTXRQ_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETDIR */
+#define IFX_CAN_MO_CTR_SETDIR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETDIR */
+#define IFX_CAN_MO_CTR_SETDIR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETDIR */
+#define IFX_CAN_MO_CTR_SETDIR_OFF (27)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETMSGLST */
+#define IFX_CAN_MO_CTR_SETMSGLST_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETMSGLST */
+#define IFX_CAN_MO_CTR_SETMSGLST_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETMSGLST */
+#define IFX_CAN_MO_CTR_SETMSGLST_OFF (20)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETMSGVAL */
+#define IFX_CAN_MO_CTR_SETMSGVAL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETMSGVAL */
+#define IFX_CAN_MO_CTR_SETMSGVAL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETMSGVAL */
+#define IFX_CAN_MO_CTR_SETMSGVAL_OFF (21)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETNEWDAT */
+#define IFX_CAN_MO_CTR_SETNEWDAT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETNEWDAT */
+#define IFX_CAN_MO_CTR_SETNEWDAT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETNEWDAT */
+#define IFX_CAN_MO_CTR_SETNEWDAT_OFF (19)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETRTSEL */
+#define IFX_CAN_MO_CTR_SETRTSEL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETRTSEL */
+#define IFX_CAN_MO_CTR_SETRTSEL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETRTSEL */
+#define IFX_CAN_MO_CTR_SETRTSEL_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETRXEN */
+#define IFX_CAN_MO_CTR_SETRXEN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETRXEN */
+#define IFX_CAN_MO_CTR_SETRXEN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETRXEN */
+#define IFX_CAN_MO_CTR_SETRXEN_OFF (23)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETRXPND */
+#define IFX_CAN_MO_CTR_SETRXPND_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETRXPND */
+#define IFX_CAN_MO_CTR_SETRXPND_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETRXPND */
+#define IFX_CAN_MO_CTR_SETRXPND_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETRXUPD */
+#define IFX_CAN_MO_CTR_SETRXUPD_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETRXUPD */
+#define IFX_CAN_MO_CTR_SETRXUPD_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETRXUPD */
+#define IFX_CAN_MO_CTR_SETRXUPD_OFF (18)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETTXEN0 */
+#define IFX_CAN_MO_CTR_SETTXEN0_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETTXEN0 */
+#define IFX_CAN_MO_CTR_SETTXEN0_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETTXEN0 */
+#define IFX_CAN_MO_CTR_SETTXEN0_OFF (25)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETTXEN1 */
+#define IFX_CAN_MO_CTR_SETTXEN1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETTXEN1 */
+#define IFX_CAN_MO_CTR_SETTXEN1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETTXEN1 */
+#define IFX_CAN_MO_CTR_SETTXEN1_OFF (26)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETTXPND */
+#define IFX_CAN_MO_CTR_SETTXPND_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETTXPND */
+#define IFX_CAN_MO_CTR_SETTXPND_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETTXPND */
+#define IFX_CAN_MO_CTR_SETTXPND_OFF (17)
+
+/** \\brief  Length for Ifx_CAN_MO_CTR_Bits.SETTXRQ */
+#define IFX_CAN_MO_CTR_SETTXRQ_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_CTR_Bits.SETTXRQ */
+#define IFX_CAN_MO_CTR_SETTXRQ_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_CTR_Bits.SETTXRQ */
+#define IFX_CAN_MO_CTR_SETTXRQ_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAH_Bits.DB4 */
+#define IFX_CAN_MO_DATAH_DB4_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAH_Bits.DB4 */
+#define IFX_CAN_MO_DATAH_DB4_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAH_Bits.DB4 */
+#define IFX_CAN_MO_DATAH_DB4_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAH_Bits.DB5 */
+#define IFX_CAN_MO_DATAH_DB5_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAH_Bits.DB5 */
+#define IFX_CAN_MO_DATAH_DB5_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAH_Bits.DB5 */
+#define IFX_CAN_MO_DATAH_DB5_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAH_Bits.DB6 */
+#define IFX_CAN_MO_DATAH_DB6_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAH_Bits.DB6 */
+#define IFX_CAN_MO_DATAH_DB6_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAH_Bits.DB6 */
+#define IFX_CAN_MO_DATAH_DB6_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAH_Bits.DB7 */
+#define IFX_CAN_MO_DATAH_DB7_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAH_Bits.DB7 */
+#define IFX_CAN_MO_DATAH_DB7_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAH_Bits.DB7 */
+#define IFX_CAN_MO_DATAH_DB7_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAL_Bits.DB0 */
+#define IFX_CAN_MO_DATAL_DB0_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAL_Bits.DB0 */
+#define IFX_CAN_MO_DATAL_DB0_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAL_Bits.DB0 */
+#define IFX_CAN_MO_DATAL_DB0_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAL_Bits.DB1 */
+#define IFX_CAN_MO_DATAL_DB1_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAL_Bits.DB1 */
+#define IFX_CAN_MO_DATAL_DB1_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAL_Bits.DB1 */
+#define IFX_CAN_MO_DATAL_DB1_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAL_Bits.DB2 */
+#define IFX_CAN_MO_DATAL_DB2_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAL_Bits.DB2 */
+#define IFX_CAN_MO_DATAL_DB2_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAL_Bits.DB2 */
+#define IFX_CAN_MO_DATAL_DB2_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_DATAL_Bits.DB3 */
+#define IFX_CAN_MO_DATAL_DB3_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_DATAL_Bits.DB3 */
+#define IFX_CAN_MO_DATAL_DB3_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_DATAL_Bits.DB3 */
+#define IFX_CAN_MO_DATAL_DB3_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.DATC */
+#define IFX_CAN_MO_FCR_DATC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.DATC */
+#define IFX_CAN_MO_FCR_DATC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.DATC */
+#define IFX_CAN_MO_FCR_DATC_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.DLC */
+#define IFX_CAN_MO_FCR_DLC_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.DLC */
+#define IFX_CAN_MO_FCR_DLC_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.DLC */
+#define IFX_CAN_MO_FCR_DLC_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.DLCC */
+#define IFX_CAN_MO_FCR_DLCC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.DLCC */
+#define IFX_CAN_MO_FCR_DLCC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.DLCC */
+#define IFX_CAN_MO_FCR_DLCC_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.FRREN */
+#define IFX_CAN_MO_FCR_FRREN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.FRREN */
+#define IFX_CAN_MO_FCR_FRREN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.FRREN */
+#define IFX_CAN_MO_FCR_FRREN_OFF (20)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.GDFS */
+#define IFX_CAN_MO_FCR_GDFS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.GDFS */
+#define IFX_CAN_MO_FCR_GDFS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.GDFS */
+#define IFX_CAN_MO_FCR_GDFS_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.IDC */
+#define IFX_CAN_MO_FCR_IDC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.IDC */
+#define IFX_CAN_MO_FCR_IDC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.IDC */
+#define IFX_CAN_MO_FCR_IDC_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.MMC */
+#define IFX_CAN_MO_FCR_MMC_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.MMC */
+#define IFX_CAN_MO_FCR_MMC_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.MMC */
+#define IFX_CAN_MO_FCR_MMC_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.MSC */
+#define IFX_CAN_MO_FCR_MSC_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.MSC */
+#define IFX_CAN_MO_FCR_MSC_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.MSC */
+#define IFX_CAN_MO_FCR_MSC_OFF (28)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.OVIE */
+#define IFX_CAN_MO_FCR_OVIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.OVIE */
+#define IFX_CAN_MO_FCR_OVIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.OVIE */
+#define IFX_CAN_MO_FCR_OVIE_OFF (18)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.RMM */
+#define IFX_CAN_MO_FCR_RMM_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.RMM */
+#define IFX_CAN_MO_FCR_RMM_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.RMM */
+#define IFX_CAN_MO_FCR_RMM_OFF (21)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.RXIE */
+#define IFX_CAN_MO_FCR_RXIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.RXIE */
+#define IFX_CAN_MO_FCR_RXIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.RXIE */
+#define IFX_CAN_MO_FCR_RXIE_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.RXTOE */
+#define IFX_CAN_MO_FCR_RXTOE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.RXTOE */
+#define IFX_CAN_MO_FCR_RXTOE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.RXTOE */
+#define IFX_CAN_MO_FCR_RXTOE_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.SDT */
+#define IFX_CAN_MO_FCR_SDT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.SDT */
+#define IFX_CAN_MO_FCR_SDT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.SDT */
+#define IFX_CAN_MO_FCR_SDT_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.STT */
+#define IFX_CAN_MO_FCR_STT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.STT */
+#define IFX_CAN_MO_FCR_STT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.STT */
+#define IFX_CAN_MO_FCR_STT_OFF (23)
+
+/** \\brief  Length for Ifx_CAN_MO_FCR_Bits.TXIE */
+#define IFX_CAN_MO_FCR_TXIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_FCR_Bits.TXIE */
+#define IFX_CAN_MO_FCR_TXIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_FCR_Bits.TXIE */
+#define IFX_CAN_MO_FCR_TXIE_OFF (17)
+
+/** \\brief  Length for Ifx_CAN_MO_FGPR_Bits.BOT */
+#define IFX_CAN_MO_FGPR_BOT_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_FGPR_Bits.BOT */
+#define IFX_CAN_MO_FGPR_BOT_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_FGPR_Bits.BOT */
+#define IFX_CAN_MO_FGPR_BOT_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_FGPR_Bits.CUR */
+#define IFX_CAN_MO_FGPR_CUR_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_FGPR_Bits.CUR */
+#define IFX_CAN_MO_FGPR_CUR_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_FGPR_Bits.CUR */
+#define IFX_CAN_MO_FGPR_CUR_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_FGPR_Bits.SEL */
+#define IFX_CAN_MO_FGPR_SEL_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_FGPR_Bits.SEL */
+#define IFX_CAN_MO_FGPR_SEL_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_FGPR_Bits.SEL */
+#define IFX_CAN_MO_FGPR_SEL_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_MO_FGPR_Bits.TOP */
+#define IFX_CAN_MO_FGPR_TOP_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_FGPR_Bits.TOP */
+#define IFX_CAN_MO_FGPR_TOP_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_FGPR_Bits.TOP */
+#define IFX_CAN_MO_FGPR_TOP_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MO_IPR_Bits.CFCVAL */
+#define IFX_CAN_MO_IPR_CFCVAL_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_MO_IPR_Bits.CFCVAL */
+#define IFX_CAN_MO_IPR_CFCVAL_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_MO_IPR_Bits.CFCVAL */
+#define IFX_CAN_MO_IPR_CFCVAL_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_IPR_Bits.MPN */
+#define IFX_CAN_MO_IPR_MPN_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_IPR_Bits.MPN */
+#define IFX_CAN_MO_IPR_MPN_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_IPR_Bits.MPN */
+#define IFX_CAN_MO_IPR_MPN_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MO_IPR_Bits.RXINP */
+#define IFX_CAN_MO_IPR_RXINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MO_IPR_Bits.RXINP */
+#define IFX_CAN_MO_IPR_RXINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MO_IPR_Bits.RXINP */
+#define IFX_CAN_MO_IPR_RXINP_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_IPR_Bits.TXINP */
+#define IFX_CAN_MO_IPR_TXINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MO_IPR_Bits.TXINP */
+#define IFX_CAN_MO_IPR_TXINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MO_IPR_Bits.TXINP */
+#define IFX_CAN_MO_IPR_TXINP_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.DIR */
+#define IFX_CAN_MO_STAT_DIR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.DIR */
+#define IFX_CAN_MO_STAT_DIR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.DIR */
+#define IFX_CAN_MO_STAT_DIR_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.LIST */
+#define IFX_CAN_MO_STAT_LIST_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.LIST */
+#define IFX_CAN_MO_STAT_LIST_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.LIST */
+#define IFX_CAN_MO_STAT_LIST_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.MSGLST */
+#define IFX_CAN_MO_STAT_MSGLST_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.MSGLST */
+#define IFX_CAN_MO_STAT_MSGLST_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.MSGLST */
+#define IFX_CAN_MO_STAT_MSGLST_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.MSGVAL */
+#define IFX_CAN_MO_STAT_MSGVAL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.MSGVAL */
+#define IFX_CAN_MO_STAT_MSGVAL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.MSGVAL */
+#define IFX_CAN_MO_STAT_MSGVAL_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.NEWDAT */
+#define IFX_CAN_MO_STAT_NEWDAT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.NEWDAT */
+#define IFX_CAN_MO_STAT_NEWDAT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.NEWDAT */
+#define IFX_CAN_MO_STAT_NEWDAT_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.PNEXT */
+#define IFX_CAN_MO_STAT_PNEXT_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.PNEXT */
+#define IFX_CAN_MO_STAT_PNEXT_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.PNEXT */
+#define IFX_CAN_MO_STAT_PNEXT_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.PPREV */
+#define IFX_CAN_MO_STAT_PPREV_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.PPREV */
+#define IFX_CAN_MO_STAT_PPREV_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.PPREV */
+#define IFX_CAN_MO_STAT_PPREV_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.RTSEL */
+#define IFX_CAN_MO_STAT_RTSEL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.RTSEL */
+#define IFX_CAN_MO_STAT_RTSEL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.RTSEL */
+#define IFX_CAN_MO_STAT_RTSEL_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.RXEN */
+#define IFX_CAN_MO_STAT_RXEN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.RXEN */
+#define IFX_CAN_MO_STAT_RXEN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.RXEN */
+#define IFX_CAN_MO_STAT_RXEN_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.RXPND */
+#define IFX_CAN_MO_STAT_RXPND_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.RXPND */
+#define IFX_CAN_MO_STAT_RXPND_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.RXPND */
+#define IFX_CAN_MO_STAT_RXPND_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.RXUPD */
+#define IFX_CAN_MO_STAT_RXUPD_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.RXUPD */
+#define IFX_CAN_MO_STAT_RXUPD_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.RXUPD */
+#define IFX_CAN_MO_STAT_RXUPD_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.TXEN0 */
+#define IFX_CAN_MO_STAT_TXEN0_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.TXEN0 */
+#define IFX_CAN_MO_STAT_TXEN0_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.TXEN0 */
+#define IFX_CAN_MO_STAT_TXEN0_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.TXEN1 */
+#define IFX_CAN_MO_STAT_TXEN1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.TXEN1 */
+#define IFX_CAN_MO_STAT_TXEN1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.TXEN1 */
+#define IFX_CAN_MO_STAT_TXEN1_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.TXPND */
+#define IFX_CAN_MO_STAT_TXPND_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.TXPND */
+#define IFX_CAN_MO_STAT_TXPND_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.TXPND */
+#define IFX_CAN_MO_STAT_TXPND_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_MO_STAT_Bits.TXRQ */
+#define IFX_CAN_MO_STAT_TXRQ_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_MO_STAT_Bits.TXRQ */
+#define IFX_CAN_MO_STAT_TXRQ_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_MO_STAT_Bits.TXRQ */
+#define IFX_CAN_MO_STAT_TXRQ_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_MSID_Bits.INDEX */
+#define IFX_CAN_MSID_INDEX_LEN (6)
+
+/** \\brief  Mask for Ifx_CAN_MSID_Bits.INDEX */
+#define IFX_CAN_MSID_INDEX_MSK (0x3f)
+
+/** \\brief  Offset for Ifx_CAN_MSID_Bits.INDEX */
+#define IFX_CAN_MSID_INDEX_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MSIMASK_Bits.IM */
+#define IFX_CAN_MSIMASK_IM_LEN (32)
+
+/** \\brief  Mask for Ifx_CAN_MSIMASK_Bits.IM */
+#define IFX_CAN_MSIMASK_IM_MSK (0xffffffff)
+
+/** \\brief  Offset for Ifx_CAN_MSIMASK_Bits.IM */
+#define IFX_CAN_MSIMASK_IM_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_MSPND_Bits.PND */
+#define IFX_CAN_MSPND_PND_LEN (32)
+
+/** \\brief  Mask for Ifx_CAN_MSPND_Bits.PND */
+#define IFX_CAN_MSPND_PND_MSK (0xffffffff)
+
+/** \\brief  Offset for Ifx_CAN_MSPND_Bits.PND */
+#define IFX_CAN_MSPND_PND_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_BTR_Bits.BRP */
+#define IFX_CAN_N_BTR_BRP_LEN (6)
+
+/** \\brief  Mask for Ifx_CAN_N_BTR_Bits.BRP */
+#define IFX_CAN_N_BTR_BRP_MSK (0x3f)
+
+/** \\brief  Offset for Ifx_CAN_N_BTR_Bits.BRP */
+#define IFX_CAN_N_BTR_BRP_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_BTR_Bits.DIV8 */
+#define IFX_CAN_N_BTR_DIV8_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_BTR_Bits.DIV8 */
+#define IFX_CAN_N_BTR_DIV8_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_BTR_Bits.DIV8 */
+#define IFX_CAN_N_BTR_DIV8_OFF (15)
+
+/** \\brief  Length for Ifx_CAN_N_BTR_Bits.FTX */
+#define IFX_CAN_N_BTR_FTX_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_BTR_Bits.FTX */
+#define IFX_CAN_N_BTR_FTX_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_BTR_Bits.FTX */
+#define IFX_CAN_N_BTR_FTX_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_N_BTR_Bits.SJW */
+#define IFX_CAN_N_BTR_SJW_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_N_BTR_Bits.SJW */
+#define IFX_CAN_N_BTR_SJW_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_N_BTR_Bits.SJW */
+#define IFX_CAN_N_BTR_SJW_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_N_BTR_Bits.TSEG1 */
+#define IFX_CAN_N_BTR_TSEG1_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_BTR_Bits.TSEG1 */
+#define IFX_CAN_N_BTR_TSEG1_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_BTR_Bits.TSEG1 */
+#define IFX_CAN_N_BTR_TSEG1_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_BTR_Bits.TSEG2 */
+#define IFX_CAN_N_BTR_TSEG2_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_N_BTR_Bits.TSEG2 */
+#define IFX_CAN_N_BTR_TSEG2_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_N_BTR_Bits.TSEG2 */
+#define IFX_CAN_N_BTR_TSEG2_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.ALIE */
+#define IFX_CAN_N_CR_ALIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.ALIE */
+#define IFX_CAN_N_CR_ALIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.ALIE */
+#define IFX_CAN_N_CR_ALIE_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.CALM */
+#define IFX_CAN_N_CR_CALM_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.CALM */
+#define IFX_CAN_N_CR_CALM_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.CALM */
+#define IFX_CAN_N_CR_CALM_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.CANDIS */
+#define IFX_CAN_N_CR_CANDIS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.CANDIS */
+#define IFX_CAN_N_CR_CANDIS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.CANDIS */
+#define IFX_CAN_N_CR_CANDIS_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.CCE */
+#define IFX_CAN_N_CR_CCE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.CCE */
+#define IFX_CAN_N_CR_CCE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.CCE */
+#define IFX_CAN_N_CR_CCE_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.INIT */
+#define IFX_CAN_N_CR_INIT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.INIT */
+#define IFX_CAN_N_CR_INIT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.INIT */
+#define IFX_CAN_N_CR_INIT_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.LECIE */
+#define IFX_CAN_N_CR_LECIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.LECIE */
+#define IFX_CAN_N_CR_LECIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.LECIE */
+#define IFX_CAN_N_CR_LECIE_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.SUSEN */
+#define IFX_CAN_N_CR_SUSEN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.SUSEN */
+#define IFX_CAN_N_CR_SUSEN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.SUSEN */
+#define IFX_CAN_N_CR_SUSEN_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.TRIE */
+#define IFX_CAN_N_CR_TRIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.TRIE */
+#define IFX_CAN_N_CR_TRIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.TRIE */
+#define IFX_CAN_N_CR_TRIE_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_N_CR_Bits.TXDIS */
+#define IFX_CAN_N_CR_TXDIS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_CR_Bits.TXDIS */
+#define IFX_CAN_N_CR_TXDIS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_CR_Bits.TXDIS */
+#define IFX_CAN_N_CR_TXDIS_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_N_ECNT_Bits.EWRNLVL */
+#define IFX_CAN_N_ECNT_EWRNLVL_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_N_ECNT_Bits.EWRNLVL */
+#define IFX_CAN_N_ECNT_EWRNLVL_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_N_ECNT_Bits.EWRNLVL */
+#define IFX_CAN_N_ECNT_EWRNLVL_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_N_ECNT_Bits.LEINC */
+#define IFX_CAN_N_ECNT_LEINC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_ECNT_Bits.LEINC */
+#define IFX_CAN_N_ECNT_LEINC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_ECNT_Bits.LEINC */
+#define IFX_CAN_N_ECNT_LEINC_OFF (25)
+
+/** \\brief  Length for Ifx_CAN_N_ECNT_Bits.LETD */
+#define IFX_CAN_N_ECNT_LETD_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_ECNT_Bits.LETD */
+#define IFX_CAN_N_ECNT_LETD_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_ECNT_Bits.LETD */
+#define IFX_CAN_N_ECNT_LETD_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_N_ECNT_Bits.REC */
+#define IFX_CAN_N_ECNT_REC_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_N_ECNT_Bits.REC */
+#define IFX_CAN_N_ECNT_REC_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_N_ECNT_Bits.REC */
+#define IFX_CAN_N_ECNT_REC_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_ECNT_Bits.TEC */
+#define IFX_CAN_N_ECNT_TEC_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_N_ECNT_Bits.TEC */
+#define IFX_CAN_N_ECNT_TEC_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_N_ECNT_Bits.TEC */
+#define IFX_CAN_N_ECNT_TEC_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_FCR_Bits.CFC */
+#define IFX_CAN_N_FCR_CFC_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_N_FCR_Bits.CFC */
+#define IFX_CAN_N_FCR_CFC_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_N_FCR_Bits.CFC */
+#define IFX_CAN_N_FCR_CFC_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_FCR_Bits.CFCIE */
+#define IFX_CAN_N_FCR_CFCIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_FCR_Bits.CFCIE */
+#define IFX_CAN_N_FCR_CFCIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_FCR_Bits.CFCIE */
+#define IFX_CAN_N_FCR_CFCIE_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_N_FCR_Bits.CFCOV */
+#define IFX_CAN_N_FCR_CFCOV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_FCR_Bits.CFCOV */
+#define IFX_CAN_N_FCR_CFCOV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_FCR_Bits.CFCOV */
+#define IFX_CAN_N_FCR_CFCOV_OFF (23)
+
+/** \\brief  Length for Ifx_CAN_N_FCR_Bits.CFMOD */
+#define IFX_CAN_N_FCR_CFMOD_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_N_FCR_Bits.CFMOD */
+#define IFX_CAN_N_FCR_CFMOD_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_N_FCR_Bits.CFMOD */
+#define IFX_CAN_N_FCR_CFMOD_OFF (19)
+
+/** \\brief  Length for Ifx_CAN_N_FCR_Bits.CFSEL */
+#define IFX_CAN_N_FCR_CFSEL_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_N_FCR_Bits.CFSEL */
+#define IFX_CAN_N_FCR_CFSEL_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_N_FCR_Bits.CFSEL */
+#define IFX_CAN_N_FCR_CFSEL_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_N_IPR_Bits.ALINP */
+#define IFX_CAN_N_IPR_ALINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_IPR_Bits.ALINP */
+#define IFX_CAN_N_IPR_ALINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_IPR_Bits.ALINP */
+#define IFX_CAN_N_IPR_ALINP_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_IPR_Bits.CFCINP */
+#define IFX_CAN_N_IPR_CFCINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_IPR_Bits.CFCINP */
+#define IFX_CAN_N_IPR_CFCINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_IPR_Bits.CFCINP */
+#define IFX_CAN_N_IPR_CFCINP_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_N_IPR_Bits.LECINP */
+#define IFX_CAN_N_IPR_LECINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_IPR_Bits.LECINP */
+#define IFX_CAN_N_IPR_LECINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_IPR_Bits.LECINP */
+#define IFX_CAN_N_IPR_LECINP_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_N_IPR_Bits.TEINP */
+#define IFX_CAN_N_IPR_TEINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_IPR_Bits.TEINP */
+#define IFX_CAN_N_IPR_TEINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_IPR_Bits.TEINP */
+#define IFX_CAN_N_IPR_TEINP_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_N_IPR_Bits.TRINP */
+#define IFX_CAN_N_IPR_TRINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_IPR_Bits.TRINP */
+#define IFX_CAN_N_IPR_TRINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_IPR_Bits.TRINP */
+#define IFX_CAN_N_IPR_TRINP_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_PCR_Bits.LBM */
+#define IFX_CAN_N_PCR_LBM_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_PCR_Bits.LBM */
+#define IFX_CAN_N_PCR_LBM_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_PCR_Bits.LBM */
+#define IFX_CAN_N_PCR_LBM_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_PCR_Bits.RXSEL */
+#define IFX_CAN_N_PCR_RXSEL_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_N_PCR_Bits.RXSEL */
+#define IFX_CAN_N_PCR_RXSEL_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_N_PCR_Bits.RXSEL */
+#define IFX_CAN_N_PCR_RXSEL_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.ALERT */
+#define IFX_CAN_N_SR_ALERT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.ALERT */
+#define IFX_CAN_N_SR_ALERT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.ALERT */
+#define IFX_CAN_N_SR_ALERT_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.BOFF */
+#define IFX_CAN_N_SR_BOFF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.BOFF */
+#define IFX_CAN_N_SR_BOFF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.BOFF */
+#define IFX_CAN_N_SR_BOFF_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.EWRN */
+#define IFX_CAN_N_SR_EWRN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.EWRN */
+#define IFX_CAN_N_SR_EWRN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.EWRN */
+#define IFX_CAN_N_SR_EWRN_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.LEC */
+#define IFX_CAN_N_SR_LEC_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.LEC */
+#define IFX_CAN_N_SR_LEC_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.LEC */
+#define IFX_CAN_N_SR_LEC_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.LLE */
+#define IFX_CAN_N_SR_LLE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.LLE */
+#define IFX_CAN_N_SR_LLE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.LLE */
+#define IFX_CAN_N_SR_LLE_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.LOE */
+#define IFX_CAN_N_SR_LOE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.LOE */
+#define IFX_CAN_N_SR_LOE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.LOE */
+#define IFX_CAN_N_SR_LOE_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.RXOK */
+#define IFX_CAN_N_SR_RXOK_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.RXOK */
+#define IFX_CAN_N_SR_RXOK_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.RXOK */
+#define IFX_CAN_N_SR_RXOK_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.SUSACK */
+#define IFX_CAN_N_SR_SUSACK_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.SUSACK */
+#define IFX_CAN_N_SR_SUSACK_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.SUSACK */
+#define IFX_CAN_N_SR_SUSACK_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_N_SR_Bits.TXOK */
+#define IFX_CAN_N_SR_TXOK_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_SR_Bits.TXOK */
+#define IFX_CAN_N_SR_TXOK_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_SR_Bits.TXOK */
+#define IFX_CAN_N_SR_TXOK_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_N_TCCR_Bits.TPSC */
+#define IFX_CAN_N_TCCR_TPSC_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_N_TCCR_Bits.TPSC */
+#define IFX_CAN_N_TCCR_TPSC_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_N_TCCR_Bits.TPSC */
+#define IFX_CAN_N_TCCR_TPSC_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_N_TCCR_Bits.TRIGSRC */
+#define IFX_CAN_N_TCCR_TRIGSRC_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_N_TCCR_Bits.TRIGSRC */
+#define IFX_CAN_N_TCCR_TRIGSRC_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_N_TCCR_Bits.TRIGSRC */
+#define IFX_CAN_N_TCCR_TRIGSRC_OFF (18)
+
+/** \\brief  Length for Ifx_CAN_N_TRTR_Bits.RELOAD */
+#define IFX_CAN_N_TRTR_RELOAD_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_N_TRTR_Bits.RELOAD */
+#define IFX_CAN_N_TRTR_RELOAD_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_N_TRTR_Bits.RELOAD */
+#define IFX_CAN_N_TRTR_RELOAD_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_TRTR_Bits.TE */
+#define IFX_CAN_N_TRTR_TE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_TRTR_Bits.TE */
+#define IFX_CAN_N_TRTR_TE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_TRTR_Bits.TE */
+#define IFX_CAN_N_TRTR_TE_OFF (23)
+
+/** \\brief  Length for Ifx_CAN_N_TRTR_Bits.TEIE */
+#define IFX_CAN_N_TRTR_TEIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_TRTR_Bits.TEIE */
+#define IFX_CAN_N_TRTR_TEIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_TRTR_Bits.TEIE */
+#define IFX_CAN_N_TRTR_TEIE_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_N_TTTR_Bits.RELOAD */
+#define IFX_CAN_N_TTTR_RELOAD_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_N_TTTR_Bits.RELOAD */
+#define IFX_CAN_N_TTTR_RELOAD_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_N_TTTR_Bits.RELOAD */
+#define IFX_CAN_N_TTTR_RELOAD_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_N_TTTR_Bits.STRT */
+#define IFX_CAN_N_TTTR_STRT_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_N_TTTR_Bits.STRT */
+#define IFX_CAN_N_TTTR_STRT_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_N_TTTR_Bits.STRT */
+#define IFX_CAN_N_TTTR_STRT_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_N_TTTR_Bits.TXMO */
+#define IFX_CAN_N_TTTR_TXMO_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_N_TTTR_Bits.TXMO */
+#define IFX_CAN_N_TTTR_TXMO_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_N_TTTR_Bits.TXMO */
+#define IFX_CAN_N_TTTR_TXMO_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_OCS_Bits.SUS */
+#define IFX_CAN_OCS_SUS_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_OCS_Bits.SUS */
+#define IFX_CAN_OCS_SUS_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_OCS_Bits.SUS */
+#define IFX_CAN_OCS_SUS_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_OCS_Bits.SUS_P */
+#define IFX_CAN_OCS_SUS_P_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_OCS_Bits.SUS_P */
+#define IFX_CAN_OCS_SUS_P_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_OCS_Bits.SUS_P */
+#define IFX_CAN_OCS_SUS_P_OFF (28)
+
+/** \\brief  Length for Ifx_CAN_OCS_Bits.SUSSTA */
+#define IFX_CAN_OCS_SUSSTA_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_OCS_Bits.SUSSTA */
+#define IFX_CAN_OCS_SUSSTA_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_OCS_Bits.SUSSTA */
+#define IFX_CAN_OCS_SUSSTA_OFF (29)
+
+/** \\brief  Length for Ifx_CAN_OCS_Bits.TG_P */
+#define IFX_CAN_OCS_TG_P_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_OCS_Bits.TG_P */
+#define IFX_CAN_OCS_TG_P_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_OCS_Bits.TG_P */
+#define IFX_CAN_OCS_TG_P_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_OCS_Bits.TGB */
+#define IFX_CAN_OCS_TGB_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_OCS_Bits.TGB */
+#define IFX_CAN_OCS_TGB_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_OCS_Bits.TGB */
+#define IFX_CAN_OCS_TGB_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_OCS_Bits.TGS */
+#define IFX_CAN_OCS_TGS_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_OCS_Bits.TGS */
+#define IFX_CAN_OCS_TGS_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_OCS_Bits.TGS */
+#define IFX_CAN_OCS_TGS_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_PANCTR_Bits.BUSY */
+#define IFX_CAN_PANCTR_BUSY_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_PANCTR_Bits.BUSY */
+#define IFX_CAN_PANCTR_BUSY_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_PANCTR_Bits.BUSY */
+#define IFX_CAN_PANCTR_BUSY_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_PANCTR_Bits.PANAR1 */
+#define IFX_CAN_PANCTR_PANAR1_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_PANCTR_Bits.PANAR1 */
+#define IFX_CAN_PANCTR_PANAR1_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_PANCTR_Bits.PANAR1 */
+#define IFX_CAN_PANCTR_PANAR1_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_PANCTR_Bits.PANAR2 */
+#define IFX_CAN_PANCTR_PANAR2_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_PANCTR_Bits.PANAR2 */
+#define IFX_CAN_PANCTR_PANAR2_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_PANCTR_Bits.PANAR2 */
+#define IFX_CAN_PANCTR_PANAR2_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_PANCTR_Bits.PANCMD */
+#define IFX_CAN_PANCTR_PANCMD_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_PANCTR_Bits.PANCMD */
+#define IFX_CAN_PANCTR_PANCMD_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_PANCTR_Bits.PANCMD */
+#define IFX_CAN_PANCTR_PANCMD_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_PANCTR_Bits.RBUSY */
+#define IFX_CAN_PANCTR_RBUSY_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_PANCTR_Bits.RBUSY */
+#define IFX_CAN_PANCTR_RBUSY_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_PANCTR_Bits.RBUSY */
+#define IFX_CAN_PANCTR_RBUSY_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_REFMR_Bits.REFM */
+#define IFX_CAN_REFMR_REFM_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_REFMR_Bits.REFM */
+#define IFX_CAN_REFMR_REFM_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_REFMR_Bits.REFM */
+#define IFX_CAN_REFMR_REFM_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_REFMR_Bits.REFMFR */
+#define IFX_CAN_REFMR_REFMFR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_REFMR_Bits.REFMFR */
+#define IFX_CAN_REFMR_REFMFR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_REFMR_Bits.REFMFR */
+#define IFX_CAN_REFMR_REFMFR_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.ALTMSG */
+#define IFX_CAN_SISR_ALTMSG_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.ALTMSG */
+#define IFX_CAN_SISR_ALTMSG_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.ALTMSG */
+#define IFX_CAN_SISR_ALTMSG_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.ARBM */
+#define IFX_CAN_SISR_ARBM_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.ARBM */
+#define IFX_CAN_SISR_ARBM_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.ARBM */
+#define IFX_CAN_SISR_ARBM_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.ARBV */
+#define IFX_CAN_SISR_ARBV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.ARBV */
+#define IFX_CAN_SISR_ARBV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.ARBV */
+#define IFX_CAN_SISR_ARBV_OFF (19)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.BCEV */
+#define IFX_CAN_SISR_BCEV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.BCEV */
+#define IFX_CAN_SISR_BCEV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.BCEV */
+#define IFX_CAN_SISR_BCEV_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.CHEN */
+#define IFX_CAN_SISR_CHEN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.CHEN */
+#define IFX_CAN_SISR_CHEN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.CHEN */
+#define IFX_CAN_SISR_CHEN_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.GM */
+#define IFX_CAN_SISR_GM_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.GM */
+#define IFX_CAN_SISR_GM_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.GM */
+#define IFX_CAN_SISR_GM_OFF (14)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.ICEV */
+#define IFX_CAN_SISR_ICEV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.ICEV */
+#define IFX_CAN_SISR_ICEV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.ICEV */
+#define IFX_CAN_SISR_ICEV_OFF (18)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.ICF */
+#define IFX_CAN_SISR_ICF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.ICF */
+#define IFX_CAN_SISR_ICF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.ICF */
+#define IFX_CAN_SISR_ICF_OFF (15)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.IENRECF0 */
+#define IFX_CAN_SISR_IENRECF0_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.IENRECF0 */
+#define IFX_CAN_SISR_IENRECF0_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.IENRECF0 */
+#define IFX_CAN_SISR_IENRECF0_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.IENRECF1 */
+#define IFX_CAN_SISR_IENRECF1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.IENRECF1 */
+#define IFX_CAN_SISR_IENRECF1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.IENRECF1 */
+#define IFX_CAN_SISR_IENRECF1_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.IENTRAF0 */
+#define IFX_CAN_SISR_IENTRAF0_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.IENTRAF0 */
+#define IFX_CAN_SISR_IENTRAF0_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.IENTRAF0 */
+#define IFX_CAN_SISR_IENTRAF0_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.IENTRAF1 */
+#define IFX_CAN_SISR_IENTRAF1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.IENTRAF1 */
+#define IFX_CAN_SISR_IENTRAF1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.IENTRAF1 */
+#define IFX_CAN_SISR_IENTRAF1_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.INP */
+#define IFX_CAN_SISR_INP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.INP */
+#define IFX_CAN_SISR_INP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.INP */
+#define IFX_CAN_SISR_INP_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.RCEV */
+#define IFX_CAN_SISR_RCEV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.RCEV */
+#define IFX_CAN_SISR_RCEV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.RCEV */
+#define IFX_CAN_SISR_RCEV_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.RMEV */
+#define IFX_CAN_SISR_RMEV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.RMEV */
+#define IFX_CAN_SISR_RMEV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.RMEV */
+#define IFX_CAN_SISR_RMEV_OFF (21)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.TCEV */
+#define IFX_CAN_SISR_TCEV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.TCEV */
+#define IFX_CAN_SISR_TCEV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.TCEV */
+#define IFX_CAN_SISR_TCEV_OFF (17)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.TMEV */
+#define IFX_CAN_SISR_TMEV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.TMEV */
+#define IFX_CAN_SISR_TMEV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.TMEV */
+#define IFX_CAN_SISR_TMEV_OFF (20)
+
+/** \\brief  Length for Ifx_CAN_SISR_Bits.TREN */
+#define IFX_CAN_SISR_TREN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_SISR_Bits.TREN */
+#define IFX_CAN_SISR_TREN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_SISR_Bits.TREN */
+#define IFX_CAN_SISR_TREN_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_STPTR0_Bits.STPTR */
+#define IFX_CAN_STPTR0_STPTR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_STPTR0_Bits.STPTR */
+#define IFX_CAN_STPTR0_STPTR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_STPTR0_Bits.STPTR */
+#define IFX_CAN_STPTR0_STPTR_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_STSRH_Bits.RCEMSGNR */
+#define IFX_CAN_STSRH_RCEMSGNR_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_STSRH_Bits.RCEMSGNR */
+#define IFX_CAN_STSRH_RCEMSGNR_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_STSRH_Bits.RCEMSGNR */
+#define IFX_CAN_STSRH_RCEMSGNR_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_STSRH_Bits.TCEMSGNR */
+#define IFX_CAN_STSRH_TCEMSGNR_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_STSRH_Bits.TCEMSGNR */
+#define IFX_CAN_STSRH_TCEMSGNR_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_STSRH_Bits.TCEMSGNR */
+#define IFX_CAN_STSRH_TCEMSGNR_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_STSRH_Bits.TMETMV */
+#define IFX_CAN_STSRH_TMETMV_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_STSRH_Bits.TMETMV */
+#define IFX_CAN_STSRH_TMETMV_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_STSRH_Bits.TMETMV */
+#define IFX_CAN_STSRH_TMETMV_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_STSRL_Bits.BCETMV */
+#define IFX_CAN_STSRL_BCETMV_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_STSRL_Bits.BCETMV */
+#define IFX_CAN_STSRL_BCETMV_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_STSRL_Bits.BCETMV */
+#define IFX_CAN_STSRL_BCETMV_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_STSRL_Bits.RMETMV */
+#define IFX_CAN_STSRL_RMETMV_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_STSRL_Bits.RMETMV */
+#define IFX_CAN_STSRL_RMETMV_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_STSRL_Bits.RMETMV */
+#define IFX_CAN_STSRL_RMETMV_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_SYNMR_Bits.SYNM */
+#define IFX_CAN_SYNMR_SYNM_LEN (16)
+
+/** \\brief  Mask for Ifx_CAN_SYNMR_Bits.SYNM */
+#define IFX_CAN_SYNMR_SYNM_MSK (0xffff)
+
+/** \\brief  Offset for Ifx_CAN_SYNMR_Bits.SYNM */
+#define IFX_CAN_SYNMR_SYNM_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_SYNMR_Bits.SYNMFR */
+#define IFX_CAN_SYNMR_SYNMFR_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_SYNMR_Bits.SYNMFR */
+#define IFX_CAN_SYNMR_SYNMFR_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_SYNMR_Bits.SYNMFR */
+#define IFX_CAN_SYNMR_SYNMFR_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_TTCFGR_Bits.EXPTT */
+#define IFX_CAN_TTCFGR_EXPTT_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_TTCFGR_Bits.EXPTT */
+#define IFX_CAN_TTCFGR_EXPTT_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_TTCFGR_Bits.EXPTT */
+#define IFX_CAN_TTCFGR_EXPTT_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_TTCFGR_Bits.IRO */
+#define IFX_CAN_TTCFGR_IRO_LEN (7)
+
+/** \\brief  Mask for Ifx_CAN_TTCFGR_Bits.IRO */
+#define IFX_CAN_TTCFGR_IRO_MSK (0x7f)
+
+/** \\brief  Offset for Ifx_CAN_TTCFGR_Bits.IRO */
+#define IFX_CAN_TTCFGR_IRO_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTCFGR_Bits.RTO */
+#define IFX_CAN_TTCFGR_RTO_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_TTCFGR_Bits.RTO */
+#define IFX_CAN_TTCFGR_RTO_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_TTCFGR_Bits.RTO */
+#define IFX_CAN_TTCFGR_RTO_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_TTCFGR_Bits.TTCNT */
+#define IFX_CAN_TTCFGR_TTCNT_LEN (8)
+
+/** \\brief  Mask for Ifx_CAN_TTCFGR_Bits.TTCNT */
+#define IFX_CAN_TTCFGR_TTCNT_MSK (0xff)
+
+/** \\brief  Offset for Ifx_CAN_TTCFGR_Bits.TTCNT */
+#define IFX_CAN_TTCFGR_TTCNT_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.CYCLE */
+#define IFX_CAN_TTCR_CYCLE_LEN (6)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.CYCLE */
+#define IFX_CAN_TTCR_CYCLE_MSK (0x3f)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.CYCLE */
+#define IFX_CAN_TTCR_CYCLE_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.ETESEL */
+#define IFX_CAN_TTCR_ETESEL_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.ETESEL */
+#define IFX_CAN_TTCR_ETESEL_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.ETESEL */
+#define IFX_CAN_TTCR_ETESEL_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.ETM */
+#define IFX_CAN_TTCR_ETM_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.ETM */
+#define IFX_CAN_TTCR_ETM_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.ETM */
+#define IFX_CAN_TTCR_ETM_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.ETSSEL */
+#define IFX_CAN_TTCR_ETSSEL_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.ETSSEL */
+#define IFX_CAN_TTCR_ETSSEL_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.ETSSEL */
+#define IFX_CAN_TTCR_ETSSEL_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.ETSSEX */
+#define IFX_CAN_TTCR_ETSSEX_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.ETSSEX */
+#define IFX_CAN_TTCR_ETSSEX_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.ETSSEX */
+#define IFX_CAN_TTCR_ETSSEX_OFF (15)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.LTCTSS */
+#define IFX_CAN_TTCR_LTCTSS_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.LTCTSS */
+#define IFX_CAN_TTCR_LTCTSS_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.LTCTSS */
+#define IFX_CAN_TTCR_LTCTSS_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.RMDLC */
+#define IFX_CAN_TTCR_RMDLC_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.RMDLC */
+#define IFX_CAN_TTCR_RMDLC_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.RMDLC */
+#define IFX_CAN_TTCR_RMDLC_OFF (28)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.TENW */
+#define IFX_CAN_TTCR_TENW_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.TENW */
+#define IFX_CAN_TTCR_TENW_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.TENW */
+#define IFX_CAN_TTCR_TENW_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.TMPRIO */
+#define IFX_CAN_TTCR_TMPRIO_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.TMPRIO */
+#define IFX_CAN_TTCR_TMPRIO_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.TMPRIO */
+#define IFX_CAN_TTCR_TMPRIO_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.TTLVL */
+#define IFX_CAN_TTCR_TTLVL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.TTLVL */
+#define IFX_CAN_TTCR_TTLVL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.TTLVL */
+#define IFX_CAN_TTCR_TTLVL_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_TTCR_Bits.TTM */
+#define IFX_CAN_TTCR_TTM_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTCR_Bits.TTM */
+#define IFX_CAN_TTCR_TTM_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTCR_Bits.TTM */
+#define IFX_CAN_TTCR_TTM_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTFMR_Bits.CFGMEL */
+#define IFX_CAN_TTFMR_CFGMEL_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTFMR_Bits.CFGMEL */
+#define IFX_CAN_TTFMR_CFGMEL_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTFMR_Bits.CFGMEL */
+#define IFX_CAN_TTFMR_CFGMEL_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTFMR_Bits.ETREVR */
+#define IFX_CAN_TTFMR_ETREVR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTFMR_Bits.ETREVR */
+#define IFX_CAN_TTFMR_ETREVR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTFMR_Bits.ETREVR */
+#define IFX_CAN_TTFMR_ETREVR_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_TTFMR_Bits.NIGSR */
+#define IFX_CAN_TTFMR_NIGSR_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTFMR_Bits.NIGSR */
+#define IFX_CAN_TTFMR_NIGSR_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTFMR_Bits.NIGSR */
+#define IFX_CAN_TTFMR_NIGSR_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_TTFMR_Bits.STE */
+#define IFX_CAN_TTFMR_STE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTFMR_Bits.STE */
+#define IFX_CAN_TTFMR_STE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTFMR_Bits.STE */
+#define IFX_CAN_TTFMR_STE_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.AWDIE */
+#define IFX_CAN_TTIER_AWDIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.AWDIE */
+#define IFX_CAN_TTIER_AWDIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.AWDIE */
+#define IFX_CAN_TTIER_AWDIE_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.ERRSCIE */
+#define IFX_CAN_TTIER_ERRSCIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.ERRSCIE */
+#define IFX_CAN_TTIER_ERRSCIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.ERRSCIE */
+#define IFX_CAN_TTIER_ERRSCIE_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.MSRCIE */
+#define IFX_CAN_TTIER_MSRCIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.MSRCIE */
+#define IFX_CAN_TTIER_MSRCIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.MSRCIE */
+#define IFX_CAN_TTIER_MSRCIE_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.NBCIE */
+#define IFX_CAN_TTIER_NBCIE_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.NBCIE */
+#define IFX_CAN_TTIER_NBCIE_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.NBCIE */
+#define IFX_CAN_TTIER_NBCIE_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.NOTIFIE */
+#define IFX_CAN_TTIER_NOTIFIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.NOTIFIE */
+#define IFX_CAN_TTIER_NOTIFIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.NOTIFIE */
+#define IFX_CAN_TTIER_NOTIFIE_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.SEIE */
+#define IFX_CAN_TTIER_SEIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.SEIE */
+#define IFX_CAN_TTIER_SEIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.SEIE */
+#define IFX_CAN_TTIER_SEIE_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.SYNCSCIE */
+#define IFX_CAN_TTIER_SYNCSCIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.SYNCSCIE */
+#define IFX_CAN_TTIER_SYNCSCIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.SYNCSCIE */
+#define IFX_CAN_TTIER_SYNCSCIE_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.TENWERIE */
+#define IFX_CAN_TTIER_TENWERIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.TENWERIE */
+#define IFX_CAN_TTIER_TENWERIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.TENWERIE */
+#define IFX_CAN_TTIER_TENWERIE_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.TTERIE */
+#define IFX_CAN_TTIER_TTERIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.TTERIE */
+#define IFX_CAN_TTIER_TTERIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.TTERIE */
+#define IFX_CAN_TTIER_TTERIE_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_TTIER_Bits.WTEIE */
+#define IFX_CAN_TTIER_WTEIE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIER_Bits.WTEIE */
+#define IFX_CAN_TTIER_WTEIE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIER_Bits.WTEIE */
+#define IFX_CAN_TTIER_WTEIE_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_TTINPR_Bits.ERRINP */
+#define IFX_CAN_TTINPR_ERRINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_TTINPR_Bits.ERRINP */
+#define IFX_CAN_TTINPR_ERRINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_TTINPR_Bits.ERRINP */
+#define IFX_CAN_TTINPR_ERRINP_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTINPR_Bits.NBCINP */
+#define IFX_CAN_TTINPR_NBCINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_TTINPR_Bits.NBCINP */
+#define IFX_CAN_TTINPR_NBCINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_TTINPR_Bits.NBCINP */
+#define IFX_CAN_TTINPR_NBCINP_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_TTINPR_Bits.NOTIFINP */
+#define IFX_CAN_TTINPR_NOTIFINP_LEN (4)
+
+/** \\brief  Mask for Ifx_CAN_TTINPR_Bits.NOTIFINP */
+#define IFX_CAN_TTINPR_NOTIFINP_MSK (0xf)
+
+/** \\brief  Offset for Ifx_CAN_TTINPR_Bits.NOTIFINP */
+#define IFX_CAN_TTINPR_NOTIFINP_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.AWDERR */
+#define IFX_CAN_TTIRR_AWDERR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.AWDERR */
+#define IFX_CAN_TTIRR_AWDERR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.AWDERR */
+#define IFX_CAN_TTIRR_AWDERR_OFF (7)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.CFGERR */
+#define IFX_CAN_TTIRR_CFGERR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.CFGERR */
+#define IFX_CAN_TTIRR_CFGERR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.CFGERR */
+#define IFX_CAN_TTIRR_CFGERR_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.DISC */
+#define IFX_CAN_TTIRR_DISC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.DISC */
+#define IFX_CAN_TTIRR_DISC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.DISC */
+#define IFX_CAN_TTIRR_DISC_OFF (13)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.EOS */
+#define IFX_CAN_TTIRR_EOS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.EOS */
+#define IFX_CAN_TTIRR_EOS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.EOS */
+#define IFX_CAN_TTIRR_EOS_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.ERRSC */
+#define IFX_CAN_TTIRR_ERRSC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.ERRSC */
+#define IFX_CAN_TTIRR_ERRSC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.ERRSC */
+#define IFX_CAN_TTIRR_ERRSC_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.IWTE */
+#define IFX_CAN_TTIRR_IWTE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.IWTE */
+#define IFX_CAN_TTIRR_IWTE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.IWTE */
+#define IFX_CAN_TTIRR_IWTE_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.MSRC */
+#define IFX_CAN_TTIRR_MSRC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.MSRC */
+#define IFX_CAN_TTIRR_MSRC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.MSRC */
+#define IFX_CAN_TTIRR_MSRC_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.NBC */
+#define IFX_CAN_TTIRR_NBC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.NBC */
+#define IFX_CAN_TTIRR_NBC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.NBC */
+#define IFX_CAN_TTIRR_NBC_OFF (1)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.NMC */
+#define IFX_CAN_TTIRR_NMC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.NMC */
+#define IFX_CAN_TTIRR_NMC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.NMC */
+#define IFX_CAN_TTIRR_NMC_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.SERR1 */
+#define IFX_CAN_TTIRR_SERR1_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.SERR1 */
+#define IFX_CAN_TTIRR_SERR1_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.SERR1 */
+#define IFX_CAN_TTIRR_SERR1_OFF (14)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.SERR2 */
+#define IFX_CAN_TTIRR_SERR2_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.SERR2 */
+#define IFX_CAN_TTIRR_SERR2_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.SERR2 */
+#define IFX_CAN_TTIRR_SERR2_OFF (15)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.SYNCSC */
+#define IFX_CAN_TTIRR_SYNCSC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.SYNCSC */
+#define IFX_CAN_TTIRR_SYNCSC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.SYNCSC */
+#define IFX_CAN_TTIRR_SYNCSC_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.TENWER */
+#define IFX_CAN_TTIRR_TENWER_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.TENWER */
+#define IFX_CAN_TTIRR_TENWER_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.TENWER */
+#define IFX_CAN_TTIRR_TENWER_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.TTOF */
+#define IFX_CAN_TTIRR_TTOF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.TTOF */
+#define IFX_CAN_TTIRR_TTOF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.TTOF */
+#define IFX_CAN_TTIRR_TTOF_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.TTUF */
+#define IFX_CAN_TTIRR_TTUF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.TTUF */
+#define IFX_CAN_TTIRR_TTUF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.TTUF */
+#define IFX_CAN_TTIRR_TTUF_OFF (3)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.TURERR */
+#define IFX_CAN_TTIRR_TURERR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.TURERR */
+#define IFX_CAN_TTIRR_TURERR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.TURERR */
+#define IFX_CAN_TTIRR_TURERR_OFF (17)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.WFE */
+#define IFX_CAN_TTIRR_WFE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.WFE */
+#define IFX_CAN_TTIRR_WFE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.WFE */
+#define IFX_CAN_TTIRR_WFE_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_TTIRR_Bits.WTE */
+#define IFX_CAN_TTIRR_WTE_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTIRR_Bits.WTE */
+#define IFX_CAN_TTIRR_WTE_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTIRR_Bits.WTE */
+#define IFX_CAN_TTIRR_WTE_OFF (5)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.ARB */
+#define IFX_CAN_TTSR_ARB_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.ARB */
+#define IFX_CAN_TTSR_ARB_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.ARB */
+#define IFX_CAN_TTSR_ARB_OFF (11)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.CFGM */
+#define IFX_CAN_TTSR_CFGM_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.CFGM */
+#define IFX_CAN_TTSR_CFGM_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.CFGM */
+#define IFX_CAN_TTSR_CFGM_OFF (12)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.EFF */
+#define IFX_CAN_TTSR_EFF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.EFF */
+#define IFX_CAN_TTSR_EFF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.EFF */
+#define IFX_CAN_TTSR_EFF_OFF (9)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.EFI */
+#define IFX_CAN_TTSR_EFI_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.EFI */
+#define IFX_CAN_TTSR_EFI_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.EFI */
+#define IFX_CAN_TTSR_EFI_OFF (8)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.ERRS */
+#define IFX_CAN_TTSR_ERRS_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.ERRS */
+#define IFX_CAN_TTSR_ERRS_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.ERRS */
+#define IFX_CAN_TTSR_ERRS_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.ETR */
+#define IFX_CAN_TTSR_ETR_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.ETR */
+#define IFX_CAN_TTSR_ETR_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.ETR */
+#define IFX_CAN_TTSR_ETR_OFF (25)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.ETREV */
+#define IFX_CAN_TTSR_ETREV_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.ETREV */
+#define IFX_CAN_TTSR_ETREV_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.ETREV */
+#define IFX_CAN_TTSR_ETREV_OFF (26)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.MSCMAX */
+#define IFX_CAN_TTSR_MSCMAX_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.MSCMAX */
+#define IFX_CAN_TTSR_MSCMAX_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.MSCMAX */
+#define IFX_CAN_TTSR_MSCMAX_OFF (20)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.MSCMIN */
+#define IFX_CAN_TTSR_MSCMIN_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.MSCMIN */
+#define IFX_CAN_TTSR_MSCMIN_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.MSCMIN */
+#define IFX_CAN_TTSR_MSCMIN_OFF (16)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.MSR */
+#define IFX_CAN_TTSR_MSR_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.MSR */
+#define IFX_CAN_TTSR_MSR_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.MSR */
+#define IFX_CAN_TTSR_MSR_OFF (2)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.NIG */
+#define IFX_CAN_TTSR_NIG_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.NIG */
+#define IFX_CAN_TTSR_NIG_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.NIG */
+#define IFX_CAN_TTSR_NIG_OFF (24)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.RECF */
+#define IFX_CAN_TTSR_RECF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.RECF */
+#define IFX_CAN_TTSR_RECF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.RECF */
+#define IFX_CAN_TTSR_RECF_OFF (15)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.REFTRG */
+#define IFX_CAN_TTSR_REFTRG_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.REFTRG */
+#define IFX_CAN_TTSR_REFTRG_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.REFTRG */
+#define IFX_CAN_TTSR_REFTRG_OFF (10)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.SYNCS */
+#define IFX_CAN_TTSR_SYNCS_LEN (2)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.SYNCS */
+#define IFX_CAN_TTSR_SYNCS_MSK (0x3)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.SYNCS */
+#define IFX_CAN_TTSR_SYNCS_OFF (4)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.TMPC */
+#define IFX_CAN_TTSR_TMPC_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.TMPC */
+#define IFX_CAN_TTSR_TMPC_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.TMPC */
+#define IFX_CAN_TTSR_TMPC_OFF (13)
+
+/** \\brief  Length for Ifx_CAN_TTSR_Bits.TRAF */
+#define IFX_CAN_TTSR_TRAF_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TTSR_Bits.TRAF */
+#define IFX_CAN_TTSR_TRAF_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TTSR_Bits.TRAF */
+#define IFX_CAN_TTSR_TRAF_OFF (14)
+
+/** \\brief  Length for Ifx_CAN_TURR_Bits.ADJEN */
+#define IFX_CAN_TURR_ADJEN_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TURR_Bits.ADJEN */
+#define IFX_CAN_TURR_ADJEN_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TURR_Bits.ADJEN */
+#define IFX_CAN_TURR_ADJEN_OFF (0)
+
+/** \\brief  Length for Ifx_CAN_TURR_Bits.LTCS */
+#define IFX_CAN_TURR_LTCS_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TURR_Bits.LTCS */
+#define IFX_CAN_TURR_LTCS_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TURR_Bits.LTCS */
+#define IFX_CAN_TURR_LTCS_OFF (17)
+
+/** \\brief  Length for Ifx_CAN_TURR_Bits.LTDIV */
+#define IFX_CAN_TURR_LTDIV_LEN (3)
+
+/** \\brief  Mask for Ifx_CAN_TURR_Bits.LTDIV */
+#define IFX_CAN_TURR_LTDIV_MSK (0x7)
+
+/** \\brief  Offset for Ifx_CAN_TURR_Bits.LTDIV */
+#define IFX_CAN_TURR_LTDIV_OFF (18)
+
+/** \\brief  Length for Ifx_CAN_TURR_Bits.TUR */
+#define IFX_CAN_TURR_TUR_LEN (10)
+
+/** \\brief  Mask for Ifx_CAN_TURR_Bits.TUR */
+#define IFX_CAN_TURR_TUR_MSK (0x3ff)
+
+/** \\brief  Offset for Ifx_CAN_TURR_Bits.TUR */
+#define IFX_CAN_TURR_TUR_OFF (22)
+
+/** \\brief  Length for Ifx_CAN_TURR_Bits.TURADJ */
+#define IFX_CAN_TURR_TURADJ_LEN (10)
+
+/** \\brief  Mask for Ifx_CAN_TURR_Bits.TURADJ */
+#define IFX_CAN_TURR_TURADJ_MSK (0x3ff)
+
+/** \\brief  Offset for Ifx_CAN_TURR_Bits.TURADJ */
+#define IFX_CAN_TURR_TURADJ_OFF (6)
+
+/** \\brief  Length for Ifx_CAN_TURR_Bits.VAL */
+#define IFX_CAN_TURR_VAL_LEN (1)
+
+/** \\brief  Mask for Ifx_CAN_TURR_Bits.VAL */
+#define IFX_CAN_TURR_VAL_MSK (0x1)
+
+/** \\brief  Offset for Ifx_CAN_TURR_Bits.VAL */
+#define IFX_CAN_TURR_VAL_OFF (16)
+/** \}  */
+/******************************************************************************/
+/******************************************************************************/
+#endif /* IFXCAN_BF_H */

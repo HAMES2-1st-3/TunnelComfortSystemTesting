@@ -1,0 +1,11 @@
+#include <tc1130b/asc-struct.h>
+#include <tc1130b/port-struct.h>
+#include <tc1130b/port4-struct.h>
+#include <tc1130b/ssc-struct.h>
+#include <tc1130b/ccu60-struct.h>
+#include <tc1130b/ccu61-struct.h>
+#include <tc1130b/usb-struct.h>
+#include <tc1130b/mli-struct.h>
+#include <tc1130b/dma-struct.h>
+#include <tc1130b/usb_ram-struct.h>
+#include <tc1130b/can-struct.h>

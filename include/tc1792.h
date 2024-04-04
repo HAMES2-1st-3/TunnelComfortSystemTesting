@@ -1,0 +1,52 @@
+/* (c) 2000-2008 HighTec EDV-Systeme GmbH */
+#ifndef _TRICORE_TC1792_H_ /* (2289 SFRs in 47 blocks) */
+#define _TRICORE_TC1792_H_
+#include <tc1792/adc0.h>
+#include <tc1792/adc1.h>
+#include <tc1792/asc0.h>
+#include <tc1792/asc1.h>
+#include <tc1792/can.h>
+#include <tc1792/cerberus.h>
+#include <tc1792/core_debug.h>
+#include <tc1792/cps.h>
+#include <tc1792/csfr.h>
+#include <tc1792/dbcu.h>
+#include <tc1792/dma.h>
+#include <tc1792/dmi.h>
+#include <tc1792/dmu.h>
+#include <tc1792/ebu.h>
+#include <tc1792/fadc.h>
+#include <tc1792/flash.h>
+#include <tc1792/gpr.h>
+#include <tc1792/gpta0.h>
+#include <tc1792/gpta1.h>
+#include <tc1792/lfi.h>
+#include <tc1792/mchk.h>
+#include <tc1792/mli0.h>
+#include <tc1792/mli1.h>
+#include <tc1792/mmu.h>
+#include <tc1792/mpr.h>
+#include <tc1792/msc0.h>
+#include <tc1792/p0.h>
+#include <tc1792/p1.h>
+#include <tc1792/p10.h>
+#include <tc1792/p2.h>
+#include <tc1792/p3.h>
+#include <tc1792/p4.h>
+#include <tc1792/p5.h>
+#include <tc1792/p6.h>
+#include <tc1792/p7.h>
+#include <tc1792/p8.h>
+#include <tc1792/p9.h>
+#include <tc1792/pbcu.h>
+#include <tc1792/pcp2.h>
+#include <tc1792/pmi.h>
+#include <tc1792/pmu.h>
+#include <tc1792/rbcu.h>
+#include <tc1792/sbcu.h>
+#include <tc1792/scu.h>
+#include <tc1792/ssc0.h>
+#include <tc1792/ssc1.h>
+#include <tc1792/stm.h>
+
+#endif /* _TRICORE_TC1792_H_ */

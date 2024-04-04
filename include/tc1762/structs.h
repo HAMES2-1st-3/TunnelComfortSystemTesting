@@ -1,0 +1,13 @@
+#include <tc1762/port0-struct.h>
+#include <tc1762/port1-struct.h>
+#include <tc1762/port2-struct.h>
+#include <tc1762/port3-struct.h>
+#include <tc1762/port4-struct.h>
+#include <tc1762/port5-struct.h>
+#include <tc1762/asc0-struct.h>
+#include <tc1762/asc1-struct.h>
+#include <tc1762/ssc0-struct.h>
+#include <tc1762/gpta0-struct.h>
+#include <tc1762/mli0-struct.h>
+#include <tc1762/dma-struct.h>
+#include <tc1762/can-struct.h>
