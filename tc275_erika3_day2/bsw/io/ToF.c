@@ -62,8 +62,10 @@ int getTofDistance (void)
     int TOF_distance = 0;
     unsigned char buf_ToF[TOF_length];
 
+//    MODULE_SRC.ASCLIN.ASCLIN[1].RX.B.SRE = 0;
     /* copy buf_tof into tmp */
     memcpy(buf_ToF, gBuf_tof, TOF_length);
+//    MODULE_SRC.ASCLIN.ASCLIN[1].RX.B.SRE = 1;
 
     /* for debugging */
 //     for (int i = 0; i < 16; i++) {

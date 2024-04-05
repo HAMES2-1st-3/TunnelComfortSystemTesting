@@ -8,6 +8,10 @@
 #include <string.h>
 #include "../io/ToF.h"
 
+void uart3_rx_isr(){
+   char c = _in_uart3();
+   _out_uart3(c);
+}
 /* Initialise asynchronous interface to operate at baudrate,8,n,1 */
 void _init_uart3(void)
 {
@@ -61,12 +65,12 @@ void _init_uart3(void)
 	MODULE_ASCLIN3.CSR.U = 1;				/* select CLC as clock source */
 
 	/* ASCLIN3RX Interrupt */
-	MODULE_ASCLIN3.FLAGSENABLE.U = (1 << 28); /* FLAGSENABLE.RFLE */
 	/* set SRC register  */
 	MODULE_SRC.ASCLIN.ASCLIN[3].RX.B.TOS = 0;	// execute core
 	MODULE_SRC.ASCLIN.ASCLIN[3].RX.B.SRPN = 1;	// priority
 	MODULE_SRC.ASCLIN.ASCLIN[3].RX.B.SRE = 1;	// enable
-
+//	InterruptInstall(SRC_ID_ASCLIN3RX, uart3_rx_isr, 3, 0);
+	MODULE_ASCLIN3.FLAGSENABLE.U = (1 << 28); /* FLAGSENABLE.RFLE */
 	TX_START(MODULE_ASCLIN3);
 }
 
@@ -515,7 +519,7 @@ void _init_uart1(void)
 	MODULE_ASCLIN1.FLAGSSET.U = (IFX_ASCLIN_FLAGSSET_TFLS_MSK << IFX_ASCLIN_FLAGSSET_TFLS_OFF);
 
 	/* UART1 Rx Interrupt ¼³Á¤ */
-	InterruptInstall(SRC_ID_ASCLIN1RX, (void(*)(int))IsrUart1RxHandler_tof, 1, 0);
+	InterruptInstall(SRC_ID_ASCLIN1RX, (void(*)(int))IsrUart1RxHandler_tof, 5, 0);
 	MODULE_ASCLIN1.FLAGSENABLE.U = (1 << 28); /* FLAGSENABLE.RFLE */
 }
 
