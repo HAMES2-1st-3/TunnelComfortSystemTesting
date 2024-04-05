@@ -164122,10 +164122,10 @@ int getSW1_Debounce(void);
 int getSW2_Debounce(void);
 
 void init_lcd(void);
-void write_instruction(char i);
+void write_instruction(unsigned char i);
 void write_data(char d);
 void delay_us(unsigned int m);
-void delay_ms1(unsigned int m);
+void delay_mss(unsigned int m);
 # 22 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/Motor.h" 1
 

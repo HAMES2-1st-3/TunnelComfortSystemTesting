@@ -19,17 +19,29 @@ void Init_GPIO(void)
 	IfxPort_setPinLow(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex);
 
 	/*LCD  output setting*/
-	MODULE_P00.IOCR0.B.PC0=0b10000;
-	MODULE_P00.IOCR0.B.PC1=0b10000;
-	MODULE_P00.IOCR0.B.PC2=0b10000;
-	MODULE_P00.IOCR0.B.PC3=0b10000;
-	MODULE_P00.IOCR4.B.PC4=0b10000;
-	MODULE_P00.IOCR4.B.PC5=0b10000;
-	MODULE_P00.IOCR4.B.PC6=0b10000;
-	MODULE_P00.IOCR4.B.PC7=0b10000;
-	MODULE_P11.IOCR0.B.PC2=0b10000;
-	MODULE_P11.IOCR8.B.PC11=0b10000;
-	MODULE_P11.IOCR8.B.PC9=0b10000;
+//	MODULE_P00.IOCR0.B.PC0=0b10000;
+//	MODULE_P00.IOCR0.B.PC1=0b10000;
+//	MODULE_P00.IOCR0.B.PC2=0b10000;
+//	MODULE_P00.IOCR0.B.PC3=0b10000;
+//	MODULE_P00.IOCR4.B.PC4=0b10000;
+//	MODULE_P00.IOCR4.B.PC5=0b10000;
+//	MODULE_P00.IOCR4.B.PC6=0b10000;
+//	MODULE_P00.IOCR4.B.PC7=0b10000;
+//	MODULE_P11.IOCR0.B.PC2=0b10000;
+//	MODULE_P11.IOCR8.B.PC11=0b10000;
+//	MODULE_P11.IOCR8.B.PC9=0b10000;
+//	MODULE_P00.IOCR0.B.PC0=0x10;
+			MODULE_P00.IOCR0.B.PC0=0x10;
+	        MODULE_P00.IOCR0.B.PC1=0x10;
+	        MODULE_P00.IOCR0.B.PC2=0x10;
+	        MODULE_P00.IOCR0.B.PC3=0x10;
+	        MODULE_P00.IOCR4.B.PC4=0x10;
+	        MODULE_P00.IOCR4.B.PC5=0x10;
+	        MODULE_P00.IOCR4.B.PC6=0x10;
+	        MODULE_P00.IOCR4.B.PC7=0x10;
+	        MODULE_P11.IOCR0.B.PC2=0x10;
+	        MODULE_P11.IOCR8.B.PC11=0x10;
+	        MODULE_P11.IOCR8.B.PC9=0x10;
 
 }
 
@@ -122,63 +134,70 @@ int getSW2_Debounce(void)
 //lcd 관련 설정 코드
 void init_lcd(void){
 
-	delay_ms1(10);
-	write_instruction(0x30);
-	delay_ms1(25);
-	write_instruction(0x30);
-	delay_ms1(5);
-	write_instruction(0x30);
-	delay_ms1(5);
-	write_instruction(0x3c);
-	delay_ms1(5);
-	write_instruction(0x08);
-	delay_ms1(5);
+	delay_mss(30000);
+	//write_instruction(0x30);
+	write_instruction(0x38);
+	delay_mss(10000);
+	//write_instruction(0x38);
+	//delay_ms1(1000);
+	//write_instruction(0x38);
+	delay_mss(10000);
+	//write_instruction(0x3c);
+	//delay_ms1(1000);
+   // write_instruction(0x08);
+	write_instruction(0x0e);
+	delay_mss(10000);
 	write_instruction(0x01);
-	delay_ms1(5);
-	write_instruction(0x06);
-	delay_ms1(5);
-	write_instruction(0x0c);
-	delay_ms1(15);
+	delay_mss(10000);
+	write_instruction(0x04);
+		delay_mss(10000);
+	//write_instruction(0x06);
+	//delay_ms1(10000);
+	//write_instruction(0x0c);
+	//delay_ms1(10000);
 }
 //4 portg 0  p11_9
 //5       1  p11_11
 //6       2  p11_2
-void write_instruction(char i){
+void write_instruction(unsigned char i){
 
-	//PORTG=0x04; --> 100  관련 초기화 init gpio에서
+    //PORTG=0x04; --> 100  관련 초기화 init gpio에서
 
-	MODULE_P11.OUT.U=0x0;
-	MODULE_P11.OUT.B.P2=1;
-	MODULE_P11.OUT.B.P11=0;
-	MODULE_P11.OUT.B.P9=0;
-
-
-	delay_us(10);
-
-	MODULE_P00.OUT.U=i;
-	delay_us(10);
+    MODULE_P11.OUT.U=0x00000004;
+    //MODULE_P11.OUT.B.P2=1;
+    //MODULE_P11.OUT.B.P11=0;
+    //MODULE_P11.OUT.B.P9=0;
 
 
-	MODULE_P11.OUT.B.P2=0;
-	MODULE_P11.OUT.B.P11=0;
-	MODULE_P11.OUT.B.P9=0;
-	delay_us(100);
+    delay_us(1000);
+
+    MODULE_P00.OUT.U=i;
+    delay_us(1000);
+
+    MODULE_P11.OUT.U=0x0;
+    //MODULE_P11.OUT.B.P2=0;
+    //MODULE_P11.OUT.B.P11=0;
+    //MODULE_P11.OUT.B.P9=0;
+    delay_us(1000);
 }
 void write_data(char d){
 
-   MODULE_P11.OUT.U=0x0;
-   MODULE_P11.OUT.B.P2 = 1;
-   MODULE_P11.OUT.B.P11 = 0;
-   MODULE_P11.OUT.B.P9 = 1;
+   MODULE_P11.OUT.U=0x00000204;
+   //MODULE_P11.OUT.B.P2 = 1;
+   //MODULE_P11.OUT.B.P11 = 0;
+   //MODULE_P11.OUT.B.P9 = 1;
 
-   delay_us(10);
-   MODULE_P00.OUT.U =d;
-   delay_us(10);
-   MODULE_P11.OUT.B.P2 = 0;
-   MODULE_P11.OUT.B.P11 = 0;
-   MODULE_P11.OUT.B.P9 = 1;
-   delay_us(100);
+   delay_us(1000);
+   MODULE_P00.OUT.U =d;//d
+   delay_us(1000);
+
+   MODULE_P11.OUT.U=0x00000100;
+   //MODULE_P11.OUT.B.P2 = 0;
+   //MODULE_P11.OUT.B.P11 = 0;
+   //MODULE_P11.OUT.B.P9 = 1;
+   delay_us(1000);
 }
+
 void delay_us(unsigned int m){
 	unsigned int i,j;
 	for(i=0;i<m;i++){
@@ -187,7 +206,7 @@ void delay_us(unsigned int m){
 		}
 	}
 }
-void delay_ms1(unsigned int m){
+void delay_mss(unsigned int m){
 	unsigned int i,j;
 	for(i=0;i<m;i++){
 		for(j=0;j<2117;j++){

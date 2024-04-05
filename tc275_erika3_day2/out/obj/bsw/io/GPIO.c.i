@@ -140894,10 +140894,10 @@ int getSW1_Debounce(void);
 int getSW2_Debounce(void);
 
 void init_lcd(void);
-void write_instruction(char i);
+void write_instruction(unsigned char i);
 void write_data(char d);
 void delay_us(unsigned int m);
-void delay_ms1(unsigned int m);
+void delay_mss(unsigned int m);
 # 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 1 3
 # 46 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 3
@@ -153105,19 +153105,18 @@ void Init_GPIO(void)
 
  IfxPort_setPinModeOutput(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
  IfxPort_setPinLow(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex);
-
-
- (*(Ifx_P*)0xF003A000u).IOCR0.B.PC0=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR0.B.PC1=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR0.B.PC2=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR0.B.PC3=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR4.B.PC4=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR4.B.PC5=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR4.B.PC6=0b10000;
- (*(Ifx_P*)0xF003A000u).IOCR4.B.PC7=0b10000;
- (*(Ifx_P*)0xF003B100u).IOCR0.B.PC2=0b10000;
- (*(Ifx_P*)0xF003B100u).IOCR8.B.PC11=0b10000;
- (*(Ifx_P*)0xF003B100u).IOCR8.B.PC9=0b10000;
+# 34 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c"
+   (*(Ifx_P*)0xF003A000u).IOCR0.B.PC0=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR0.B.PC1=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR0.B.PC2=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR0.B.PC3=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC4=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC5=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC6=0x10;
+         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC7=0x10;
+         (*(Ifx_P*)0xF003B100u).IOCR0.B.PC2=0x10;
+         (*(Ifx_P*)0xF003B100u).IOCR8.B.PC11=0x10;
+         (*(Ifx_P*)0xF003B100u).IOCR8.B.PC9=0x10;
 
 }
 
@@ -153210,63 +153209,70 @@ int getSW2_Debounce(void)
 
 void init_lcd(void){
 
- delay_ms1(10);
- write_instruction(0x30);
- delay_ms1(25);
- write_instruction(0x30);
- delay_ms1(5);
- write_instruction(0x30);
- delay_ms1(5);
- write_instruction(0x3c);
- delay_ms1(5);
- write_instruction(0x08);
- delay_ms1(5);
+ delay_mss(30000);
+
+ write_instruction(0x38);
+ delay_mss(10000);
+
+
+
+ delay_mss(10000);
+
+
+
+ write_instruction(0x0e);
+ delay_mss(10000);
  write_instruction(0x01);
- delay_ms1(5);
- write_instruction(0x06);
- delay_ms1(5);
- write_instruction(0x0c);
- delay_ms1(15);
+ delay_mss(10000);
+ write_instruction(0x04);
+  delay_mss(10000);
+
+
+
+
 }
 
 
 
-void write_instruction(char i){
+void write_instruction(unsigned char i){
 
 
 
- (*(Ifx_P*)0xF003B100u).OUT.U=0x0;
- (*(Ifx_P*)0xF003B100u).OUT.B.P2=1;
- (*(Ifx_P*)0xF003B100u).OUT.B.P11=0;
- (*(Ifx_P*)0xF003B100u).OUT.B.P9=0;
+    (*(Ifx_P*)0xF003B100u).OUT.U=0x00000004;
 
 
- delay_us(10);
-
- (*(Ifx_P*)0xF003A000u).OUT.U=i;
- delay_us(10);
 
 
- (*(Ifx_P*)0xF003B100u).OUT.B.P2=0;
- (*(Ifx_P*)0xF003B100u).OUT.B.P11=0;
- (*(Ifx_P*)0xF003B100u).OUT.B.P9=0;
- delay_us(100);
+
+    delay_us(1000);
+
+    (*(Ifx_P*)0xF003A000u).OUT.U=i;
+    delay_us(1000);
+
+    (*(Ifx_P*)0xF003B100u).OUT.U=0x0;
+
+
+
+    delay_us(1000);
 }
 void write_data(char d){
 
-   (*(Ifx_P*)0xF003B100u).OUT.U=0x0;
-   (*(Ifx_P*)0xF003B100u).OUT.B.P2 = 1;
-   (*(Ifx_P*)0xF003B100u).OUT.B.P11 = 0;
-   (*(Ifx_P*)0xF003B100u).OUT.B.P9 = 1;
+   (*(Ifx_P*)0xF003B100u).OUT.U=0x00000204;
 
-   delay_us(10);
+
+
+
+   delay_us(1000);
    (*(Ifx_P*)0xF003A000u).OUT.U =d;
-   delay_us(10);
-   (*(Ifx_P*)0xF003B100u).OUT.B.P2 = 0;
-   (*(Ifx_P*)0xF003B100u).OUT.B.P11 = 0;
-   (*(Ifx_P*)0xF003B100u).OUT.B.P9 = 1;
-   delay_us(100);
+   delay_us(1000);
+
+   (*(Ifx_P*)0xF003B100u).OUT.U=0x00000100;
+
+
+
+   delay_us(1000);
 }
+
 void delay_us(unsigned int m){
  unsigned int i,j;
  for(i=0;i<m;i++){
@@ -153275,7 +153281,7 @@ void delay_us(unsigned int m){
   }
  }
 }
-void delay_ms1(unsigned int m){
+void delay_mss(unsigned int m){
  unsigned int i,j;
  for(i=0;i<m;i++){
   for(j=0;j<2117;j++){
