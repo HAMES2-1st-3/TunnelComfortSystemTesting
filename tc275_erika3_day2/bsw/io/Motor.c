@@ -62,7 +62,14 @@ void movChB(int dir)
 	MODULE_P02.OUT.B.P6 = 0; /* 모터 정지 (1: 정지, 0: PWM-A에 따라 동작) */
 	MODULE_P10.OUT.B.P3 = 1; /* 100% PWM duty  */
 }
-
+void stopCh(unsigned int mode){
+	if(mode == 1){
+		stopChA();
+	}
+	else{
+		stopChB();
+	}
+}
 void stopChA(void)
 {
 	MODULE_P02.OUT.B.P7 = 1; /* 모터 정지 (1: 정지, 0: PWM-A에 따라 동작) */
@@ -72,6 +79,12 @@ void stopChB(void)
 	MODULE_P02.OUT.B.P6 = 1; /* 모터 정지 (1: 정지, 0: PWM-B에 따라 동작) */
 }
 
+void movCh(unsigned int mode,int duty, int dir){
+	if(mode == 1)
+		movChA_PWM(duty, dir);
+	else
+		movChB_PWM(duty, dir);
+}
 /* 1: 정방향, 0: 역방향 */
 void movChA_PWM(int duty, int dir)
 {

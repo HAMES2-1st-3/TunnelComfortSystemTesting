@@ -87,24 +87,45 @@ TASK(DCMotor_Example)
 {
 	int duty=0;
 	unsigned char ch;
-	unsigned int dir;
+	unsigned int dir = 0; 	// 0: up/counter clockwise, 1: down/ clockwise
+	unsigned int stop = 0; 	// 0: start, 1: stop
+	unsigned int mode = 1; 	// 1: chA, 2: chB
 	while (1) {
 	      ch = _in_uart3();
-	      if (ch == 'u' || ch == 'U') {
-	         duty += 10;
-	      } else if (ch == 'd' || ch == 'D') {
-	         duty -= 10;
-	      }
-	      else if(ch == 'r' || ch == 'R'){
+	      switch(ch){
+	      case 'w': 	// speed-up
+		      duty += 10;
+	    	  break;
+	      case 's': 	// speed-down
+	    	  duty -= 10;
+	    	  break;
+	      case 'd':		// start
+	    	  stop = 0;
+	    	  break;
+	      case 'a': 	// stop
+	    	  stop = 1;
+	    	  break;
+	      case 'e':		// change direction(toggle)
 	    	  dir = 1-dir;
+	    	  break;
+	      case '1':		// select chA
+	    	  mode = 1;
+	    	  break;
+	      case '2':		// select chB
+	    	  mode = 2;
+	    	  break;
 	      }
 	      if (duty > 100) {
 	         duty = 100;
 	      } else if (duty < 0) {
 	         duty = 0;
 	      }
-	      movChA_PWM(duty, dir);
-	      movChB_PWM(duty, dir);
+	      if(stop == 1){
+	    	  stopCh(mode);
+	      }
+	      else{
+	    	  movCh(mode, duty, dir);
+	      }
 	}
 	TerminateTask();
 }
