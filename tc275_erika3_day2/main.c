@@ -6,9 +6,9 @@
 void StartupHook(void)
 {
 //	my_printf("Hello world!\n");
-	//ActivateTask(Task_Motor);
-	ActivateTask(CAN_Tx);
-
+//	ActivateTask(Task_Motor);
+//	ActivateTask(DCMotor_Example);
+	ActivateTask(DCMotor_Example);
 }
 
 /* Task Declaration */
@@ -24,14 +24,14 @@ DeclareTask(OS_EE_Task_Init);
 DeclareTask(Task_Motor);
 DeclareTask(Task_AEB);
 
-int duty=0;
-unsigned char ch;
-unsigned char dir;
-int flag=0;
-int pwm=0;
+
+
 TASK(Task_Motor){
 	//toggleLED1();
 
+	int duty=0;
+	unsigned char ch;
+	unsigned char dir;
 	while(1){
 		ch=_in_uart3();
 		_out_uart3(ch);
@@ -54,6 +54,7 @@ TASK(Task_Motor){
 	}
 	TerminateTask();
 }
+
 TASK(Task_AEB){
 	while(1){
 		toggleLED2();
@@ -61,6 +62,7 @@ TASK(Task_AEB){
 	}
 	TerminateTask();
 }
+
 TASK(CAN_Tx)
 {
 	while(1){
@@ -83,14 +85,26 @@ TASK(UART_Echo)
 
 TASK(DCMotor_Example)
 {
-	unsigned int i;
+	int duty=0;
+	unsigned char ch;
+	unsigned int dir;
 	while (1) {
-		movChA(1);
-		movChB(1);
-		i = 0; while (i++ < 10000000);
-		movChA(0);
-		movChB(0);
-		i = 0; while (i++ < 10000000);
+	      ch = _in_uart3();
+	      if (ch == 'u' || ch == 'U') {
+	         duty += 10;
+	      } else if (ch == 'd' || ch == 'D') {
+	         duty -= 10;
+	      }
+	      else if(ch == 'r' || ch == 'R'){
+	    	  dir = 1-dir;
+	      }
+	      if (duty > 100) {
+	         duty = 100;
+	      } else if (duty < 0) {
+	         duty = 0;
+	      }
+	      movChA_PWM(duty, dir);
+	      movChB_PWM(duty, dir);
 	}
 	TerminateTask();
 }
@@ -181,22 +195,23 @@ TASK(OS_EE_Task_Init)
 {
 	TerminateTask();
 }
+
 int main(void)
 {
 	SYSTEM_Init();
 	InterruptInit();
 
-	Init_GPIO();
+//	Init_GPIO();
 	Driver_Can_Init();
 
-//	_init_uart3();
+	_init_uart3();
 //	Init_DCMotor();
-//	Init_DCMotorPWM();
+	Init_DCMotorPWM();
 //	init_gpt2();
 //	Init_Ultrasonics();
 //	Init_Buzzer();
 //	Init_Buzzer_PWM();
-	//Init_ToF();
+//	Init_ToF();
 //	init_VADC();
 	StartOS(OSDEFAULTAPPMODE);
 
