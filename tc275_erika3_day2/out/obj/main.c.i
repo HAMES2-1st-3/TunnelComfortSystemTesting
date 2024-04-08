@@ -171436,12 +171436,6 @@ int getSW1(void);
 int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
-
-void init_lcd(void);
-void write_instruction(unsigned char i);
-void write_data(char d);
-void delay_us(unsigned int m);
-void delay_mss(unsigned int m);
 # 22 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/Motor.h" 1
 
@@ -172734,21 +172728,24 @@ void FuncLCD_TEST ( void ){
 
  while(1){
   setLED1(1);
-  delay_mss(3000);
+  delay_ms(1000);
      write_instruction(0x80);
-  delay_mss(10000);
-     write_data('a');
-     delay_mss(10000);
-     write_data('b');
-     delay_mss(10000);
+  delay_ms(1000);
+
+
+
+  lcdprint_data("TunnelIn");
+     delay_ms(3000);
+
      write_instruction(0xc0);
-     delay_mss(10000);
-  write_data('c');
-  delay_mss(10000);
-  write_data('d');
-  delay_mss(10000);
+     delay_ms(1000);
+
+
+
+  lcdprint_data("TunnelOFF");
+  delay_ms(3000);
   setLED1(0);
-  delay_mss(3000);
+  delay_ms(1000);
  }
  TerminateTask();
 }
@@ -172785,7 +172782,7 @@ void FuncTask_AEB ( void ){
 void FuncBlink_LED ( void )
 {
  while(1){
-# 97 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+# 100 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
   Driver_Can_TxTest();
   delay_ms(1000);
  }
@@ -172908,13 +172905,13 @@ int main(void)
 {
  SYSTEM_Init();
  InterruptInit();
+
  Init_GPIO();
  init_lcd();
  Driver_Can_Init();
 
-
  _init_uart3();
-# 233 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+# 236 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
  StartOS(((AppModeType)0U));
 
  return 0;

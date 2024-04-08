@@ -140892,12 +140892,6 @@ int getSW1(void);
 int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
-
-void init_lcd(void);
-void write_instruction(unsigned char i);
-void write_data(char d);
-void delay_us(unsigned int m);
-void delay_mss(unsigned int m);
 # 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 1 3
 # 46 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 3
@@ -153088,6 +153082,12 @@ extern IfxPort_Pin IfxPort_P40_9;
 
 extern const IfxPort_Pin *IfxPort_Pin_pinTable[41][16];
 # 3 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c" 2
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/etc/etc.h" 1
+
+#define BSW_ETC_ETC_H_ 
+
+void delay_ms(unsigned int delay_time);
+# 4 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c" 2
 void Init_GPIO(void)
 {
 
@@ -153105,18 +153105,19 @@ void Init_GPIO(void)
 
  IfxPort_setPinModeOutput(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
  IfxPort_setPinLow(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex);
-# 34 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c"
-   (*(Ifx_P*)0xF003A000u).IOCR0.B.PC0=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR0.B.PC1=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR0.B.PC2=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR0.B.PC3=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC4=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC5=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC6=0x10;
-         (*(Ifx_P*)0xF003A000u).IOCR4.B.PC7=0x10;
-         (*(Ifx_P*)0xF003B100u).IOCR0.B.PC2=0x10;
-         (*(Ifx_P*)0xF003B100u).IOCR8.B.PC11=0x10;
-         (*(Ifx_P*)0xF003B100u).IOCR8.B.PC9=0x10;
+
+
+ (*(Ifx_P*)0xF003A000u).IOCR0.B.PC0=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR0.B.PC1=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR0.B.PC2=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR0.B.PC3=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR4.B.PC4=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR4.B.PC5=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR4.B.PC6=0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR4.B.PC7=0x10;
+ (*(Ifx_P*)0xF003B100u).IOCR0.B.PC2=0x10;
+ (*(Ifx_P*)0xF003B100u).IOCR8.B.PC11=0x10;
+ (*(Ifx_P*)0xF003B100u).IOCR8.B.PC9=0x10;
 
 }
 
@@ -153204,88 +153205,4 @@ int getSW2_Debounce(void)
  }
  SW2 = buf[0];
  return SW2;
-}
-
-
-void init_lcd(void){
-
- delay_mss(30000);
-
- write_instruction(0x38);
- delay_mss(10000);
-
-
-
- delay_mss(10000);
-
-
-
- write_instruction(0x0e);
- delay_mss(10000);
- write_instruction(0x01);
- delay_mss(10000);
- write_instruction(0x04);
-  delay_mss(10000);
-
-
-
-
-}
-
-
-
-void write_instruction(unsigned char i){
-
-
-
-    (*(Ifx_P*)0xF003B100u).OUT.U=0x00000004;
-
-
-
-
-
-    delay_us(1000);
-
-    (*(Ifx_P*)0xF003A000u).OUT.U=i;
-    delay_us(1000);
-
-    (*(Ifx_P*)0xF003B100u).OUT.U=0x0;
-
-
-
-    delay_us(1000);
-}
-void write_data(char d){
-
-   (*(Ifx_P*)0xF003B100u).OUT.U=0x00000204;
-
-
-
-
-   delay_us(1000);
-   (*(Ifx_P*)0xF003A000u).OUT.U =d;
-   delay_us(1000);
-
-   (*(Ifx_P*)0xF003B100u).OUT.U=0x00000100;
-
-
-
-   delay_us(1000);
-}
-
-void delay_us(unsigned int m){
- unsigned int i,j;
- for(i=0;i<m;i++){
-  for(j=0;j<2;j++){
-   ;
-  }
- }
-}
-void delay_mss(unsigned int m){
- unsigned int i,j;
- for(i=0;i<m;i++){
-  for(j=0;j<2117;j++){
-   ;
-  }
- }
 }

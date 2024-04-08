@@ -15,10 +15,10 @@ int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
 
-void init_lcd(void);
-void write_instruction(unsigned char i);
-void write_data(char d);
-void delay_us(unsigned int m);
-void delay_mss(unsigned int m);
+//void init_lcd(void);
+//void write_instruction(unsigned char i);
+//void write_data(unsigned char d);
+//void delay_us(unsigned int m);
+
 
 #endif /* BSW_IO_GPIO_H_ */

@@ -35,21 +35,24 @@ TASK(LCD_TEST){
 
 	while(1){
 		setLED1(1);
-		delay_mss(3000);
+		delay_ms(1000);
 	    write_instruction(0x80); //첫번째 줄 이동
-		delay_mss(10000);
-	    write_data('a'); //0x61
-	    delay_mss(10000);
-	    write_data('b');//0x62
-	    delay_mss(10000);
+		delay_ms(1000);
+	  //  write_data('a'); //0x61
+	  //  delay_ms(1000);
+	   // write_data('b');//0x62
+		lcdprint_data("TunnelIn");
+	    delay_ms(3000);
+
 	    write_instruction(0xc0); //두번째 줄 이동
-	    delay_mss(10000);
-		write_data('c');//0x63
-		delay_mss(10000);
-		write_data('d');//0x64
-		delay_mss(10000);
+	    delay_ms(1000);
+		//write_data('c');//0x63
+		//delay_ms(1000);
+		//write_data('d');//0x64
+		lcdprint_data("TunnelOFF");
+		delay_ms(3000);
 		setLED1(0);
-		delay_mss(3000);
+		delay_ms(1000);
 	}
 	TerminateTask();
 }
@@ -216,10 +219,10 @@ int main(void)
 {
 	SYSTEM_Init();
 	InterruptInit();
+
 	Init_GPIO();
 	init_lcd();
 	Driver_Can_Init();
-	//init_lcd();
 
 	_init_uart3();
 //	Init_DCMotor();

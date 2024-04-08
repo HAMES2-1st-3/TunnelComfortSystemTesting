@@ -19,6 +19,7 @@ CPU tc275_shieldbuddy {
 		APP_SRC = "bsw/io/GPIO.c";
 		APP_SRC = "bsw/io/Motor.c";
 		APP_SRC = "bsw/io/ToF.c";
+		APP_SRC = "bsw/io/LCD.c";
 		APP_SRC = "bsw/io/Ultrasonic.c";
 		APP_SRC = "bsw/system/interrupts.c";
 		APP_SRC = "bsw/system/system_tc27x.c";
@@ -176,7 +177,6 @@ CPU tc275_shieldbuddy {
 	};
 	TASK LCD_TEST {
 		PRIORITY = 1;
-		CPU_ID = 0;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = SHARED;

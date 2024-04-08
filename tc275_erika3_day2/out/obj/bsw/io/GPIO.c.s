@@ -7,72 +7,72 @@
 Init_GPIO:
 .LFB181:
 	.file 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c"
-	.loc 1 4 0
-	.loc 1 6 0
+	.loc 1 5 0
+	.loc 1 7 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15] 16
-.LBB46:
-.LBB47:
+.LBB14:
+.LBB15:
 	.file 2 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport.h"
 	.loc 2 586 0
 	mov	%d5, 128
-.LBE47:
-.LBE46:
-	.loc 1 6 0
+.LBE15:
+.LBE14:
+	.loc 1 7 0
 	insert	%d15, %d15, 0, 19, 5
 	insert	%d15, %d15, 15, 23, 1
 	st.w	[%a15] 16, %d15
-	.loc 1 9 0
+	.loc 1 10 0
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 0, 11, 5
 	insert	%d15, %d15, 15, 15, 1
 	st.w	[%a15] 16, %d15
-	.loc 1 12 0
+	.loc 1 13 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 2, 3, 5
 	st.w	[%a15] 16, %d15
-	.loc 1 15 0
+	.loc 1 16 0
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 2, 11, 5
 	st.w	[%a15] 16, %d15
 .LVL0:
-	.loc 1 18 0
+	.loc 1 19 0
 	movh.a	%a15, hi:IfxPort_P20_6
-.LBB50:
-.LBB48:
+.LBB18:
+.LBB16:
 	.loc 2 586 0
 	ld.a	%a4, [%a15] lo:IfxPort_P20_6
-.LBE48:
-.LBE50:
-	.loc 1 18 0
+.LBE16:
+.LBE18:
+	.loc 1 19 0
 	lea	%a12, [%a15] lo:IfxPort_P20_6
-.LBB51:
-.LBB49:
+.LBB19:
+.LBB17:
 	.loc 2 586 0
 	ld.bu	%d4, [%a12] 4
 	call	IfxPort_setPinMode
 .LVL1:
-.LBE49:
-.LBE51:
-	.loc 1 19 0
+.LBE17:
+.LBE19:
+	.loc 1 20 0
 	ld.a	%a15, [%a15] lo:IfxPort_P20_6
 .LVL2:
-.LBB52:
-.LBB53:
-.LBB54:
+.LBB20:
+.LBB21:
+.LBB22:
 	.loc 2 592 0
 	ld.bu	%d15, [%a12] 4
 	movh	%d2, 1
 	sh	%d15, %d2, %d15
 	st.w	[%a15] 4, %d15
 .LVL3:
-.LBE54:
-.LBE53:
-.LBE52:
-	.loc 1 34 0
+.LBE22:
+.LBE21:
+.LBE20:
+	.loc 1 23 0
 	movh.a	%a15, 61444
 .LVL4:
 	lea	%a15, [%a15] -24576
@@ -81,54 +81,54 @@ Init_GPIO:
 	or	%d15, %d15, 128
 	st.w	[%a15] 16, %d15
 .LVL5:
-	.loc 1 35 0
+	.loc 1 24 0
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 0, 11, 5
 	insert	%d15, %d15, 15, 15, 1
 	st.w	[%a15] 16, %d15
-	.loc 1 36 0
+	.loc 1 25 0
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 0, 19, 5
 	insert	%d15, %d15, 15, 23, 1
 	st.w	[%a15] 16, %d15
-	.loc 1 37 0
+	.loc 1 26 0
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 0, 27, 5
 	insert	%d15, %d15, 15, 31, 1
 	st.w	[%a15] 16, %d15
-	.loc 1 38 0
+	.loc 1 27 0
 	ld.w	%d15, [%a15] 20
 	andn	%d15, %d15, ~(-249)
 	or	%d15, %d15, 128
 	st.w	[%a15] 20, %d15
-	.loc 1 39 0
+	.loc 1 28 0
 	ld.w	%d15, [%a15] 20
 	insert	%d15, %d15, 0, 11, 5
 	insert	%d15, %d15, 15, 15, 1
 	st.w	[%a15] 20, %d15
-	.loc 1 40 0
+	.loc 1 29 0
 	ld.w	%d15, [%a15] 20
 	insert	%d15, %d15, 0, 19, 5
 	insert	%d15, %d15, 15, 23, 1
 	st.w	[%a15] 20, %d15
-	.loc 1 41 0
+	.loc 1 30 0
 	ld.w	%d15, [%a15] 20
 	insert	%d15, %d15, 0, 27, 5
 	insert	%d15, %d15, 15, 31, 1
 	st.w	[%a15] 20, %d15
-	.loc 1 42 0
+	.loc 1 31 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20224
 	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 0, 19, 5
 	insert	%d15, %d15, 15, 23, 1
 	st.w	[%a15] 16, %d15
-	.loc 1 43 0
+	.loc 1 32 0
 	ld.w	%d15, [%a15] 24
 	insert	%d15, %d15, 0, 27, 5
 	insert	%d15, %d15, 15, 31, 1
 	st.w	[%a15] 24, %d15
-	.loc 1 44 0
+	.loc 1 33 0
 	ld.w	%d15, [%a15] 24
 	insert	%d15, %d15, 0, 11, 5
 	insert	%d15, %d15, 15, 15, 1
@@ -141,20 +141,20 @@ Init_GPIO:
 	.type	setLED1, @function
 setLED1:
 .LFB182:
-	.loc 1 49 0
+	.loc 1 38 0
 .LVL6:
-	.loc 1 52 0
+	.loc 1 41 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
-	.loc 1 50 0
+	.loc 1 39 0
 	jnz	%d4, .L6
-	.loc 1 56 0
+	.loc 1 45 0
 	andn	%d15, %d15, ~(-5)
 	st.w	[%a15]0, %d15
 	ret
 .L6:
-	.loc 1 52 0
+	.loc 1 41 0
 	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
 	ret
@@ -165,20 +165,20 @@ setLED1:
 	.type	setLED2, @function
 setLED2:
 .LFB183:
-	.loc 1 61 0
+	.loc 1 50 0
 .LVL7:
-	.loc 1 64 0
+	.loc 1 53 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
-	.loc 1 62 0
+	.loc 1 51 0
 	jnz	%d4, .L10
-	.loc 1 68 0
+	.loc 1 57 0
 	andn	%d15, %d15, ~(-3)
 	st.w	[%a15]0, %d15
 	ret
 .L10:
-	.loc 1 64 0
+	.loc 1 53 0
 	or	%d15, %d15, 2
 	st.w	[%a15]0, %d15
 	ret
@@ -189,8 +189,8 @@ setLED2:
 	.type	toggleLED1, @function
 toggleLED1:
 .LFB184:
-	.loc 1 73 0
-	.loc 1 74 0
+	.loc 1 62 0
+	.loc 1 63 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
@@ -208,8 +208,8 @@ toggleLED1:
 	.type	toggleLED2, @function
 toggleLED2:
 .LFB185:
-	.loc 1 78 0
-	.loc 1 79 0
+	.loc 1 67 0
+	.loc 1 68 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
@@ -227,12 +227,12 @@ toggleLED2:
 	.type	getSW1, @function
 getSW1:
 .LFB186:
-	.loc 1 83 0
-	.loc 1 84 0
+	.loc 1 72 0
+	.loc 1 73 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d2, [%a15] 36
-	.loc 1 85 0
+	.loc 1 74 0
 	and	%d2, %d2, 1
 	ret
 .LFE186:
@@ -242,12 +242,12 @@ getSW1:
 	.type	getSW2, @function
 getSW2:
 .LFB187:
-	.loc 1 88 0
-	.loc 1 89 0
+	.loc 1 77 0
+	.loc 1 78 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d2, [%a15] 36
-	.loc 1 90 0
+	.loc 1 79 0
 	extr.u	%d2, %d2, 1, 1
 	ret
 .LFE187:
@@ -257,62 +257,62 @@ getSW2:
 	.type	getSW1_Debounce, @function
 getSW1_Debounce:
 .LFB188:
-	.loc 1 93 0
+	.loc 1 82 0
 	sub.a	%SP, 24
 .LCFI0:
-	.loc 1 94 0
+	.loc 1 83 0
 	mov	%d15, 0
-	.loc 1 95 0
+	.loc 1 84 0
 	lea	%a2, [%SP] 14
-	.loc 1 94 0
+	.loc 1 83 0
 	st.w	[%SP] 8, %d15
-	.loc 1 95 0
+	.loc 1 84 0
 	mov.aa	%a3, %a2
 	mov	%d15, 0
 	lea	%a15, 5-1
 	0:
 	st.h	[%a3+]2, %d15
 	loop	%a15, 0b
-	.loc 1 98 0
+	.loc 1 87 0
 	ld.w	%d2, [%SP] 8
 	mov	%d15, 10000
-.LBB55:
-.LBB56:
-	.loc 1 84 0
+.LBB23:
+.LBB24:
+	.loc 1 73 0
 	movh.a	%a3, 61444
-.LBE56:
-.LBE55:
-	.loc 1 99 0
+.LBE24:
+.LBE23:
+	.loc 1 88 0
 	mov	%d3, 0
-.LBB59:
-.LBB57:
-	.loc 1 84 0
+.LBB27:
+.LBB25:
+	.loc 1 73 0
 	lea	%a3, [%a3] -24064
-.LBE57:
-.LBE59:
-	.loc 1 98 0
+.LBE25:
+.LBE27:
+	.loc 1 87 0
 	mov	%d4, %d15
 	jge	%d2, %d15, .L21
 .L23:
-	.loc 1 99 0
+	.loc 1 88 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
 	jz	%d15, .L20
 .L25:
-	.loc 1 100 0 discriminator 3
+	.loc 1 89 0 discriminator 3
 	ld.a	%a15, [%SP] 4
-.LBB60:
-.LBB58:
-	.loc 1 84 0 discriminator 3
+.LBB28:
+.LBB26:
+	.loc 1 73 0 discriminator 3
 	ld.w	%d15, [%a3] 36
-.LBE58:
-.LBE60:
-	.loc 1 100 0 discriminator 3
+.LBE26:
+.LBE28:
+	.loc 1 89 0 discriminator 3
 	add.a	%a15, %a2
 	and	%d15, %d15, 1
 	st.b	[%a15]0, %d15
-	.loc 1 99 0 discriminator 3
+	.loc 1 88 0 discriminator 3
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
@@ -320,22 +320,22 @@ getSW1_Debounce:
 	lt	%d15, %d15, 10
 	jnz	%d15, .L25
 .L20:
-	.loc 1 102 0
+	.loc 1 91 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
 	jz	%d15, .L19
 .L24:
-	.loc 1 103 0
+	.loc 1 92 0
 	ld.b	%d2, [%SP] 14
 	ld.a	%a15, [%SP] 4
 	add.a	%a15, %a2
 	ld.b	%d15, [%a15]0
 	jeq	%d2, %d15, .L22
-	.loc 1 104 0
+	.loc 1 93 0
 	st.w	[%SP] 8, %d3
 .L22:
-	.loc 1 102 0 discriminator 2
+	.loc 1 91 0 discriminator 2
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
@@ -343,18 +343,18 @@ getSW1_Debounce:
 	lt	%d15, %d15, 10
 	jnz	%d15, .L24
 .L19:
-	.loc 1 107 0
+	.loc 1 96 0
 	ld.w	%d15, [%SP] 8
 	add	%d15, 1
 	st.w	[%SP] 8, %d15
-	.loc 1 98 0
+	.loc 1 87 0
 	ld.w	%d15, [%SP] 8
 	jlt	%d15, %d4, .L23
 .L21:
-	.loc 1 109 0
+	.loc 1 98 0
 	ld.b	%d15, [%SP] 14
 	st.w	[%SP]0, %d15
-	.loc 1 110 0
+	.loc 1 99 0
 	ld.w	%d2, [%SP]0
 	ret
 .LFE188:
@@ -364,62 +364,62 @@ getSW1_Debounce:
 	.type	getSW2_Debounce, @function
 getSW2_Debounce:
 .LFB189:
-	.loc 1 114 0
+	.loc 1 103 0
 	sub.a	%SP, 24
 .LCFI1:
-	.loc 1 115 0
+	.loc 1 104 0
 	mov	%d15, 0
-	.loc 1 116 0
+	.loc 1 105 0
 	lea	%a2, [%SP] 14
-	.loc 1 115 0
+	.loc 1 104 0
 	st.w	[%SP] 8, %d15
-	.loc 1 116 0
+	.loc 1 105 0
 	mov.aa	%a3, %a2
 	mov	%d15, 0
 	lea	%a15, 5-1
 	0:
 	st.h	[%a3+]2, %d15
 	loop	%a15, 0b
-	.loc 1 119 0
+	.loc 1 108 0
 	ld.w	%d2, [%SP] 8
 	mov	%d15, 10000
-.LBB61:
-.LBB62:
-	.loc 1 89 0
+.LBB29:
+.LBB30:
+	.loc 1 78 0
 	movh.a	%a3, 61444
-.LBE62:
-.LBE61:
-	.loc 1 120 0
+.LBE30:
+.LBE29:
+	.loc 1 109 0
 	mov	%d3, 0
-.LBB65:
-.LBB63:
-	.loc 1 89 0
+.LBB33:
+.LBB31:
+	.loc 1 78 0
 	lea	%a3, [%a3] -24064
-.LBE63:
-.LBE65:
-	.loc 1 119 0
+.LBE31:
+.LBE33:
+	.loc 1 108 0
 	mov	%d4, %d15
 	jge	%d2, %d15, .L36
 .L38:
-	.loc 1 120 0
+	.loc 1 109 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
 	jz	%d15, .L35
 .L40:
-	.loc 1 121 0 discriminator 3
+	.loc 1 110 0 discriminator 3
 	ld.a	%a15, [%SP] 4
-.LBB66:
-.LBB64:
-	.loc 1 89 0 discriminator 3
+.LBB34:
+.LBB32:
+	.loc 1 78 0 discriminator 3
 	ld.w	%d15, [%a3] 36
-.LBE64:
-.LBE66:
-	.loc 1 121 0 discriminator 3
+.LBE32:
+.LBE34:
+	.loc 1 110 0 discriminator 3
 	extr.u	%d15, %d15, 1, 1
 	add.a	%a15, %a2
 	st.b	[%a15]0, %d15
-	.loc 1 120 0 discriminator 3
+	.loc 1 109 0 discriminator 3
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
@@ -427,22 +427,22 @@ getSW2_Debounce:
 	lt	%d15, %d15, 10
 	jnz	%d15, .L40
 .L35:
-	.loc 1 123 0
+	.loc 1 112 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
 	jz	%d15, .L34
 .L39:
-	.loc 1 124 0
+	.loc 1 113 0
 	ld.b	%d2, [%SP] 14
 	ld.a	%a15, [%SP] 4
 	add.a	%a15, %a2
 	ld.b	%d15, [%a15]0
 	jeq	%d2, %d15, .L37
-	.loc 1 125 0
+	.loc 1 114 0
 	st.w	[%SP] 8, %d3
 .L37:
-	.loc 1 123 0 discriminator 2
+	.loc 1 112 0 discriminator 2
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
@@ -450,163 +450,22 @@ getSW2_Debounce:
 	lt	%d15, %d15, 10
 	jnz	%d15, .L39
 .L34:
-	.loc 1 128 0
+	.loc 1 117 0
 	ld.w	%d15, [%SP] 8
 	add	%d15, 1
 	st.w	[%SP] 8, %d15
-	.loc 1 119 0
+	.loc 1 108 0
 	ld.w	%d15, [%SP] 8
 	jlt	%d15, %d4, .L38
 .L36:
-	.loc 1 130 0
+	.loc 1 119 0
 	ld.b	%d15, [%SP] 14
 	st.w	[%SP]0, %d15
-	.loc 1 131 0
+	.loc 1 120 0
 	ld.w	%d2, [%SP]0
 	ret
 .LFE189:
 	.size	getSW2_Debounce, .-getSW2_Debounce
-	.align 1
-	.global	init_lcd
-	.type	init_lcd, @function
-init_lcd:
-.LFB190:
-	.loc 1 135 0
-.LVL8:
-.LBB67:
-.LBB68:
-	.loc 1 166 0
-	movh.a	%a15, 61444
-	lea	%a15, [%a15] -20224
-	mov	%d15, 4
-	.loc 1 174 0
-	movh.a	%a2, 61444
-	.loc 1 166 0
-	st.w	[%a15]0, %d15
-.LVL9:
-	.loc 1 174 0
-	lea	%a2, [%a2] -24576
-	mov	%d2, 56
-	st.w	[%a2]0, %d2
-.LVL10:
-	.loc 1 177 0
-	mov	%d2, 0
-	st.w	[%a15]0, %d2
-.LVL11:
-.LBE68:
-.LBE67:
-.LBB69:
-.LBB70:
-	.loc 1 166 0
-	st.w	[%a15]0, %d15
-	.loc 1 174 0
-	mov	%d3, 14
-	st.w	[%a2]0, %d3
-	.loc 1 177 0
-	st.w	[%a15]0, %d2
-.LVL12:
-.LBE70:
-.LBE69:
-.LBB71:
-.LBB72:
-	.loc 1 166 0
-	st.w	[%a15]0, %d15
-	.loc 1 174 0
-	mov	%d3, 1
-	st.w	[%a2]0, %d3
-	.loc 1 177 0
-	st.w	[%a15]0, %d2
-.LVL13:
-.LBE72:
-.LBE71:
-.LBB73:
-.LBB74:
-	.loc 1 166 0
-	st.w	[%a15]0, %d15
-	.loc 1 174 0
-	st.w	[%a2]0, %d15
-	.loc 1 177 0
-	st.w	[%a15]0, %d2
-.LVL14:
-	ret
-.LBE74:
-.LBE73:
-.LFE190:
-	.size	init_lcd, .-init_lcd
-	.align 1
-	.global	write_instruction
-	.type	write_instruction, @function
-write_instruction:
-.LFB191:
-	.loc 1 162 0
-.LVL15:
-	.loc 1 166 0
-	movh.a	%a15, 61444
-	lea	%a15, [%a15] -20224
-	mov	%d15, 4
-	.loc 1 174 0
-	movh.a	%a2, 61444
-	.loc 1 166 0
-	st.w	[%a15]0, %d15
-.LVL16:
-	.loc 1 174 0
-	lea	%a2, [%a2] -24576
-	st.w	[%a2]0, %d4
-.LVL17:
-	.loc 1 177 0
-	mov	%d15, 0
-	st.w	[%a15]0, %d15
-.LVL18:
-	ret
-.LFE191:
-	.size	write_instruction, .-write_instruction
-	.align 1
-	.global	write_data
-	.type	write_data, @function
-write_data:
-.LFB192:
-	.loc 1 183 0
-.LVL19:
-	.loc 1 185 0
-	movh.a	%a15, 61444
-	lea	%a15, [%a15] -20224
-	mov	%d15, 516
-	.loc 1 191 0
-	movh.a	%a2, 61444
-	.loc 1 185 0
-	st.w	[%a15]0, %d15
-.LVL20:
-	.loc 1 191 0
-	lea	%a2, [%a2] -24576
-	st.w	[%a2]0, %d4
-.LVL21:
-	.loc 1 194 0
-	mov	%d15, 256
-	st.w	[%a15]0, %d15
-.LVL22:
-	ret
-.LFE192:
-	.size	write_data, .-write_data
-	.align 1
-	.global	delay_us
-	.type	delay_us, @function
-delay_us:
-.LFB193:
-	.loc 1 201 0
-.LVL23:
-	ret
-.LFE193:
-	.size	delay_us, .-delay_us
-	.align 1
-	.global	delay_mss
-	.type	delay_mss, @function
-delay_mss:
-.LFB194:
-	.loc 1 209 0
-.LVL24:
-	ret
-.LFE194:
-	.size	delay_mss, .-delay_mss
 .section .debug_frame,"",@progbits
 .Lframe0:
 	.uaword	.LECIE0-.LSCIE0
@@ -702,46 +561,6 @@ delay_mss:
 	.uleb128 0x18
 	.align 2
 .LEFDE16:
-.LSFDE18:
-	.uaword	.LEFDE18-.LASFDE18
-.LASFDE18:
-	.uaword	.Lframe0
-	.uaword	.LFB190
-	.uaword	.LFE190-.LFB190
-	.align 2
-.LEFDE18:
-.LSFDE20:
-	.uaword	.LEFDE20-.LASFDE20
-.LASFDE20:
-	.uaword	.Lframe0
-	.uaword	.LFB191
-	.uaword	.LFE191-.LFB191
-	.align 2
-.LEFDE20:
-.LSFDE22:
-	.uaword	.LEFDE22-.LASFDE22
-.LASFDE22:
-	.uaword	.Lframe0
-	.uaword	.LFB192
-	.uaword	.LFE192-.LFB192
-	.align 2
-.LEFDE22:
-.LSFDE24:
-	.uaword	.LEFDE24-.LASFDE24
-.LASFDE24:
-	.uaword	.Lframe0
-	.uaword	.LFB193
-	.uaword	.LFE193-.LFB193
-	.align 2
-.LEFDE24:
-.LSFDE26:
-	.uaword	.LEFDE26-.LASFDE26
-.LASFDE26:
-	.uaword	.Lframe0
-	.uaword	.LFB194
-	.uaword	.LFE194-.LFB194
-	.align 2
-.LEFDE26:
 .section .text,"ax",@progbits
 .Letext0:
 	.file 3 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\IfxPort_regdef.h"
@@ -749,7 +568,7 @@ delay_mss:
 	.file 5 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x3004
+	.uaword	0x2e68
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -5226,7 +5045,7 @@ delay_mss:
 	.byte	0x1
 	.string	"getSW1"
 	.byte	0x1
-	.byte	0x52
+	.byte	0x47
 	.byte	0x1
 	.uaword	0x25a
 	.byte	0x1
@@ -5234,105 +5053,43 @@ delay_mss:
 	.byte	0x1
 	.string	"getSW2"
 	.byte	0x1
-	.byte	0x57
+	.byte	0x4c
 	.byte	0x1
 	.uaword	0x25a
 	.byte	0x1
 	.uleb128 0x1d
 	.byte	0x1
-	.string	"delay_us"
-	.byte	0x1
-	.byte	0xc9
-	.byte	0x1
-	.byte	0x1
-	.uaword	0x2c0f
-	.uleb128 0x1e
-	.string	"m"
-	.byte	0x1
-	.byte	0xc9
-	.uaword	0x24a
-	.uleb128 0x1f
-	.string	"i"
-	.byte	0x1
-	.byte	0xca
-	.uaword	0x24a
-	.uleb128 0x1f
-	.string	"j"
-	.byte	0x1
-	.byte	0xca
-	.uaword	0x24a
-	.byte	0
-	.uleb128 0x1d
-	.byte	0x1
-	.string	"delay_mss"
-	.byte	0x1
-	.byte	0xd1
-	.byte	0x1
-	.byte	0x1
-	.uaword	0x2c3f
-	.uleb128 0x1e
-	.string	"m"
-	.byte	0x1
-	.byte	0xd1
-	.uaword	0x24a
-	.uleb128 0x1f
-	.string	"i"
-	.byte	0x1
-	.byte	0xd2
-	.uaword	0x24a
-	.uleb128 0x1f
-	.string	"j"
-	.byte	0x1
-	.byte	0xd2
-	.uaword	0x24a
-	.byte	0
-	.uleb128 0x1d
-	.byte	0x1
-	.string	"write_instruction"
-	.byte	0x1
-	.byte	0xa2
-	.byte	0x1
-	.byte	0x1
-	.uaword	0x2c65
-	.uleb128 0x1e
-	.string	"i"
-	.byte	0x1
-	.byte	0xa2
-	.uaword	0x26d
-	.byte	0
-	.uleb128 0x20
-	.byte	0x1
 	.string	"Init_GPIO"
 	.byte	0x1
-	.byte	0x3
+	.byte	0x4
 	.byte	0x1
 	.uaword	.LFB181
 	.uaword	.LFE181
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2d06
-	.uleb128 0x21
+	.uaword	0x2c81
+	.uleb128 0x1e
 	.uaword	0x2b30
-	.uaword	.LBB46
+	.uaword	.LBB14
 	.uaword	.Ldebug_ranges0+0
 	.byte	0x1
-	.byte	0x12
-	.uaword	0x2cbf
-	.uleb128 0x22
+	.byte	0x13
+	.uaword	0x2c3a
+	.uleb128 0x1f
 	.uaword	0x2b79
 	.sleb128 -128
-	.uleb128 0x22
+	.uleb128 0x1f
 	.uaword	0x2b6c
 	.sleb128 -128
-	.uleb128 0x23
+	.uleb128 0x20
 	.uaword	0x2b60
-	.uleb128 0x23
+	.uleb128 0x20
 	.uaword	0x2b53
-	.uleb128 0x24
+	.uleb128 0x21
 	.uaword	.LVL1
-	.uaword	0x2fdd
-	.uleb128 0x25
+	.uaword	0x2e41
+	.uleb128 0x22
 	.byte	0x1
 	.byte	0x55
 	.byte	0x2
@@ -5340,115 +5097,115 @@ delay_mss:
 	.byte	0x80
 	.byte	0
 	.byte	0
-	.uleb128 0x26
-	.uaword	0x2b88
-	.uaword	.LBB52
-	.uaword	.LBE52
-	.byte	0x1
-	.byte	0x13
 	.uleb128 0x23
+	.uaword	0x2b88
+	.uaword	.LBB20
+	.uaword	.LBE20
+	.byte	0x1
+	.byte	0x14
+	.uleb128 0x20
 	.uaword	0x2bb1
-	.uleb128 0x27
+	.uleb128 0x24
 	.uaword	0x2ba4
 	.uaword	.LLST0
-	.uleb128 0x28
+	.uleb128 0x25
 	.uaword	0x2ae9
-	.uaword	.LBB53
-	.uaword	.LBE53
+	.uaword	.LBB21
+	.uaword	.LBE21
 	.byte	0x2
 	.uahalf	0x23e
-	.uleb128 0x29
+	.uleb128 0x26
 	.uaword	0x2b20
 	.uaword	0x10000
-	.uleb128 0x23
+	.uleb128 0x20
 	.uaword	0x2b14
-	.uleb128 0x27
+	.uleb128 0x24
 	.uaword	0x2b07
 	.uaword	.LLST0
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1d
 	.byte	0x1
 	.string	"setLED1"
 	.byte	0x1
-	.byte	0x30
+	.byte	0x25
 	.byte	0x1
 	.uaword	.LFB182
 	.uaword	.LFE182
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2d32
-	.uleb128 0x2a
+	.uaword	0x2cad
+	.uleb128 0x27
 	.string	"onoff"
 	.byte	0x1
-	.byte	0x30
+	.byte	0x25
 	.uaword	0x25a
 	.byte	0x1
 	.byte	0x54
 	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1d
 	.byte	0x1
 	.string	"setLED2"
 	.byte	0x1
-	.byte	0x3c
+	.byte	0x31
 	.byte	0x1
 	.uaword	.LFB183
 	.uaword	.LFE183
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2d5e
-	.uleb128 0x2a
+	.uaword	0x2cd9
+	.uleb128 0x27
 	.string	"onoff"
 	.byte	0x1
-	.byte	0x3c
+	.byte	0x31
 	.uaword	0x25a
 	.byte	0x1
 	.byte	0x54
 	.byte	0
-	.uleb128 0x2b
+	.uleb128 0x28
 	.byte	0x1
 	.string	"toggleLED1"
 	.byte	0x1
-	.byte	0x48
+	.byte	0x3d
 	.byte	0x1
 	.uaword	.LFB184
 	.uaword	.LFE184
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x28
 	.byte	0x1
 	.string	"toggleLED2"
 	.byte	0x1
-	.byte	0x4d
+	.byte	0x42
 	.byte	0x1
 	.uaword	.LFB185
 	.uaword	.LFE185
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x29
 	.uaword	0x2bbe
 	.uaword	.LFB186
 	.uaword	.LFE186
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x29
 	.uaword	0x2bcf
 	.uaword	.LFB187
 	.uaword	.LFE187
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x2d
+	.uleb128 0x2a
 	.byte	0x1
 	.string	"getSW1_Debounce"
 	.byte	0x1
-	.byte	0x5c
+	.byte	0x51
 	.byte	0x1
 	.uaword	0x25a
 	.uaword	.LFB188
@@ -5456,62 +5213,62 @@ delay_mss:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2e22
-	.uleb128 0x2e
+	.uaword	0x2d9d
+	.uleb128 0x2b
 	.string	"SW1"
 	.byte	0x1
-	.byte	0x5e
-	.uaword	0x2e22
+	.byte	0x53
+	.uaword	0x2d9d
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.string	"i"
 	.byte	0x1
-	.byte	0x5e
-	.uaword	0x2e22
+	.byte	0x53
+	.uaword	0x2d9d
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.string	"cnt"
 	.byte	0x1
-	.byte	0x5e
-	.uaword	0x2e22
+	.byte	0x53
+	.uaword	0x2d9d
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.string	"buf"
 	.byte	0x1
-	.byte	0x5f
-	.uaword	0x2e37
+	.byte	0x54
+	.uaword	0x2db2
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x2f
+	.uleb128 0x2c
 	.uaword	0x2bbe
-	.uaword	.LBB55
+	.uaword	.LBB23
 	.uaword	.Ldebug_ranges0+0x20
 	.byte	0x1
-	.byte	0x64
+	.byte	0x59
 	.byte	0
 	.uleb128 0x12
 	.uaword	0x25a
 	.uleb128 0x3
 	.uaword	0x2603
-	.uaword	0x2e37
+	.uaword	0x2db2
 	.uleb128 0x4
 	.uaword	0x261
 	.byte	0x9
 	.byte	0
 	.uleb128 0x12
-	.uaword	0x2e27
-	.uleb128 0x2d
+	.uaword	0x2da2
+	.uleb128 0x2a
 	.byte	0x1
 	.string	"getSW2_Debounce"
 	.byte	0x1
-	.byte	0x71
+	.byte	0x66
 	.byte	0x1
 	.uaword	0x25a
 	.uaword	.LFB189
@@ -5519,192 +5276,67 @@ delay_mss:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2eaa
-	.uleb128 0x2e
+	.uaword	0x2e25
+	.uleb128 0x2b
 	.string	"SW2"
 	.byte	0x1
-	.byte	0x73
-	.uaword	0x2e22
+	.byte	0x68
+	.uaword	0x2d9d
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.string	"i"
 	.byte	0x1
-	.byte	0x73
-	.uaword	0x2e22
+	.byte	0x68
+	.uaword	0x2d9d
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.string	"cnt"
 	.byte	0x1
-	.byte	0x73
-	.uaword	0x2e22
+	.byte	0x68
+	.uaword	0x2d9d
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.string	"buf"
 	.byte	0x1
-	.byte	0x74
-	.uaword	0x2eaa
+	.byte	0x69
+	.uaword	0x2e25
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x2f
+	.uleb128 0x2c
 	.uaword	0x2bcf
-	.uaword	.LBB61
+	.uaword	.LBB29
 	.uaword	.Ldebug_ranges0+0x40
 	.byte	0x1
-	.byte	0x79
+	.byte	0x6e
 	.byte	0
 	.uleb128 0x12
-	.uaword	0x2e27
-	.uleb128 0x20
-	.byte	0x1
-	.string	"init_lcd"
-	.byte	0x1
-	.byte	0x87
-	.byte	0x1
-	.uaword	.LFB190
-	.uaword	.LFE190
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x2f31
-	.uleb128 0x30
-	.uaword	0x2c3f
-	.uaword	.LBB67
-	.uaword	.LBE67
-	.byte	0x1
-	.byte	0x8b
-	.uaword	0x2ee6
-	.uleb128 0x31
-	.uaword	0x2c5b
-	.byte	0x38
-	.byte	0
-	.uleb128 0x30
-	.uaword	0x2c3f
-	.uaword	.LBB69
-	.uaword	.LBE69
-	.byte	0x1
-	.byte	0x94
-	.uaword	0x2f00
-	.uleb128 0x31
-	.uaword	0x2c5b
-	.byte	0xe
-	.byte	0
-	.uleb128 0x30
-	.uaword	0x2c3f
-	.uaword	.LBB71
-	.uaword	.LBE71
-	.byte	0x1
-	.byte	0x96
-	.uaword	0x2f1a
-	.uleb128 0x31
-	.uaword	0x2c5b
-	.byte	0x1
-	.byte	0
-	.uleb128 0x26
-	.uaword	0x2c3f
-	.uaword	.LBB73
-	.uaword	.LBE73
-	.byte	0x1
-	.byte	0x98
-	.uleb128 0x31
-	.uaword	0x2c5b
-	.byte	0x4
-	.byte	0
-	.byte	0
-	.uleb128 0x32
-	.uaword	0x2c3f
-	.uaword	.LFB191
-	.uaword	.LFE191
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x2f4d
-	.uleb128 0x33
-	.uaword	0x2c5b
-	.byte	0x1
-	.byte	0x54
-	.byte	0
-	.uleb128 0x20
-	.byte	0x1
-	.string	"write_data"
-	.byte	0x1
-	.byte	0xb7
-	.byte	0x1
-	.uaword	.LFB192
-	.uaword	.LFE192
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x2f78
-	.uleb128 0x2a
-	.string	"d"
-	.byte	0x1
-	.byte	0xb7
-	.uaword	0x2603
-	.byte	0x1
-	.byte	0x54
-	.byte	0
-	.uleb128 0x32
-	.uaword	0x2be0
-	.uaword	.LFB193
-	.uaword	.LFE193
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x2f9f
-	.uleb128 0x33
-	.uaword	0x2bf3
-	.byte	0x1
-	.byte	0x54
-	.uleb128 0x34
-	.uaword	0x2bfc
-	.byte	0
-	.uleb128 0x35
-	.uaword	0x2c05
-	.byte	0
-	.uleb128 0x32
-	.uaword	0x2c0f
-	.uaword	.LFB194
-	.uaword	.LFE194
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x2fc6
-	.uleb128 0x33
-	.uaword	0x2c23
-	.byte	0x1
-	.byte	0x54
-	.uleb128 0x34
-	.uaword	0x2c2c
-	.byte	0
-	.uleb128 0x35
-	.uaword	0x2c35
-	.byte	0
-	.uleb128 0x36
+	.uaword	0x2da2
+	.uleb128 0x2d
 	.string	"IfxPort_P20_6"
 	.byte	0x5
 	.byte	0x8f
 	.uaword	0x2ad6
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x37
+	.uleb128 0x2e
 	.byte	0x1
 	.string	"IfxPort_setPinMode"
 	.byte	0x2
 	.uahalf	0x175
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x38
+	.uleb128 0x2f
 	.uaword	0x260b
-	.uleb128 0x38
+	.uleb128 0x2f
 	.uaword	0x25cb
-	.uleb128 0x38
+	.uleb128 0x2f
 	.uaword	0x28b1
 	.byte	0
 	.byte	0
@@ -6125,51 +5757,6 @@ delay_mss:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0xc
-	.uleb128 0x20
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0xc
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0xc
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -6182,7 +5769,7 @@ delay_mss:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1e
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
@@ -6199,7 +5786,7 @@ delay_mss:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x22
+	.uleb128 0x1f
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -6208,14 +5795,14 @@ delay_mss:
 	.uleb128 0xd
 	.byte	0
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x20
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x24
+	.uleb128 0x21
 	.uleb128 0x4109
 	.byte	0x1
 	.uleb128 0x11
@@ -6224,7 +5811,7 @@ delay_mss:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x22
 	.uleb128 0x410a
 	.byte	0
 	.uleb128 0x2
@@ -6233,7 +5820,7 @@ delay_mss:
 	.uleb128 0xa
 	.byte	0
 	.byte	0
-	.uleb128 0x26
+	.uleb128 0x23
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
@@ -6248,7 +5835,7 @@ delay_mss:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x27
+	.uleb128 0x24
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -6257,7 +5844,7 @@ delay_mss:
 	.uleb128 0x6
 	.byte	0
 	.byte	0
-	.uleb128 0x28
+	.uleb128 0x25
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
@@ -6272,7 +5859,7 @@ delay_mss:
 	.uleb128 0x5
 	.byte	0
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x26
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -6281,7 +5868,7 @@ delay_mss:
 	.uleb128 0x6
 	.byte	0
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x27
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -6296,7 +5883,7 @@ delay_mss:
 	.uleb128 0xa
 	.byte	0
 	.byte	0
-	.uleb128 0x2b
+	.uleb128 0x28
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -6319,7 +5906,7 @@ delay_mss:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x2c
+	.uleb128 0x29
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x31
@@ -6334,7 +5921,7 @@ delay_mss:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2a
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -6361,7 +5948,7 @@ delay_mss:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2b
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -6376,7 +5963,7 @@ delay_mss:
 	.uleb128 0xa
 	.byte	0
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x2c
 	.uleb128 0x1d
 	.byte	0
 	.uleb128 0x31
@@ -6391,75 +5978,7 @@ delay_mss:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x30
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x1
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x32
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x1
-	.uleb128 0x40
-	.uleb128 0xa
-	.uleb128 0x2117
-	.uleb128 0xc
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x33
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x34
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x35
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x36
+	.uleb128 0x2d
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -6476,7 +5995,7 @@ delay_mss:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x37
+	.uleb128 0x2e
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -6493,7 +6012,7 @@ delay_mss:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x38
+	.uleb128 0x2f
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
@@ -6529,28 +6048,28 @@ delay_mss:
 	.uaword	0
 .section .debug_ranges,"",@progbits
 .Ldebug_ranges0:
-	.uaword	.LBB46-.Ltext0
-	.uaword	.LBE46-.Ltext0
-	.uaword	.LBB50-.Ltext0
-	.uaword	.LBE50-.Ltext0
-	.uaword	.LBB51-.Ltext0
-	.uaword	.LBE51-.Ltext0
+	.uaword	.LBB14-.Ltext0
+	.uaword	.LBE14-.Ltext0
+	.uaword	.LBB18-.Ltext0
+	.uaword	.LBE18-.Ltext0
+	.uaword	.LBB19-.Ltext0
+	.uaword	.LBE19-.Ltext0
 	.uaword	0
 	.uaword	0
-	.uaword	.LBB55-.Ltext0
-	.uaword	.LBE55-.Ltext0
-	.uaword	.LBB59-.Ltext0
-	.uaword	.LBE59-.Ltext0
-	.uaword	.LBB60-.Ltext0
-	.uaword	.LBE60-.Ltext0
+	.uaword	.LBB23-.Ltext0
+	.uaword	.LBE23-.Ltext0
+	.uaword	.LBB27-.Ltext0
+	.uaword	.LBE27-.Ltext0
+	.uaword	.LBB28-.Ltext0
+	.uaword	.LBE28-.Ltext0
 	.uaword	0
 	.uaword	0
-	.uaword	.LBB61-.Ltext0
-	.uaword	.LBE61-.Ltext0
-	.uaword	.LBB65-.Ltext0
-	.uaword	.LBE65-.Ltext0
-	.uaword	.LBB66-.Ltext0
-	.uaword	.LBE66-.Ltext0
+	.uaword	.LBB29-.Ltext0
+	.uaword	.LBE29-.Ltext0
+	.uaword	.LBB33-.Ltext0
+	.uaword	.LBE33-.Ltext0
+	.uaword	.LBB34-.Ltext0
+	.uaword	.LBE34-.Ltext0
 	.uaword	0
 	.uaword	0
 .section .debug_macro,"",@progbits
@@ -8181,6 +7700,14 @@ delay_mss:
 	.byte	0x4
 	.byte	0x7
 	.uaword	.Ldebug_macro60
+	.byte	0x4
+	.file 105 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/etc/etc.h"
+	.byte	0x3
+	.uleb128 0x3
+	.uleb128 0x69
+	.byte	0x1
+	.uleb128 0x2
+	.string	"BSW_ETC_ETC_H_ "
 	.byte	0x4
 	.byte	0x4
 	.byte	0
