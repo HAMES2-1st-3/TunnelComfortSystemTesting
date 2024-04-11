@@ -57,7 +57,6 @@
 #define OSEE_ARCH_TRICORE
 #define OSEE_CPU_CLOCK (200000000U)
 #define OSEE_HAS_ALARMS
-#define OSEE_HAS_AUTOSTART_TRIGGER
 #define OSEE_HAS_COUNTERS
 #define OSEE_HAS_EVENTS
 #define OSEE_HAS_RESOURCES
@@ -104,8 +103,8 @@
 #define OSEE_TC_CORE0_3_ISR_CAT (2U)
 #define OSEE_TC_CORE0_3_ISR_TID 1
 
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID   (1U)
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO  (3U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID   (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO  (3U)
 
 
 /***************************************************************************
@@ -115,8 +114,8 @@
  **************************************************************************/
 #define OSEE_SYSTEM_TIMER        (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 
 /***************************************************************************
  *

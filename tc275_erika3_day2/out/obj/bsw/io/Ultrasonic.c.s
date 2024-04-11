@@ -172,7 +172,7 @@ ReadUltrasonic_Filt:
 .LBE7:
 .LBE6:
 	.loc 1 52 0
-	movh.a	%a15, hi:old_index.37632
+	movh.a	%a15, hi:old_index.37634
 .LBB10:
 .LBB8:
 	.loc 1 38 0
@@ -182,7 +182,7 @@ ReadUltrasonic_Filt:
 .LBE8:
 .LBE10:
 	.loc 1 52 0
-	ld.w	%d15, [%a15] lo:old_index.37632
+	ld.w	%d15, [%a15] lo:old_index.37634
 	.loc 1 53 0
 	mov	%d4, 5
 	.loc 1 52 0
@@ -190,18 +190,18 @@ ReadUltrasonic_Filt:
 	.loc 1 53 0
 	div	%e4, %d15, %d4
 	.loc 1 54 0
-	movh.a	%a3, hi:avg_filt_buf.37631
+	movh.a	%a3, hi:avg_filt_buf.37633
 	.loc 1 53 0
-	st.w	[%a15] lo:old_index.37632, %d5
+	st.w	[%a15] lo:old_index.37634, %d5
 	.loc 1 54 0
-	lea	%a15, [%a3] lo:avg_filt_buf.37631
+	lea	%a15, [%a3] lo:avg_filt_buf.37633
 	addsc.a	%a2, %a15, %d5, 2
 	st.w	[%a2]0, %d2
 	.loc 1 55 0
-	movh.a	%a2, hi:sensorRxCnt.37634
-	ld.w	%d15, [%a2] lo:sensorRxCnt.37634
+	movh.a	%a2, hi:sensorRxCnt.37636
+	ld.w	%d15, [%a2] lo:sensorRxCnt.37636
 	add	%d15, 1
-	st.w	[%a2] lo:sensorRxCnt.37634, %d15
+	st.w	[%a2] lo:sensorRxCnt.37636, %d15
 	.loc 1 58 0
 	jlt	%d15, 5, .L20
 .LVL12:
@@ -209,7 +209,7 @@ ReadUltrasonic_Filt:
 .LBB12:
 	.loc 1 60 0
 	ld.w	%d15, [%a15] 4
-	ld.w	%d2, [%a3] lo:avg_filt_buf.37631
+	ld.w	%d2, [%a3] lo:avg_filt_buf.37633
 .LVL13:
 	add.f	%d2, %d2, %d15
 .LVL14:
@@ -252,24 +252,24 @@ ReadUltrasonic_Filt:
 .LBE13:
 .LFE328:
 	.size	ReadUltrasonic_Filt, .-ReadUltrasonic_Filt
-	.local	sensorRxCnt.37634
+	.local	sensorRxCnt.37636
 .section .bss,"aw",@nobits
 	.align 2
-	.type		 sensorRxCnt.37634,@object
-	.size		 sensorRxCnt.37634,4
-sensorRxCnt.37634:
+	.type		 sensorRxCnt.37636,@object
+	.size		 sensorRxCnt.37636,4
+sensorRxCnt.37636:
 	.space	4
-	.local	avg_filt_buf.37631
+	.local	avg_filt_buf.37633
 	.align 2
-	.type		 avg_filt_buf.37631,@object
-	.size		 avg_filt_buf.37631,20
-avg_filt_buf.37631:
+	.type		 avg_filt_buf.37633,@object
+	.size		 avg_filt_buf.37633,20
+avg_filt_buf.37633:
 	.space	20
-	.local	old_index.37632
+	.local	old_index.37634
 	.align 2
-	.type		 old_index.37632,@object
-	.size		 old_index.37632,4
-old_index.37632:
+	.type		 old_index.37634,@object
+	.size		 old_index.37634,4
+old_index.37634:
 	.space	4
 .section .debug_frame,"",@progbits
 .Lframe0:
@@ -8081,7 +8081,7 @@ old_index.37632:
 	.uaword	0x477b
 	.byte	0x5
 	.byte	0x3
-	.uaword	avg_filt_buf.37631
+	.uaword	avg_filt_buf.37633
 	.uleb128 0x22
 	.string	"old_index"
 	.byte	0x1
@@ -8089,7 +8089,7 @@ old_index.37632:
 	.uaword	0x269
 	.byte	0x5
 	.byte	0x3
-	.uaword	old_index.37632
+	.uaword	old_index.37634
 	.uleb128 0x23
 	.string	"distance_filt"
 	.byte	0x1
@@ -8103,7 +8103,7 @@ old_index.37632:
 	.uaword	0x269
 	.byte	0x5
 	.byte	0x3
-	.uaword	sensorRxCnt.37634
+	.uaword	sensorRxCnt.37636
 	.uleb128 0x24
 	.uaword	0x456f
 	.uaword	.LBB6
@@ -8979,7 +8979,7 @@ old_index.37632:
 	.uaword	.LVL14-.Ltext0
 	.uahalf	0x5
 	.byte	0x3
-	.uaword	avg_filt_buf.37631
+	.uaword	avg_filt_buf.37633
 	.uaword	.LVL14-.Ltext0
 	.uaword	.LVL16-.Ltext0
 	.uahalf	0x1
@@ -8991,7 +8991,7 @@ old_index.37632:
 	.uleb128 0x2
 	.uleb128 0x250
 	.byte	0x3
-	.uaword	avg_filt_buf.37631+16
+	.uaword	avg_filt_buf.37633+16
 	.byte	0xf6
 	.byte	0x4
 	.uleb128 0x250

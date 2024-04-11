@@ -6,7 +6,7 @@ CPU tc275_shieldbuddy {
 		CATEGORY = 2;
 		SOURCE = "CANINT0";
 		PRIORITY = 3;
-		HANDLER = "CAN_RxInt0Handler";
+		HANDLER = "CAN_RX_HND";
 	};
 	OS erika3_basic_example {
 		EE_OPT = "OSEE_DEBUG";

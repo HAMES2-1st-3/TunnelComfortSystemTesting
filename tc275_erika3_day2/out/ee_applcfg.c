@@ -172,15 +172,6 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
   },
   {
     /* .current_num_of_act = */ 0U,
-    /* .current_prio       = */ 3U,
-    /* .status             = */ SUSPENDED,
-    /* .p_last_m           = */ NULL,
-    /* .wait_mask          = */ 0U,
-    /* .event_mask         = */ 0U,
-    /* .p_own_sn           = */ NULL
-  },
-  {
-    /* .current_num_of_act = */ 0U,
     /* .current_prio       = */ 1U,
     /* .status             = */ SUSPENDED,
     /* .p_last_m           = */ NULL,
@@ -288,6 +279,15 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
     /* .p_own_sn           = */ NULL
   },
   {
+    /* .current_num_of_act = */ 0U,
+    /* .current_prio       = */ 3U,
+    /* .status             = */ SUSPENDED,
+    /* .p_last_m           = */ NULL,
+    /* .wait_mask          = */ 0U,
+    /* .event_mask         = */ 0U,
+    /* .p_own_sn           = */ NULL
+  },
+  {
     /* .current_num_of_act = */ 1U,
     /* .current_prio       = */ 0U,
     /* .status             = */ RUNNING,
@@ -330,7 +330,7 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .p_tcb          = */ &osEE_tcb_array[1U],
     /* .tid            = */ 1U,
     /* .task_type      = */ OSEE_TASK_TYPE_ISR2,
-    /* .task_func      = */ CAN_RxInt0Handler,
+    /* .task_func      = */ CAN_RX_HND,
     /* .ready_prio     = */ 130U,
     /* .dispatch_prio  = */ 130U,
     /* .max_num_of_act = */ 1U
@@ -345,8 +345,8 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .tid            = */ 2U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
     /* .task_func      = */ TASK_FUNC(Blink_LED),
-    /* .ready_prio     = */ 3U,
-    /* .dispatch_prio  = */ 3U,
+    /* .ready_prio     = */ 1U,
+    /* .dispatch_prio  = */ 1U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -458,7 +458,7 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
     /* .task_func      = */ TASK_FUNC(OS_EE_Task_Init),
     /* .ready_prio     = */ 1U,
-    /* .dispatch_prio  = */ 127U,
+    /* .dispatch_prio  = */ 1U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -499,8 +499,8 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .tid            = */ 13U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
     /* .task_func      = */ TASK_FUNC(LCD_TEST),
-    /* .ready_prio     = */ 1U,
-    /* .dispatch_prio  = */ 1U,
+    /* .ready_prio     = */ 2U,
+    /* .dispatch_prio  = */ 2U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -513,8 +513,8 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .tid            = */ 14U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
     /* .task_func      = */ TASK_FUNC(LED_KING),
-    /* .ready_prio     = */ 2U,
-    /* .dispatch_prio  = */ 2U,
+    /* .ready_prio     = */ 3U,
+    /* .dispatch_prio  = */ 3U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -712,30 +712,6 @@ static CONSTP2VAR(OsEE_AlarmDB, OS_CONST, OS_APPL_DATA)
 
 /***************************************************************************
  *
- * Autostart Alarm Core0
- *
- **************************************************************************/
-
-static VAR(OsEE_autostart_trigger_info, OS_CONST)
-  osEE_trigger_autostart_info_OSDEFAULTAPPMODE[1U] =
-{
-  {
-    /* .p_trigger_db          = */  &osEE_alarm_db_array[0U],
-    /* .first_tick_parameter  = */  (1000U),
-    /* .first_tick_parameter  = */  (500U)
-  }
-};
-
-static VAR(OsEE_autostart_trigger, OS_CONST) osEE_autostart_trigger_db[1U] =
-{
-  {
-    /* .p_trigger_ptr_array = */  (P2SYM_VAR(OsEE_autostart_trigger_info, OS_APPL_CONST, TYPEDEF)[])&osEE_trigger_autostart_info_OSDEFAULTAPPMODE,
-    /* .trigger_array_size  = */  OSEE_ARRAY_ELEMENT_COUNT(osEE_trigger_autostart_info_OSDEFAULTAPPMODE)
-  }
-};
-
-/***************************************************************************
- *
  * Init Cpu Control Block Core0
  *
  **************************************************************************/
@@ -766,9 +742,7 @@ VAR(OsEE_CCB, OS_VAR_INIT) osEE_ccb_var = {
 VAR(OsEE_CDB, OS_CONST) osEE_cdb_var = {
   /* .p_ccb                         = */ &osEE_ccb_var,
   /* .p_idle_task                   = */ &osEE_tdb_array[15U],
-  /* .p_sys_counter_db              = */ &osEE_counter_db_array[0U],
-  /* .p_autostart_trigger_array     = */ (P2SYM_VAR(OsEE_autostart_trigger, OS_APPL_CONST, TYPEDEF)[])&osEE_autostart_trigger_db,
-  /* .autostart_trigger_array_size  = */ OSEE_ARRAY_ELEMENT_COUNT(osEE_autostart_trigger_db)
+  /* .p_sys_counter_db              = */ &osEE_counter_db_array[0U]
 };
 
 

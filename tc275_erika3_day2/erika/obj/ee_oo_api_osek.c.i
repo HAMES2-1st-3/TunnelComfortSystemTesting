@@ -295,7 +295,6 @@
 #define OSEE_ARCH_TRICORE 
 #define OSEE_CPU_CLOCK (200000000U)
 #define OSEE_HAS_ALARMS 
-#define OSEE_HAS_AUTOSTART_TRIGGER 
 #define OSEE_HAS_COUNTERS 
 #define OSEE_HAS_EVENTS 
 #define OSEE_HAS_RESOURCES 
@@ -311,17 +310,17 @@
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
 #define OS_EE_RTD_BUILD_ENV_CYGWIN 
-# 85 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 84 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSMAXALLOWEDVALUE (2147483647U)
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 104 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 103 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSEE_TC_CORE0_3_ISR_CAT (2U)
 #define OSEE_TC_CORE0_3_ISR_TID 1
 
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)
 
 
 
@@ -331,8 +330,8 @@
 
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 57 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_cfg.h" 2
 # 56 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_arch_override.h" 1
@@ -7843,31 +7842,6 @@ typedef struct OsEE_TriggerDB_tag {
 
 typedef OsEE_TriggerCB OsEE_AlarmCB;
 typedef OsEE_TriggerDB OsEE_AlarmDB;
-# 681 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
-typedef struct {
-
-
-
-  OsEE_TriggerDB * p_trigger_db;
-
-  TickType first_tick_parameter;
-
-
-  TickType second_tick_parameter;
-
-
-
-
-
-} const OsEE_autostart_trigger_info;
-
-
-typedef struct {
-
-  OsEE_autostart_trigger_info (* p_trigger_ptr_array)[];
-
-  MemSize trigger_array_size;
-} const OsEE_autostart_trigger;
 # 729 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
 typedef struct {
 
@@ -7914,15 +7888,7 @@ typedef struct {
 
 
   OsEE_CounterDB * p_sys_counter_db;
-# 866 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
-  OsEE_autostart_trigger (* p_autostart_trigger_array)[];
-
-  MemSize autostart_trigger_array_size;
-
-
-
-
-
+# 874 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
 } const OsEE_CDB;
 
 
@@ -9464,35 +9430,6 @@ StatusType
     p_ccb->app_mode = real_mode;
 # 389 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_oo_api_osek.c"
     osEE_call_startup_hook(p_ccb);
-# 398 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_oo_api_osek.c"
-    {
-      MemSize i;
-      MemSize trigger_size;
-      OsEE_autostart_trigger * const
-        p_auto_triggers = &(*p_cdb->p_autostart_trigger_array)[real_mode];
-
-
-
-
-
-
-
-      trigger_size = p_auto_triggers->trigger_array_size;
-      for (i = 0U; i < trigger_size; ++i) {
-        OsEE_autostart_trigger_info * const
-          p_trigger_to_act_info = &(*p_auto_triggers->p_trigger_ptr_array)[i];
-        OsEE_TriggerDB * const
-          p_trigger_to_act_db = p_trigger_to_act_info->p_trigger_db;
-
-        (void)osEE_alarm_set_rel(
-          p_trigger_to_act_db->p_counter_db,
-          p_trigger_to_act_db,
-          p_trigger_to_act_info->first_tick_parameter,
-          p_trigger_to_act_info->second_tick_parameter
-        );
-# 460 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_oo_api_osek.c"
-      }
-    }
 # 527 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_oo_api_osek.c"
     if (p_ccb->os_status == OSEE_KERNEL_STARTING) {
       p_ccb->os_status = OSEE_KERNEL_STARTED;

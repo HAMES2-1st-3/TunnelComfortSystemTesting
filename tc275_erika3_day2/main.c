@@ -8,7 +8,7 @@ void StartupHook(void)
 	//my_printf("Hello aaaorld!\n");
 	//ActivateTask(Task_Motor);
 	//ActivateTask(Blink_LED);
-	//ActivateTask(LCD_TEST);
+	ActivateTask(OS_EE_Task_Init);
 
 }
 
@@ -71,11 +71,11 @@ TASK(LED_KING){
 
 	if(HeadLampStatus){ //01 받았으면 터널 진입으로 헤드램프 on으로 왕눈이도 불들어와
 		setHeadlampLED(HeadLampStatus);
-		delay_ms(1000);
+		//delay_ms(1000);
 	}
 	else{ //00 받아 탈출
 		setHeadlampLED(HeadLampStatus);
-		delay_ms(1000);
+		//delay_ms(1000);
 	}
 	//}
 	TerminateTask();
@@ -115,7 +115,7 @@ TASK(Blink_LED)
 {
 	//while(1){
 		toggleLED1();
-		delay_ms(1000);
+		delay_ms(500);
 		//unsigned int i = 0; while (i++ < 1000);
 
 		//setLED2(0);
@@ -125,9 +125,8 @@ TASK(Blink_LED)
 		//unsigned int i = 0; while (i++ < 1000);
 		//Driver_Can_TxTest();
 		//can_Send(signal_type, wheretoecu);
-		delay_ms(1000);
 	//}
-	TerminateTask();
+		TerminateTask();
 }
 
 TASK(UART_Echo)
@@ -239,6 +238,9 @@ TASK(ADC_Example)
 
 TASK(OS_EE_Task_Init)
 {
+	while(1){
+
+	}
 	TerminateTask();
 }
 
@@ -246,6 +248,10 @@ int main(void)
 {
 	SYSTEM_Init();
 	InterruptInit();
+	//EnableAllInterrupts();
+	/* enable external interrupts */
+//	_enable();
+
 
 	Init_GPIO();
 	init_lcd();

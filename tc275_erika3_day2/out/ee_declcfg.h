@@ -47,7 +47,7 @@ DeclareTask(LCD_TEST);
 DeclareTask(LED_KING);
 
 
-ISR2(CAN_RxInt0Handler);
+ISR2(CAN_RX_HND);
 
 
 /***************************************************************************

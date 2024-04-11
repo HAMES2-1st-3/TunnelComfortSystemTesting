@@ -6,10 +6,7 @@ CPU tc275_shieldbuddy {
 		ACTION = ACTIVATETASK {
 			TASK = Blink_LED;
 		};
-		AUTOSTART = TRUE {
-			ALARMTIME = 1000;
-			CYCLETIME = 500;
-		};
+		AUTOSTART = FALSE;
 		COUNTER = systimer;
 	};
 	APPDATA app_main {
@@ -58,7 +55,7 @@ CPU tc275_shieldbuddy {
 		CATEGORY = 2;
 		SOURCE = "CANINT0";
 		PRIORITY = 3;
-		HANDLER = "CAN_RxInt0Handler";
+		HANDLER = "CAN_RX_HND";
 	};
 	OS erika3_basic_example {
 		EE_OPT = "OSEE_DEBUG";
@@ -98,7 +95,7 @@ CPU tc275_shieldbuddy {
 		STACKMONITORING = FALSE;
 	};
 	TASK Blink_LED {
-		PRIORITY = 5;
+		PRIORITY = 1;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {
@@ -163,7 +160,7 @@ CPU tc275_shieldbuddy {
 	};
 	TASK OS_EE_Task_Init {
 		PRIORITY = 1;
-		SCHEDULE = NON;
+		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {
 			SIZE = 1024;
@@ -185,13 +182,13 @@ CPU tc275_shieldbuddy {
 		};
 	};
 	TASK LCD_TEST {
-		PRIORITY = 1;
+		PRIORITY = 2;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = SHARED;
 	};
 	TASK LED_KING {
-		PRIORITY = 2;
+		PRIORITY = 3;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = SHARED;

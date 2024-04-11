@@ -299,7 +299,6 @@
 #define OSEE_ARCH_TRICORE 
 #define OSEE_CPU_CLOCK (200000000U)
 #define OSEE_HAS_ALARMS 
-#define OSEE_HAS_AUTOSTART_TRIGGER 
 #define OSEE_HAS_COUNTERS 
 #define OSEE_HAS_EVENTS 
 #define OSEE_HAS_RESOURCES 
@@ -315,17 +314,17 @@
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
 #define OS_EE_RTD_BUILD_ENV_CYGWIN 
-# 85 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 84 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSMAXALLOWEDVALUE (2147483647U)
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 104 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 103 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSEE_TC_CORE0_3_ISR_CAT (2U)
 #define OSEE_TC_CORE0_3_ISR_TID 1
 
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)
 
 
 
@@ -335,8 +334,8 @@
 
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\out/ee_applcfg.h" 2
 # 39 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\out/ee_applcfg.h"
 #define OS_EE_RTD_GEN_VERSION 12345
@@ -7687,7 +7686,7 @@ extern void FuncLCD_TEST ( void );
 extern void FuncLED_KING ( void );
 
 
-void CAN_RxInt0Handler(void);
+void CAN_RX_HND(void);
 # 71 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 5 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\Driver_Can.c" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\Driver_Can.h" 1
@@ -75949,6 +75948,7 @@ extern Ecu1Can stEcu1Can;
 extern void Driver_Can_Init(void);
 extern void Driver_Can_TxTest(void);
 extern void CAN_RxInt0Handler(void);
+extern void CAN_RX_HND(void);
 
 extern char getLEDKing(void);
 extern char getTunnelStatus(void);
@@ -75971,14 +75971,15 @@ char led_king=0;
 char tunnel_ok=0;
 
 
-void CAN_RxInt0Handler(void){
-  IfxMultican_Status readStatusfromsensor;
+void CAN_RX_HND(void){
+ IfxMultican_Status readStatusfromsensor;
      IfxMultican_Status readStatusfrombody;
 
      static uint32_t u32nuTemp1=0u;
      static uint32_t u32nuTemp2=0u;
 
      IfxCpu_enableInterrupts();
+
 
      readStatusfromsensor=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
 
@@ -75996,7 +75997,7 @@ void CAN_RxInt0Handler(void){
          else {
           ;
          }
-
+         toggleLED1();
          ActivateTask((14U));
 
       }
@@ -76004,12 +76005,12 @@ void CAN_RxInt0Handler(void){
 
      readStatusfrombody=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[1], &stRxMsgData[1]);
 
-     if(readStatusfromsensor==IfxMultican_Status_newData){
+     if(readStatusfrombody==IfxMultican_Status_newData){
              u32nuTemp1=stRxMsgData[1].data[0];
              u32nuTemp2=stRxMsgData[1].data[1];
           if(u32nuTemp1==0x15){
            tunnel_ok=1;
-          }
+            }
           else{
            tunnel_ok=0;
           }
@@ -76017,7 +76018,7 @@ void CAN_RxInt0Handler(void){
           ActivateTask((13U));
          }
 }
-# 139 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\Driver_Can.c"
+# 142 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\Driver_Can.c"
 char getLEDKing(void){
  return led_king;
 }
@@ -76027,7 +76028,7 @@ char getTunnelStatus(void){
 
 void Driver_Can_Init(void)
 {
-
+ InterruptInstall(576, CAN_RX_HND,3,0);
 
     IfxMultican_Can_Config canConfig;
     IfxMultican_Can_initModuleConfig(&canConfig, &(*(Ifx_CAN*)0xF0018000u));

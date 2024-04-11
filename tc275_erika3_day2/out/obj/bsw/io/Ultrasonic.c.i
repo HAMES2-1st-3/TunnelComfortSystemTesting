@@ -164082,6 +164082,7 @@ extern Ecu1Can stEcu1Can;
 extern void Driver_Can_Init(void);
 extern void Driver_Can_TxTest(void);
 extern void CAN_RxInt0Handler(void);
+extern void CAN_RX_HND(void);
 
 extern char getLEDKing(void);
 extern char getTunnelStatus(void);

@@ -301,7 +301,6 @@
 #define OSEE_ARCH_TRICORE 
 #define OSEE_CPU_CLOCK (200000000U)
 #define OSEE_HAS_ALARMS 
-#define OSEE_HAS_AUTOSTART_TRIGGER 
 #define OSEE_HAS_COUNTERS 
 #define OSEE_HAS_EVENTS 
 #define OSEE_HAS_RESOURCES 
@@ -317,17 +316,17 @@
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
 #define OS_EE_RTD_BUILD_ENV_CYGWIN 
-# 85 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 84 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSMAXALLOWEDVALUE (2147483647U)
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 104 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 103 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSEE_TC_CORE0_3_ISR_CAT (2U)
 #define OSEE_TC_CORE0_3_ISR_TID 1
 
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)
 
 
 
@@ -337,8 +336,8 @@
 
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\out/ee_applcfg.h" 2
 # 39 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\out/ee_applcfg.h"
 #define OS_EE_RTD_GEN_VERSION 12345
@@ -7689,7 +7688,7 @@ extern void FuncLCD_TEST ( void );
 extern void FuncLED_KING ( void );
 
 
-void CAN_RxInt0Handler(void);
+void CAN_RX_HND(void);
 # 71 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 56 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_conf.h" 2
 
@@ -7945,31 +7944,6 @@ typedef struct OsEE_TriggerDB_tag {
 
 typedef OsEE_TriggerCB OsEE_AlarmCB;
 typedef OsEE_TriggerDB OsEE_AlarmDB;
-# 681 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
-typedef struct {
-
-
-
-  OsEE_TriggerDB * p_trigger_db;
-
-  TickType first_tick_parameter;
-
-
-  TickType second_tick_parameter;
-
-
-
-
-
-} const OsEE_autostart_trigger_info;
-
-
-typedef struct {
-
-  OsEE_autostart_trigger_info (* p_trigger_ptr_array)[];
-
-  MemSize trigger_array_size;
-} const OsEE_autostart_trigger;
 # 729 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
 typedef struct {
 
@@ -8016,15 +7990,7 @@ typedef struct {
 
 
   OsEE_CounterDB * p_sys_counter_db;
-# 866 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
-  OsEE_autostart_trigger (* p_autostart_trigger_array)[];
-
-  MemSize autostart_trigger_array_size;
-
-
-
-
-
+# 874 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_kernel_types.h"
 } const OsEE_CDB;
 
 
@@ -8466,15 +8432,6 @@ static OsEE_TCB
   },
   {
                                 0U,
-                                3U,
-                                OSEE_TASK_SUSPENDED,
-                                ((void *)0),
-                                0U,
-                                0U,
-                                ((void *)0)
-  },
-  {
-                                0U,
                                 1U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
@@ -8582,6 +8539,15 @@ static OsEE_TCB
                                 ((void *)0)
   },
   {
+                                0U,
+                                3U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
                                 1U,
                                 0U,
                                 OSEE_TASK_RUNNING,
@@ -8617,7 +8583,7 @@ static OsEE_TDB
                             &osEE_tcb_array[1U],
                             1U,
                             OSEE_TASK_TYPE_ISR2,
-                            CAN_RxInt0Handler,
+                            CAN_RX_HND,
                             130U,
                             130U,
                             1U
@@ -8632,8 +8598,8 @@ static OsEE_TDB
                             2U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncBlink_LED,
-                            3U,
-                            3U,
+                            1U,
+                            1U,
                             1U
   },
   {
@@ -8745,7 +8711,7 @@ static OsEE_TDB
                             OSEE_TASK_TYPE_BASIC,
                             FuncOS_EE_Task_Init,
                             1U,
-                            127U,
+                            1U,
                             1U
   },
   {
@@ -8786,8 +8752,8 @@ static OsEE_TDB
                             13U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncLCD_TEST,
-                            1U,
-                            1U,
+                            2U,
+                            2U,
                             1U
   },
   {
@@ -8800,8 +8766,8 @@ static OsEE_TDB
                             14U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncLED_KING,
-                            2U,
-                            2U,
+                            3U,
+                            3U,
                             1U
   },
   {
@@ -8980,25 +8946,7 @@ static OsEE_AlarmDB * const
 {
   &osEE_alarm_db_array[0]
 };
-# 719 "ee_applcfg.c"
-static OsEE_autostart_trigger_info
-  osEE_trigger_autostart_info_OSDEFAULTAPPMODE[1U] =
-{
-  {
-                                    &osEE_alarm_db_array[0U],
-                                    (1000U),
-                                    (500U)
-  }
-};
-
-static OsEE_autostart_trigger osEE_autostart_trigger_db[1U] =
-{
-  {
-                                  (OsEE_autostart_trigger_info (* )[])&osEE_trigger_autostart_info_OSDEFAULTAPPMODE,
-                                  (sizeof(osEE_trigger_autostart_info_OSDEFAULTAPPMODE)/sizeof(0[(osEE_trigger_autostart_info_OSDEFAULTAPPMODE)]))
-  }
-};
-# 744 "ee_applcfg.c"
+# 720 "ee_applcfg.c"
 OsEE_CCB osEE_ccb_var = {
                         &osEE_tdb_array[15U],
                         ((void *)0),
@@ -9013,13 +8961,11 @@ OsEE_CCB osEE_ccb_var = {
                                  0U,
                                  0U
 };
-# 766 "ee_applcfg.c"
+# 742 "ee_applcfg.c"
 OsEE_CDB osEE_cdb_var = {
                                          &osEE_ccb_var,
                                          &osEE_tdb_array[15U],
-                                         &osEE_counter_db_array[0U],
-                                         (OsEE_autostart_trigger (* )[])&osEE_autostart_trigger_db,
-                                         (sizeof(osEE_autostart_trigger_db)/sizeof(0[(osEE_autostart_trigger_db)]))
+                                         &osEE_counter_db_array[0U]
 };
 
 

@@ -296,7 +296,6 @@
 #define OSEE_ARCH_TRICORE 
 #define OSEE_CPU_CLOCK (200000000U)
 #define OSEE_HAS_ALARMS 
-#define OSEE_HAS_AUTOSTART_TRIGGER 
 #define OSEE_HAS_COUNTERS 
 #define OSEE_HAS_EVENTS 
 #define OSEE_HAS_RESOURCES 
@@ -312,17 +311,17 @@
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
 #define OS_EE_RTD_BUILD_ENV_CYGWIN 
-# 85 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 84 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSMAXALLOWEDVALUE (2147483647U)
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 104 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 103 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
 #define OSEE_TC_CORE0_3_ISR_CAT (2U)
 #define OSEE_TC_CORE0_3_ISR_TID 1
 
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)
-#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)
 
 
 
@@ -332,8 +331,8 @@
 
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\out/ee_applcfg.h" 2
 # 39 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\out/ee_applcfg.h"
 #define OS_EE_RTD_GEN_VERSION 12345
@@ -7684,7 +7683,7 @@ extern void FuncLCD_TEST ( void );
 extern void FuncLED_KING ( void );
 
 
-void CAN_RxInt0Handler(void);
+void CAN_RX_HND(void);
 # 71 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oo_api_osek.h" 1
@@ -171417,6 +171416,7 @@ extern Ecu1Can stEcu1Can;
 extern void Driver_Can_Init(void);
 extern void Driver_Can_TxTest(void);
 extern void CAN_RxInt0Handler(void);
+extern void CAN_RX_HND(void);
 
 extern char getLEDKing(void);
 extern char getTunnelStatus(void);
@@ -172749,7 +172749,7 @@ void StartupHook(void)
 
 
 
-
+ ActivateTask((10U));
 
 }
 
@@ -172812,11 +172812,11 @@ void FuncLED_KING ( void ){
 
  if(HeadLampStatus){
   setHeadlampLED(HeadLampStatus);
-  delay_ms(1000);
+
  }
  else{
   setHeadlampLED(HeadLampStatus);
-  delay_ms(1000);
+
  }
 
  TerminateTask();
@@ -172856,11 +172856,9 @@ void FuncBlink_LED ( void )
 {
 
   toggleLED1();
-  delay_ms(1000);
-# 128 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
-  delay_ms(1000);
-
- TerminateTask();
+  delay_ms(500);
+# 129 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+  TerminateTask();
 }
 
 void FuncUART_Echo ( void )
@@ -172972,6 +172970,9 @@ void FuncADC_Example ( void )
 
 void FuncOS_EE_Task_Init ( void )
 {
+ while(1){
+
+ }
  TerminateTask();
 }
 
@@ -172980,12 +172981,16 @@ int main(void)
  SYSTEM_Init();
  InterruptInit();
 
+
+
+
+
  Init_GPIO();
  init_lcd();
  Driver_Can_Init();
 
  _init_uart3();
-# 264 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+# 270 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
  StartOS(((AppModeType)0U));
 
  return 0;

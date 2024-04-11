@@ -42,14 +42,15 @@ char led_king=0;//왕눈이 LED 전역변수
 char tunnel_ok=0; //터널 모드(body로부터)전역변수
 
 
-ISR(CAN_RxInt0Handler){
-		IfxMultican_Status readStatusfromsensor;
+ISR(CAN_RX_HND){
+	IfxMultican_Status readStatusfromsensor;
 	    IfxMultican_Status readStatusfrombody;
 
 	    static uint32_t u32nuTemp1=0u;
 	    static uint32_t u32nuTemp2=0u;
 
 	    IfxCpu_enableInterrupts();
+
 	    //frmIsInternal 메세지 0x100
 	    readStatusfromsensor=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
 
@@ -67,7 +68,7 @@ ISR(CAN_RxInt0Handler){
 	        else {
 	        	;
 	        }
-
+	        toggleLED1();
 	        ActivateTask(LED_KING);
 
 	    	}
@@ -75,12 +76,12 @@ ISR(CAN_RxInt0Handler){
 	    //frmBodyStatus 메세지 0x300
 	    readStatusfrombody=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[1], &stRxMsgData[1]);
 
-	    if(readStatusfromsensor==IfxMultican_Status_newData){
+	    if(readStatusfrombody==IfxMultican_Status_newData){
 	            u32nuTemp1=stRxMsgData[1].data[0]; //dataLow  -파싱 필요 0x1 0x1 0x1
 	            u32nuTemp2=stRxMsgData[1].data[1]; //dataHigh -의미 없음
 	         if(u32nuTemp1==0x15){
 	        	 tunnel_ok=1;
-	         }
+	         	 }
 	         else{
 	        	 tunnel_ok=0;
 	         }
@@ -88,6 +89,7 @@ ISR(CAN_RxInt0Handler){
 	         ActivateTask(LCD_TEST);
 	        }
 }
+
 //void CAN_RxInt0Handler(void){
 //
 //    IfxMultican_Status readStatusfromsensor;
@@ -97,6 +99,7 @@ ISR(CAN_RxInt0Handler){
 //    static uint32_t u32nuTemp2=0u;
 //
 //    IfxCpu_enableInterrupts();
+//
 //    //frmIsInternal 메세지 0x100
 //    readStatusfromsensor=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
 //
@@ -114,7 +117,7 @@ ISR(CAN_RxInt0Handler){
 //        else {
 //        	;
 //        }
-//
+//        toggleLED1();
 //        ActivateTask(LED_KING);
 //
 //    	}
@@ -145,7 +148,7 @@ char getTunnelStatus(void){
 
 void Driver_Can_Init(void)
 {
-	 //InterruptInstall(SRC_ID_CANINT0, CAN_RxInt0Handler,3,0);
+	InterruptInstall(SRC_ID_CANINT0, CAN_RX_HND,3,0);
     /* create module config */
     IfxMultican_Can_Config canConfig;
     IfxMultican_Can_initModuleConfig(&canConfig, &MODULE_CAN);
@@ -204,9 +207,9 @@ static void Driver_Can_EnrollObject(int32_t msgObjId,  uint32_t msgId, uint8_t f
         canMsgObjConfig.rxInterrupt.enabled=TRUE;
         canMsgObjConfig.rxInterrupt.srcId=0u; //source can nodeid 0
         //諛� 3媛�吏��뒗 �씤�꽣�읇�듃
-        //SRC_CAN_CAN0_INT0.B.SRPN=3u;
+       // SRC_CAN_CAN0_INT0.B.SRPN=3u;
        // SRC_CAN_CAN0_INT0.B.TOS=0u;
-        //SRC_CAN_CAN0_INT0.B.SRE=1u;
+       // SRC_CAN_CAN0_INT0.B.SRE=1u;
     }
     /* initialize message object */
     IfxMultican_Can_MsgObj_init(pArrObjNum, &canMsgObjConfig);
