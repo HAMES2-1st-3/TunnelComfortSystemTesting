@@ -15,6 +15,7 @@ int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
 
+void setHeadlampLED(int onoff);
 //void init_lcd(void);
 //void write_instruction(unsigned char i);
 //void write_data(unsigned char d);

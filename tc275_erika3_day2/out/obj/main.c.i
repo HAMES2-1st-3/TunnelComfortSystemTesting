@@ -302,12 +302,12 @@
 #define OSEE_HAS_RESOURCES 
 #define OSEE_HAS_STARTUPHOOK 
 #define OSEE_HAS_SYSTEM_TIMER 
-#define OSEE_ISR2_MAX_HW_ASM_PRIO 1
-#define OSEE_ISR2_MAX_PRIO (128U)
+#define OSEE_ISR2_MAX_HW_ASM_PRIO 3
+#define OSEE_ISR2_MAX_PRIO (130U)
 #define OSEE_MULTI_STACK 
 #define OSEE_OC_ECC1 
 #define OSEE_SINGLE_ACTIVATION 
-#define OSEE_TC_CORE0_ISR_MAX_PRIO (1U)
+#define OSEE_TC_CORE0_ISR_MAX_PRIO (3U)
 #define OSEE_TC_TC27X 
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
@@ -317,7 +317,19 @@
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 108 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 104 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 1
+
+#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)
+
+
+
+
+
+
+
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
 #define OSEE_TC_CORE0_1_ISR_CAT (2U)
@@ -331,8 +343,8 @@
 
 
 
-#define OSEE_TASK_ARRAY_SIZE (13U)
-#define OSEE_SN_ARRAY_SIZE (13U)
+#define OSEE_TASK_ARRAY_SIZE (15U)
+#define OSEE_SN_ARRAY_SIZE (15U)
 #define OSEE_STACK_ARRAY_SIZE (11U)
 #define OSEE_RESOURCE_ARRAY_SIZE (1U)
 #define OSEE_COUNTERS_ARRAY_SIZE (1U)
@@ -343,18 +355,19 @@
 
 
 
-#define Blink_LED (1U)
-#define UART_Echo (2U)
-#define DCMotor_Example (3U)
-#define Timer_Example (4U)
-#define Ultrasonic_Example (5U)
-#define Buzzer_Example (6U)
-#define TOF_Example (7U)
-#define ADC_Example (8U)
-#define OS_EE_Task_Init (9U)
-#define Task_Motor (10U)
-#define Task_AEB (11U)
-#define LCD_TEST (12U)
+#define Blink_LED (2U)
+#define UART_Echo (3U)
+#define DCMotor_Example (4U)
+#define Timer_Example (5U)
+#define Ultrasonic_Example (6U)
+#define Buzzer_Example (7U)
+#define TOF_Example (8U)
+#define ADC_Example (9U)
+#define OS_EE_Task_Init (10U)
+#define Task_Motor (11U)
+#define Task_AEB (12U)
+#define LCD_TEST (13U)
+#define LED_KING (14U)
 
 
 
@@ -7668,6 +7681,10 @@ extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
 extern void FuncLCD_TEST ( void );
+extern void FuncLED_KING ( void );
+
+
+void CAN_RxInt0Handler(void);
 # 71 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oo_api_osek.h" 1
@@ -171399,15 +171416,33 @@ extern Ecu1Can stEcu1Can;
 
 extern void Driver_Can_Init(void);
 extern void Driver_Can_TxTest(void);
-void CAN_RxInt0Handler(void);
+extern void CAN_RxInt0Handler(void);
+
+extern char getLEDKing(void);
+extern char getTunnelStatus(void);
 # 16 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/drivers/com.h" 1
+# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/drivers/com.h"
+#define BSW_DRIVERS_COM_H_ 
+
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/drivers/Driver_Can.h" 1
+# 12 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/drivers/com.h" 2
+typedef struct {
+ uint32 dataHighs;
+ uint32 dataLows;
+}signalname;
+
+void can_send(signalname s1,int toecu);
+# 18 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+
 
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/etc/etc.h" 1
 
 #define BSW_ETC_ETC_H_ 
 
 void delay_ms(unsigned int delay_time);
-# 18 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 21 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 
 
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/Buzzer.h" 1
@@ -171418,7 +171453,7 @@ void Init_Buzzer(void);
 void Init_Buzzer_PWM(void);
 void setBeepCycle(int cycle);
 void Beep(unsigned int hz);
-# 21 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 24 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/GPIO.h" 1
 
 #define BSW_IO_GPIO_H_ 
@@ -171436,7 +171471,9 @@ int getSW1(void);
 int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
-# 22 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+
+void setHeadlampLED(int onoff);
+# 25 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/Motor.h" 1
 
 #define BSW_IO_MOTOR_H_ 
@@ -171452,7 +171489,7 @@ void stopChB(void);
 
 void movChA_PWM(int duty, int dir);
 void movChB_PWM(int duty, int dir);
-# 23 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 26 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/ToF.h" 1
 
 #define BSW_IO_TOF_H_ 
@@ -171460,7 +171497,7 @@ void movChB_PWM(int duty, int dir);
 void Init_ToF(void);
 void IsrUart1RxHandler_tof(void);
 int getTofDistance(void);
-# 24 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 27 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/Ultrasonic.h" 1
 
 #define BSW_IO_ULTRASONIC_H_ 
@@ -171470,8 +171507,19 @@ double ReadUltrasonic_noFilt(void);
 double ReadUltrasonic_Filt(void);
 
 #define FILT_SIZE 5
-# 25 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 28 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/LCD.h" 1
+# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw/io/LCD.h"
+#define BSW_IO_LCD_H_ 
 
+
+
+void init_lcd(void);
+void write_instruction(unsigned char i);
+void write_data(char d);
+void delay_us(unsigned int m);
+void lcdprint_data(char *str);
+# 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3
 # 27 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 3
@@ -172683,7 +172731,7 @@ int __swbuf_r (struct _reent *, int, FILE *);
 #define putchar(x) putc(x, stdout)
 
 
-# 28 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
+# 31 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 
 
 extern unsigned char cmd_clr_scr[8];
@@ -172701,7 +172749,7 @@ void StartupHook(void)
 
 
 
- ActivateTask((12U));
+
 
 }
 
@@ -172718,6 +172766,7 @@ extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
 extern void FuncLCD_TEST ( void );
+extern void FuncLED_KING ( void );
 int duty=0;
 unsigned char ch;
 unsigned char dir;
@@ -172726,29 +172775,53 @@ int pwm=0;
 
 void FuncLCD_TEST ( void ){
 
- while(1){
-  setLED1(1);
-  delay_ms(1000);
-     write_instruction(0x80);
-  delay_ms(1000);
+
+
+  char TunnelStatus=getTunnelStatus();
+
+  if(TunnelStatus){
+   delay_ms(1000);
+   write_instruction(0x80);
+   delay_ms(1000);
 
 
 
-  lcdprint_data("TunnelIn");
-     delay_ms(3000);
+   lcdprint_data("Tunnel In");
+   delay_ms(2000);
 
-     write_instruction(0xc0);
-     delay_ms(1000);
+  }
+  else{
+   write_instruction(0xc0);
+   delay_ms(1000);
 
 
 
-  lcdprint_data("TunnelOFF");
-  delay_ms(3000);
-  setLED1(0);
-  delay_ms(1000);
- }
+   lcdprint_data("Tunnel OFF");
+   delay_ms(2000);
+
+
+  }
+
+
  TerminateTask();
 }
+
+void FuncLED_KING ( void ){
+
+ int HeadLampStatus=getLEDKing();
+
+ if(HeadLampStatus){
+  setHeadlampLED(HeadLampStatus);
+  delay_ms(1000);
+ }
+ else{
+  setHeadlampLED(HeadLampStatus);
+  delay_ms(1000);
+ }
+
+ TerminateTask();
+}
+
 void FuncTask_Motor ( void ){
 
 
@@ -172781,11 +172854,12 @@ void FuncTask_AEB ( void ){
 }
 void FuncBlink_LED ( void )
 {
- while(1){
-# 100 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
-  Driver_Can_TxTest();
+
+  toggleLED1();
   delay_ms(1000);
- }
+# 128 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+  delay_ms(1000);
+
  TerminateTask();
 }
 
@@ -172840,10 +172914,10 @@ void FuncUltrasonic_Example ( void )
   dist = (int)ReadUltrasonic_noFilt();
   if (dist >= 20&&dist<=30) {
 
-   ActivateTask((6U));
+   ActivateTask((7U));
   } else if(dist>=10&&dist<20) {
 
-   ActivateTask((6U));
+   ActivateTask((7U));
   }
   else if(dist<10){
    stopChB();
@@ -172911,7 +172985,7 @@ int main(void)
  Driver_Can_Init();
 
  _init_uart3();
-# 236 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+# 264 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
  StartOS(((AppModeType)0U));
 
  return 0;

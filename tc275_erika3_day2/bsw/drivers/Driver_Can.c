@@ -1,6 +1,7 @@
 /***********************************************************************/
 /*Include*/ 
 /***********************************************************************/
+#include "ee.h"
 #include "Driver_Can.h"
 
 
@@ -34,31 +35,117 @@ uint32_t u32nuCanRxCnt=0;
 static void Driver_Can_EnrollObject(int32_t msgObjId,  uint32_t msgId, uint8_t frameType, uint8_t msgDlc,  uint32_t extendedFrame, IfxMultican_Can_MsgObj* pArrObjNum);
 const uint32 dataLow  = 0x12340000;
 const uint32 dataHigh = 0x9abc0000;
-IfxMultican_Message stRxMsgData[10];
+
+IfxMultican_Message stRxMsgData[10];//받은 메세지 저장한 배열
+
+char led_king=0;//왕눈이 LED 전역변수
+char tunnel_ok=0; //터널 모드(body로부터)전역변수
 
 
-//IFX_INTERRUPT(CAN_RxInt0Handler, 0, 30);
+ISR(CAN_RxInt0Handler){
+		IfxMultican_Status readStatusfromsensor;
+	    IfxMultican_Status readStatusfrombody;
 
-void CAN_RxInt0Handler(void){
+	    static uint32_t u32nuTemp1=0u;
+	    static uint32_t u32nuTemp2=0u;
 
-    IfxMultican_Status readStatus;
-    static uint32_t u32nuTemp1=0u;
-    static uint32_t u32nuTemp2=0u;
+	    IfxCpu_enableInterrupts();
+	    //frmIsInternal 메세지 0x100
+	    readStatusfromsensor=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
 
-    IfxCpu_enableInterrupts();
-    readStatus=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
+	    if(readStatusfromsensor==IfxMultican_Status_newData){
+	        u32nuTemp1=stRxMsgData[0].data[0]; //dataLow  -파싱 필요 0x1
+	        u32nuTemp2=stRxMsgData[0].data[1]; //dataHigh -의미 없음
 
-    if(readStatus==IfxMultican_Status_newData){
-        u32nuTemp1=stRxMsgData[0].data[0]; //dataLow
-        u32nuTemp2=stRxMsgData[0].data[1]; //dataHigh
-        u32nuCanRxCnt++;
-        toggleLED2(); //blue
-    }
 
+	        if(u32nuTemp1==0x1){ //터널 진입 모드를 의미
+	        	led_king=1;
+	        }
+	        else if(u32nuTemp1==0x0){ //일반 모드를 의미
+	        	led_king=0;
+	        }
+	        else {
+	        	;
+	        }
+
+	        ActivateTask(LED_KING);
+
+	    	}
+
+	    //frmBodyStatus 메세지 0x300
+	    readStatusfrombody=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[1], &stRxMsgData[1]);
+
+	    if(readStatusfromsensor==IfxMultican_Status_newData){
+	            u32nuTemp1=stRxMsgData[1].data[0]; //dataLow  -파싱 필요 0x1 0x1 0x1
+	            u32nuTemp2=stRxMsgData[1].data[1]; //dataHigh -의미 없음
+	         if(u32nuTemp1==0x15){
+	        	 tunnel_ok=1;
+	         }
+	         else{
+	        	 tunnel_ok=0;
+	         }
+
+	         ActivateTask(LCD_TEST);
+	        }
 }
+//void CAN_RxInt0Handler(void){
+//
+//    IfxMultican_Status readStatusfromsensor;
+//    IfxMultican_Status readStatusfrombody;
+//
+//    static uint32_t u32nuTemp1=0u;
+//    static uint32_t u32nuTemp2=0u;
+//
+//    IfxCpu_enableInterrupts();
+//    //frmIsInternal 메세지 0x100
+//    readStatusfromsensor=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[0], &stRxMsgData[0]);
+//
+//    if(readStatusfromsensor==IfxMultican_Status_newData){
+//        u32nuTemp1=stRxMsgData[0].data[0]; //dataLow  -파싱 필요 0x1
+//        u32nuTemp2=stRxMsgData[0].data[1]; //dataHigh -의미 없음
+//
+//
+//        if(u32nuTemp1==0x1){ //터널 진입 모드를 의미
+//        	led_king=1;
+//        }
+//        else if(u32nuTemp1==0x0){ //일반 모드를 의미
+//        	led_king=0;
+//        }
+//        else {
+//        	;
+//        }
+//
+//        ActivateTask(LED_KING);
+//
+//    	}
+//
+//    //frmBodyStatus 메세지 0x300
+//    readStatusfrombody=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[1], &stRxMsgData[1]);;
+//
+//    if(readStatusfromsensor==IfxMultican_Status_newData){
+//            u32nuTemp1=stRxMsgData[1].data[0]; //dataLow  -파싱 필요 0x1 0x1 0x1
+//            u32nuTemp2=stRxMsgData[1].data[1]; //dataHigh -의미 없음
+//         if(u32nuTemp1==0x15){
+//        	 tunnel_ok=1;
+//         	 }
+//         else{
+//        	 tunnel_ok=0;
+//         }
+//
+//         ActivateTask(LCD_TEST);
+//        }
+//
+//}
+char getLEDKing(void){
+	return led_king;
+}
+char getTunnelStatus(void){
+	return tunnel_ok;
+}
+
 void Driver_Can_Init(void)
 {
-	 InterruptInstall(SRC_ID_CANINT0, CAN_RxInt0Handler,3,0);
+	 //InterruptInstall(SRC_ID_CANINT0, CAN_RxInt0Handler,3,0);
     /* create module config */
     IfxMultican_Can_Config canConfig;
     IfxMultican_Can_initModuleConfig(&canConfig, &MODULE_CAN);
@@ -87,10 +174,12 @@ void Driver_Can_Init(void)
 
     //�삤釉뚯젥�듃 �벑濡�(ecu2媛� �뿰寃�)
     /*Object Enrollment*/
-       Driver_Can_EnrollObject(0u, 0x100, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[0]);
-       //Driver_Can_EnrollObject(1u, 0x101, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[1]);
-       //Driver_Can_EnrollObject(2u, 0x102, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[2]);
-       Driver_Can_EnrollObject(10u, 0x200, IfxMultican_Frame_receive,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgRxObj[0]);
+    //송신
+       Driver_Can_EnrollObject(0u, 0x101, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[0]);
+      //Driver_Can_EnrollObject(2u, 0x102, IfxMultican_Frame_transmit,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgTxObj[2]);
+    //수신
+       Driver_Can_EnrollObject(10u, 0x100, IfxMultican_Frame_receive,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgRxObj[0]);
+       Driver_Can_EnrollObject(11u, 0x300, IfxMultican_Frame_receive,  IfxMultican_DataLengthCode_8, FALSE, &stEcu1Can.CanEcu1MsgRxObj[1]);
 
 
 
@@ -113,27 +202,28 @@ static void Driver_Can_EnrollObject(int32_t msgObjId,  uint32_t msgId, uint8_t f
     if(frameType==IfxMultican_Frame_receive)
     {
         canMsgObjConfig.rxInterrupt.enabled=TRUE;
-        canMsgObjConfig.rxInterrupt.srcId=0u; //source id 0
+        canMsgObjConfig.rxInterrupt.srcId=0u; //source can nodeid 0
         //諛� 3媛�吏��뒗 �씤�꽣�읇�듃
-        SRC_CAN_CAN0_INT0.B.SRPN=3u;
-        SRC_CAN_CAN0_INT0.B.TOS=0u;
-        SRC_CAN_CAN0_INT0.B.SRE=1u;
+        //SRC_CAN_CAN0_INT0.B.SRPN=3u;
+       // SRC_CAN_CAN0_INT0.B.TOS=0u;
+        //SRC_CAN_CAN0_INT0.B.SRE=1u;
     }
     /* initialize message object */
     IfxMultican_Can_MsgObj_init(pArrObjNum, &canMsgObjConfig);
 }
 
-void Driver_Can_TxTest(void)
+void Driver_Can_TxTest(void) //매개변수 msg
 {
-    const uint32 dataLow  = 0x66660000; //4諛붿씠�듃
-    const uint32 dataHigh = 0xaaaa0000; //4諛붿씠�듃 珥�8諛붿씠�듃 �뜲�씠�꽣
+	const uint32 dataLow  = 0x01; //4諛붿씠�듃
+    const uint32 dataHigh = 0x00; //4諛붿씠�듃 珥�8諛붿씠�듃 �뜲�씠�꽣
+
 
     /* Transmit Data */
     {
     	//setLED2(1);
-    	toggleLED1();
+    	//toggleLED1();
         IfxMultican_Message msg;
-        IfxMultican_Message_init(&msg, 0x100, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
+        IfxMultican_Message_init(&msg, 0x101, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
 
         //1媛쒖쓽 硫붿떆吏� 蹂대궪�븣 1媛쒖쓽 �삤釉뚯젥�듃 �궗�슜
         while (IfxMultican_Can_MsgObj_sendMessage(&stEcu1Can.CanEcu1MsgTxObj[0], &msg) == IfxMultican_Status_notSentBusy)

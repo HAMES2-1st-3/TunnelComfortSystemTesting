@@ -170,9 +170,9 @@ osEE_scheduler_task_wrapper_run:
 	.loc 2 365 0
 	and	%d2, %d15, 255
 .LVL15:
-	jnz	%d2, .L7
+	jge.u	%d2, 3, .L7
 .LVL16:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL17:
 .LBB148:
 .LBB149:
@@ -4792,7 +4792,7 @@ osEE_idle_hook_wrapper:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.35c9dc0cf3d8f6e58ac1f394a7b05831,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.18c51f8fadb0a1cdec133fa097c6e38d,comdat
 .Ldebug_macro1:
 	.uahalf	0x4
 	.byte	0
@@ -4849,10 +4849,10 @@ osEE_idle_hook_wrapper:
 	.string	"OSEE_HAS_SYSTEM_TIMER "
 	.byte	0x1
 	.uleb128 0x42
-	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 1"
+	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 3"
 	.byte	0x1
 	.uleb128 0x43
-	.string	"OSEE_ISR2_MAX_PRIO (128U)"
+	.string	"OSEE_ISR2_MAX_PRIO (130U)"
 	.byte	0x1
 	.uleb128 0x44
 	.string	"OSEE_MULTI_STACK "
@@ -4864,7 +4864,7 @@ osEE_idle_hook_wrapper:
 	.string	"OSEE_SINGLE_ACTIVATION "
 	.byte	0x1
 	.uleb128 0x47
-	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (1U)"
+	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (3U)"
 	.byte	0x1
 	.uleb128 0x48
 	.string	"OSEE_TC_TC27X "
@@ -4890,16 +4890,28 @@ osEE_idle_hook_wrapper:
 	.uleb128 0x58
 	.string	"OSTICKDURATION (1000000U)"
 	.byte	0x1
+	.uleb128 0x68
+	.string	"OSEE_TC_CORE0_3_ISR_CAT (2U)"
+	.byte	0x1
+	.uleb128 0x69
+	.string	"OSEE_TC_CORE0_3_ISR_TID 1"
+	.byte	0x1
+	.uleb128 0x6b
+	.string	"OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)"
+	.byte	0x1
 	.uleb128 0x6c
+	.string	"OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)"
+	.byte	0x1
+	.uleb128 0x74
 	.string	"OSEE_SYSTEM_TIMER (0U)"
 	.byte	0x1
-	.uleb128 0x6d
+	.uleb128 0x75
 	.string	"OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0"
 	.byte	0x1
-	.uleb128 0x6e
+	.uleb128 0x76
 	.string	"OSEE_TC_CORE0_1_ISR_CAT (2U)"
 	.byte	0x1
-	.uleb128 0x6f
+	.uleb128 0x77
 	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat

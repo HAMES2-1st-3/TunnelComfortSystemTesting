@@ -9,7 +9,7 @@
 osEE_kdb_var:
 	.word	osEE_kcb_var
 	.word	osEE_tdb_ptr_array
-	.word	14
+	.word	16
 	.word	osEE_res_db_ptr_array
 	.word	1
 	.word	osEE_counter_db_ptr_array
@@ -30,16 +30,17 @@ osEE_kcb_var:
 	.size	osEE_cdb_var, 20
 osEE_cdb_var:
 	.word	osEE_ccb_var
-	.word	osEE_tdb_array+416
+	.word	osEE_tdb_array+480
 	.word	osEE_counter_db_array
-	.zero	8
+	.word	osEE_autostart_trigger_db
+	.word	1
 	.global	osEE_ccb_var
 .section .data,"aw",@progbits
 	.align 2
 	.type	osEE_ccb_var, @object
 	.size	osEE_ccb_var, 32
 osEE_ccb_var:
-	.word	osEE_tdb_array+416
+	.word	osEE_tdb_array+480
 	.word	0
 	.word	osEE_sn_array
 	.word	0
@@ -55,6 +56,19 @@ osEE_ccb_var:
 	.zero	1
 .section .rodata,"a",@progbits
 	.align 2
+	.type	osEE_autostart_trigger_db, @object
+	.size	osEE_autostart_trigger_db, 8
+osEE_autostart_trigger_db:
+	.word	osEE_trigger_autostart_info_OSDEFAULTAPPMODE
+	.word	1
+	.align 2
+	.type	osEE_trigger_autostart_info_OSDEFAULTAPPMODE, @object
+	.size	osEE_trigger_autostart_info_OSDEFAULTAPPMODE, 12
+osEE_trigger_autostart_info_OSDEFAULTAPPMODE:
+	.word	osEE_alarm_db_array
+	.word	1000
+	.word	500
+	.align 2
 	.type	osEE_alarm_db_ptr_array, @object
 	.size	osEE_alarm_db_ptr_array, 4
 osEE_alarm_db_ptr_array:
@@ -66,7 +80,7 @@ osEE_alarm_db_array:
 	.word	osEE_alarm_cb_array
 	.word	osEE_counter_db_array
 	.word	0
-	.word	osEE_tdb_array+160
+	.word	osEE_tdb_array+64
 	.word	0
 	.word	0
 	.byte	0
@@ -109,7 +123,7 @@ osEE_res_db_ptr_array:
 	.size	osEE_res_db_array, 8
 osEE_res_db_array:
 	.word	osEE_res_cb_array
-	.byte	1
+	.byte	3
 	.zero	3
 	.local	osEE_res_cb_array
 .section .bss,"aw",@nobits
@@ -121,7 +135,7 @@ osEE_res_cb_array:
 .section .data,"aw",@progbits
 	.align 2
 	.type	osEE_sn_array, @object
-	.size	osEE_sn_array, 104
+	.size	osEE_sn_array, 120
 osEE_sn_array:
 	.word	osEE_sn_array+8
 	.word	0
@@ -147,12 +161,16 @@ osEE_sn_array:
 	.word	0
 	.word	osEE_sn_array+96
 	.word	0
+	.word	osEE_sn_array+104
+	.word	0
+	.word	osEE_sn_array+112
+	.word	0
 	.word	0
 	.word	0
 .section .rodata,"a",@progbits
 	.align 2
 	.type	osEE_tdb_ptr_array, @object
-	.size	osEE_tdb_ptr_array, 56
+	.size	osEE_tdb_ptr_array, 64
 osEE_tdb_ptr_array:
 	.word	osEE_tdb_array
 	.word	osEE_tdb_array+32
@@ -168,9 +186,11 @@ osEE_tdb_ptr_array:
 	.word	osEE_tdb_array+352
 	.word	osEE_tdb_array+384
 	.word	osEE_tdb_array+416
+	.word	osEE_tdb_array+448
+	.word	osEE_tdb_array+480
 	.align 2
 	.type	osEE_tdb_array, @object
-	.size	osEE_tdb_array, 448
+	.size	osEE_tdb_array, 512
 osEE_tdb_array:
 	.word	osEE_sdb_array+80
 	.word	osEE_scb_array+40
@@ -181,29 +201,42 @@ osEE_tdb_array:
 	.byte	2
 	.zero	3
 	.word	osEE_tricore_system_timer_handler
-	.byte	-128
+	.byte	-126
 	.byte	-1
+	.byte	1
+	.zero	1
+	.word	osEE_sdb_array+80
+	.word	osEE_scb_array+40
+	.short	2304
+	.zero	2
+	.word	osEE_tcb_array+20
+	.word	1
+	.byte	2
+	.zero	3
+	.word	CAN_RxInt0Handler
+	.byte	-126
+	.byte	-126
 	.byte	1
 	.zero	1
 	.word	osEE_sdb_array
 	.word	osEE_scb_array
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+20
-	.word	1
+	.word	osEE_tcb_array+40
+	.word	2
 	.byte	0
 	.zero	3
 	.word	FuncBlink_LED
-	.byte	1
-	.byte	1
+	.byte	3
+	.byte	3
 	.byte	1
 	.zero	1
 	.word	osEE_sdb_array+8
 	.word	osEE_scb_array+4
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+40
-	.word	2
+	.word	osEE_tcb_array+60
+	.word	3
 	.byte	0
 	.zero	3
 	.word	FuncUART_Echo
@@ -215,8 +248,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+8
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+60
-	.word	3
+	.word	osEE_tcb_array+80
+	.word	4
 	.byte	0
 	.zero	3
 	.word	FuncDCMotor_Example
@@ -228,8 +261,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+12
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+80
-	.word	4
+	.word	osEE_tcb_array+100
+	.word	5
 	.byte	0
 	.zero	3
 	.word	FuncTimer_Example
@@ -241,8 +274,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+16
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+100
-	.word	5
+	.word	osEE_tcb_array+120
+	.word	6
 	.byte	0
 	.zero	3
 	.word	FuncUltrasonic_Example
@@ -254,8 +287,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+20
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+120
-	.word	6
+	.word	osEE_tcb_array+140
+	.word	7
 	.byte	0
 	.zero	3
 	.word	FuncBuzzer_Example
@@ -267,8 +300,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+24
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+140
-	.word	7
+	.word	osEE_tcb_array+160
+	.word	8
 	.byte	0
 	.zero	3
 	.word	FuncTOF_Example
@@ -280,8 +313,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+28
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+160
-	.word	8
+	.word	osEE_tcb_array+180
+	.word	9
 	.byte	0
 	.zero	3
 	.word	FuncADC_Example
@@ -293,8 +326,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+32
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+180
-	.word	9
+	.word	osEE_tcb_array+200
+	.word	10
 	.byte	0
 	.zero	3
 	.word	FuncOS_EE_Task_Init
@@ -306,8 +339,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+40
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+200
-	.word	10
+	.word	osEE_tcb_array+220
+	.word	11
 	.byte	0
 	.zero	3
 	.word	FuncTask_Motor
@@ -319,8 +352,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+36
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+220
-	.word	11
+	.word	osEE_tcb_array+240
+	.word	12
 	.byte	0
 	.zero	3
 	.word	FuncTask_AEB
@@ -332,8 +365,8 @@ osEE_tdb_array:
 	.word	osEE_scb_array+40
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+240
-	.word	12
+	.word	osEE_tcb_array+260
+	.word	13
 	.byte	0
 	.zero	3
 	.word	FuncLCD_TEST
@@ -345,8 +378,21 @@ osEE_tdb_array:
 	.word	osEE_scb_array+40
 	.short	-1
 	.zero	2
-	.word	osEE_tcb_array+260
-	.word	13
+	.word	osEE_tcb_array+280
+	.word	14
+	.byte	0
+	.zero	3
+	.word	FuncLED_KING
+	.byte	2
+	.byte	2
+	.byte	1
+	.zero	1
+	.word	osEE_sdb_array+80
+	.word	osEE_scb_array+40
+	.short	-1
+	.zero	2
+	.word	osEE_tcb_array+300
+	.word	15
 	.byte	3
 	.zero	3
 	.word	osEE_idle_hook_wrapper
@@ -357,10 +403,26 @@ osEE_tdb_array:
 .section .data,"aw",@progbits
 	.align 2
 	.type	osEE_tcb_array, @object
-	.size	osEE_tcb_array, 280
+	.size	osEE_tcb_array, 320
 osEE_tcb_array:
 	.byte	0
-	.byte	-128
+	.byte	-126
+	.byte	0
+	.zero	1
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.byte	0
+	.byte	-126
+	.byte	0
+	.zero	1
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.byte	0
+	.byte	3
 	.byte	0
 	.zero	1
 	.word	0
@@ -456,7 +518,7 @@ osEE_tcb_array:
 	.word	0
 	.word	0
 	.byte	0
-	.byte	1
+	.byte	2
 	.byte	0
 	.zero	1
 	.word	0
@@ -587,7 +649,7 @@ osEE_task_stack_1:
 	.file 8 "ee_applcfg.c"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x19b1
+	.uaword	0x1a3e
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -2089,7 +2151,7 @@ osEE_task_stack_1:
 	.uaword	0x1686
 	.uleb128 0x1c
 	.uaword	0x14d6
-	.byte	0xd
+	.byte	0xf
 	.byte	0
 	.uleb128 0x1b
 	.string	"osEE_tcb_array"
@@ -2104,12 +2166,12 @@ osEE_task_stack_1:
 	.uaword	0x16b2
 	.uleb128 0x1c
 	.uaword	0x14d6
-	.byte	0xd
+	.byte	0xf
 	.byte	0
 	.uleb128 0x1d
 	.string	"osEE_tdb_array"
 	.byte	0x8
-	.uahalf	0x122
+	.uahalf	0x134
 	.uaword	0x16cf
 	.byte	0x5
 	.byte	0x3
@@ -2121,12 +2183,12 @@ osEE_task_stack_1:
 	.uaword	0x16e4
 	.uleb128 0x1c
 	.uaword	0x14d6
-	.byte	0xd
+	.byte	0xf
 	.byte	0
 	.uleb128 0x1d
 	.string	"osEE_tdb_ptr_array"
 	.byte	0x8
-	.uahalf	0x1ed
+	.uahalf	0x21b
 	.uaword	0x1705
 	.byte	0x5
 	.byte	0x3
@@ -2138,12 +2200,12 @@ osEE_task_stack_1:
 	.uaword	0x171a
 	.uleb128 0x1c
 	.uaword	0x14d6
-	.byte	0xc
+	.byte	0xe
 	.byte	0
 	.uleb128 0x1d
 	.string	"osEE_sn_array"
 	.byte	0x8
-	.uahalf	0x201
+	.uahalf	0x231
 	.uaword	0x170a
 	.byte	0x5
 	.byte	0x3
@@ -2158,7 +2220,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_res_cb_array"
 	.byte	0x8
-	.uahalf	0x23a
+	.uahalf	0x272
 	.uaword	0x1736
 	.byte	0x5
 	.byte	0x3
@@ -2173,7 +2235,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_res_db_array"
 	.byte	0x8
-	.uahalf	0x23e
+	.uahalf	0x276
 	.uaword	0x1796
 	.byte	0x5
 	.byte	0x3
@@ -2190,7 +2252,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_res_db_ptr_array"
 	.byte	0x8
-	.uahalf	0x248
+	.uahalf	0x280
 	.uaword	0x17cf
 	.byte	0x5
 	.byte	0x3
@@ -2207,7 +2269,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_counter_cb_array"
 	.byte	0x8
-	.uahalf	0x256
+	.uahalf	0x28e
 	.uaword	0x17d4
 	.byte	0x5
 	.byte	0x3
@@ -2222,7 +2284,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_counter_db_array"
 	.byte	0x8
-	.uahalf	0x25b
+	.uahalf	0x293
 	.uaword	0x183c
 	.byte	0x5
 	.byte	0x3
@@ -2239,7 +2301,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_counter_db_ptr_array"
 	.byte	0x8
-	.uahalf	0x267
+	.uahalf	0x29f
 	.uaword	0x1879
 	.byte	0x5
 	.byte	0x3
@@ -2256,7 +2318,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_alarm_cb_array"
 	.byte	0x8
-	.uahalf	0x274
+	.uahalf	0x2ac
 	.uaword	0x187e
 	.byte	0x5
 	.byte	0x3
@@ -2271,7 +2333,7 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_alarm_db_array"
 	.byte	0x8
-	.uahalf	0x279
+	.uahalf	0x2b1
 	.uaword	0x18e2
 	.byte	0x5
 	.byte	0x3
@@ -2288,17 +2350,51 @@ osEE_task_stack_1:
 	.uleb128 0x1d
 	.string	"osEE_alarm_db_ptr_array"
 	.byte	0x8
-	.uahalf	0x28b
+	.uahalf	0x2c3
 	.uaword	0x191d
 	.byte	0x5
 	.byte	0x3
 	.uaword	osEE_alarm_db_ptr_array
 	.uleb128 0xf
 	.uaword	0x18e7
+	.uleb128 0x17
+	.uaword	0x10d2
+	.uaword	0x1932
+	.uleb128 0x1c
+	.uaword	0x14d6
+	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.string	"osEE_trigger_autostart_info_OSDEFAULTAPPMODE"
+	.byte	0x8
+	.uahalf	0x2d0
+	.uaword	0x196d
+	.byte	0x5
+	.byte	0x3
+	.uaword	osEE_trigger_autostart_info_OSDEFAULTAPPMODE
+	.uleb128 0xf
+	.uaword	0x1922
+	.uleb128 0x17
+	.uaword	0x114f
+	.uaword	0x1982
+	.uleb128 0x1c
+	.uaword	0x14d6
+	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.string	"osEE_autostart_trigger_db"
+	.byte	0x8
+	.uahalf	0x2d9
+	.uaword	0x19aa
+	.byte	0x5
+	.byte	0x3
+	.uaword	osEE_autostart_trigger_db
+	.uleb128 0xf
+	.uaword	0x1972
 	.uleb128 0x1e
 	.string	"osEE_kdb_var"
 	.byte	0x8
-	.uahalf	0x2b8
+	.uahalf	0x30a
 	.uaword	0x14af
 	.byte	0x1
 	.byte	0x5
@@ -2307,7 +2403,7 @@ osEE_task_stack_1:
 	.uleb128 0x1e
 	.string	"osEE_kcb_var"
 	.byte	0x8
-	.uahalf	0x2b5
+	.uahalf	0x307
 	.uaword	0x1365
 	.byte	0x1
 	.byte	0x5
@@ -2316,7 +2412,7 @@ osEE_task_stack_1:
 	.uleb128 0x1e
 	.string	"osEE_cdb_var"
 	.byte	0x8
-	.uahalf	0x2ae
+	.uahalf	0x2fe
 	.uaword	0x1336
 	.byte	0x1
 	.byte	0x5
@@ -2325,7 +2421,7 @@ osEE_task_stack_1:
 	.uleb128 0x1e
 	.string	"osEE_ccb_var"
 	.byte	0x8
-	.uahalf	0x298
+	.uahalf	0x2e8
 	.uaword	0x127d
 	.byte	0x1
 	.byte	0x5
@@ -2333,14 +2429,14 @@ osEE_task_stack_1:
 	.uaword	osEE_ccb_var
 	.uleb128 0x17
 	.uaword	0x473
-	.uaword	0x199d
+	.uaword	0x1a2a
 	.uleb128 0x18
 	.byte	0
 	.uleb128 0x1f
 	.string	"__USTACK0_END"
 	.byte	0x8
 	.byte	0x1e
-	.uaword	0x1992
+	.uaword	0x1a1f
 	.byte	0x1
 	.byte	0x1
 	.byte	0
@@ -3775,7 +3871,7 @@ osEE_task_stack_1:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.35c9dc0cf3d8f6e58ac1f394a7b05831,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.18c51f8fadb0a1cdec133fa097c6e38d,comdat
 .Ldebug_macro1:
 	.uahalf	0x4
 	.byte	0
@@ -3832,10 +3928,10 @@ osEE_task_stack_1:
 	.string	"OSEE_HAS_SYSTEM_TIMER "
 	.byte	0x1
 	.uleb128 0x42
-	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 1"
+	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 3"
 	.byte	0x1
 	.uleb128 0x43
-	.string	"OSEE_ISR2_MAX_PRIO (128U)"
+	.string	"OSEE_ISR2_MAX_PRIO (130U)"
 	.byte	0x1
 	.uleb128 0x44
 	.string	"OSEE_MULTI_STACK "
@@ -3847,7 +3943,7 @@ osEE_task_stack_1:
 	.string	"OSEE_SINGLE_ACTIVATION "
 	.byte	0x1
 	.uleb128 0x47
-	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (1U)"
+	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (3U)"
 	.byte	0x1
 	.uleb128 0x48
 	.string	"OSEE_TC_TC27X "
@@ -3873,19 +3969,31 @@ osEE_task_stack_1:
 	.uleb128 0x58
 	.string	"OSTICKDURATION (1000000U)"
 	.byte	0x1
+	.uleb128 0x68
+	.string	"OSEE_TC_CORE0_3_ISR_CAT (2U)"
+	.byte	0x1
+	.uleb128 0x69
+	.string	"OSEE_TC_CORE0_3_ISR_TID 1"
+	.byte	0x1
+	.uleb128 0x6b
+	.string	"OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)"
+	.byte	0x1
 	.uleb128 0x6c
+	.string	"OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)"
+	.byte	0x1
+	.uleb128 0x74
 	.string	"OSEE_SYSTEM_TIMER (0U)"
 	.byte	0x1
-	.uleb128 0x6d
+	.uleb128 0x75
 	.string	"OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0"
 	.byte	0x1
-	.uleb128 0x6e
+	.uleb128 0x76
 	.string	"OSEE_TC_CORE0_1_ISR_CAT (2U)"
 	.byte	0x1
-	.uleb128 0x6f
+	.uleb128 0x77
 	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.6213da16b60dc516a68475efdd93d720,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.fe91f59c3746c5a35c29ee7ef240125a,comdat
 .Ldebug_macro2:
 	.uahalf	0x4
 	.byte	0
@@ -3894,10 +4002,10 @@ osEE_task_stack_1:
 	.string	"OS_EE_RTD_GEN_VERSION 12345"
 	.byte	0x1
 	.uleb128 0x2e
-	.string	"OSEE_TASK_ARRAY_SIZE (13U)"
+	.string	"OSEE_TASK_ARRAY_SIZE (15U)"
 	.byte	0x1
 	.uleb128 0x2f
-	.string	"OSEE_SN_ARRAY_SIZE (13U)"
+	.string	"OSEE_SN_ARRAY_SIZE (15U)"
 	.byte	0x1
 	.uleb128 0x30
 	.string	"OSEE_STACK_ARRAY_SIZE (11U)"
@@ -3912,78 +4020,81 @@ osEE_task_stack_1:
 	.string	"OSEE_ALARMS_ARRAY_SIZE (1U)"
 	.byte	0x1
 	.uleb128 0x3a
-	.string	"Blink_LED (1U)"
+	.string	"Blink_LED (2U)"
 	.byte	0x1
 	.uleb128 0x3b
-	.string	"UART_Echo (2U)"
+	.string	"UART_Echo (3U)"
 	.byte	0x1
 	.uleb128 0x3c
-	.string	"DCMotor_Example (3U)"
+	.string	"DCMotor_Example (4U)"
 	.byte	0x1
 	.uleb128 0x3d
-	.string	"Timer_Example (4U)"
+	.string	"Timer_Example (5U)"
 	.byte	0x1
 	.uleb128 0x3e
-	.string	"Ultrasonic_Example (5U)"
+	.string	"Ultrasonic_Example (6U)"
 	.byte	0x1
 	.uleb128 0x3f
-	.string	"Buzzer_Example (6U)"
+	.string	"Buzzer_Example (7U)"
 	.byte	0x1
 	.uleb128 0x40
-	.string	"TOF_Example (7U)"
+	.string	"TOF_Example (8U)"
 	.byte	0x1
 	.uleb128 0x41
-	.string	"ADC_Example (8U)"
+	.string	"ADC_Example (9U)"
 	.byte	0x1
 	.uleb128 0x42
-	.string	"OS_EE_Task_Init (9U)"
+	.string	"OS_EE_Task_Init (10U)"
 	.byte	0x1
 	.uleb128 0x43
-	.string	"Task_Motor (10U)"
+	.string	"Task_Motor (11U)"
 	.byte	0x1
 	.uleb128 0x44
-	.string	"Task_AEB (11U)"
+	.string	"Task_AEB (12U)"
 	.byte	0x1
 	.uleb128 0x45
-	.string	"LCD_TEST (12U)"
+	.string	"LCD_TEST (13U)"
 	.byte	0x1
-	.uleb128 0x4c
-	.string	"osEE_task_stack_1_StackSize (1024U)"
+	.uleb128 0x46
+	.string	"LED_KING (14U)"
 	.byte	0x1
 	.uleb128 0x4d
-	.string	"osEE_task_stack_2_StackSize (1024U)"
+	.string	"osEE_task_stack_1_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x4e
-	.string	"osEE_task_stack_3_StackSize (1024U)"
+	.string	"osEE_task_stack_2_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x4f
-	.string	"osEE_task_stack_4_StackSize (1024U)"
+	.string	"osEE_task_stack_3_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x50
-	.string	"osEE_task_stack_5_StackSize (1024U)"
+	.string	"osEE_task_stack_4_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x51
-	.string	"osEE_task_stack_6_StackSize (1024U)"
+	.string	"osEE_task_stack_5_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x52
-	.string	"osEE_task_stack_7_StackSize (1024U)"
+	.string	"osEE_task_stack_6_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x53
-	.string	"osEE_task_stack_8_StackSize (1024U)"
+	.string	"osEE_task_stack_7_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x54
-	.string	"osEE_task_stack_9_StackSize (1024U)"
+	.string	"osEE_task_stack_8_StackSize (1024U)"
 	.byte	0x1
 	.uleb128 0x55
+	.string	"osEE_task_stack_9_StackSize (1024U)"
+	.byte	0x1
+	.uleb128 0x56
 	.string	"osEE_task_stack_10_StackSize (1024U)"
 	.byte	0x1
-	.uleb128 0x5c
+	.uleb128 0x5d
 	.string	"RES_SCHEDULER (0U)"
 	.byte	0x1
-	.uleb128 0x63
+	.uleb128 0x64
 	.string	"systimer (0U)"
 	.byte	0x1
-	.uleb128 0x6a
+	.uleb128 0x6b
 	.string	"alarm1 (0U)"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat
@@ -9414,6 +9525,7 @@ osEE_task_stack_1:
 	.string	"p_counter_db"
 	.extern	__USTACK0_END,STT_OBJECT,-1
 	.extern	osEE_idle_hook_wrapper,STT_FUNC,0
+	.extern	FuncLED_KING,STT_FUNC,0
 	.extern	FuncLCD_TEST,STT_FUNC,0
 	.extern	FuncTask_AEB,STT_FUNC,0
 	.extern	FuncTask_Motor,STT_FUNC,0
@@ -9426,6 +9538,7 @@ osEE_task_stack_1:
 	.extern	FuncDCMotor_Example,STT_FUNC,0
 	.extern	FuncUART_Echo,STT_FUNC,0
 	.extern	FuncBlink_LED,STT_FUNC,0
+	.extern	CAN_RxInt0Handler,STT_FUNC,0
 	.extern	osEE_tricore_system_timer_handler,STT_FUNC,0
 .pushsection .version_info,"",@note
 	.ascii	"Compiler executable checksum: b7b3970860f5d298b1615bfa2549208c\n"

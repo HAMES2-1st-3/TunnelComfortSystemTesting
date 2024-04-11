@@ -2,6 +2,12 @@
 // Please do not modify it.
 
 CPU tc275_shieldbuddy {
+	ISR CAN_Rx_ISR {
+		CATEGORY = 2;
+		SOURCE = "CANINT0";
+		PRIORITY = 3;
+		HANDLER = "CAN_RxInt0Handler";
+	};
 	OS erika3_basic_example {
 		EE_OPT = "OSEE_DEBUG";
 		EE_OPT = "OS_EE_APPL_BUILD_DEBUG";

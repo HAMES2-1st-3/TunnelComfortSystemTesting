@@ -301,12 +301,12 @@
 #define OSEE_HAS_RESOURCES 
 #define OSEE_HAS_STARTUPHOOK 
 #define OSEE_HAS_SYSTEM_TIMER 
-#define OSEE_ISR2_MAX_HW_ASM_PRIO 1
-#define OSEE_ISR2_MAX_PRIO (128U)
+#define OSEE_ISR2_MAX_HW_ASM_PRIO 3
+#define OSEE_ISR2_MAX_PRIO (130U)
 #define OSEE_MULTI_STACK 
 #define OSEE_OC_ECC1 
 #define OSEE_SINGLE_ACTIVATION 
-#define OSEE_TC_CORE0_ISR_MAX_PRIO (1U)
+#define OSEE_TC_CORE0_ISR_MAX_PRIO (3U)
 #define OSEE_TC_TC27X 
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
@@ -316,7 +316,19 @@
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 108 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+# 104 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\inc/ee_oscfg.h"
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 1
+
+#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RxInt0Handler_ISR_PRIO (3U)
+
+
+
+
+
+
+
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
 #define OSEE_TC_CORE0_1_ISR_CAT (2U)
@@ -8540,10 +8552,10 @@ static __inline__ OsEE_reg __attribute__((always_inline))
 {
   OsEE_icr icr = osEE_tc_get_icr();
 
-  if (icr.bits.ccpn < OSEE_ISR2_VIRT_TO_HW_PRIO((128U))) {
+  if (icr.bits.ccpn < OSEE_ISR2_VIRT_TO_HW_PRIO((130U))) {
     OsEE_icr icr_temp = icr;
 
-    icr_temp.bits.ccpn = OSEE_ISR2_VIRT_TO_HW_PRIO((128U));
+    icr_temp.bits.ccpn = OSEE_ISR2_VIRT_TO_HW_PRIO((130U));
     osEE_tc_set_icr(icr_temp);
   }
 
@@ -9262,8 +9274,10 @@ __asm__(
 __asm__ (".globl osEE_tc" "_" "isr2_entry_" "1"); __asm__ ("osEE_tc" "_" "isr2_entry_" "1" ":"); __asm__ ("svlcx"); __asm__ ("mov %d4, " "0"); __asm__ ("j osEE_tc_isr2_wrapper"); __asm__ (".align 5");
 # 159 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_tc_intvec.c"
 __asm__ (".globl osEE_tc" "_" "isr_dummy_entry_" "2"); __asm__ ("osEE_tc" "_" "isr_dummy_entry_" "2" ":"); __asm__ ("j ."); __asm__ (".align  5");
-# 170 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_tc_intvec.c"
-__asm__ (".globl osEE_tc" "_" "isr_dummy_entry_" "3"); __asm__ ("osEE_tc" "_" "isr_dummy_entry_" "3" ":"); __asm__ ("j ."); __asm__ (".align  5");
+
+
+
+__asm__ (".globl osEE_tc" "_" "isr2_entry_" "3"); __asm__ ("osEE_tc" "_" "isr2_entry_" "3" ":"); __asm__ ("svlcx"); __asm__ ("mov %d4, " "1"); __asm__ ("j osEE_tc_isr2_wrapper"); __asm__ (".align 5");
 # 181 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_tc_intvec.c"
 __asm__ (".globl osEE_tc" "_" "isr_dummy_entry_" "4"); __asm__ ("osEE_tc" "_" "isr_dummy_entry_" "4" ":"); __asm__ ("j ."); __asm__ (".align  5");
 # 192 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\erika\\src\\ee_tc_intvec.c"

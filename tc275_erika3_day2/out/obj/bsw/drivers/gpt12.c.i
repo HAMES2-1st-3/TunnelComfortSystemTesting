@@ -164083,15 +164083,33 @@ extern Ecu1Can stEcu1Can;
 
 extern void Driver_Can_Init(void);
 extern void Driver_Can_TxTest(void);
-void CAN_RxInt0Handler(void);
+extern void CAN_RxInt0Handler(void);
+
+extern char getLEDKing(void);
+extern char getTunnelStatus(void);
 # 16 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/drivers/com.h" 1
+# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/drivers/com.h"
+#define BSW_DRIVERS_COM_H_ 
+
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/drivers/Driver_Can.h" 1
+# 12 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/drivers/com.h" 2
+typedef struct {
+ uint32 dataHighs;
+ uint32 dataLows;
+}signalname;
+
+void can_send(signalname s1,int toecu);
+# 18 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+
 
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/etc/etc.h" 1
 
 #define BSW_ETC_ETC_H_ 
 
 void delay_ms(unsigned int delay_time);
-# 18 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 21 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 
 
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/Buzzer.h" 1
@@ -164102,7 +164120,7 @@ void Init_Buzzer(void);
 void Init_Buzzer_PWM(void);
 void setBeepCycle(int cycle);
 void Beep(unsigned int hz);
-# 21 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 24 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/GPIO.h" 1
 
 #define BSW_IO_GPIO_H_ 
@@ -164120,7 +164138,9 @@ int getSW1(void);
 int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
-# 22 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+
+void setHeadlampLED(int onoff);
+# 25 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/Motor.h" 1
 
 #define BSW_IO_MOTOR_H_ 
@@ -164136,7 +164156,7 @@ void stopChB(void);
 
 void movChA_PWM(int duty, int dir);
 void movChB_PWM(int duty, int dir);
-# 23 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 26 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/ToF.h" 1
 
 #define BSW_IO_TOF_H_ 
@@ -164144,10 +164164,21 @@ void movChB_PWM(int duty, int dir);
 void Init_ToF(void);
 void IsrUart1RxHandler_tof(void);
 int getTofDistance(void);
-# 24 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 27 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 # 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/Ultrasonic.h" 1
-# 25 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 28 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/LCD.h" 1
+# 9 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../bsw/io/LCD.h"
+#define BSW_IO_LCD_H_ 
 
+
+
+void init_lcd(void);
+void write_instruction(unsigned char i);
+void write_data(char d);
+void delay_us(unsigned int m);
+void lcdprint_data(char *str);
+# 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3
 # 27 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 3
@@ -165359,7 +165390,7 @@ int __swbuf_r (struct _reent *, int, FILE *);
 #define putchar(x) putc(x, stdout)
 
 
-# 28 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
+# 31 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 
 
 extern unsigned char cmd_clr_scr[8];

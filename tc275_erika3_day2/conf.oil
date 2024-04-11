@@ -1,9 +1,8 @@
 CPU tc275_shieldbuddy
 {
+
 	
-	
-	
-	
+
 	
 	
 	
@@ -25,49 +24,6 @@ CPU tc275_shieldbuddy
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	
 	
 	
@@ -84,9 +40,12 @@ CPU tc275_shieldbuddy
 	
 ALARM alarm1 {
 		ACTION = ACTIVATETASK {
-			TASK = Ultrasonic_Example;
+			TASK = Blink_LED;
 		};
-		AUTOSTART = FALSE;
+		AUTOSTART = TRUE {
+			ALARMTIME = 1000;
+			CYCLETIME = 500;
+		};
 		COUNTER = systimer;
 	};
 	APPDATA app_main {
@@ -126,10 +85,16 @@ ALARM alarm1 {
 		TICKSPERBASE = 1;
 		SECONDSPERTICK = 0.001;
 		TYPE = HARDWARE {
-			PRIORITY = 1;
+			PRIORITY = 3;
 			DEVICE = "STM_SR0";
 			SYSTEM_TIMER = TRUE;
 		};
+	};
+	ISR CAN_Rx_ISR {
+		CATEGORY = 2;
+		SOURCE = "CANINT0";
+		PRIORITY = 3;
+		HANDLER = "CAN_RxInt0Handler";
 	};
 	OS erika3_basic_example {
 		EE_OPT = "OSEE_DEBUG";
@@ -169,7 +134,7 @@ ALARM alarm1 {
 		STACKMONITORING = FALSE;
 	};
 	TASK Blink_LED {
-		PRIORITY = 1;
+		PRIORITY = 5;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {
@@ -257,6 +222,12 @@ ALARM alarm1 {
 	};
 	TASK LCD_TEST {
 		PRIORITY = 1;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK LED_KING {
+		PRIORITY = 2;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = SHARED;

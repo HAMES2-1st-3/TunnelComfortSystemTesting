@@ -140892,6 +140892,8 @@ int getSW1(void);
 int getSW2(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
+
+void setHeadlampLED(int onoff);
 # 2 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\GPIO.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 1 3
 # 46 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 3
@@ -153119,8 +153121,20 @@ void Init_GPIO(void)
  (*(Ifx_P*)0xF003B100u).IOCR8.B.PC11=0x10;
  (*(Ifx_P*)0xF003B100u).IOCR8.B.PC9=0x10;
 
-}
 
+ (*(Ifx_P*)0xF003A200u).IOCR0.B.PC3=0x10;
+ (*(Ifx_P*)0xF003A200u).IOCR4.B.PC4=0x10;
+ (*(Ifx_P*)0xF003A200u).IOCR4.B.PC5=0x10;
+
+}
+void setHeadlampLED(int onoff){
+ if(onoff){
+  (*(Ifx_P*)0xF003A200u).OUT.B.P4=1;
+ }
+ else{
+  (*(Ifx_P*)0xF003A200u).OUT.B.P4=0;
+ }
+}
 void setLED1(int onoff)
 {
  if(onoff)

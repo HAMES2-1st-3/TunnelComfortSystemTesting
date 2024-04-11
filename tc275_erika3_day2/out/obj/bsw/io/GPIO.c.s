@@ -12,6 +12,17 @@ Init_GPIO:
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15] 16
+	.loc 1 13 0
+	movh.a	%a12, 61444
+	.loc 1 7 0
+	insert	%d15, %d15, 0, 19, 5
+	insert	%d15, %d15, 15, 23, 1
+	.loc 1 13 0
+	lea	%a12, [%a12] -24064
+	.loc 1 7 0
+	st.w	[%a15] 16, %d15
+	.loc 1 10 0
+	ld.w	%d15, [%a15] 16
 .LBB14:
 .LBB15:
 	.file 2 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport.h"
@@ -19,59 +30,49 @@ Init_GPIO:
 	mov	%d5, 128
 .LBE15:
 .LBE14:
-	.loc 1 7 0
-	insert	%d15, %d15, 0, 19, 5
-	insert	%d15, %d15, 15, 23, 1
-	st.w	[%a15] 16, %d15
 	.loc 1 10 0
-	ld.w	%d15, [%a15] 16
 	insert	%d15, %d15, 0, 11, 5
 	insert	%d15, %d15, 15, 15, 1
 	st.w	[%a15] 16, %d15
 	.loc 1 13 0
-	movh.a	%a15, 61444
-	lea	%a15, [%a15] -24064
-	ld.w	%d15, [%a15] 16
-	insert	%d15, %d15, 2, 3, 5
-	st.w	[%a15] 16, %d15
-	.loc 1 16 0
-	ld.w	%d15, [%a15] 16
-	insert	%d15, %d15, 2, 11, 5
-	st.w	[%a15] 16, %d15
-.LVL0:
+	ld.w	%d15, [%a12] 16
 	.loc 1 19 0
 	movh.a	%a15, hi:IfxPort_P20_6
-.LBB18:
+	.loc 1 13 0
+	insert	%d15, %d15, 2, 3, 5
+	.loc 1 19 0
+	lea	%a13, [%a15] lo:IfxPort_P20_6
+	.loc 1 13 0
+	st.w	[%a12] 16, %d15
+	.loc 1 16 0
+	ld.w	%d15, [%a12] 16
+	insert	%d15, %d15, 2, 11, 5
+	st.w	[%a12] 16, %d15
+.LVL0:
+.LBB17:
 .LBB16:
 	.loc 2 586 0
 	ld.a	%a4, [%a15] lo:IfxPort_P20_6
-.LBE16:
-.LBE18:
-	.loc 1 19 0
-	lea	%a12, [%a15] lo:IfxPort_P20_6
-.LBB19:
-.LBB17:
-	.loc 2 586 0
-	ld.bu	%d4, [%a12] 4
+	ld.bu	%d4, [%a13] 4
 	call	IfxPort_setPinMode
 .LVL1:
+.LBE16:
 .LBE17:
-.LBE19:
 	.loc 1 20 0
 	ld.a	%a15, [%a15] lo:IfxPort_P20_6
 .LVL2:
+.LBB18:
+.LBB19:
 .LBB20:
-.LBB21:
-.LBB22:
 	.loc 2 592 0
-	ld.bu	%d15, [%a12] 4
+	ld.bu	%d15, [%a13] 4
 	movh	%d2, 1
 	sh	%d15, %d2, %d15
 	st.w	[%a15] 4, %d15
 .LVL3:
-.LBE22:
-.LBE21:
 .LBE20:
+.LBE19:
+.LBE18:
 	.loc 1 23 0
 	movh.a	%a15, 61444
 .LVL4:
@@ -133,37 +134,52 @@ Init_GPIO:
 	insert	%d15, %d15, 0, 11, 5
 	insert	%d15, %d15, 15, 15, 1
 	st.w	[%a15] 24, %d15
+	.loc 1 36 0
+	ld.w	%d15, [%a12] 16
+	insert	%d15, %d15, 0, 27, 5
+	insert	%d15, %d15, 15, 31, 1
+	st.w	[%a12] 16, %d15
+	.loc 1 37 0
+	ld.w	%d15, [%a12] 20
+	andn	%d15, %d15, ~(-249)
+	or	%d15, %d15, 128
+	st.w	[%a12] 20, %d15
+	.loc 1 38 0
+	ld.w	%d15, [%a12] 20
+	insert	%d15, %d15, 0, 11, 5
+	insert	%d15, %d15, 15, 15, 1
+	st.w	[%a12] 20, %d15
 	ret
 .LFE181:
 	.size	Init_GPIO, .-Init_GPIO
 	.align 1
-	.global	setLED1
-	.type	setLED1, @function
-setLED1:
+	.global	setHeadlampLED
+	.type	setHeadlampLED, @function
+setHeadlampLED:
 .LFB182:
-	.loc 1 38 0
-.LVL6:
 	.loc 1 41 0
+.LVL6:
+	.loc 1 43 0
 	movh.a	%a15, 61444
-	lea	%a15, [%a15] -20480
+	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
-	.loc 1 39 0
+	.loc 1 42 0
 	jnz	%d4, .L6
-	.loc 1 45 0
-	andn	%d15, %d15, ~(-5)
+	.loc 1 46 0
+	andn	%d15, %d15, ~(-17)
 	st.w	[%a15]0, %d15
 	ret
 .L6:
-	.loc 1 41 0
-	or	%d15, %d15, 4
+	.loc 1 43 0
+	or	%d15, %d15, 16
 	st.w	[%a15]0, %d15
 	ret
 .LFE182:
-	.size	setLED1, .-setLED1
+	.size	setHeadlampLED, .-setHeadlampLED
 	.align 1
-	.global	setLED2
-	.type	setLED2, @function
-setLED2:
+	.global	setLED1
+	.type	setLED1, @function
+setLED1:
 .LFB183:
 	.loc 1 50 0
 .LVL7:
@@ -174,23 +190,47 @@ setLED2:
 	.loc 1 51 0
 	jnz	%d4, .L10
 	.loc 1 57 0
-	andn	%d15, %d15, ~(-3)
+	andn	%d15, %d15, ~(-5)
 	st.w	[%a15]0, %d15
 	ret
 .L10:
 	.loc 1 53 0
-	or	%d15, %d15, 2
+	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
 	ret
 .LFE183:
+	.size	setLED1, .-setLED1
+	.align 1
+	.global	setLED2
+	.type	setLED2, @function
+setLED2:
+.LFB184:
+	.loc 1 62 0
+.LVL8:
+	.loc 1 65 0
+	movh.a	%a15, 61444
+	lea	%a15, [%a15] -20480
+	ld.w	%d15, [%a15]0
+	.loc 1 63 0
+	jnz	%d4, .L14
+	.loc 1 69 0
+	andn	%d15, %d15, ~(-3)
+	st.w	[%a15]0, %d15
+	ret
+.L14:
+	.loc 1 65 0
+	or	%d15, %d15, 2
+	st.w	[%a15]0, %d15
+	ret
+.LFE184:
 	.size	setLED2, .-setLED2
 	.align 1
 	.global	toggleLED1
 	.type	toggleLED1, @function
 toggleLED1:
-.LFB184:
-	.loc 1 62 0
-	.loc 1 63 0
+.LFB185:
+	.loc 1 74 0
+	.loc 1 75 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
@@ -201,15 +241,15 @@ toggleLED1:
 	or	%d15, %d2
 	st.w	[%a15]0, %d15
 	ret
-.LFE184:
+.LFE185:
 	.size	toggleLED1, .-toggleLED1
 	.align 1
 	.global	toggleLED2
 	.type	toggleLED2, @function
 toggleLED2:
-.LFB185:
-	.loc 1 67 0
-	.loc 1 68 0
+.LFB186:
+	.loc 1 79 0
+	.loc 1 80 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
@@ -220,251 +260,251 @@ toggleLED2:
 	or	%d15, %d2
 	st.w	[%a15]0, %d15
 	ret
-.LFE185:
+.LFE186:
 	.size	toggleLED2, .-toggleLED2
 	.align 1
 	.global	getSW1
 	.type	getSW1, @function
 getSW1:
-.LFB186:
-	.loc 1 72 0
-	.loc 1 73 0
+.LFB187:
+	.loc 1 84 0
+	.loc 1 85 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d2, [%a15] 36
-	.loc 1 74 0
+	.loc 1 86 0
 	and	%d2, %d2, 1
 	ret
-.LFE186:
+.LFE187:
 	.size	getSW1, .-getSW1
 	.align 1
 	.global	getSW2
 	.type	getSW2, @function
 getSW2:
-.LFB187:
-	.loc 1 77 0
-	.loc 1 78 0
+.LFB188:
+	.loc 1 89 0
+	.loc 1 90 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d2, [%a15] 36
-	.loc 1 79 0
+	.loc 1 91 0
 	extr.u	%d2, %d2, 1, 1
 	ret
-.LFE187:
+.LFE188:
 	.size	getSW2, .-getSW2
 	.align 1
 	.global	getSW1_Debounce
 	.type	getSW1_Debounce, @function
 getSW1_Debounce:
-.LFB188:
-	.loc 1 82 0
+.LFB189:
+	.loc 1 94 0
 	sub.a	%SP, 24
 .LCFI0:
-	.loc 1 83 0
+	.loc 1 95 0
 	mov	%d15, 0
-	.loc 1 84 0
+	.loc 1 96 0
 	lea	%a2, [%SP] 14
-	.loc 1 83 0
+	.loc 1 95 0
 	st.w	[%SP] 8, %d15
-	.loc 1 84 0
+	.loc 1 96 0
 	mov.aa	%a3, %a2
 	mov	%d15, 0
 	lea	%a15, 5-1
 	0:
 	st.h	[%a3+]2, %d15
 	loop	%a15, 0b
-	.loc 1 87 0
+	.loc 1 99 0
 	ld.w	%d2, [%SP] 8
 	mov	%d15, 10000
-.LBB23:
-.LBB24:
-	.loc 1 73 0
+.LBB21:
+.LBB22:
+	.loc 1 85 0
 	movh.a	%a3, 61444
-.LBE24:
-.LBE23:
-	.loc 1 88 0
+.LBE22:
+.LBE21:
+	.loc 1 100 0
 	mov	%d3, 0
-.LBB27:
 .LBB25:
-	.loc 1 73 0
+.LBB23:
+	.loc 1 85 0
 	lea	%a3, [%a3] -24064
+.LBE23:
 .LBE25:
-.LBE27:
-	.loc 1 87 0
+	.loc 1 99 0
 	mov	%d4, %d15
-	jge	%d2, %d15, .L21
-.L23:
-	.loc 1 88 0
+	jge	%d2, %d15, .L25
+.L27:
+	.loc 1 100 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jz	%d15, .L20
-.L25:
-	.loc 1 89 0 discriminator 3
+	jz	%d15, .L24
+.L29:
+	.loc 1 101 0 discriminator 3
 	ld.a	%a15, [%SP] 4
-.LBB28:
 .LBB26:
-	.loc 1 73 0 discriminator 3
+.LBB24:
+	.loc 1 85 0 discriminator 3
 	ld.w	%d15, [%a3] 36
+.LBE24:
 .LBE26:
-.LBE28:
-	.loc 1 89 0 discriminator 3
+	.loc 1 101 0 discriminator 3
 	add.a	%a15, %a2
 	and	%d15, %d15, 1
 	st.b	[%a15]0, %d15
-	.loc 1 88 0 discriminator 3
+	.loc 1 100 0 discriminator 3
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jnz	%d15, .L25
-.L20:
-	.loc 1 91 0
+	jnz	%d15, .L29
+.L24:
+	.loc 1 103 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jz	%d15, .L19
-.L24:
-	.loc 1 92 0
+	jz	%d15, .L23
+.L28:
+	.loc 1 104 0
 	ld.b	%d2, [%SP] 14
 	ld.a	%a15, [%SP] 4
 	add.a	%a15, %a2
 	ld.b	%d15, [%a15]0
-	jeq	%d2, %d15, .L22
-	.loc 1 93 0
+	jeq	%d2, %d15, .L26
+	.loc 1 105 0
 	st.w	[%SP] 8, %d3
-.L22:
-	.loc 1 91 0 discriminator 2
+.L26:
+	.loc 1 103 0 discriminator 2
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jnz	%d15, .L24
-.L19:
-	.loc 1 96 0
+	jnz	%d15, .L28
+.L23:
+	.loc 1 108 0
 	ld.w	%d15, [%SP] 8
 	add	%d15, 1
 	st.w	[%SP] 8, %d15
-	.loc 1 87 0
+	.loc 1 99 0
 	ld.w	%d15, [%SP] 8
-	jlt	%d15, %d4, .L23
-.L21:
-	.loc 1 98 0
+	jlt	%d15, %d4, .L27
+.L25:
+	.loc 1 110 0
 	ld.b	%d15, [%SP] 14
 	st.w	[%SP]0, %d15
-	.loc 1 99 0
+	.loc 1 111 0
 	ld.w	%d2, [%SP]0
 	ret
-.LFE188:
+.LFE189:
 	.size	getSW1_Debounce, .-getSW1_Debounce
 	.align 1
 	.global	getSW2_Debounce
 	.type	getSW2_Debounce, @function
 getSW2_Debounce:
-.LFB189:
-	.loc 1 103 0
+.LFB190:
+	.loc 1 115 0
 	sub.a	%SP, 24
 .LCFI1:
-	.loc 1 104 0
+	.loc 1 116 0
 	mov	%d15, 0
-	.loc 1 105 0
+	.loc 1 117 0
 	lea	%a2, [%SP] 14
-	.loc 1 104 0
+	.loc 1 116 0
 	st.w	[%SP] 8, %d15
-	.loc 1 105 0
+	.loc 1 117 0
 	mov.aa	%a3, %a2
 	mov	%d15, 0
 	lea	%a15, 5-1
 	0:
 	st.h	[%a3+]2, %d15
 	loop	%a15, 0b
-	.loc 1 108 0
+	.loc 1 120 0
 	ld.w	%d2, [%SP] 8
 	mov	%d15, 10000
-.LBB29:
-.LBB30:
-	.loc 1 78 0
+.LBB27:
+.LBB28:
+	.loc 1 90 0
 	movh.a	%a3, 61444
-.LBE30:
-.LBE29:
-	.loc 1 109 0
+.LBE28:
+.LBE27:
+	.loc 1 121 0
 	mov	%d3, 0
-.LBB33:
 .LBB31:
-	.loc 1 78 0
+.LBB29:
+	.loc 1 90 0
 	lea	%a3, [%a3] -24064
+.LBE29:
 .LBE31:
-.LBE33:
-	.loc 1 108 0
+	.loc 1 120 0
 	mov	%d4, %d15
-	jge	%d2, %d15, .L36
-.L38:
-	.loc 1 109 0
+	jge	%d2, %d15, .L40
+.L42:
+	.loc 1 121 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jz	%d15, .L35
-.L40:
-	.loc 1 110 0 discriminator 3
+	jz	%d15, .L39
+.L44:
+	.loc 1 122 0 discriminator 3
 	ld.a	%a15, [%SP] 4
-.LBB34:
 .LBB32:
-	.loc 1 78 0 discriminator 3
+.LBB30:
+	.loc 1 90 0 discriminator 3
 	ld.w	%d15, [%a3] 36
+.LBE30:
 .LBE32:
-.LBE34:
-	.loc 1 110 0 discriminator 3
+	.loc 1 122 0 discriminator 3
 	extr.u	%d15, %d15, 1, 1
 	add.a	%a15, %a2
 	st.b	[%a15]0, %d15
-	.loc 1 109 0 discriminator 3
+	.loc 1 121 0 discriminator 3
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jnz	%d15, .L40
-.L35:
-	.loc 1 112 0
+	jnz	%d15, .L44
+.L39:
+	.loc 1 124 0
 	st.w	[%SP] 4, %d3
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jz	%d15, .L34
-.L39:
-	.loc 1 113 0
+	jz	%d15, .L38
+.L43:
+	.loc 1 125 0
 	ld.b	%d2, [%SP] 14
 	ld.a	%a15, [%SP] 4
 	add.a	%a15, %a2
 	ld.b	%d15, [%a15]0
-	jeq	%d2, %d15, .L37
-	.loc 1 114 0
+	jeq	%d2, %d15, .L41
+	.loc 1 126 0
 	st.w	[%SP] 8, %d3
-.L37:
-	.loc 1 112 0 discriminator 2
+.L41:
+	.loc 1 124 0 discriminator 2
 	ld.w	%d15, [%SP] 4
 	add	%d15, 1
 	st.w	[%SP] 4, %d15
 	ld.w	%d15, [%SP] 4
 	lt	%d15, %d15, 10
-	jnz	%d15, .L39
-.L34:
-	.loc 1 117 0
+	jnz	%d15, .L43
+.L38:
+	.loc 1 129 0
 	ld.w	%d15, [%SP] 8
 	add	%d15, 1
 	st.w	[%SP] 8, %d15
-	.loc 1 108 0
+	.loc 1 120 0
 	ld.w	%d15, [%SP] 8
-	jlt	%d15, %d4, .L38
-.L36:
-	.loc 1 119 0
+	jlt	%d15, %d4, .L42
+.L40:
+	.loc 1 131 0
 	ld.b	%d15, [%SP] 14
 	st.w	[%SP]0, %d15
-	.loc 1 120 0
+	.loc 1 132 0
 	ld.w	%d2, [%SP]0
 	ret
-.LFE189:
+.LFE190:
 	.size	getSW2_Debounce, .-getSW2_Debounce
 .section .debug_frame,"",@progbits
 .Lframe0:
@@ -543,10 +583,6 @@ getSW2_Debounce:
 	.uaword	.Lframe0
 	.uaword	.LFB188
 	.uaword	.LFE188-.LFB188
-	.byte	0x4
-	.uaword	.LCFI0-.LFB188
-	.byte	0xe
-	.uleb128 0x18
 	.align 2
 .LEFDE14:
 .LSFDE16:
@@ -556,11 +592,23 @@ getSW2_Debounce:
 	.uaword	.LFB189
 	.uaword	.LFE189-.LFB189
 	.byte	0x4
-	.uaword	.LCFI1-.LFB189
+	.uaword	.LCFI0-.LFB189
 	.byte	0xe
 	.uleb128 0x18
 	.align 2
 .LEFDE16:
+.LSFDE18:
+	.uaword	.LEFDE18-.LASFDE18
+.LASFDE18:
+	.uaword	.Lframe0
+	.uaword	.LFB190
+	.uaword	.LFE190-.LFB190
+	.byte	0x4
+	.uaword	.LCFI1-.LFB190
+	.byte	0xe
+	.uleb128 0x18
+	.align 2
+.LEFDE18:
 .section .text,"ax",@progbits
 .Letext0:
 	.file 3 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\IfxPort_regdef.h"
@@ -568,7 +616,7 @@ getSW2_Debounce:
 	.file 5 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x2e68
+	.uaword	0x2e9b
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -5045,7 +5093,7 @@ getSW2_Debounce:
 	.byte	0x1
 	.string	"getSW1"
 	.byte	0x1
-	.byte	0x47
+	.byte	0x53
 	.byte	0x1
 	.uaword	0x25a
 	.byte	0x1
@@ -5053,7 +5101,7 @@ getSW2_Debounce:
 	.byte	0x1
 	.string	"getSW2"
 	.byte	0x1
-	.byte	0x4c
+	.byte	0x58
 	.byte	0x1
 	.uaword	0x25a
 	.byte	0x1
@@ -5088,7 +5136,7 @@ getSW2_Debounce:
 	.uaword	0x2b53
 	.uleb128 0x21
 	.uaword	.LVL1
-	.uaword	0x2e41
+	.uaword	0x2e74
 	.uleb128 0x22
 	.byte	0x1
 	.byte	0x55
@@ -5099,8 +5147,8 @@ getSW2_Debounce:
 	.byte	0
 	.uleb128 0x23
 	.uaword	0x2b88
-	.uaword	.LBB20
-	.uaword	.LBE20
+	.uaword	.LBB18
+	.uaword	.LBE18
 	.byte	0x1
 	.byte	0x14
 	.uleb128 0x20
@@ -5110,8 +5158,8 @@ getSW2_Debounce:
 	.uaword	.LLST0
 	.uleb128 0x25
 	.uaword	0x2ae9
-	.uaword	.LBB21
-	.uaword	.LBE21
+	.uaword	.LBB19
+	.uaword	.LBE19
 	.byte	0x2
 	.uahalf	0x23e
 	.uleb128 0x26
@@ -5127,27 +5175,27 @@ getSW2_Debounce:
 	.byte	0
 	.uleb128 0x1d
 	.byte	0x1
-	.string	"setLED1"
+	.string	"setHeadlampLED"
 	.byte	0x1
-	.byte	0x25
+	.byte	0x29
 	.byte	0x1
 	.uaword	.LFB182
 	.uaword	.LFE182
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2cad
+	.uaword	0x2cb4
 	.uleb128 0x27
 	.string	"onoff"
 	.byte	0x1
-	.byte	0x25
+	.byte	0x29
 	.uaword	0x25a
 	.byte	0x1
 	.byte	0x54
 	.byte	0
 	.uleb128 0x1d
 	.byte	0x1
-	.string	"setLED2"
+	.string	"setLED1"
 	.byte	0x1
 	.byte	0x31
 	.byte	0x1
@@ -5156,7 +5204,7 @@ getSW2_Debounce:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2cd9
+	.uaword	0x2ce0
 	.uleb128 0x27
 	.string	"onoff"
 	.byte	0x1
@@ -5165,9 +5213,9 @@ getSW2_Debounce:
 	.byte	0x1
 	.byte	0x54
 	.byte	0
-	.uleb128 0x28
+	.uleb128 0x1d
 	.byte	0x1
-	.string	"toggleLED1"
+	.string	"setLED2"
 	.byte	0x1
 	.byte	0x3d
 	.byte	0x1
@@ -5176,28 +5224,48 @@ getSW2_Debounce:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
+	.uaword	0x2d0c
+	.uleb128 0x27
+	.string	"onoff"
+	.byte	0x1
+	.byte	0x3d
+	.uaword	0x25a
+	.byte	0x1
+	.byte	0x54
+	.byte	0
 	.uleb128 0x28
 	.byte	0x1
-	.string	"toggleLED2"
+	.string	"toggleLED1"
 	.byte	0x1
-	.byte	0x42
+	.byte	0x49
 	.byte	0x1
 	.uaword	.LFB185
 	.uaword	.LFE185
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x29
-	.uaword	0x2bbe
+	.uleb128 0x28
+	.byte	0x1
+	.string	"toggleLED2"
+	.byte	0x1
+	.byte	0x4e
+	.byte	0x1
 	.uaword	.LFB186
 	.uaword	.LFE186
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
 	.uleb128 0x29
-	.uaword	0x2bcf
+	.uaword	0x2bbe
 	.uaword	.LFB187
 	.uaword	.LFE187
+	.byte	0x1
+	.byte	0x9c
+	.byte	0x1
+	.uleb128 0x29
+	.uaword	0x2bcf
+	.uaword	.LFB188
+	.uaword	.LFE188
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
@@ -5205,70 +5273,7 @@ getSW2_Debounce:
 	.byte	0x1
 	.string	"getSW1_Debounce"
 	.byte	0x1
-	.byte	0x51
-	.byte	0x1
-	.uaword	0x25a
-	.uaword	.LFB188
-	.uaword	.LFE188
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x2d9d
-	.uleb128 0x2b
-	.string	"SW1"
-	.byte	0x1
-	.byte	0x53
-	.uaword	0x2d9d
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x2b
-	.string	"i"
-	.byte	0x1
-	.byte	0x53
-	.uaword	0x2d9d
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -20
-	.uleb128 0x2b
-	.string	"cnt"
-	.byte	0x1
-	.byte	0x53
-	.uaword	0x2d9d
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -16
-	.uleb128 0x2b
-	.string	"buf"
-	.byte	0x1
-	.byte	0x54
-	.uaword	0x2db2
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -10
-	.uleb128 0x2c
-	.uaword	0x2bbe
-	.uaword	.LBB23
-	.uaword	.Ldebug_ranges0+0x20
-	.byte	0x1
-	.byte	0x59
-	.byte	0
-	.uleb128 0x12
-	.uaword	0x25a
-	.uleb128 0x3
-	.uaword	0x2603
-	.uaword	0x2db2
-	.uleb128 0x4
-	.uaword	0x261
-	.byte	0x9
-	.byte	0
-	.uleb128 0x12
-	.uaword	0x2da2
-	.uleb128 0x2a
-	.byte	0x1
-	.string	"getSW2_Debounce"
-	.byte	0x1
-	.byte	0x66
+	.byte	0x5d
 	.byte	0x1
 	.uaword	0x25a
 	.uaword	.LFB189
@@ -5276,48 +5281,111 @@ getSW2_Debounce:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2e25
+	.uaword	0x2dd0
 	.uleb128 0x2b
-	.string	"SW2"
+	.string	"SW1"
 	.byte	0x1
-	.byte	0x68
-	.uaword	0x2d9d
+	.byte	0x5f
+	.uaword	0x2dd0
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -24
 	.uleb128 0x2b
 	.string	"i"
 	.byte	0x1
-	.byte	0x68
-	.uaword	0x2d9d
+	.byte	0x5f
+	.uaword	0x2dd0
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0x2b
 	.string	"cnt"
 	.byte	0x1
-	.byte	0x68
-	.uaword	0x2d9d
+	.byte	0x5f
+	.uaword	0x2dd0
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0x2b
 	.string	"buf"
 	.byte	0x1
-	.byte	0x69
-	.uaword	0x2e25
+	.byte	0x60
+	.uaword	0x2de5
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -10
+	.uleb128 0x2c
+	.uaword	0x2bbe
+	.uaword	.LBB21
+	.uaword	.Ldebug_ranges0+0x18
+	.byte	0x1
+	.byte	0x65
+	.byte	0
+	.uleb128 0x12
+	.uaword	0x25a
+	.uleb128 0x3
+	.uaword	0x2603
+	.uaword	0x2de5
+	.uleb128 0x4
+	.uaword	0x261
+	.byte	0x9
+	.byte	0
+	.uleb128 0x12
+	.uaword	0x2dd5
+	.uleb128 0x2a
+	.byte	0x1
+	.string	"getSW2_Debounce"
+	.byte	0x1
+	.byte	0x72
+	.byte	0x1
+	.uaword	0x25a
+	.uaword	.LFB190
+	.uaword	.LFE190
+	.byte	0x1
+	.byte	0x9c
+	.byte	0x1
+	.uaword	0x2e58
+	.uleb128 0x2b
+	.string	"SW2"
+	.byte	0x1
+	.byte	0x74
+	.uaword	0x2dd0
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x2b
+	.string	"i"
+	.byte	0x1
+	.byte	0x74
+	.uaword	0x2dd0
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x2b
+	.string	"cnt"
+	.byte	0x1
+	.byte	0x74
+	.uaword	0x2dd0
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x2b
+	.string	"buf"
+	.byte	0x1
+	.byte	0x75
+	.uaword	0x2e58
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -10
 	.uleb128 0x2c
 	.uaword	0x2bcf
-	.uaword	.LBB29
-	.uaword	.Ldebug_ranges0+0x40
+	.uaword	.LBB27
+	.uaword	.Ldebug_ranges0+0x38
 	.byte	0x1
-	.byte	0x6e
+	.byte	0x7a
 	.byte	0
 	.uleb128 0x12
-	.uaword	0x2da2
+	.uaword	0x2dd5
 	.uleb128 0x2d
 	.string	"IfxPort_P20_6"
 	.byte	0x5
@@ -6030,7 +6098,7 @@ getSW2_Debounce:
 	.uaword	.LVL4-.Ltext0
 	.uaword	.LVL5-.Ltext0
 	.uahalf	0x2
-	.byte	0x8c
+	.byte	0x8d
 	.sleb128 0
 	.uaword	0
 	.uaword	0
@@ -6050,26 +6118,24 @@ getSW2_Debounce:
 .Ldebug_ranges0:
 	.uaword	.LBB14-.Ltext0
 	.uaword	.LBE14-.Ltext0
-	.uaword	.LBB18-.Ltext0
-	.uaword	.LBE18-.Ltext0
-	.uaword	.LBB19-.Ltext0
-	.uaword	.LBE19-.Ltext0
+	.uaword	.LBB17-.Ltext0
+	.uaword	.LBE17-.Ltext0
 	.uaword	0
 	.uaword	0
-	.uaword	.LBB23-.Ltext0
-	.uaword	.LBE23-.Ltext0
+	.uaword	.LBB21-.Ltext0
+	.uaword	.LBE21-.Ltext0
+	.uaword	.LBB25-.Ltext0
+	.uaword	.LBE25-.Ltext0
+	.uaword	.LBB26-.Ltext0
+	.uaword	.LBE26-.Ltext0
+	.uaword	0
+	.uaword	0
 	.uaword	.LBB27-.Ltext0
 	.uaword	.LBE27-.Ltext0
-	.uaword	.LBB28-.Ltext0
-	.uaword	.LBE28-.Ltext0
-	.uaword	0
-	.uaword	0
-	.uaword	.LBB29-.Ltext0
-	.uaword	.LBE29-.Ltext0
-	.uaword	.LBB33-.Ltext0
-	.uaword	.LBE33-.Ltext0
-	.uaword	.LBB34-.Ltext0
-	.uaword	.LBE34-.Ltext0
+	.uaword	.LBB31-.Ltext0
+	.uaword	.LBE31-.Ltext0
+	.uaword	.LBB32-.Ltext0
+	.uaword	.LBE32-.Ltext0
 	.uaword	0
 	.uaword	0
 .section .debug_macro,"",@progbits

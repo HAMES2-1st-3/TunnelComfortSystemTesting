@@ -13,6 +13,9 @@
 #include "bsw/drivers/gpt12.h"
 #include "bsw/drivers/vadc.h"
 #include "bsw/drivers/Driver_Can.h"
+//그냥 테스트 com
+#include "bsw/drivers/com.h"
+
 /* Include etc driver */
 #include "bsw/etc/etc.h"
 
@@ -22,7 +25,7 @@
 #include "bsw/io/Motor.h"
 #include "bsw/io/ToF.h"
 #include "bsw/io/Ultrasonic.h"
-
+#include "bsw/io/LCD.h"
 /* Include Standard C Library */
 #include <stdio.h>
 

@@ -8,7 +8,7 @@ void StartupHook(void)
 	//my_printf("Hello aaaorld!\n");
 	//ActivateTask(Task_Motor);
 	//ActivateTask(Blink_LED);
-	ActivateTask(LCD_TEST);
+	//ActivateTask(LCD_TEST);
 
 }
 
@@ -25,6 +25,7 @@ DeclareTask(OS_EE_Task_Init);
 DeclareTask(Task_Motor);
 DeclareTask(Task_AEB);
 DeclareTask(LCD_TEST);
+DeclareTask(LED_KING);
 int duty=0;
 unsigned char ch;
 unsigned char dir;
@@ -33,29 +34,53 @@ int pwm=0;
 
 TASK(LCD_TEST){
 
-	while(1){
-		setLED1(1);
-		delay_ms(1000);
-	    write_instruction(0x80); //첫번째 줄 이동
-		delay_ms(1000);
-	  //  write_data('a'); //0x61
-	  //  delay_ms(1000);
-	   // write_data('b');//0x62
-		lcdprint_data("TunnelIn");
-	    delay_ms(3000);
+	//while(1){
+		//setLED1(1);
+		char TunnelStatus=getTunnelStatus(); //can에서 받아와
 
-	    write_instruction(0xc0); //두번째 줄 이동
-	    delay_ms(1000);
-		//write_data('c');//0x63
-		//delay_ms(1000);
-		//write_data('d');//0x64
-		lcdprint_data("TunnelOFF");
-		delay_ms(3000);
-		setLED1(0);
-		delay_ms(1000);
-	}
+		if(TunnelStatus){ //01 01 01 받았으면 터널 진입모드로
+			delay_ms(1000);
+			write_instruction(0x80); //첫번째 줄 이동
+			delay_ms(1000);
+		  //  write_data('a'); //0x61
+		  //  delay_ms(1000);
+		   // write_data('b');//0x62
+			lcdprint_data("Tunnel In");
+			delay_ms(2000);
+
+		}
+		else{
+			write_instruction(0xc0); //두번째 줄 이동
+			delay_ms(1000);
+			//write_data('c');//0x63
+			//delay_ms(1000);
+			//write_data('d');//0x64
+			lcdprint_data("Tunnel OFF");
+			delay_ms(2000);
+			//setLED1(0);
+			//delay_ms(1000);
+		}
+
+	//}
 	TerminateTask();
 }
+
+TASK(LED_KING){
+	//while(1){
+	int HeadLampStatus=getLEDKing(); //can에서 받아와
+
+	if(HeadLampStatus){ //01 받았으면 터널 진입으로 헤드램프 on으로 왕눈이도 불들어와
+		setHeadlampLED(HeadLampStatus);
+		delay_ms(1000);
+	}
+	else{ //00 받아 탈출
+		setHeadlampLED(HeadLampStatus);
+		delay_ms(1000);
+	}
+	//}
+	TerminateTask();
+}
+
 TASK(Task_Motor){
 	//toggleLED1();
 
@@ -88,8 +113,9 @@ TASK(Task_AEB){
 }
 TASK(Blink_LED)
 {
-	while(1){
-		//setLED2(1); //red
+	//while(1){
+		toggleLED1();
+		delay_ms(1000);
 		//unsigned int i = 0; while (i++ < 1000);
 
 		//setLED2(0);
@@ -97,9 +123,10 @@ TASK(Blink_LED)
 		//toggleLED2();
 		//delay_ms(1000);
 		//unsigned int i = 0; while (i++ < 1000);
-		Driver_Can_TxTest();
+		//Driver_Can_TxTest();
+		//can_Send(signal_type, wheretoecu);
 		delay_ms(1000);
-	}
+	//}
 	TerminateTask();
 }
 
@@ -225,9 +252,10 @@ int main(void)
 	Driver_Can_Init();
 
 	_init_uart3();
+	//init_gpt2();
 //	Init_DCMotor();
 //	Init_DCMotorPWM();
-//	init_gpt2();
+	//init_gpt2();
 //	Init_Ultrasonics();
 //	Init_Buzzer();
 //	Init_Buzzer_PWM();

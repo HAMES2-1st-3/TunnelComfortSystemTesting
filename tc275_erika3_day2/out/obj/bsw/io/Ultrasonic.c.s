@@ -172,7 +172,7 @@ ReadUltrasonic_Filt:
 .LBE7:
 .LBE6:
 	.loc 1 52 0
-	movh.a	%a15, hi:old_index.37609
+	movh.a	%a15, hi:old_index.37632
 .LBB10:
 .LBB8:
 	.loc 1 38 0
@@ -182,7 +182,7 @@ ReadUltrasonic_Filt:
 .LBE8:
 .LBE10:
 	.loc 1 52 0
-	ld.w	%d15, [%a15] lo:old_index.37609
+	ld.w	%d15, [%a15] lo:old_index.37632
 	.loc 1 53 0
 	mov	%d4, 5
 	.loc 1 52 0
@@ -190,18 +190,18 @@ ReadUltrasonic_Filt:
 	.loc 1 53 0
 	div	%e4, %d15, %d4
 	.loc 1 54 0
-	movh.a	%a3, hi:avg_filt_buf.37608
+	movh.a	%a3, hi:avg_filt_buf.37631
 	.loc 1 53 0
-	st.w	[%a15] lo:old_index.37609, %d5
+	st.w	[%a15] lo:old_index.37632, %d5
 	.loc 1 54 0
-	lea	%a15, [%a3] lo:avg_filt_buf.37608
+	lea	%a15, [%a3] lo:avg_filt_buf.37631
 	addsc.a	%a2, %a15, %d5, 2
 	st.w	[%a2]0, %d2
 	.loc 1 55 0
-	movh.a	%a2, hi:sensorRxCnt.37611
-	ld.w	%d15, [%a2] lo:sensorRxCnt.37611
+	movh.a	%a2, hi:sensorRxCnt.37634
+	ld.w	%d15, [%a2] lo:sensorRxCnt.37634
 	add	%d15, 1
-	st.w	[%a2] lo:sensorRxCnt.37611, %d15
+	st.w	[%a2] lo:sensorRxCnt.37634, %d15
 	.loc 1 58 0
 	jlt	%d15, 5, .L20
 .LVL12:
@@ -209,7 +209,7 @@ ReadUltrasonic_Filt:
 .LBB12:
 	.loc 1 60 0
 	ld.w	%d15, [%a15] 4
-	ld.w	%d2, [%a3] lo:avg_filt_buf.37608
+	ld.w	%d2, [%a3] lo:avg_filt_buf.37631
 .LVL13:
 	add.f	%d2, %d2, %d15
 .LVL14:
@@ -252,24 +252,24 @@ ReadUltrasonic_Filt:
 .LBE13:
 .LFE328:
 	.size	ReadUltrasonic_Filt, .-ReadUltrasonic_Filt
-	.local	sensorRxCnt.37611
+	.local	sensorRxCnt.37634
 .section .bss,"aw",@nobits
 	.align 2
-	.type		 sensorRxCnt.37611,@object
-	.size		 sensorRxCnt.37611,4
-sensorRxCnt.37611:
+	.type		 sensorRxCnt.37634,@object
+	.size		 sensorRxCnt.37634,4
+sensorRxCnt.37634:
 	.space	4
-	.local	avg_filt_buf.37608
+	.local	avg_filt_buf.37631
 	.align 2
-	.type		 avg_filt_buf.37608,@object
-	.size		 avg_filt_buf.37608,20
-avg_filt_buf.37608:
+	.type		 avg_filt_buf.37631,@object
+	.size		 avg_filt_buf.37631,20
+avg_filt_buf.37631:
 	.space	20
-	.local	old_index.37609
+	.local	old_index.37632
 	.align 2
-	.type		 old_index.37609,@object
-	.size		 old_index.37609,4
-old_index.37609:
+	.type		 old_index.37632,@object
+	.size		 old_index.37632,4
+old_index.37632:
 	.space	4
 .section .debug_frame,"",@progbits
 .Lframe0:
@@ -8081,7 +8081,7 @@ old_index.37609:
 	.uaword	0x477b
 	.byte	0x5
 	.byte	0x3
-	.uaword	avg_filt_buf.37608
+	.uaword	avg_filt_buf.37631
 	.uleb128 0x22
 	.string	"old_index"
 	.byte	0x1
@@ -8089,7 +8089,7 @@ old_index.37609:
 	.uaword	0x269
 	.byte	0x5
 	.byte	0x3
-	.uaword	old_index.37609
+	.uaword	old_index.37632
 	.uleb128 0x23
 	.string	"distance_filt"
 	.byte	0x1
@@ -8103,7 +8103,7 @@ old_index.37609:
 	.uaword	0x269
 	.byte	0x5
 	.byte	0x3
-	.uaword	sensorRxCnt.37611
+	.uaword	sensorRxCnt.37634
 	.uleb128 0x24
 	.uaword	0x456f
 	.uaword	.LBB6
@@ -8979,7 +8979,7 @@ old_index.37609:
 	.uaword	.LVL14-.Ltext0
 	.uahalf	0x5
 	.byte	0x3
-	.uaword	avg_filt_buf.37608
+	.uaword	avg_filt_buf.37631
 	.uaword	.LVL14-.Ltext0
 	.uaword	.LVL16-.Ltext0
 	.uahalf	0x1
@@ -8991,7 +8991,7 @@ old_index.37609:
 	.uleb128 0x2
 	.uleb128 0x250
 	.byte	0x3
-	.uaword	avg_filt_buf.37608+16
+	.uaword	avg_filt_buf.37631+16
 	.byte	0xf6
 	.byte	0x4
 	.uleb128 0x250
@@ -10918,83 +10918,103 @@ old_index.37609:
 	.byte	0x7
 	.uaword	.Ldebug_macro74
 	.byte	0x4
-	.file 137 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/etc/etc.h"
+	.file 137 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/drivers/com.h"
 	.byte	0x3
 	.uleb128 0x11
 	.uleb128 0x89
 	.byte	0x1
-	.uleb128 0x2
-	.string	"BSW_ETC_ETC_H_ "
+	.uleb128 0x9
+	.string	"BSW_DRIVERS_COM_H_ "
+	.byte	0x3
+	.uleb128 0xb
+	.uleb128 0x64
 	.byte	0x4
-	.file 138 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Buzzer.h"
+	.byte	0x4
+	.file 138 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/etc/etc.h"
 	.byte	0x3
 	.uleb128 0x14
 	.uleb128 0x8a
 	.byte	0x1
 	.uleb128 0x2
+	.string	"BSW_ETC_ETC_H_ "
+	.byte	0x4
+	.file 139 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Buzzer.h"
+	.byte	0x3
+	.uleb128 0x17
+	.uleb128 0x8b
+	.byte	0x1
+	.uleb128 0x2
 	.string	"BSW_IO_BUZZER_H_ "
 	.byte	0x4
-	.file 139 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/GPIO.h"
+	.file 140 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/GPIO.h"
 	.byte	0x3
-	.uleb128 0x15
-	.uleb128 0x8b
+	.uleb128 0x18
+	.uleb128 0x8c
 	.byte	0x1
 	.uleb128 0x2
 	.string	"BSW_IO_GPIO_H_ "
 	.byte	0x4
-	.file 140 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Motor.h"
+	.file 141 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Motor.h"
 	.byte	0x3
-	.uleb128 0x16
-	.uleb128 0x8c
+	.uleb128 0x19
+	.uleb128 0x8d
 	.byte	0x1
 	.uleb128 0x2
 	.string	"BSW_IO_MOTOR_H_ "
 	.byte	0x4
-	.file 141 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/ToF.h"
+	.file 142 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/ToF.h"
 	.byte	0x3
-	.uleb128 0x17
-	.uleb128 0x8d
+	.uleb128 0x1a
+	.uleb128 0x8e
 	.byte	0x1
 	.uleb128 0x2
 	.string	"BSW_IO_TOF_H_ "
 	.byte	0x4
-	.file 142 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Ultrasonic.h"
-	.byte	0x3
-	.uleb128 0x18
-	.uleb128 0x8e
-	.byte	0x4
-	.file 143 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h"
+	.file 143 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/Ultrasonic.h"
 	.byte	0x3
 	.uleb128 0x1b
 	.uleb128 0x8f
+	.byte	0x4
+	.file 144 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/io/LCD.h"
+	.byte	0x3
+	.uleb128 0x1c
+	.uleb128 0x90
+	.byte	0x1
+	.uleb128 0x9
+	.string	"BSW_IO_LCD_H_ "
+	.byte	0x4
+	.file 145 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h"
+	.byte	0x3
+	.uleb128 0x1e
+	.uleb128 0x91
 	.byte	0x1
 	.uleb128 0x1b
 	.string	"_STDIO_H_ "
-	.file 144 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\_ansi.h"
+	.file 146 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\_ansi.h"
 	.byte	0x3
 	.uleb128 0x1d
-	.uleb128 0x90
+	.uleb128 0x92
 	.byte	0x1
 	.uleb128 0xd
 	.string	"_ANSIDECL_H_ "
-	.file 145 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\newlib.h"
+	.file 147 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\newlib.h"
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0x91
+	.uleb128 0x93
 	.byte	0x7
 	.uaword	.Ldebug_macro75
 	.byte	0x4
-	.file 146 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\config.h"
+	.file 148 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\config.h"
 	.byte	0x3
 	.uleb128 0x10
-	.uleb128 0x92
+	.uleb128 0x94
 	.byte	0x1
 	.uleb128 0x2
 	.string	"__SYS_CONFIG_H__ "
-	.file 147 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\ieeefp.h"
+	.file 149 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\ieeefp.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x93
+	.uleb128 0x95
 	.byte	0x7
 	.uaword	.Ldebug_macro76
 	.byte	0x4
@@ -11015,35 +11035,35 @@ old_index.37609:
 	.byte	0x1
 	.uleb128 0x24
 	.string	"__need___va_list "
-	.file 148 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\reent.h"
+	.file 150 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\reent.h"
 	.byte	0x3
 	.uleb128 0x2d
-	.uleb128 0x94
+	.uleb128 0x96
 	.byte	0x1
 	.uleb128 0xb
 	.string	"_SYS_REENT_H_ "
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x90
+	.uleb128 0x92
 	.byte	0x4
-	.file 149 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\_types.h"
+	.file 151 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\_types.h"
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0x95
+	.uleb128 0x97
 	.byte	0x1
 	.uleb128 0xa
 	.string	"_SYS__TYPES_H "
-	.file 150 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_types.h"
+	.file 152 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_types.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0x96
+	.uleb128 0x98
 	.byte	0x1
 	.uleb128 0x2
 	.string	"_MACHINE__TYPES_H "
-	.file 151 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_default_types.h"
+	.file 153 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_default_types.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x97
+	.uleb128 0x99
 	.byte	0x7
 	.uaword	.Ldebug_macro81
 	.byte	0x4
@@ -11051,10 +11071,10 @@ old_index.37609:
 	.uleb128 0x7
 	.string	"__ATTRIBUTE_IMPURE_PTR__ __attribute__((__fardata__))"
 	.byte	0x4
-	.file 152 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\lock.h"
+	.file 154 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\lock.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x98
+	.uleb128 0x9a
 	.byte	0x7
 	.uaword	.Ldebug_macro82
 	.byte	0x4
@@ -11071,29 +11091,29 @@ old_index.37609:
 	.byte	0x7
 	.uaword	.Ldebug_macro84
 	.byte	0x4
-	.file 153 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\types.h"
+	.file 155 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\types.h"
 	.byte	0x3
 	.uleb128 0x2e
-	.uleb128 0x99
+	.uleb128 0x9b
 	.byte	0x7
 	.uaword	.Ldebug_macro85
 	.byte	0x3
 	.uleb128 0x45
 	.uleb128 0x68
 	.byte	0x4
-	.file 154 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\types.h"
+	.file 156 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\types.h"
 	.byte	0x3
 	.uleb128 0x46
-	.uleb128 0x9a
+	.uleb128 0x9c
 	.byte	0x7
 	.uaword	.Ldebug_macro86
 	.byte	0x4
 	.byte	0x7
 	.uaword	.Ldebug_macro87
-	.file 155 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\features.h"
+	.file 157 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\features.h"
 	.byte	0x3
 	.uleb128 0x105
-	.uleb128 0x9b
+	.uleb128 0x9d
 	.byte	0x1
 	.uleb128 0x16
 	.string	"_SYS_FEATURES_H "
@@ -11102,10 +11122,10 @@ old_index.37609:
 	.uleb128 0x215
 	.string	"__need_inttypes"
 	.byte	0x4
-	.file 156 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\stdio.h"
+	.file 158 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\stdio.h"
 	.byte	0x3
 	.uleb128 0x41
-	.uleb128 0x9c
+	.uleb128 0x9e
 	.byte	0x7
 	.uaword	.Ldebug_macro88
 	.byte	0x4
@@ -109792,18 +109812,18 @@ old_index.37609:
 	.uleb128 0x2ad
 	.string	"putchar(x) putc(x, stdout)"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.main.h.35.cd68cdd997ae2c74cfafe121e6ee6978,comdat
+.section .debug_macro,"G",@progbits,wm4.main.h.38.d6eba6bbf11cec40a928690646004853,comdat
 .Ldebug_macro90:
 	.uahalf	0x4
 	.byte	0
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x26
 	.string	"CLR_SCR() my_printf(\"%s\", cmd_clr_scr)"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x27
 	.string	"CLR_LINE() my_printf(\"%s\", cmd_clr_line)"
 	.byte	0x1
-	.uleb128 0x25
+	.uleb128 0x28
 	.string	"MOV_CUR_UP() my_printf(\"%s\", cmd_mov_cur_up)"
 	.byte	0
 .section .debug_line,"",@progbits

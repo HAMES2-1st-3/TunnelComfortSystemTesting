@@ -32,8 +32,20 @@ void Init_GPIO(void)
 	MODULE_P11.IOCR8.B.PC11=0x10;
 	MODULE_P11.IOCR8.B.PC9=0x10;
 
-}
+	/*P02_3,4,5  ¿Õ´«ÀÌ LED Output*/
+	MODULE_P02.IOCR0.B.PC3=0x10;
+	MODULE_P02.IOCR4.B.PC4=0x10;
+	MODULE_P02.IOCR4.B.PC5=0x10;
 
+}
+void setHeadlampLED(int onoff){
+	if(onoff){
+		MODULE_P02.OUT.B.P4=1;
+	}
+	else{
+		MODULE_P02.OUT.B.P4=0;
+	}
+}
 void setLED1(int onoff)	// on if true, off if false
 {
 	if(onoff)
