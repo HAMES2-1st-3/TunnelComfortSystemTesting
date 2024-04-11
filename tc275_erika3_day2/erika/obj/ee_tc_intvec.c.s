@@ -17,10 +17,12 @@ __INTTAB0:
 	osEE_tc_isr_dummy_entry_2:
 	j .
 	.align  5
-	.globl osEE_tc_isr_dummy_entry_3
-	osEE_tc_isr_dummy_entry_3:
-	j .
-	.align  5
+	.globl osEE_tc_isr2_entry_3
+	osEE_tc_isr2_entry_3:
+	svlcx
+	mov %d4, 1
+	j osEE_tc_isr2_wrapper
+	.align 5
 	.globl osEE_tc_isr_dummy_entry_4
 	osEE_tc_isr_dummy_entry_4:
 	j .
@@ -4057,7 +4059,7 @@ osEE_tc_isr2_wrapper:
 	.string	"OSEE_ISR_ENTRY_ALIGN(c,c_id,p) __asm__ (\".globl osEE_tc\" OSEE_S(c) \"isr_dummy_entry_\" OSEE_S(p)); __asm__ (\"osEE_tc\" OSEE_S(c) \"isr_dummy_entry_\" OSEE_S(p) \":\"); __asm__ (\"j .\"); __asm__ (\".align  5\");"
 	.byte	0x4
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.e2c79c07d6563b034e5909ba86774814,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.d4593416f79fb7b3acf82b210e340322,comdat
 .Ldebug_macro1:
 	.uahalf	0x4
 	.byte	0
@@ -4111,10 +4113,10 @@ osEE_tc_isr2_wrapper:
 	.string	"OSEE_HAS_SYSTEM_TIMER "
 	.byte	0x1
 	.uleb128 0x41
-	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 1"
+	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 3"
 	.byte	0x1
 	.uleb128 0x42
-	.string	"OSEE_ISR2_MAX_PRIO (128U)"
+	.string	"OSEE_ISR2_MAX_PRIO (130U)"
 	.byte	0x1
 	.uleb128 0x43
 	.string	"OSEE_MULTI_STACK "
@@ -4126,7 +4128,7 @@ osEE_tc_isr2_wrapper:
 	.string	"OSEE_SINGLE_ACTIVATION "
 	.byte	0x1
 	.uleb128 0x46
-	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (1U)"
+	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (3U)"
 	.byte	0x1
 	.uleb128 0x47
 	.string	"OSEE_TC_TC27X "
@@ -4152,16 +4154,28 @@ osEE_tc_isr2_wrapper:
 	.uleb128 0x57
 	.string	"OSTICKDURATION (1000000U)"
 	.byte	0x1
+	.uleb128 0x67
+	.string	"OSEE_TC_CORE0_3_ISR_CAT (2U)"
+	.byte	0x1
+	.uleb128 0x68
+	.string	"OSEE_TC_CORE0_3_ISR_TID 1"
+	.byte	0x1
+	.uleb128 0x6a
+	.string	"OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)"
+	.byte	0x1
 	.uleb128 0x6b
+	.string	"OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)"
+	.byte	0x1
+	.uleb128 0x73
 	.string	"OSEE_SYSTEM_TIMER (0U)"
 	.byte	0x1
-	.uleb128 0x6c
+	.uleb128 0x74
 	.string	"OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0"
 	.byte	0x1
-	.uleb128 0x6d
+	.uleb128 0x75
 	.string	"OSEE_TC_CORE0_1_ISR_CAT (2U)"
 	.byte	0x1
-	.uleb128 0x6e
+	.uleb128 0x76
 	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat

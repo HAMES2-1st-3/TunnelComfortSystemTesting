@@ -23,12 +23,14 @@
 
 #include "bsw/io/GPIO.h"
 #include "bsw/system/interrupts.h"
+
 /***********************************************************************/
 /*Define*/ 
 /***********************************************************************/
 #define ECU1_TX_OBJ_NUM     10u
 #define ECU1_RX_OBJ_NUM     10u
 
+//#define ECUBODY 1u
 /***********************************************************************/
 /*Typedef*/ 
 /***********************************************************************/
@@ -58,8 +60,14 @@ IFX_EXTERN Ecu1Can stEcu1Can;
 /***********************************************************************/
 /*Global Function Prototype*/ 
 /***********************************************************************/
-extern void Driver_Can_Init(void);
-extern void Driver_Can_TxTest(void);
-void CAN_RxInt0Handler(void);
+//extern void Driver_Can_Init(void);
+//extern void Driver_Can_TxTest(void);
+extern void Driver_Can_Init(uint32 mid);
+extern void Driver_Can_TxTest(uint32 mid, uint32 data);
+//extern void CAN_RxInt0Handler(void);
+extern void CAN_RX_HND(void);
+
+uint16 getIsDark(void);
+uint16 getIsInternal(void);
 
 #endif /* DRIVER_STM */

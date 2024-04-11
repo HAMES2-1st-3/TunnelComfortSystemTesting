@@ -6,6 +6,9 @@
 #include <machine/intrinsics.h>
 #include "../system/interrupts.h"
 
+int getchA(void){
+	return MODULE_P02.OUT.B.P7; // 1:stop / 0:start
+}
 void Init_DCMotor(void)
 {
 	/* Init CH-A (Left Motor) */
@@ -24,7 +27,21 @@ void Init_DCMotor(void)
 	MODULE_P02.OUT.B.P6 = 1; /* 모터 정지 (1: 정지, 0: PWM-B에 따라 동작) */
 	MODULE_P10.OUT.B.P3 = 0; /* 100% PWM duty  */
 }
+void InitChA(int iniInAir, int iniDuty){
+	if(iniInAir){
+		movChA_PWM(iniDuty, 1);
+	}else{
+		stopChA();
+	}
+}
 
+void InitChB(int iniWindow, int iniDuty, int distance){
+	if(iniWindow == 0){
+		for(int i = 0; i< distance*10000000; i++)
+			movChB_PWM(iniDuty, 1);
+	}
+	stopChB();
+}
 void Init_DCMotorPWM(void)
 {
 	Init_DCMotor();

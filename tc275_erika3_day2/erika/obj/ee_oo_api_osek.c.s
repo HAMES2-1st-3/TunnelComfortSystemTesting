@@ -229,12 +229,12 @@ SuspendOSInterrupts:
 	.loc 2 365 0
 	and	%d2, %d15, 255
 .LVL16:
-	jnz	%d2, .L22
+	jge.u	%d2, 3, .L22
 .LBB804:
 	.loc 2 366 0
 	mov	%d2, %d15
 .LVL17:
-	insert	%d2, %d2, 1, 0, 8
+	insert	%d2, %d2, 3, 0, 8
 .LVL18:
 .LBB805:
 .LBB806:
@@ -396,9 +396,9 @@ StartOS:
 .LBE819:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jnz	%d8, .L35
+	jge.u	%d8, 3, .L35
 .LVL37:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL38:
 .LBB822:
 .LBB823:
@@ -631,9 +631,9 @@ ActivateTask:
 .LBE847:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jnz	%d8, .L61
+	jge.u	%d8, 3, .L61
 .LVL67:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL68:
 .LBB850:
 .LBB851:
@@ -812,9 +812,9 @@ ChainTask:
 .LBE872:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jnz	%d8, .L73
+	jge.u	%d8, 3, .L73
 .LVL88:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL89:
 .LBB875:
 .LBB876:
@@ -993,9 +993,9 @@ TerminateTask:
 	.loc 2 365 0
 	and	%d2, %d15, 255
 .LVL108:
-	jnz	%d2, .L95
+	jge.u	%d2, 3, .L95
 .LVL109:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL110:
 .LBB903:
 .LBB904:
@@ -1073,7 +1073,7 @@ Schedule:
 .LBE912:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jz	%d8, .L108
+	jlt.u	%d8, 3, .L108
 .LVL119:
 .L104:
 .LBE911:
@@ -1138,7 +1138,7 @@ Schedule:
 	ret
 .LVL128:
 .L108:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL129:
 .LBB929:
 .LBB928:
@@ -1228,9 +1228,9 @@ GetResource:
 .LVL139:
 	mov	%d15, %d2
 .LVL140:
-	jnz	%d5, .L111
+	jge.u	%d5, 3, .L111
 .LVL141:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL142:
 .LBB937:
 .LBB938:
@@ -1415,7 +1415,7 @@ ReleaseResource:
 	.loc 2 365 0
 	and	%d15, %d2, 255
 .LVL165:
-	jz	%d15, .L134
+	jlt.u	%d15, 3, .L134
 .LVL166:
 .L122:
 .LBE959:
@@ -1549,7 +1549,7 @@ ReleaseResource:
 	.loc 2 366 0
 	mov	%d15, %d2
 .LVL184:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL185:
 .LBB964:
 .LBB965:
@@ -1607,9 +1607,9 @@ ShutdownOS:
 .LBE1015:
 	.loc 2 365 0
 	and	%d2, %d15, 255
-	jnz	%d2, .L136
+	jge.u	%d2, 3, .L136
 .LVL190:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL191:
 .LBB1018:
 .LBB1019:
@@ -1969,7 +1969,7 @@ SetRelAlarm:
 .LBE1043:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jz	%d8, .L181
+	jlt.u	%d8, 3, .L181
 .LVL247:
 .L176:
 .LBE1042:
@@ -2024,7 +2024,7 @@ SetRelAlarm:
 	ret
 .LVL255:
 .L181:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL256:
 .LBB1061:
 .LBB1060:
@@ -2101,7 +2101,7 @@ SetAbsAlarm:
 .LBE1067:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jz	%d8, .L189
+	jlt.u	%d8, 3, .L189
 .LVL263:
 .L184:
 .LBE1066:
@@ -2156,7 +2156,7 @@ SetAbsAlarm:
 	ret
 .LVL271:
 .L189:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL272:
 .LBB1085:
 .LBB1084:
@@ -2229,7 +2229,7 @@ CancelAlarm:
 .LBE1090:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jz	%d8, .L197
+	jlt.u	%d8, 3, .L197
 .LVL278:
 .L192:
 .LBE1089:
@@ -2281,7 +2281,7 @@ CancelAlarm:
 	ret
 .LVL285:
 .L197:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL286:
 .LBB1107:
 .LBB1106:
@@ -2356,9 +2356,9 @@ GetAlarm:
 .LBE1112:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jnz	%d8, .L200
+	jge.u	%d8, 3, .L200
 .LVL292:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL293:
 .LBB1115:
 .LBB1116:
@@ -2508,9 +2508,9 @@ WaitEvent:
 .LBE1131:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jnz	%d8, .L214
+	jge.u	%d8, 3, .L214
 .LVL313:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL314:
 .LBB1134:
 .LBB1135:
@@ -2651,9 +2651,9 @@ SetEvent:
 .LBE1150:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jnz	%d8, .L221
+	jge.u	%d8, 3, .L221
 .LVL331:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL332:
 .LBB1153:
 .LBB1154:
@@ -2851,9 +2851,9 @@ ClearEvent:
 .LBE1176:
 	.loc 2 365 0
 	and	%d2, %d15, 255
-	jnz	%d2, .L240
+	jge.u	%d2, 3, .L240
 .LVL358:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL359:
 .LBB1179:
 .LBB1180:
@@ -3095,7 +3095,7 @@ IncrementCounter:
 .LBE1200:
 	.loc 2 365 0
 	and	%d8, %d15, 255
-	jz	%d8, .L264
+	jlt.u	%d8, 3, .L264
 .LVL393:
 .L258:
 .LBE1199:
@@ -3166,7 +3166,7 @@ IncrementCounter:
 	ret
 .LVL403:
 .L264:
-	insert	%d15, %d15, 1, 0, 8
+	insert	%d15, %d15, 3, 0, 8
 .LVL404:
 .LBB1220:
 .LBB1219:
@@ -14864,7 +14864,7 @@ GetISRID:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.e2c79c07d6563b034e5909ba86774814,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.d4593416f79fb7b3acf82b210e340322,comdat
 .Ldebug_macro1:
 	.uahalf	0x4
 	.byte	0
@@ -14918,10 +14918,10 @@ GetISRID:
 	.string	"OSEE_HAS_SYSTEM_TIMER "
 	.byte	0x1
 	.uleb128 0x41
-	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 1"
+	.string	"OSEE_ISR2_MAX_HW_ASM_PRIO 3"
 	.byte	0x1
 	.uleb128 0x42
-	.string	"OSEE_ISR2_MAX_PRIO (128U)"
+	.string	"OSEE_ISR2_MAX_PRIO (130U)"
 	.byte	0x1
 	.uleb128 0x43
 	.string	"OSEE_MULTI_STACK "
@@ -14933,7 +14933,7 @@ GetISRID:
 	.string	"OSEE_SINGLE_ACTIVATION "
 	.byte	0x1
 	.uleb128 0x46
-	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (1U)"
+	.string	"OSEE_TC_CORE0_ISR_MAX_PRIO (3U)"
 	.byte	0x1
 	.uleb128 0x47
 	.string	"OSEE_TC_TC27X "
@@ -14959,16 +14959,28 @@ GetISRID:
 	.uleb128 0x57
 	.string	"OSTICKDURATION (1000000U)"
 	.byte	0x1
+	.uleb128 0x67
+	.string	"OSEE_TC_CORE0_3_ISR_CAT (2U)"
+	.byte	0x1
+	.uleb128 0x68
+	.string	"OSEE_TC_CORE0_3_ISR_TID 1"
+	.byte	0x1
+	.uleb128 0x6a
+	.string	"OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)"
+	.byte	0x1
 	.uleb128 0x6b
+	.string	"OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)"
+	.byte	0x1
+	.uleb128 0x73
 	.string	"OSEE_SYSTEM_TIMER (0U)"
 	.byte	0x1
-	.uleb128 0x6c
+	.uleb128 0x74
 	.string	"OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0"
 	.byte	0x1
-	.uleb128 0x6d
+	.uleb128 0x75
 	.string	"OSEE_TC_CORE0_1_ISR_CAT (2U)"
 	.byte	0x1
-	.uleb128 0x6e
+	.uleb128 0x76
 	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat

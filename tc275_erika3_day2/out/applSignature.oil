@@ -50,6 +50,12 @@ CPU tc275_shieldbuddy {
 			SYSTEM_TIMER = TRUE;
 		};
 	};
+	ISR CAN_Rx_ISR {
+		CATEGORY = 2;
+		SOURCE = "CANINT0";
+		PRIORITY = 3;
+		HANDLER = "CAN_RX_HND";
+	};
 	OS erika3_basic_example {
 		EE_OPT = "OSEE_DEBUG";
 		EE_OPT = "OS_EE_APPL_BUILD_DEBUG";
@@ -153,7 +159,7 @@ CPU tc275_shieldbuddy {
 	};
 	TASK OS_EE_Task_Init {
 		PRIORITY = 1;
-		SCHEDULE = NON;
+		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {
 			SIZE = 1024;
@@ -173,5 +179,32 @@ CPU tc275_shieldbuddy {
 		STACK = PRIVATE {
 			SIZE = 1024;
 		};
+	};
+	TASK Ctrl_Window {
+		PRIORITY = 2;
+		CPU_ID = 0;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK Ctrl_InAir {
+		PRIORITY = 3;
+		CPU_ID = 0;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK Ctrl_HLamp {
+		PRIORITY = 4;
+		CPU_ID = 0;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK Ctrl_Btn {
+		PRIORITY = 1;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
 	};
 };

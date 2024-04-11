@@ -62,12 +62,12 @@
 #define OSEE_HAS_RESOURCES
 #define OSEE_HAS_STARTUPHOOK
 #define OSEE_HAS_SYSTEM_TIMER
-#define OSEE_ISR2_MAX_HW_ASM_PRIO 1
-#define OSEE_ISR2_MAX_PRIO (128U)
+#define OSEE_ISR2_MAX_HW_ASM_PRIO 3
+#define OSEE_ISR2_MAX_PRIO (130U)
 #define OSEE_MULTI_STACK
 #define OSEE_OC_ECC1
 #define OSEE_SINGLE_ACTIVATION
-#define OSEE_TC_CORE0_ISR_MAX_PRIO  (1U)
+#define OSEE_TC_CORE0_ISR_MAX_PRIO  (3U)
 #define OSEE_TC_TC27X
 #define OS_EE_GCC
 #define OS_EE_KERNEL_OSEK
@@ -98,6 +98,14 @@
  * ISR2 declaration
  *
  **************************************************************************/
+
+
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 1
+
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID   (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO  (3U)
+
 
 /***************************************************************************
  *

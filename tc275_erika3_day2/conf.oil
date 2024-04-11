@@ -97,6 +97,136 @@ CPU tc275_shieldbuddy
 	
 	
 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 ALARM alarm1 {
 		ACTION = ACTIVATETASK {
 			TASK = Ultrasonic_Example;
@@ -144,6 +274,12 @@ ALARM alarm1 {
 			DEVICE = "STM_SR0";
 			SYSTEM_TIMER = TRUE;
 		};
+	};
+	ISR CAN_Rx_ISR {
+		CATEGORY = 2;
+		SOURCE = "CANINT0";
+		PRIORITY = 3;
+		HANDLER = "CAN_RX_HND";
 	};
 	OS erika3_basic_example {
 		EE_OPT = "OSEE_DEBUG";
@@ -248,7 +384,7 @@ ALARM alarm1 {
 	};
 	TASK OS_EE_Task_Init {
 		PRIORITY = 1;
-		SCHEDULE = NON;
+		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {
 			SIZE = 1024;
@@ -268,5 +404,32 @@ ALARM alarm1 {
 		STACK = PRIVATE {
 			SIZE = 1024;
 		};
+	};
+	TASK Ctrl_Window {
+		PRIORITY = 2;
+		CPU_ID = 0;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK Ctrl_InAir {
+		PRIORITY = 3;
+		CPU_ID = 0;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK Ctrl_HLamp {
+		PRIORITY = 4;
+		CPU_ID = 0;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK Ctrl_Btn {
+		PRIORITY = 1;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
 	};
 };

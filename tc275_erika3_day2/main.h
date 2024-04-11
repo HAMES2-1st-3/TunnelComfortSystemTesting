@@ -32,6 +32,16 @@ extern unsigned char cmd_clr_line[5];
 extern unsigned char cmd_mov_cur_up[5];
 extern unsigned char cmd;
 
+/* Definition of global variable */
+typedef struct{
+	unsigned char hLamp;
+	unsigned char window;
+	unsigned char inAir;
+	uint32		  dist;
+	uint32	 	  iDuty; // inAir mode's duty
+	uint32		  wDuty; // window's duty
+} bodyStatus;
+
 #define CLR_SCR() my_printf("%s", cmd_clr_scr)
 #define CLR_LINE() my_printf("%s", cmd_clr_line)
 #define MOV_CUR_UP() my_printf("%s", cmd_mov_cur_up)

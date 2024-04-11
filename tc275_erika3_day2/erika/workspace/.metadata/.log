@@ -1,4 +1,4 @@
-!SESSION 2024-04-05 11:55:20.292 -----------------------------------------------
+!SESSION 2024-04-11 14:27:25.778 -----------------------------------------------
 eclipse.buildId=4.8.0.I20180611-0500
 java.version=1.8.0_402
 java.vendor=Amazon.com Inc.
@@ -6,8 +6,18 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -application com.eu.evidence.rtdruid3.oil.ee.core.generator --inputFile conf.oil --outputDir .
 Command-line arguments:  -data ./erika/workspace -application com.eu.evidence.rtdruid3.oil.ee.core.generator --inputFile conf.oil --outputDir .
 
-!ENTRY org.eclipse.acceleo.engine 2 0 2024-04-05 11:55:25.442
+!ENTRY org.eclipse.acceleo.engine 2 0 2024-04-11 14:27:30.240
 !MESSAGE No value found for the property 'preference_tricore__path_for_hightec_gcc_compiler'.
 
-!ENTRY org.eclipse.acceleo.engine 2 0 2024-04-05 11:55:25.733
+!ENTRY org.eclipse.acceleo.engine 2 0 2024-04-11 14:27:30.529
+!MESSAGE No value found for the property 'preference_lauterbach__path_for_trace32'.
+!SESSION 2024-04-11 14:37:08.639 -----------------------------------------------
+eclipse.buildId=4.8.0.I20180611-0500
+java.version=1.8.0_402
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -application com.eu.evidence.rtdruid3.oil.ee.core.generator --inputFile conf.oil --outputDir .
+Command-line arguments:  -data ./erika/workspace -application com.eu.evidence.rtdruid3.oil.ee.core.generator --inputFile conf.oil --outputDir .
+
+!ENTRY org.eclipse.acceleo.engine 2 0 2024-04-11 14:37:13.851
 !MESSAGE No value found for the property 'preference_lauterbach__path_for_trace32'.

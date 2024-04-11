@@ -43,8 +43,13 @@ DeclareTask(ADC_Example);
 DeclareTask(OS_EE_Task_Init);
 DeclareTask(Task_Motor);
 DeclareTask(Task_AEB);
+DeclareTask(Ctrl_Window);
+DeclareTask(Ctrl_InAir);
+DeclareTask(Ctrl_HLamp);
+DeclareTask(Ctrl_Btn);
 
 
+ISR2(CAN_RX_HND);
 
 
 /***************************************************************************

@@ -25,9 +25,16 @@ void init_VADC(void)
                                             // Conversion Mode : Standard Conversion (12-bit)
 
     /* VADC Group 4 Channel 7 Setting */
+
+//    MODULE_VADC.G[4].CHCTR[6].B.RESPOS = 0x1;     // Read Results Right-aligned
+//    MODULE_VADC.G[4].CHCTR[6].B.RESREG = 0x1;     // Store Result in Group Result Register G0RES1
+//    MODULE_VADC.G[4].CHCTR[6].B.ICLSEL = 0x0;     // Use Group-specific Class 0
+
     MODULE_VADC.G[4].CHCTR[7].B.RESPOS = 0x1;     // Read Results Right-aligned
     MODULE_VADC.G[4].CHCTR[7].B.RESREG = 0x1;     // Store Result in Group Result Register G0RES1
     MODULE_VADC.G[4].CHCTR[7].B.ICLSEL = 0x0;     // Use Group-specific Class 0
+
+    MODULE_P00.IOCR4.B.PC4 = 0b00010;
 }
 
 void VADC_startConversion(void)
