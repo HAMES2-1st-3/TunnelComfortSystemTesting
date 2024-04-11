@@ -1,9 +1,8 @@
 CPU tc275_shieldbuddy
 {
+
 	
-	
-	
-	
+
 	
 	
 	
@@ -25,79 +24,6 @@ CPU tc275_shieldbuddy
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	
 	
 	
@@ -148,68 +74,7 @@ CPU tc275_shieldbuddy
 	
 	
 	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
 	
 	
 	
@@ -229,7 +94,7 @@ CPU tc275_shieldbuddy
 	
 ALARM alarm1 {
 		ACTION = ACTIVATETASK {
-			TASK = Ultrasonic_Example;
+			TASK = Blink_LED;
 		};
 		AUTOSTART = FALSE;
 		COUNTER = systimer;
@@ -244,6 +109,7 @@ ALARM alarm1 {
 		APP_SRC = "bsw/io/GPIO.c";
 		APP_SRC = "bsw/io/Motor.c";
 		APP_SRC = "bsw/io/ToF.c";
+		APP_SRC = "bsw/io/LCD.c";
 		APP_SRC = "bsw/io/Ultrasonic.c";
 		APP_SRC = "bsw/system/interrupts.c";
 		APP_SRC = "bsw/system/system_tc27x.c";
@@ -270,7 +136,7 @@ ALARM alarm1 {
 		TICKSPERBASE = 1;
 		SECONDSPERTICK = 0.001;
 		TYPE = HARDWARE {
-			PRIORITY = 1;
+			PRIORITY = 3;
 			DEVICE = "STM_SR0";
 			SYSTEM_TIMER = TRUE;
 		};
@@ -318,7 +184,7 @@ ALARM alarm1 {
 		USEEXTENSIONAPI = FALSE;
 		STACKMONITORING = FALSE;
 	};
-	TASK CAN_Tx {
+	TASK Blink_LED {
 		PRIORITY = 1;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
@@ -404,6 +270,18 @@ ALARM alarm1 {
 		STACK = PRIVATE {
 			SIZE = 1024;
 		};
+	};
+	TASK LCD_TEST {
+		PRIORITY = 2;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
+	};
+	TASK LED_KING {
+		PRIORITY = 3;
+		SCHEDULE = FULL;
+		AUTOSTART = FALSE;
+		STACK = SHARED;
 	};
 	TASK Ctrl_Window {
 		PRIORITY = 2;

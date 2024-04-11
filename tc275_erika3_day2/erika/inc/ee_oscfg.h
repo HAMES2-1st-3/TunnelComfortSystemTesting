@@ -114,8 +114,8 @@
  **************************************************************************/
 #define OSEE_SYSTEM_TIMER        (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 
 /***************************************************************************
  *

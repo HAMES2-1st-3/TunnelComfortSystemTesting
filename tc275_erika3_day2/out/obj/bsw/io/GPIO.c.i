@@ -140881,7 +140881,7 @@ typedef volatile struct _Ifx_XBAR
 # 67 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_reg.h" 2 3
 # 5 "C:\\TC275_~2\\bsw\\io\\GPIO.h" 2
 
-void Init_GPIO(void);
+void Init_GPIO(int iniHLamp);
 
 void setLED1(int onoff);
 void setLED2(int onoff);
@@ -140890,8 +140890,11 @@ void toggleLED2(void);
 
 int getSW1(void);
 int getSW2(void);
+int getSW3(void);
 int getSW1_Debounce(void);
 int getSW2_Debounce(void);
+
+void setHeadlampLED(int onoff);
 # 2 "C:\\TC275_~2\\bsw\\io\\GPIO.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 1 3
 # 46 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxport_pinmap.h" 3
@@ -153082,7 +153085,13 @@ extern IfxPort_Pin IfxPort_P40_9;
 
 extern const IfxPort_Pin *IfxPort_Pin_pinTable[41][16];
 # 3 "C:\\TC275_~2\\bsw\\io\\GPIO.c" 2
-void Init_GPIO(void)
+# 1 "C:\\TC275_~2/bsw/etc/etc.h" 1
+
+#define BSW_ETC_ETC_H_ 
+
+void delay_ms(unsigned int delay_time);
+# 4 "C:\\TC275_~2\\bsw\\io\\GPIO.c" 2
+void Init_GPIO(int iniHLamp)
 {
 
  (*(Ifx_P*)0xF003B000u).IOCR0.B.PC2 = 0b10000;
@@ -153099,18 +153108,59 @@ void Init_GPIO(void)
 
  IfxPort_setPinModeOutput(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
  IfxPort_setPinLow(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex);
-}
+# 36 "C:\\TC275_~2\\bsw\\io\\GPIO.c"
+ (*(Ifx_P*)0xF003A200u).IOCR0.B.PC3=0x10;
+ (*(Ifx_P*)0xF003A200u).IOCR4.B.PC4=0x10;
+ (*(Ifx_P*)0xF003A200u).IOCR4.B.PC5=0x10;
 
+ (*(Ifx_P*)0xF003A000u).IOCR8.B.PC8 = 0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR8.B.PC9 = 0x10;
+ (*(Ifx_P*)0xF003A000u).IOCR8.B.PC10 = 0x10;
+
+
+
+
+
+ setLED1(iniHLamp);
+
+}
+void setHeadlampLED(int onoff){
+ if(onoff){
+  (*(Ifx_P*)0xF003A200u).OUT.B.P4=1;
+ }
+ else{
+  (*(Ifx_P*)0xF003A200u).OUT.B.P4=0;
+ }
+}
 void setLED1(int onoff)
 {
  if(onoff)
- {
-  (*(Ifx_P*)0xF003B000u).OUT.B.P2 = 1;
- }
- else
- {
-  (*(Ifx_P*)0xF003B000u).OUT.B.P2 = 0;
- }
+  {
+
+
+   (*(Ifx_P*)0xF003A200u).OUT.B.P3 = 1;
+   (*(Ifx_P*)0xF003A200u).OUT.B.P4 = 1;
+
+
+
+   (*(Ifx_P*)0xF003A000u).OUT.B.P8=1;
+   (*(Ifx_P*)0xF003A000u).OUT.B.P9=1;
+
+
+  }
+  else
+  {
+
+
+   (*(Ifx_P*)0xF003A200u).OUT.B.P3 = 0;
+   (*(Ifx_P*)0xF003A200u).OUT.B.P4 = 0;
+
+
+
+   (*(Ifx_P*)0xF003A000u).OUT.B.P8=0;
+   (*(Ifx_P*)0xF003A000u).OUT.B.P9=0;
+
+  }
 }
 
 void setLED2(int onoff)
@@ -153143,6 +153193,11 @@ int getSW1(void)
 int getSW2(void)
 {
  return (*(Ifx_P*)0xF003A200u).IN.B.P1;
+}
+
+int getSW3(void)
+{
+ return (*(Ifx_P*)0xF003A000u).IN.B.P4;
 }
 
 int getSW1_Debounce(void)

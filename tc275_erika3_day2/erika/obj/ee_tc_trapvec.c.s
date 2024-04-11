@@ -2823,7 +2823,7 @@ __TRAPTAB:
 	.string	"OSEE_TC_TRAP_DEFAULT(t) __asm__ (\".globl \" OSEE_S(t)); __asm__ (OSEE_S(t) \":\"); OSEE_TC_TRAP_WORKAROUND(); __asm__ (\"debug\"); __asm__ (\"j \" OSEE_S(t)); __asm__ (\".align 5\");"
 	.byte	0x4
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.d4593416f79fb7b3acf82b210e340322,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_oscfg.h.21.b3edb0e26443645bf8c0b6c0fd1f5946,comdat
 .Ldebug_macro1:
 	.uahalf	0x4
 	.byte	0
@@ -2937,10 +2937,10 @@ __TRAPTAB:
 	.string	"OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0"
 	.byte	0x1
 	.uleb128 0x75
-	.string	"OSEE_TC_CORE0_1_ISR_CAT (2U)"
+	.string	"OSEE_TC_CORE0_3_ISR_CAT (2U)"
 	.byte	0x1
 	.uleb128 0x76
-	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
+	.string	"OSEE_TC_CORE0_3_ISR_TID 0"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat
 .Ldebug_macro2:

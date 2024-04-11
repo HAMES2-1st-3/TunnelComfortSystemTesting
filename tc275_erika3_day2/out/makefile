@@ -79,6 +79,7 @@ OS_EE_APP_CFG_SRCS += bsw/io/Buzzer.c
 OS_EE_APP_CFG_SRCS += bsw/io/GPIO.c
 OS_EE_APP_CFG_SRCS += bsw/io/Motor.c
 OS_EE_APP_CFG_SRCS += bsw/io/ToF.c
+OS_EE_APP_CFG_SRCS += bsw/io/LCD.c
 OS_EE_APP_CFG_SRCS += bsw/io/Ultrasonic.c
 OS_EE_APP_CFG_SRCS += bsw/system/interrupts.c
 OS_EE_APP_CFG_SRCS += bsw/system/system_tc27x.c

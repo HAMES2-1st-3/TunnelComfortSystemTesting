@@ -96,7 +96,7 @@ void init_gpt1(void)
     MODULE_GPT120.T2CON.B.T2M = 0x4; /* Set the timer T2 in reload mode */
     MODULE_GPT120.T2CON.B.T2I = 0x7; /* Reload Input Mode : Rising/Falling Edge T3OTL */
     MODULE_GPT120.T2.U = 100;
-    InterruptInstall(SRC_ID_GPT120T3, (void(*)(int))IsrGpt120T3Handler_Beep, 3, 0);
+    InterruptInstall(SRC_ID_GPT120T3, (void(*)(int))IsrGpt120T3Handler_Beep, 1, 0);
 
     /* Initialize the Timer T4 for Ultrasonic */
     MODULE_GPT120.T4CON.B.T4M = 0x0; /* Set T4 to timer mode */

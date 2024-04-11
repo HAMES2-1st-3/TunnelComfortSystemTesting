@@ -246,6 +246,7 @@
 
 #define BSW_IO_MOTOR_H_ 
 
+void InitChA(int iniInAir, int iniDuty);
 void Init_DCMotor(void);
 void Init_DCMotorPWM(void);
 
@@ -145887,6 +145888,13 @@ void InterruptInit(void);
 void InterruptInstall(int irqNum, isrhnd_t isrProc, int prio, int arg);
 # 8 "C:\\TC275_~2\\bsw\\io\\Motor.c" 2
 
+void InitChA(int iniInAir, int iniDuty){
+ if(iniInAir){
+  movChA_PWM(iniDuty, 1);
+ }else{
+  stopChA();
+ }
+}
 void Init_DCMotor(void)
 {
 

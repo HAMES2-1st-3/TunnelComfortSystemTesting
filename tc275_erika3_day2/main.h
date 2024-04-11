@@ -13,6 +13,9 @@
 #include "bsw/drivers/gpt12.h"
 #include "bsw/drivers/vadc.h"
 #include "bsw/drivers/Driver_Can.h"
+//그냥 테스트 com
+#include "bsw/drivers/com.h"
+
 /* Include etc driver */
 #include "bsw/etc/etc.h"
 
@@ -22,7 +25,7 @@
 #include "bsw/io/Motor.h"
 #include "bsw/io/ToF.h"
 #include "bsw/io/Ultrasonic.h"
-
+#include "bsw/io/LCD.h"
 /* Include Standard C Library */
 #include <stdio.h>
 
@@ -31,6 +34,14 @@ extern unsigned char cmd_clr_scr[8];
 extern unsigned char cmd_clr_line[5];
 extern unsigned char cmd_mov_cur_up[5];
 extern unsigned char cmd;
+
+#define CLR_SCR() my_printf("%s", cmd_clr_scr)
+#define CLR_LINE() my_printf("%s", cmd_clr_line)
+#define MOV_CUR_UP() my_printf("%s", cmd_mov_cur_up)
+
+#ifndef NULL
+#define NULL 0
+#endif
 
 /* Definition of global variable */
 typedef struct{
@@ -41,13 +52,4 @@ typedef struct{
 	uint32	 	  iDuty; // inAir mode's duty
 	uint32		  wDuty; // window's duty
 } bodyStatus;
-
-#define CLR_SCR() my_printf("%s", cmd_clr_scr)
-#define CLR_LINE() my_printf("%s", cmd_clr_line)
-#define MOV_CUR_UP() my_printf("%s", cmd_mov_cur_up)
-
-#ifndef NULL
-#define NULL 0
-#endif
-
 #endif /* MAIN_H_ */

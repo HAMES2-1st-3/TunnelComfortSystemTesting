@@ -2,356 +2,402 @@
 .section .text,"ax",@progbits
 .Ltext0:
 	.align 1
-	.global	Init_DCMotor
-	.type	Init_DCMotor, @function
-Init_DCMotor:
+	.global	InitChA
+	.type	InitChA, @function
+InitChA:
 .LFB14:
 	.file 1 "C:\\TC275_~2\\bsw\\io\\Motor.c"
-	.loc 1 10 0
-	.loc 1 12 0
-	movh.a	%a15, 61444
-	lea	%a15, [%a15] -20480
-	ld.w	%d15, [%a15] 16
-	.loc 1 13 0
-	movh.a	%a2, 61444
-	.loc 1 12 0
-	insert	%d15, %d15, 0, 11, 5
-	insert	%d15, %d15, 15, 15, 1
-	.loc 1 13 0
-	lea	%a2, [%a2] -24064
-	.loc 1 12 0
-	st.w	[%a15] 16, %d15
-	.loc 1 13 0
-	ld.w	%d15, [%a2] 16
-	insert	%d15, %d15, 0, 11, 5
-	insert	%d15, %d15, 15, 15, 1
-	st.w	[%a2] 16, %d15
-	.loc 1 14 0
-	ld.w	%d15, [%a2] 20
-	insert	%d15, %d15, 0, 27, 5
-	insert	%d15, %d15, 15, 31, 1
-	st.w	[%a2] 20, %d15
-	.loc 1 15 0
-	ld.w	%d15, [%a15]0
-	or	%d15, %d15, 2
-	st.w	[%a15]0, %d15
-	.loc 1 16 0
-	ld.w	%d15, [%a2]0
-	or	%d15, %d15, 128
-	st.w	[%a2]0, %d15
-	.loc 1 17 0
-	ld.w	%d15, [%a2]0
-	andn	%d15, %d15, ~(-3)
-	st.w	[%a2]0, %d15
-	.loc 1 20 0
-	ld.w	%d15, [%a15] 16
-	insert	%d15, %d15, 0, 19, 5
-	insert	%d15, %d15, 15, 23, 1
-	st.w	[%a15] 16, %d15
-	.loc 1 21 0
-	ld.w	%d15, [%a15] 16
-	insert	%d15, %d15, 0, 27, 5
-	insert	%d15, %d15, 15, 31, 1
-	st.w	[%a15] 16, %d15
-	.loc 1 22 0
-	ld.w	%d15, [%a2] 20
-	insert	%d15, %d15, 0, 19, 5
-	insert	%d15, %d15, 15, 23, 1
-	st.w	[%a2] 20, %d15
-	.loc 1 23 0
-	ld.w	%d15, [%a15]0
-	or	%d15, %d15, 4
-	st.w	[%a15]0, %d15
-	.loc 1 24 0
-	ld.w	%d15, [%a2]0
-	or	%d15, %d15, 64
-	st.w	[%a2]0, %d15
-	.loc 1 25 0
-	ld.w	%d15, [%a15]0
-	andn	%d15, %d15, ~(-9)
-	st.w	[%a15]0, %d15
-	ret
-.LFE14:
-	.size	Init_DCMotor, .-Init_DCMotor
-	.align 1
-	.global	Init_DCMotorPWM
-	.type	Init_DCMotorPWM, @function
-Init_DCMotorPWM:
-.LFB15:
-	.loc 1 29 0
-.LBB8:
-.LBB9:
-	.loc 1 12 0
-	movh.a	%a2, 61444
-	lea	%a2, [%a2] -20480
-	ld.w	%d15, [%a2] 16
-	.loc 1 13 0
-	movh.a	%a15, 61444
-	.loc 1 12 0
-	insert	%d15, %d15, 0, 11, 5
-	insert	%d15, %d15, 15, 15, 1
-	.loc 1 13 0
-	lea	%a15, [%a15] -24064
-	.loc 1 12 0
-	st.w	[%a2] 16, %d15
-	.loc 1 13 0
-	ld.w	%d15, [%a15] 16
-	insert	%d15, %d15, 0, 11, 5
-	insert	%d15, %d15, 15, 15, 1
-	st.w	[%a15] 16, %d15
-	.loc 1 14 0
-	ld.w	%d15, [%a15] 20
-	insert	%d15, %d15, 0, 27, 5
-	insert	%d15, %d15, 15, 31, 1
-	st.w	[%a15] 20, %d15
-	.loc 1 15 0
-	ld.w	%d15, [%a2]0
-	or	%d15, %d15, 2
-	st.w	[%a2]0, %d15
-	.loc 1 16 0
-	ld.w	%d15, [%a15]0
-	or	%d15, %d15, 128
-	st.w	[%a15]0, %d15
-	.loc 1 17 0
-	ld.w	%d15, [%a15]0
-	andn	%d15, %d15, ~(-3)
-	st.w	[%a15]0, %d15
-	.loc 1 20 0
-	ld.w	%d15, [%a2] 16
-	insert	%d15, %d15, 0, 19, 5
-	insert	%d15, %d15, 15, 23, 1
-	st.w	[%a2] 16, %d15
-	.loc 1 21 0
-	ld.w	%d15, [%a2] 16
-	insert	%d15, %d15, 0, 27, 5
-	insert	%d15, %d15, 15, 31, 1
-	st.w	[%a2] 16, %d15
-	.loc 1 22 0
-	ld.w	%d15, [%a15] 20
-	insert	%d15, %d15, 0, 19, 5
-	insert	%d15, %d15, 15, 23, 1
-	st.w	[%a15] 20, %d15
-	.loc 1 23 0
-	ld.w	%d15, [%a2]0
-	or	%d15, %d15, 4
-	st.w	[%a2]0, %d15
-	.loc 1 24 0
-	ld.w	%d15, [%a15]0
-	or	%d15, %d15, 64
-	st.w	[%a15]0, %d15
-	.loc 1 25 0
-	ld.w	%d15, [%a2]0
-	andn	%d15, %d15, ~(-9)
-	st.w	[%a2]0, %d15
-.LBE9:
-.LBE8:
-	.loc 1 32 0
-	call	init_gpt2
+	.loc 1 9 0
 .LVL0:
-.LBB10:
-.LBB11:
-	.loc 1 68 0
-	ld.w	%d15, [%a15]0
-	or	%d15, %d15, 128
-	st.w	[%a15]0, %d15
-.LBE11:
-.LBE10:
+	.loc 1 10 0
+	jnz	%d4, .L5
 .LBB12:
 .LBB13:
-	.loc 1 72 0
+	.loc 1 75 0
+	movh.a	%a15, 61444
+	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
-	or	%d15, %d15, 64
+	or	%d15, %d15, 128
 	st.w	[%a15]0, %d15
+	ret
+.L5:
 .LBE13:
 .LBE12:
-	.loc 1 35 0
-	j	runGpt12_T6
-.LVL1:
-.LFE15:
-	.size	Init_DCMotorPWM, .-Init_DCMotorPWM
-	.align 1
-	.global	movChA
-	.type	movChA, @function
-movChA:
-.LFB16:
-	.loc 1 40 0
-.LVL2:
-	.loc 1 43 0
+.LBB14:
+.LBB15:
+	.loc 1 87 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
+	mov	%d4, %d5
+.LVL1:
+	.loc 1 85 0
+	call	setLeftMotorDuty
+.LVL2:
+	.loc 1 87 0
 	ld.w	%d15, [%a15]0
-	.loc 1 41 0
-	jnz	%d4, .L7
-	.loc 1 46 0
-	andn	%d15, %d15, ~(-3)
+	or	%d15, %d15, 2
 	st.w	[%a15]0, %d15
-.L5:
-	.loc 1 48 0
+	.loc 1 91 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
 	andn	%d15, %d15, ~(-129)
 	st.w	[%a15]0, %d15
-	.loc 1 49 0
+	ret
+.LBE15:
+.LBE14:
+.LFE14:
+	.size	InitChA, .-InitChA
+	.align 1
+	.global	Init_DCMotor
+	.type	Init_DCMotor, @function
+Init_DCMotor:
+.LFB15:
+	.loc 1 17 0
+	.loc 1 19 0
+	movh.a	%a15, 61444
+	lea	%a15, [%a15] -20480
+	ld.w	%d15, [%a15] 16
+	.loc 1 20 0
+	movh.a	%a2, 61444
+	.loc 1 19 0
+	insert	%d15, %d15, 0, 11, 5
+	insert	%d15, %d15, 15, 15, 1
+	.loc 1 20 0
+	lea	%a2, [%a2] -24064
+	.loc 1 19 0
+	st.w	[%a15] 16, %d15
+	.loc 1 20 0
+	ld.w	%d15, [%a2] 16
+	insert	%d15, %d15, 0, 11, 5
+	insert	%d15, %d15, 15, 15, 1
+	st.w	[%a2] 16, %d15
+	.loc 1 21 0
+	ld.w	%d15, [%a2] 20
+	insert	%d15, %d15, 0, 27, 5
+	insert	%d15, %d15, 15, 31, 1
+	st.w	[%a2] 20, %d15
+	.loc 1 22 0
+	ld.w	%d15, [%a15]0
+	or	%d15, %d15, 2
+	st.w	[%a15]0, %d15
+	.loc 1 23 0
+	ld.w	%d15, [%a2]0
+	or	%d15, %d15, 128
+	st.w	[%a2]0, %d15
+	.loc 1 24 0
+	ld.w	%d15, [%a2]0
+	andn	%d15, %d15, ~(-3)
+	st.w	[%a2]0, %d15
+	.loc 1 27 0
+	ld.w	%d15, [%a15] 16
+	insert	%d15, %d15, 0, 19, 5
+	insert	%d15, %d15, 15, 23, 1
+	st.w	[%a15] 16, %d15
+	.loc 1 28 0
+	ld.w	%d15, [%a15] 16
+	insert	%d15, %d15, 0, 27, 5
+	insert	%d15, %d15, 15, 31, 1
+	st.w	[%a15] 16, %d15
+	.loc 1 29 0
+	ld.w	%d15, [%a2] 20
+	insert	%d15, %d15, 0, 19, 5
+	insert	%d15, %d15, 15, 23, 1
+	st.w	[%a2] 20, %d15
+	.loc 1 30 0
+	ld.w	%d15, [%a15]0
+	or	%d15, %d15, 4
+	st.w	[%a15]0, %d15
+	.loc 1 31 0
+	ld.w	%d15, [%a2]0
+	or	%d15, %d15, 64
+	st.w	[%a2]0, %d15
+	.loc 1 32 0
+	ld.w	%d15, [%a15]0
+	andn	%d15, %d15, ~(-9)
+	st.w	[%a15]0, %d15
+	ret
+.LFE15:
+	.size	Init_DCMotor, .-Init_DCMotor
+	.align 1
+	.global	Init_DCMotorPWM
+	.type	Init_DCMotorPWM, @function
+Init_DCMotorPWM:
+.LFB16:
+	.loc 1 36 0
+.LBB16:
+.LBB17:
+	.loc 1 19 0
+	movh.a	%a2, 61444
+	lea	%a2, [%a2] -20480
+	ld.w	%d15, [%a2] 16
+	.loc 1 20 0
+	movh.a	%a15, 61444
+	.loc 1 19 0
+	insert	%d15, %d15, 0, 11, 5
+	insert	%d15, %d15, 15, 15, 1
+	.loc 1 20 0
+	lea	%a15, [%a15] -24064
+	.loc 1 19 0
+	st.w	[%a2] 16, %d15
+	.loc 1 20 0
+	ld.w	%d15, [%a15] 16
+	insert	%d15, %d15, 0, 11, 5
+	insert	%d15, %d15, 15, 15, 1
+	st.w	[%a15] 16, %d15
+	.loc 1 21 0
+	ld.w	%d15, [%a15] 20
+	insert	%d15, %d15, 0, 27, 5
+	insert	%d15, %d15, 15, 31, 1
+	st.w	[%a15] 20, %d15
+	.loc 1 22 0
+	ld.w	%d15, [%a2]0
+	or	%d15, %d15, 2
+	st.w	[%a2]0, %d15
+	.loc 1 23 0
+	ld.w	%d15, [%a15]0
+	or	%d15, %d15, 128
+	st.w	[%a15]0, %d15
+	.loc 1 24 0
+	ld.w	%d15, [%a15]0
+	andn	%d15, %d15, ~(-3)
+	st.w	[%a15]0, %d15
+	.loc 1 27 0
+	ld.w	%d15, [%a2] 16
+	insert	%d15, %d15, 0, 19, 5
+	insert	%d15, %d15, 15, 23, 1
+	st.w	[%a2] 16, %d15
+	.loc 1 28 0
+	ld.w	%d15, [%a2] 16
+	insert	%d15, %d15, 0, 27, 5
+	insert	%d15, %d15, 15, 31, 1
+	st.w	[%a2] 16, %d15
+	.loc 1 29 0
+	ld.w	%d15, [%a15] 20
+	insert	%d15, %d15, 0, 19, 5
+	insert	%d15, %d15, 15, 23, 1
+	st.w	[%a15] 20, %d15
+	.loc 1 30 0
+	ld.w	%d15, [%a2]0
+	or	%d15, %d15, 4
+	st.w	[%a2]0, %d15
+	.loc 1 31 0
+	ld.w	%d15, [%a15]0
+	or	%d15, %d15, 64
+	st.w	[%a15]0, %d15
+	.loc 1 32 0
+	ld.w	%d15, [%a2]0
+	andn	%d15, %d15, ~(-9)
+	st.w	[%a2]0, %d15
+.LBE17:
+.LBE16:
+	.loc 1 39 0
+	call	init_gpt2
+.LVL3:
+.LBB18:
+.LBB19:
+	.loc 1 75 0
+	ld.w	%d15, [%a15]0
+	or	%d15, %d15, 128
+	st.w	[%a15]0, %d15
+.LBE19:
+.LBE18:
+.LBB20:
+.LBB21:
+	.loc 1 79 0
+	ld.w	%d15, [%a15]0
+	or	%d15, %d15, 64
+	st.w	[%a15]0, %d15
+.LBE21:
+.LBE20:
+	.loc 1 42 0
+	j	runGpt12_T6
+.LVL4:
+.LFE16:
+	.size	Init_DCMotorPWM, .-Init_DCMotorPWM
+	.align 1
+	.global	movChA
+	.type	movChA, @function
+movChA:
+.LFB17:
+	.loc 1 47 0
+.LVL5:
+	.loc 1 50 0
+	movh.a	%a15, 61444
+	lea	%a15, [%a15] -20480
+	ld.w	%d15, [%a15]0
+	.loc 1 48 0
+	jnz	%d4, .L11
+	.loc 1 53 0
+	andn	%d15, %d15, ~(-3)
+	st.w	[%a15]0, %d15
+.L10:
+	.loc 1 55 0
+	movh.a	%a15, 61444
+	lea	%a15, [%a15] -24064
+	ld.w	%d15, [%a15]0
+	andn	%d15, %d15, ~(-129)
+	st.w	[%a15]0, %d15
+	.loc 1 56 0
 	ld.w	%d15, [%a15]0
 	or	%d15, %d15, 2
 	st.w	[%a15]0, %d15
 	ret
-.L7:
-	.loc 1 43 0
+.L11:
+	.loc 1 50 0
 	or	%d15, %d15, 2
 	st.w	[%a15]0, %d15
-	j	.L5
-.LFE16:
+	j	.L10
+.LFE17:
 	.size	movChA, .-movChA
 	.align 1
 	.global	movChB
 	.type	movChB, @function
 movChB:
-.LFB17:
-	.loc 1 54 0
-.LVL3:
-	.loc 1 57 0
+.LFB18:
+	.loc 1 61 0
+.LVL6:
+	.loc 1 64 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
-	.loc 1 55 0
-	jnz	%d4, .L11
-	.loc 1 60 0
+	.loc 1 62 0
+	jnz	%d4, .L15
+	.loc 1 67 0
 	andn	%d15, %d15, ~(-5)
 	st.w	[%a15]0, %d15
-.L10:
-	.loc 1 62 0
+.L14:
+	.loc 1 69 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
 	andn	%d15, %d15, ~(-65)
 	st.w	[%a15]0, %d15
-	.loc 1 63 0
+	.loc 1 70 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20480
 	ld.w	%d15, [%a15]0
 	or	%d15, %d15, 8
 	st.w	[%a15]0, %d15
 	ret
-.L11:
-	.loc 1 57 0
+.L15:
+	.loc 1 64 0
 	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
-	j	.L10
-.LFE17:
+	j	.L14
+.LFE18:
 	.size	movChB, .-movChB
 	.align 1
 	.global	stopChA
 	.type	stopChA, @function
 stopChA:
-.LFB18:
-	.loc 1 67 0
-	.loc 1 68 0
+.LFB19:
+	.loc 1 74 0
+	.loc 1 75 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
 	or	%d15, %d15, 128
 	st.w	[%a15]0, %d15
 	ret
-.LFE18:
+.LFE19:
 	.size	stopChA, .-stopChA
 	.align 1
 	.global	stopChB
 	.type	stopChB, @function
 stopChB:
-.LFB19:
-	.loc 1 71 0
-	.loc 1 72 0
+.LFB20:
+	.loc 1 78 0
+	.loc 1 79 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
 	or	%d15, %d15, 64
 	st.w	[%a15]0, %d15
 	ret
-.LFE19:
+.LFE20:
 	.size	stopChB, .-stopChB
 	.align 1
 	.global	movChA_PWM
 	.type	movChA_PWM, @function
 movChA_PWM:
-.LFB20:
-	.loc 1 77 0
-.LVL4:
-	.loc 1 77 0
+.LFB21:
+	.loc 1 84 0
+.LVL7:
+	.loc 1 84 0
 	mov	%d15, %d5
-	.loc 1 80 0
+	.loc 1 87 0
 	movh.a	%a15, 61444
-	.loc 1 78 0
+	.loc 1 85 0
 	call	setLeftMotorDuty
-.LVL5:
-	.loc 1 80 0
+.LVL8:
+	.loc 1 87 0
 	lea	%a15, [%a15] -20480
-	.loc 1 79 0
-	jnz	%d15, .L17
-	.loc 1 82 0
+	.loc 1 86 0
+	jnz	%d15, .L21
+	.loc 1 89 0
 	ld.w	%d15, [%a15]0
-.LVL6:
+.LVL9:
 	andn	%d15, %d15, ~(-3)
 	st.w	[%a15]0, %d15
-.L16:
-	.loc 1 84 0
+.L20:
+	.loc 1 91 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
 	andn	%d15, %d15, ~(-129)
 	st.w	[%a15]0, %d15
 	ret
-.LVL7:
-.L17:
-	.loc 1 80 0
+.LVL10:
+.L21:
+	.loc 1 87 0
 	ld.w	%d15, [%a15]0
-.LVL8:
+.LVL11:
 	or	%d15, %d15, 2
 	st.w	[%a15]0, %d15
-	j	.L16
-.LFE20:
+	j	.L20
+.LFE21:
 	.size	movChA_PWM, .-movChA_PWM
 	.align 1
 	.global	movChB_PWM
 	.type	movChB_PWM, @function
 movChB_PWM:
-.LFB21:
-	.loc 1 89 0
-.LVL9:
-	.loc 1 89 0
+.LFB22:
+	.loc 1 96 0
+.LVL12:
+	.loc 1 96 0
 	mov	%d15, %d5
-	.loc 1 92 0
+	.loc 1 99 0
 	movh.a	%a15, 61444
-	.loc 1 90 0
+	.loc 1 97 0
 	call	setRightMotorDuty
-.LVL10:
-	.loc 1 92 0
+.LVL13:
+	.loc 1 99 0
 	lea	%a15, [%a15] -20480
-	.loc 1 91 0
-	jnz	%d15, .L21
-	.loc 1 94 0
+	.loc 1 98 0
+	jnz	%d15, .L25
+	.loc 1 101 0
 	ld.w	%d15, [%a15]0
-.LVL11:
+.LVL14:
 	andn	%d15, %d15, ~(-5)
 	st.w	[%a15]0, %d15
-.L20:
-	.loc 1 96 0
+.L24:
+	.loc 1 103 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -24064
 	ld.w	%d15, [%a15]0
 	andn	%d15, %d15, ~(-65)
 	st.w	[%a15]0, %d15
 	ret
-.LVL12:
-.L21:
-	.loc 1 92 0
+.LVL15:
+.L25:
+	.loc 1 99 0
 	ld.w	%d15, [%a15]0
-.LVL13:
+.LVL16:
 	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
-	j	.L20
-.LFE21:
+	j	.L24
+.LFE22:
 	.size	movChB_PWM, .-movChB_PWM
 .section .debug_frame,"",@progbits
 .Lframe0:
@@ -432,6 +478,14 @@ movChB_PWM:
 	.uaword	.LFE21-.LFB21
 	.align 2
 .LEFDE14:
+.LSFDE16:
+	.uaword	.LEFDE16-.LASFDE16
+.LASFDE16:
+	.uaword	.Lframe0
+	.uaword	.LFB22
+	.uaword	.LFE22-.LFB22
+	.align 2
+.LEFDE16:
 .section .text,"ax",@progbits
 .Letext0:
 	.file 2 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\IfxPort_regdef.h"
@@ -440,7 +494,7 @@ movChB_PWM:
 	.file 5 "C:\\TC275_~2\\bsw\\io\\../drivers/asclin.h"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x468e
+	.uaword	0x4726
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -8016,186 +8070,214 @@ movChB_PWM:
 	.byte	0x1
 	.string	"Init_DCMotor"
 	.byte	0x1
-	.byte	0x9
+	.byte	0x10
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x13
 	.byte	0x1
 	.string	"stopChA"
 	.byte	0x1
-	.byte	0x42
+	.byte	0x49
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x13
 	.byte	0x1
 	.string	"stopChB"
 	.byte	0x1
-	.byte	0x46
+	.byte	0x4d
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x14
-	.uaword	0x445b
+	.byte	0x1
+	.string	"movChA_PWM"
+	.byte	0x1
+	.byte	0x53
+	.byte	0x1
+	.byte	0x1
+	.uaword	0x44b7
+	.uleb128 0x15
+	.string	"duty"
+	.byte	0x1
+	.byte	0x53
+	.uaword	0x1c04
+	.uleb128 0x15
+	.string	"dir"
+	.byte	0x1
+	.byte	0x53
+	.uaword	0x1c04
+	.byte	0
+	.uleb128 0x16
+	.byte	0x1
+	.string	"InitChA"
+	.byte	0x1
+	.byte	0x9
+	.byte	0x1
 	.uaword	.LFB14
 	.uaword	.LFE14
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x15
+	.uaword	0x453a
+	.uleb128 0x17
+	.string	"iniInAir"
 	.byte	0x1
-	.string	"Init_DCMotorPWM"
+	.byte	0x9
+	.uaword	0x1c04
+	.uaword	.LLST0
+	.uleb128 0x17
+	.string	"iniDuty"
 	.byte	0x1
-	.byte	0x1c
+	.byte	0x9
+	.uaword	0x1c04
+	.uaword	.LLST1
+	.uleb128 0x18
+	.uaword	0x446e
+	.uaword	.LBB12
+	.uaword	.LBE12
 	.byte	0x1
+	.byte	0xd
+	.uleb128 0x19
+	.uaword	0x448a
+	.uaword	.LBB14
+	.uaword	.LBE14
+	.byte	0x1
+	.byte	0xb
+	.uleb128 0x1a
+	.uaword	0x44ab
+	.byte	0x1
+	.uleb128 0x1b
+	.uaword	0x449f
+	.uaword	.LLST2
+	.uleb128 0x1c
+	.uaword	.LVL2
+	.uaword	0x46c8
+	.uleb128 0x1d
+	.byte	0x1
+	.byte	0x54
+	.byte	0x3
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x55
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x1e
+	.uaword	0x445b
 	.uaword	.LFB15
 	.uaword	.LFE15
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x44ff
 	.uleb128 0x16
-	.uaword	0x445b
-	.uaword	.LBB8
-	.uaword	.LBE8
 	.byte	0x1
-	.byte	0x1e
-	.uleb128 0x16
-	.uaword	0x446e
-	.uaword	.LBB10
-	.uaword	.LBE10
+	.string	"Init_DCMotorPWM"
 	.byte	0x1
-	.byte	0x21
-	.uleb128 0x16
-	.uaword	0x447c
-	.uaword	.LBB12
-	.uaword	.LBE12
-	.byte	0x1
-	.byte	0x22
-	.uleb128 0x17
-	.uaword	.LVL0
-	.uaword	0x4630
-	.uleb128 0x18
-	.uaword	.LVL1
-	.byte	0x1
-	.uaword	0x4640
-	.byte	0
-	.uleb128 0x15
-	.byte	0x1
-	.string	"movChA"
-	.byte	0x1
-	.byte	0x27
+	.byte	0x23
 	.byte	0x1
 	.uaword	.LFB16
 	.uaword	.LFE16
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4528
-	.uleb128 0x19
-	.string	"dir"
+	.uaword	0x45af
+	.uleb128 0x18
+	.uaword	0x445b
+	.uaword	.LBB16
+	.uaword	.LBE16
 	.byte	0x1
-	.byte	0x27
-	.uaword	0x1c04
+	.byte	0x25
+	.uleb128 0x18
+	.uaword	0x446e
+	.uaword	.LBB18
+	.uaword	.LBE18
 	.byte	0x1
-	.byte	0x54
+	.byte	0x28
+	.uleb128 0x18
+	.uaword	0x447c
+	.uaword	.LBB20
+	.uaword	.LBE20
+	.byte	0x1
+	.byte	0x29
+	.uleb128 0x1f
+	.uaword	.LVL3
+	.uaword	0x46e9
+	.uleb128 0x20
+	.uaword	.LVL4
+	.byte	0x1
+	.uaword	0x46f9
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x16
 	.byte	0x1
-	.string	"movChB"
+	.string	"movChA"
 	.byte	0x1
-	.byte	0x35
+	.byte	0x2e
 	.byte	0x1
 	.uaword	.LFB17
 	.uaword	.LFE17
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4551
-	.uleb128 0x19
+	.uaword	0x45d8
+	.uleb128 0x21
 	.string	"dir"
 	.byte	0x1
-	.byte	0x35
+	.byte	0x2e
 	.uaword	0x1c04
 	.byte	0x1
 	.byte	0x54
 	.byte	0
-	.uleb128 0x14
-	.uaword	0x446e
+	.uleb128 0x16
+	.byte	0x1
+	.string	"movChB"
+	.byte	0x1
+	.byte	0x3c
+	.byte	0x1
 	.uaword	.LFB18
 	.uaword	.LFE18
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x14
-	.uaword	0x447c
+	.uaword	0x4601
+	.uleb128 0x21
+	.string	"dir"
+	.byte	0x1
+	.byte	0x3c
+	.uaword	0x1c04
+	.byte	0x1
+	.byte	0x54
+	.byte	0
+	.uleb128 0x1e
+	.uaword	0x446e
 	.uaword	.LFB19
 	.uaword	.LFE19
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uleb128 0x15
-	.byte	0x1
-	.string	"movChA_PWM"
-	.byte	0x1
-	.byte	0x4c
-	.byte	0x1
+	.uleb128 0x1e
+	.uaword	0x447c
 	.uaword	.LFB20
 	.uaword	.LFE20
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x45c1
-	.uleb128 0x1a
-	.string	"duty"
-	.byte	0x1
-	.byte	0x4c
-	.uaword	0x1c04
-	.uaword	.LLST0
-	.uleb128 0x1a
-	.string	"dir"
-	.byte	0x1
-	.byte	0x4c
-	.uaword	0x1c04
-	.uaword	.LLST1
-	.uleb128 0x1b
-	.uaword	.LVL5
-	.uaword	0x4652
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x54
-	.byte	0x3
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0
-	.byte	0
-	.uleb128 0x15
-	.byte	0x1
-	.string	"movChB_PWM"
-	.byte	0x1
-	.byte	0x58
-	.byte	0x1
+	.uleb128 0x22
+	.uaword	0x448a
 	.uaword	.LFB21
 	.uaword	.LFE21
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4611
-	.uleb128 0x1a
-	.string	"duty"
-	.byte	0x1
-	.byte	0x58
-	.uaword	0x1c04
-	.uaword	.LLST2
-	.uleb128 0x1a
-	.string	"dir"
-	.byte	0x1
-	.byte	0x58
-	.uaword	0x1c04
+	.uaword	0x4659
+	.uleb128 0x1b
+	.uaword	0x449f
 	.uaword	.LLST3
 	.uleb128 0x1b
-	.uaword	.LVL10
-	.uaword	0x4673
+	.uaword	0x44ab
+	.uaword	.LLST4
 	.uleb128 0x1c
+	.uaword	.LVL8
+	.uaword	0x46c8
+	.uleb128 0x1d
 	.byte	0x1
 	.byte	0x54
 	.byte	0x3
@@ -8204,50 +8286,86 @@ movChB_PWM:
 	.byte	0x54
 	.byte	0
 	.byte	0
+	.uleb128 0x16
+	.byte	0x1
+	.string	"movChB_PWM"
+	.byte	0x1
+	.byte	0x5f
+	.byte	0x1
+	.uaword	.LFB22
+	.uaword	.LFE22
+	.byte	0x1
+	.byte	0x9c
+	.byte	0x1
+	.uaword	0x46a9
+	.uleb128 0x17
+	.string	"duty"
+	.byte	0x1
+	.byte	0x5f
+	.uaword	0x1c04
+	.uaword	.LLST5
+	.uleb128 0x17
+	.string	"dir"
+	.byte	0x1
+	.byte	0x5f
+	.uaword	0x1c04
+	.uaword	.LLST6
+	.uleb128 0x1c
+	.uaword	.LVL13
+	.uaword	0x470b
 	.uleb128 0x1d
+	.byte	0x1
+	.byte	0x54
+	.byte	0x3
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x54
+	.byte	0
+	.byte	0
+	.uleb128 0x23
 	.string	"asclin3"
 	.byte	0x5
 	.byte	0xf
-	.uaword	0x4625
+	.uaword	0x46bd
 	.sleb128 -268433152
-	.uleb128 0x1e
-	.uaword	0x462a
-	.uleb128 0x1f
+	.uleb128 0x24
+	.uaword	0x46c2
+	.uleb128 0x25
 	.byte	0x4
 	.uaword	0x4420
-	.uleb128 0x20
-	.byte	0x1
-	.string	"init_gpt2"
-	.byte	0x4
-	.byte	0xf
-	.byte	0x1
-	.byte	0x1
-	.uleb128 0x20
-	.byte	0x1
-	.string	"runGpt12_T6"
-	.byte	0x4
-	.byte	0x13
-	.byte	0x1
-	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x26
 	.byte	0x1
 	.string	"setLeftMotorDuty"
 	.byte	0x4
 	.byte	0x6
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x4673
-	.uleb128 0x22
+	.uaword	0x46e9
+	.uleb128 0x27
 	.uaword	0x449
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x28
+	.byte	0x1
+	.string	"init_gpt2"
+	.byte	0x4
+	.byte	0xf
+	.byte	0x1
+	.byte	0x1
+	.uleb128 0x28
+	.byte	0x1
+	.string	"runGpt12_T6"
+	.byte	0x4
+	.byte	0x13
+	.byte	0x1
+	.byte	0x1
+	.uleb128 0x29
 	.byte	0x1
 	.string	"setRightMotorDuty"
 	.byte	0x4
 	.byte	0x7
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x22
+	.uleb128 0x27
 	.uaword	0x449
 	.byte	0
 	.byte	0
@@ -8538,20 +8656,37 @@ movChB_PWM:
 	.byte	0
 	.uleb128 0x14
 	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x1
-	.uleb128 0x40
-	.uleb128 0xa
-	.uleb128 0x2117
+	.byte	0x1
+	.uleb128 0x3f
 	.uleb128 0xc
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0xc
+	.uleb128 0x20
+	.uleb128 0xb
+	.uleb128 0x1
+	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x15
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -8576,57 +8711,7 @@ movChB_PWM:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x16
-	.uleb128 0x1d
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x1
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.byte	0
-	.byte	0
 	.uleb128 0x17
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x18
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x2115
-	.uleb128 0xc
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x19
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x1a
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -8641,7 +8726,55 @@ movChB_PWM:
 	.uleb128 0x6
 	.byte	0
 	.byte	0
+	.uleb128 0x18
+	.uleb128 0x1d
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x58
+	.uleb128 0xb
+	.uleb128 0x59
+	.uleb128 0xb
+	.byte	0
+	.byte	0
+	.uleb128 0x19
+	.uleb128 0x1d
+	.byte	0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x58
+	.uleb128 0xb
+	.uleb128 0x59
+	.uleb128 0xb
+	.byte	0
+	.byte	0
+	.uleb128 0x1a
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x1c
+	.uleb128 0xb
+	.byte	0
+	.byte	0
 	.uleb128 0x1b
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x6
+	.byte	0
+	.byte	0
+	.uleb128 0x1c
 	.uleb128 0x4109
 	.byte	0x1
 	.uleb128 0x11
@@ -8650,7 +8783,7 @@ movChB_PWM:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1d
 	.uleb128 0x410a
 	.byte	0
 	.uleb128 0x2
@@ -8659,7 +8792,74 @@ movChB_PWM:
 	.uleb128 0xa
 	.byte	0
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1e
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x40
+	.uleb128 0xa
+	.uleb128 0x2117
+	.uleb128 0xc
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
+	.uleb128 0x4109
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.uleb128 0x4109
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x2115
+	.uleb128 0xc
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x21
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x22
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x40
+	.uleb128 0xa
+	.uleb128 0x2117
+	.uleb128 0xc
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x23
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -8674,14 +8874,14 @@ movChB_PWM:
 	.uleb128 0xd
 	.byte	0
 	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x24
 	.uleb128 0x26
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x25
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -8690,24 +8890,7 @@ movChB_PWM:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x20
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0xc
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0xc
-	.uleb128 0x3c
-	.uleb128 0xc
-	.byte	0
-	.byte	0
-	.uleb128 0x21
+	.uleb128 0x26
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -8726,14 +8909,31 @@ movChB_PWM:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x22
+	.uleb128 0x27
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x28
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0xc
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0xc
+	.uleb128 0x3c
+	.uleb128 0xc
+	.byte	0
+	.byte	0
+	.uleb128 0x29
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -8754,12 +8954,12 @@ movChB_PWM:
 .section .debug_loc,"",@progbits
 .Ldebug_loc0:
 .LLST0:
-	.uaword	.LVL4-.Ltext0
-	.uaword	.LVL5-1-.Ltext0
+	.uaword	.LVL0-.Ltext0
+	.uaword	.LVL1-.Ltext0
 	.uahalf	0x1
 	.byte	0x54
-	.uaword	.LVL5-1-.Ltext0
-	.uaword	.LFE20-.Ltext0
+	.uaword	.LVL1-.Ltext0
+	.uaword	.LFE14-.Ltext0
 	.uahalf	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -8768,27 +8968,12 @@ movChB_PWM:
 	.uaword	0
 	.uaword	0
 .LLST1:
-	.uaword	.LVL4-.Ltext0
-	.uaword	.LVL5-1-.Ltext0
+	.uaword	.LVL0-.Ltext0
+	.uaword	.LVL2-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x55
-	.uaword	.LVL5-1-.Ltext0
-	.uaword	.LVL6-.Ltext0
-	.uahalf	0x1
-	.byte	0x5f
-	.uaword	.LVL6-.Ltext0
-	.uaword	.LVL7-.Ltext0
-	.uahalf	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x9f
-	.uaword	.LVL7-.Ltext0
-	.uaword	.LVL8-.Ltext0
-	.uahalf	0x1
-	.byte	0x5f
-	.uaword	.LVL8-.Ltext0
-	.uaword	.LFE20-.Ltext0
+	.uaword	.LVL2-1-.Ltext0
+	.uaword	.LFE14-.Ltext0
 	.uahalf	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -8797,41 +8982,98 @@ movChB_PWM:
 	.uaword	0
 	.uaword	0
 .LLST2:
-	.uaword	.LVL9-.Ltext0
-	.uaword	.LVL10-1-.Ltext0
+	.uaword	.LVL1-.Ltext0
+	.uaword	.LVL2-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x54
-	.uaword	.LVL10-1-.Ltext0
-	.uaword	.LFE21-.Ltext0
+	.uaword	.LVL2-1-.Ltext0
+	.uaword	.LFE14-.Ltext0
 	.uahalf	0x4
 	.byte	0xf3
 	.uleb128 0x1
-	.byte	0x54
+	.byte	0x55
 	.byte	0x9f
 	.uaword	0
 	.uaword	0
 .LLST3:
-	.uaword	.LVL9-.Ltext0
-	.uaword	.LVL10-1-.Ltext0
+	.uaword	.LVL7-.Ltext0
+	.uaword	.LVL8-1-.Ltext0
+	.uahalf	0x1
+	.byte	0x54
+	.uaword	.LVL8-1-.Ltext0
+	.uaword	.LFE21-.Ltext0
+	.uahalf	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x54
+	.byte	0x9f
+	.uaword	0
+	.uaword	0
+.LLST4:
+	.uaword	.LVL7-.Ltext0
+	.uaword	.LVL8-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x55
-	.uaword	.LVL10-1-.Ltext0
-	.uaword	.LVL11-.Ltext0
+	.uaword	.LVL8-1-.Ltext0
+	.uaword	.LVL9-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
-	.uaword	.LVL11-.Ltext0
-	.uaword	.LVL12-.Ltext0
+	.uaword	.LVL9-.Ltext0
+	.uaword	.LVL10-.Ltext0
 	.uahalf	0x4
 	.byte	0xf3
 	.uleb128 0x1
 	.byte	0x55
 	.byte	0x9f
-	.uaword	.LVL12-.Ltext0
-	.uaword	.LVL13-.Ltext0
+	.uaword	.LVL10-.Ltext0
+	.uaword	.LVL11-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
-	.uaword	.LVL13-.Ltext0
+	.uaword	.LVL11-.Ltext0
 	.uaword	.LFE21-.Ltext0
+	.uahalf	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x55
+	.byte	0x9f
+	.uaword	0
+	.uaword	0
+.LLST5:
+	.uaword	.LVL12-.Ltext0
+	.uaword	.LVL13-1-.Ltext0
+	.uahalf	0x1
+	.byte	0x54
+	.uaword	.LVL13-1-.Ltext0
+	.uaword	.LFE22-.Ltext0
+	.uahalf	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x54
+	.byte	0x9f
+	.uaword	0
+	.uaword	0
+.LLST6:
+	.uaword	.LVL12-.Ltext0
+	.uaword	.LVL13-1-.Ltext0
+	.uahalf	0x1
+	.byte	0x55
+	.uaword	.LVL13-1-.Ltext0
+	.uaword	.LVL14-.Ltext0
+	.uahalf	0x1
+	.byte	0x5f
+	.uaword	.LVL14-.Ltext0
+	.uaword	.LVL15-.Ltext0
+	.uahalf	0x4
+	.byte	0xf3
+	.uleb128 0x1
+	.byte	0x55
+	.byte	0x9f
+	.uaword	.LVL15-.Ltext0
+	.uaword	.LVL16-.Ltext0
+	.uahalf	0x1
+	.byte	0x5f
+	.uaword	.LVL16-.Ltext0
+	.uaword	.LFE22-.Ltext0
 	.uahalf	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -96587,9 +96829,9 @@ movChB_PWM:
 .LASF8:
 	.string	"reserved_28"
 	.extern	setRightMotorDuty,STT_FUNC,0
-	.extern	setLeftMotorDuty,STT_FUNC,0
 	.extern	runGpt12_T6,STT_FUNC,0
 	.extern	init_gpt2,STT_FUNC,0
+	.extern	setLeftMotorDuty,STT_FUNC,0
 .pushsection .version_info,"",@note
 	.ascii	"Compiler executable checksum: b7b3970860f5d298b1615bfa2549208c\n"
 

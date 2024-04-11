@@ -43,8 +43,8 @@ extern "C" {
  * Arrays size
  *
  **************************************************************************/
-#define OSEE_TASK_ARRAY_SIZE      (17U)
-#define OSEE_SN_ARRAY_SIZE        (17U)
+#define OSEE_TASK_ARRAY_SIZE      (19U)
+#define OSEE_SN_ARRAY_SIZE        (19U)
 #define OSEE_STACK_ARRAY_SIZE     (11U)
 #define OSEE_RESOURCE_ARRAY_SIZE  (1U)
 #define OSEE_COUNTERS_ARRAY_SIZE  (1U)
@@ -55,7 +55,7 @@ extern "C" {
  * TASKs declaration
  *
  **************************************************************************/
-#define CAN_Tx (2U)
+#define Blink_LED (2U)
 #define UART_Echo (3U)
 #define DCMotor_Example (4U)
 #define Timer_Example (5U)
@@ -66,10 +66,12 @@ extern "C" {
 #define OS_EE_Task_Init (10U)
 #define Task_Motor (11U)
 #define Task_AEB (12U)
-#define Ctrl_Window (13U)
-#define Ctrl_InAir (14U)
-#define Ctrl_HLamp (15U)
-#define Ctrl_Btn (16U)
+#define LCD_TEST (13U)
+#define LED_KING (14U)
+#define Ctrl_Window (15U)
+#define Ctrl_InAir (16U)
+#define Ctrl_HLamp (17U)
+#define Ctrl_Btn (18U)
 
 /***************************************************************************
  *

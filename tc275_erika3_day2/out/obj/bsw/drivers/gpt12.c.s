@@ -183,7 +183,7 @@ init_gpt1:
 	.loc 1 91 0
 	ld.w	%d15, [%a15] 20
 	.loc 1 99 0
-	mov	%d5, 3
+	mov	%d5, 1
 	.loc 1 91 0
 	or	%d15, %d15, 128
 	st.w	[%a15] 20, %d15
@@ -10559,7 +10559,7 @@ lMotorDuty:
 	.byte	0x1
 	.byte	0x55
 	.byte	0x1
-	.byte	0x33
+	.byte	0x31
 	.uleb128 0x21
 	.byte	0x1
 	.byte	0x54
@@ -13244,25 +13244,29 @@ lMotorDuty:
 	.uleb128 0x15
 	.uleb128 0x8a
 	.byte	0x4
-	.file 139 "C:\\TC275_~2/bsw/io/GPIO.h"
+	.file 139 "C:\\TC275_~2/bsw/system/interrupts.h"
 	.byte	0x3
-	.uleb128 0x18
+	.uleb128 0x17
 	.uleb128 0x8b
-	.byte	0x1
-	.uleb128 0x2
-	.string	"BSW_IO_GPIO_H_ "
-	.byte	0x4
-	.file 140 "C:\\TC275_~2/bsw/system/interrupts.h"
-	.byte	0x3
-	.uleb128 0x19
-	.uleb128 0x8c
 	.byte	0x4
 	.byte	0x7
 	.uaword	.Ldebug_macro74
 	.byte	0x4
-	.file 141 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/etc/etc.h"
+	.file 140 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/drivers/com.h"
 	.byte	0x3
 	.uleb128 0x11
+	.uleb128 0x8c
+	.byte	0x1
+	.uleb128 0x9
+	.string	"BSW_DRIVERS_COM_H_ "
+	.byte	0x3
+	.uleb128 0xb
+	.uleb128 0x66
+	.byte	0x4
+	.byte	0x4
+	.file 141 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/etc/etc.h"
+	.byte	0x3
+	.uleb128 0x14
 	.uleb128 0x8d
 	.byte	0x1
 	.uleb128 0x2
@@ -13270,7 +13274,7 @@ lMotorDuty:
 	.byte	0x4
 	.file 142 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/io/Buzzer.h"
 	.byte	0x3
-	.uleb128 0x14
+	.uleb128 0x17
 	.uleb128 0x8e
 	.byte	0x1
 	.uleb128 0x2
@@ -13278,12 +13282,15 @@ lMotorDuty:
 	.byte	0x4
 	.file 143 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/io/GPIO.h"
 	.byte	0x3
-	.uleb128 0x15
+	.uleb128 0x18
 	.uleb128 0x8f
+	.byte	0x1
+	.uleb128 0x2
+	.string	"BSW_IO_GPIO_H_ "
 	.byte	0x4
 	.file 144 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/io/Motor.h"
 	.byte	0x3
-	.uleb128 0x16
+	.uleb128 0x19
 	.uleb128 0x90
 	.byte	0x1
 	.uleb128 0x2
@@ -13291,7 +13298,7 @@ lMotorDuty:
 	.byte	0x4
 	.file 145 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/io/ToF.h"
 	.byte	0x3
-	.uleb128 0x17
+	.uleb128 0x1a
 	.uleb128 0x91
 	.byte	0x1
 	.uleb128 0x2
@@ -13299,41 +13306,49 @@ lMotorDuty:
 	.byte	0x4
 	.file 146 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/io/Ultrasonic.h"
 	.byte	0x3
-	.uleb128 0x18
+	.uleb128 0x1b
 	.uleb128 0x92
 	.byte	0x4
-	.file 147 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h"
+	.file 147 "C:\\TC275_~2\\bsw\\drivers\\../../bsw/io/LCD.h"
 	.byte	0x3
-	.uleb128 0x1b
+	.uleb128 0x1c
 	.uleb128 0x93
+	.byte	0x1
+	.uleb128 0x9
+	.string	"BSW_IO_LCD_H_ "
+	.byte	0x4
+	.file 148 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h"
+	.byte	0x3
+	.uleb128 0x1e
+	.uleb128 0x94
 	.byte	0x1
 	.uleb128 0x1b
 	.string	"_STDIO_H_ "
-	.file 148 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\_ansi.h"
+	.file 149 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\_ansi.h"
 	.byte	0x3
 	.uleb128 0x1d
-	.uleb128 0x94
+	.uleb128 0x95
 	.byte	0x1
 	.uleb128 0xd
 	.string	"_ANSIDECL_H_ "
-	.file 149 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\newlib.h"
+	.file 150 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\newlib.h"
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0x95
+	.uleb128 0x96
 	.byte	0x7
 	.uaword	.Ldebug_macro75
 	.byte	0x4
-	.file 150 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\config.h"
+	.file 151 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\config.h"
 	.byte	0x3
 	.uleb128 0x10
-	.uleb128 0x96
+	.uleb128 0x97
 	.byte	0x1
 	.uleb128 0x2
 	.string	"__SYS_CONFIG_H__ "
-	.file 151 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\ieeefp.h"
+	.file 152 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\ieeefp.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x97
+	.uleb128 0x98
 	.byte	0x7
 	.uaword	.Ldebug_macro76
 	.byte	0x4
@@ -13354,35 +13369,35 @@ lMotorDuty:
 	.byte	0x1
 	.uleb128 0x24
 	.string	"__need___va_list "
-	.file 152 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\reent.h"
+	.file 153 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\reent.h"
 	.byte	0x3
 	.uleb128 0x2d
-	.uleb128 0x98
+	.uleb128 0x99
 	.byte	0x1
 	.uleb128 0xb
 	.string	"_SYS_REENT_H_ "
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x94
+	.uleb128 0x95
 	.byte	0x4
-	.file 153 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\_types.h"
+	.file 154 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\_types.h"
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0x99
+	.uleb128 0x9a
 	.byte	0x1
 	.uleb128 0xa
 	.string	"_SYS__TYPES_H "
-	.file 154 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_types.h"
+	.file 155 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_types.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0x9a
+	.uleb128 0x9b
 	.byte	0x1
 	.uleb128 0x2
 	.string	"_MACHINE__TYPES_H "
-	.file 155 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_default_types.h"
+	.file 156 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\_default_types.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x9b
+	.uleb128 0x9c
 	.byte	0x7
 	.uaword	.Ldebug_macro81
 	.byte	0x4
@@ -13390,10 +13405,10 @@ lMotorDuty:
 	.uleb128 0x7
 	.string	"__ATTRIBUTE_IMPURE_PTR__ __attribute__((__fardata__))"
 	.byte	0x4
-	.file 156 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\lock.h"
+	.file 157 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\lock.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x9c
+	.uleb128 0x9d
 	.byte	0x7
 	.uaword	.Ldebug_macro82
 	.byte	0x4
@@ -13410,29 +13425,29 @@ lMotorDuty:
 	.byte	0x7
 	.uaword	.Ldebug_macro84
 	.byte	0x4
-	.file 157 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\types.h"
+	.file 158 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\types.h"
 	.byte	0x3
 	.uleb128 0x2e
-	.uleb128 0x9d
+	.uleb128 0x9e
 	.byte	0x7
 	.uaword	.Ldebug_macro85
 	.byte	0x3
 	.uleb128 0x45
 	.uleb128 0x6a
 	.byte	0x4
-	.file 158 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\types.h"
+	.file 159 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\machine\\types.h"
 	.byte	0x3
 	.uleb128 0x46
-	.uleb128 0x9e
+	.uleb128 0x9f
 	.byte	0x7
 	.uaword	.Ldebug_macro86
 	.byte	0x4
 	.byte	0x7
 	.uaword	.Ldebug_macro87
-	.file 159 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\features.h"
+	.file 160 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\features.h"
 	.byte	0x3
 	.uleb128 0x105
-	.uleb128 0x9f
+	.uleb128 0xa0
 	.byte	0x1
 	.uleb128 0x16
 	.string	"_SYS_FEATURES_H "
@@ -13441,10 +13456,10 @@ lMotorDuty:
 	.uleb128 0x215
 	.string	"__need_inttypes"
 	.byte	0x4
-	.file 160 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\stdio.h"
+	.file 161 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\sys\\stdio.h"
 	.byte	0x3
 	.uleb128 0x41
-	.uleb128 0xa0
+	.uleb128 0xa1
 	.byte	0x7
 	.uaword	.Ldebug_macro88
 	.byte	0x4
@@ -13461,10 +13476,10 @@ lMotorDuty:
 	.uleb128 0x1c
 	.string	"__wdtcon_h "
 	.byte	0x4
-	.file 161 "C:\\TC275_~2\\bsw\\drivers\\../system/interrupts.h"
+	.file 162 "C:\\TC275_~2\\bsw\\drivers\\../system/interrupts.h"
 	.byte	0x3
 	.uleb128 0x8
-	.uleb128 0xa1
+	.uleb128 0xa2
 	.byte	0x4
 	.byte	0x1
 	.uleb128 0xa
@@ -111396,15 +111411,15 @@ lMotorDuty:
 	.uleb128 0x99
 	.string	"IFX_ALIGN(n) __attribute__ ((aligned(n)))"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.Driver_Can.h.29.497249ed4e0f3072ddbf8fd99f1a965e,comdat
+.section .debug_macro,"G",@progbits,wm4.Driver_Can.h.27.2c8a819586fb0b8bff4fd5198452b781,comdat
 .Ldebug_macro74:
 	.uahalf	0x4
 	.byte	0
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.string	"ECU1_TX_OBJ_NUM 10u"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x1c
 	.string	"ECU1_RX_OBJ_NUM 10u"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.newlib.h.8.b2a2e540cc2551574077f838d8204237,comdat
@@ -112155,18 +112170,18 @@ lMotorDuty:
 	.uleb128 0x2ad
 	.string	"putchar(x) putc(x, stdout)"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.main.h.35.cd68cdd997ae2c74cfafe121e6ee6978,comdat
+.section .debug_macro,"G",@progbits,wm4.main.h.38.d6eba6bbf11cec40a928690646004853,comdat
 .Ldebug_macro90:
 	.uahalf	0x4
 	.byte	0
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x26
 	.string	"CLR_SCR() my_printf(\"%s\", cmd_clr_scr)"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x27
 	.string	"CLR_LINE() my_printf(\"%s\", cmd_clr_line)"
 	.byte	0x1
-	.uleb128 0x25
+	.uleb128 0x28
 	.string	"MOV_CUR_UP() my_printf(\"%s\", cmd_mov_cur_up)"
 	.byte	0
 .section .debug_line,"",@progbits

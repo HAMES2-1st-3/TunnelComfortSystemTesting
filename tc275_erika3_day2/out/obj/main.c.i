@@ -301,12 +301,12 @@
 #define OSEE_HAS_RESOURCES 
 #define OSEE_HAS_STARTUPHOOK 
 #define OSEE_HAS_SYSTEM_TIMER 
-#define OSEE_ISR2_MAX_HW_ASM_PRIO 1
-#define OSEE_ISR2_MAX_PRIO (128U)
+#define OSEE_ISR2_MAX_HW_ASM_PRIO 3
+#define OSEE_ISR2_MAX_PRIO (130U)
 #define OSEE_MULTI_STACK 
 #define OSEE_OC_ECC1 
 #define OSEE_SINGLE_ACTIVATION 
-#define OSEE_TC_CORE0_ISR_MAX_PRIO (1U)
+#define OSEE_TC_CORE0_ISR_MAX_PRIO (3U)
 #define OSEE_TC_TC27X 
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
@@ -316,11 +316,23 @@
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 107 "C:\\TC275_~2\\erika\\inc/ee_oscfg.h"
+# 103 "C:\\TC275_~2\\erika\\inc/ee_oscfg.h"
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 1
+
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)
+
+
+
+
+
+
+
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 29 "C:\\TC275_~2\\out/ee_applcfg.h" 2
 # 39 "C:\\TC275_~2\\out/ee_applcfg.h"
 #define OS_EE_RTD_GEN_VERSION 12345
@@ -330,8 +342,8 @@
 
 
 
-#define OSEE_TASK_ARRAY_SIZE (12U)
-#define OSEE_SN_ARRAY_SIZE (12U)
+#define OSEE_TASK_ARRAY_SIZE (19U)
+#define OSEE_SN_ARRAY_SIZE (19U)
 #define OSEE_STACK_ARRAY_SIZE (11U)
 #define OSEE_RESOURCE_ARRAY_SIZE (1U)
 #define OSEE_COUNTERS_ARRAY_SIZE (1U)
@@ -342,17 +354,23 @@
 
 
 
-#define CAN_Tx (1U)
-#define UART_Echo (2U)
-#define DCMotor_Example (3U)
-#define Timer_Example (4U)
-#define Ultrasonic_Example (5U)
-#define Buzzer_Example (6U)
-#define TOF_Example (7U)
-#define ADC_Example (8U)
-#define OS_EE_Task_Init (9U)
-#define Task_Motor (10U)
-#define Task_AEB (11U)
+#define Blink_LED (2U)
+#define UART_Echo (3U)
+#define DCMotor_Example (4U)
+#define Timer_Example (5U)
+#define Ultrasonic_Example (6U)
+#define Buzzer_Example (7U)
+#define TOF_Example (8U)
+#define ADC_Example (9U)
+#define OS_EE_Task_Init (10U)
+#define Task_Motor (11U)
+#define Task_AEB (12U)
+#define LCD_TEST (13U)
+#define LED_KING (14U)
+#define Ctrl_Window (15U)
+#define Ctrl_InAir (16U)
+#define Ctrl_HLamp (17U)
+#define Ctrl_Btn (18U)
 
 
 
@@ -7654,7 +7672,7 @@ typedef OsEE_SN * OsEE_RQ;
 # 21 "C:\\TC275_~2\\out/ee_declcfg.h"
 #define OSEE_RTD_DECLCFG_H 
 # 35 "C:\\TC275_~2\\out/ee_declcfg.h"
-extern void FuncCAN_Tx ( void );
+extern void FuncBlink_LED ( void );
 extern void FuncUART_Echo ( void );
 extern void FuncDCMotor_Example ( void );
 extern void FuncTimer_Example ( void );
@@ -7665,6 +7683,15 @@ extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
+extern void FuncLCD_TEST ( void );
+extern void FuncLED_KING ( void );
+extern void FuncCtrl_Window ( void );
+extern void FuncCtrl_InAir ( void );
+extern void FuncCtrl_HLamp ( void );
+extern void FuncCtrl_Btn ( void );
+
+
+void CAN_RX_HND(void);
 # 71 "C:\\TC275_~2\\erika\\inc/ee.h" 2
 # 2 "C:\\TC275_~2\\main.c" 2
 # 1 "C:\\TC275_~2\\erika\\inc/ee_oo_api_osek.h" 1
@@ -171368,33 +171395,14 @@ static inline __attribute__ ((always_inline)) void IfxMultican_Can_deinit(IfxMul
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_typesgnuc.h" 1 3
 # 22 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h" 2
 
-
-# 1 "C:\\TC275_~2/bsw/io/GPIO.h" 1
-
-#define BSW_IO_GPIO_H_ 
-
-
-
-void Init_GPIO(void);
-
-void setLED1(int onoff);
-void setLED2(int onoff);
-void toggleLED1(void);
-void toggleLED2(void);
-
-int getSW1(void);
-int getSW2(void);
-int getSW1_Debounce(void);
-int getSW2_Debounce(void);
-# 25 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h" 2
 # 1 "C:\\TC275_~2/bsw/system/interrupts.h" 1
-# 26 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h" 2
+# 24 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h" 2
 
 
 
 #define ECU1_TX_OBJ_NUM 10u
 #define ECU1_RX_OBJ_NUM 10u
-# 43 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h"
+# 41 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h"
 typedef struct
 {
     IfxMultican_Can CanEcu1;
@@ -171414,16 +171422,35 @@ extern Ecu1Can stEcu1Can;
 
 
 extern void Driver_Can_Init(void);
-extern void Driver_Can_TxTest(void);
-void CAN_RxInt0Handler(void);
+extern void Driver_Can_TxTest(uint32 data);
+extern void CAN_RxInt0Handler(void);
+extern void CAN_RX_HND(void);
+
+extern char getLEDKing(void);
+extern char getTunnelStatus(void);
 # 16 "C:\\TC275_~2\\main.h" 2
+
+# 1 "C:\\TC275_~2\\bsw/drivers/com.h" 1
+# 9 "C:\\TC275_~2\\bsw/drivers/com.h"
+#define BSW_DRIVERS_COM_H_ 
+
+# 1 "C:\\TC275_~2\\bsw/drivers/Driver_Can.h" 1
+# 12 "C:\\TC275_~2\\bsw/drivers/com.h" 2
+typedef struct {
+ uint32 dataHighs;
+ uint32 dataLows;
+}signalname;
+
+void can_send(signalname s1,int toecu);
+# 18 "C:\\TC275_~2\\main.h" 2
+
 
 # 1 "C:\\TC275_~2\\bsw/etc/etc.h" 1
 
 #define BSW_ETC_ETC_H_ 
 
 void delay_ms(unsigned int delay_time);
-# 18 "C:\\TC275_~2\\main.h" 2
+# 21 "C:\\TC275_~2\\main.h" 2
 
 
 # 1 "C:\\TC275_~2\\bsw/io/Buzzer.h" 1
@@ -171434,13 +171461,33 @@ void Init_Buzzer(void);
 void Init_Buzzer_PWM(void);
 void setBeepCycle(int cycle);
 void Beep(unsigned int hz);
-# 21 "C:\\TC275_~2\\main.h" 2
+# 24 "C:\\TC275_~2\\main.h" 2
 # 1 "C:\\TC275_~2\\bsw/io/GPIO.h" 1
-# 22 "C:\\TC275_~2\\main.h" 2
+
+#define BSW_IO_GPIO_H_ 
+
+
+
+void Init_GPIO(int iniHLamp);
+
+void setLED1(int onoff);
+void setLED2(int onoff);
+void toggleLED1(void);
+void toggleLED2(void);
+
+int getSW1(void);
+int getSW2(void);
+int getSW3(void);
+int getSW1_Debounce(void);
+int getSW2_Debounce(void);
+
+void setHeadlampLED(int onoff);
+# 25 "C:\\TC275_~2\\main.h" 2
 # 1 "C:\\TC275_~2\\bsw/io/Motor.h" 1
 
 #define BSW_IO_MOTOR_H_ 
 
+void InitChA(int iniInAir, int iniDuty);
 void Init_DCMotor(void);
 void Init_DCMotorPWM(void);
 
@@ -171452,7 +171499,7 @@ void stopChB(void);
 
 void movChA_PWM(int duty, int dir);
 void movChB_PWM(int duty, int dir);
-# 23 "C:\\TC275_~2\\main.h" 2
+# 26 "C:\\TC275_~2\\main.h" 2
 # 1 "C:\\TC275_~2\\bsw/io/ToF.h" 1
 
 #define BSW_IO_TOF_H_ 
@@ -171460,7 +171507,7 @@ void movChB_PWM(int duty, int dir);
 void Init_ToF(void);
 void IsrUart1RxHandler_tof(void);
 int getTofDistance(void);
-# 24 "C:\\TC275_~2\\main.h" 2
+# 27 "C:\\TC275_~2\\main.h" 2
 # 1 "C:\\TC275_~2\\bsw/io/Ultrasonic.h" 1
 
 #define BSW_IO_ULTRASONIC_H_ 
@@ -171470,8 +171517,19 @@ double ReadUltrasonic_noFilt(void);
 double ReadUltrasonic_Filt(void);
 
 #define FILT_SIZE 5
-# 25 "C:\\TC275_~2\\main.h" 2
+# 28 "C:\\TC275_~2\\main.h" 2
+# 1 "C:\\TC275_~2\\bsw/io/LCD.h" 1
+# 9 "C:\\TC275_~2\\bsw/io/LCD.h"
+#define BSW_IO_LCD_H_ 
 
+
+
+void init_lcd(void);
+void write_instruction(unsigned char i);
+void write_data(char d);
+void delay_us(unsigned int m);
+void lcdprint_data(char *str);
+# 29 "C:\\TC275_~2\\main.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3
 # 27 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 3
@@ -172683,7 +172741,7 @@ int __swbuf_r (struct _reent *, int, FILE *);
 #define putchar(x) putc(x, stdout)
 
 
-# 28 "C:\\TC275_~2\\main.h" 2
+# 31 "C:\\TC275_~2\\main.h" 2
 
 
 extern unsigned char cmd_clr_scr[8];
@@ -172694,73 +172752,238 @@ extern unsigned char cmd;
 #define CLR_SCR() my_printf("%s", cmd_clr_scr)
 #define CLR_LINE() my_printf("%s", cmd_clr_line)
 #define MOV_CUR_UP() my_printf("%s", cmd_mov_cur_up)
+
+
+
+
+
+
+typedef struct{
+ unsigned char hLamp;
+ unsigned char window;
+ unsigned char inAir;
+ uint32 dist;
+ uint32 iDuty;
+ uint32 wDuty;
+} bodyStatus;
 # 5 "C:\\TC275_~2\\main.c" 2
 
+#define MAX_DIST 16
 void StartupHook(void)
 {
 
 
- ActivateTask((1U));
+
+
+
 
 }
 
 
-extern void FuncCAN_Tx ( void );
+extern void FuncBlink_LED ( void );
 extern void FuncUART_Echo ( void );
 extern void FuncDCMotor_Example ( void );
 extern void FuncTimer_Example ( void );
 extern void FuncUltrasonic_Example ( void );
-
+extern void FuncBuzzer_Example ( void );
 extern void FuncTOF_Example ( void );
 extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
-
+extern void FuncLCD_TEST ( void );
+extern void FuncLED_KING ( void );
+extern void FuncCtrl_Window ( void );
+extern void FuncCtrl_InAir ( void );
+extern void FuncCtrl_HLamp ( void );
+extern void FuncCtrl_Btn ( void );
 int duty=0;
 unsigned char ch;
 unsigned char dir;
 int flag=0;
 int pwm=0;
+bodyStatus status;
+int distance = 3;
+
+void FuncCtrl_Btn ( void ){
+ volatile unsigned int adcResultX = 0;
+ volatile int dist = 0;
+ while(getSW3()) {
+  VADC_startConversion();
+  adcResultX = VADC_readResult();
+  dist = (int)ReadUltrasonic_noFilt();
+
+  my_printf("Distance: %dcm\n", dist);
+  if(adcResultX <= 10){
+
+   movChB_PWM(status.wDuty, 1);
+  }
+  else if(adcResultX >= 2000){
+
+   movChB_PWM(status.wDuty, 0);
+  }
+  else{
+
+   status.dist = dist;
+   stopChB();
+  }
+ }
+ my_printf("SW TEst\n");
+ TerminateTask();
+}
+void FuncCtrl_Window ( void ){
+
+ uint16 internal = getisDark();
+ static unsigned char backupDir ;
+ static uint32 backupDist;
+ if(internal){
+  backupDir = status.window;
+  backupDist = status.dist;
+  status.window = 1;
+ }
+ else{
+  status.window = backupDir;
+ }
+
+
+ uint32 data = 0x00010101;
+ Driver_Can_TxTest(data);
+ if(status.window){
+  while(status.dist < 16){
+   status.dist = (int)ReadUltrasonic_noFilt();
+   my_printf("[CLOSE] Distance: %dcm /  MAX: %dcm\n", status.dist, 16);
+   movChA_PWM(status.wDuty, 1);
+  }
+ }else{
+  while(status.dist > backupDist){
+   status.dist = (int)ReadUltrasonic_noFilt();
+   my_printf("[OPEN] Distance: %dcm /  backupDist: %dcm\n", status.dist, backupDist);
+   movChA_PWM(status.wDuty, 0);
+  }
+ }
+ stopChA();
+ TerminateTask();
+}
+
+void FuncCtrl_HLamp ( void ){
+ uint16 dark = getisInternal();
+# 117 "C:\\TC275_~2\\main.c"
+ static unsigned char backup;
+
+ if(dark == 1){
+  backup = status.hLamp;
+  status.hLamp = 1;
+ }else{
+  status.hLamp = backup;
+ }
+ setLED1(status.hLamp);
+ TerminateTask();
+}
+void FuncCtrl_InAir ( void ){
+ volatile uint16 internal = getisInternal();
+
+ static unsigned char backup;
+
+ if(internal){
+  backup = status.inAir;
+  status.inAir = 1;
+ }else{
+  status.inAir = backup;
+ }
+ if(status.inAir){
+  movChA_PWM(status.iDuty, 1);
+ }else{
+  stopChA();
+ }
+ TerminateTask();
+}
+
+void FuncLCD_TEST ( void ){
+
+
+
+  char TunnelStatus=getTunnelStatus();
+
+  if(TunnelStatus){
+   delay_ms(1000);
+   write_instruction(0x80);
+   delay_ms(1000);
+
+
+
+   lcdprint_data("Tunnel In");
+   delay_ms(2000);
+
+  }
+  else{
+   write_instruction(0xc0);
+   delay_ms(1000);
+
+
+
+   lcdprint_data("Tunnel OFF");
+   delay_ms(2000);
+
+
+  }
+
+
+ TerminateTask();
+}
+
+void FuncLED_KING ( void ){
+
+ int HeadLampStatus=getLEDKing();
+
+ if(HeadLampStatus){
+  setHeadlampLED(HeadLampStatus);
+
+ }
+ else{
+  setHeadlampLED(HeadLampStatus);
+
+ }
+
+ TerminateTask();
+}
+
 void FuncTask_Motor ( void ){
 
 
  while(1){
-  ch=_in_uart3();
-  _out_uart3(ch);
-  if(ch=='w'||ch=='W'){
-   duty+=10;
-   if(duty>0) dir=1;
+   ch=_in_uart3();
+   _out_uart3(ch);
+   if(ch=='w'||ch=='W'){
+    duty+=10;
+    if(duty>0) dir=1;
 
-  }
-  else if(ch=='s'||ch=='S'){
-
-   duty=duty-10;
-
-   if(duty<0) dir=0;
    }
+   else if(ch=='s'||ch=='S'){
 
-  if(abs(duty)>100) {duty=100;}
+    duty=duty-10;
 
-  movChA_PWM(abs(duty),dir);
-  movChB_PWM(abs(duty),dir);
- }
- TerminateTask();
+    if(duty<0) dir=0;
+    }
+
+   if(abs(duty)>100) {duty=100;}
+
+   movChA_PWM(abs(duty),dir);
+   movChB_PWM(abs(duty),dir);
+  }
+  TerminateTask();
+
 }
 void FuncTask_AEB ( void ){
- while(1){
-  toggleLED2();
-  delay_ms(1000);
- }
+ toggleLED2();
  TerminateTask();
 }
-void FuncCAN_Tx ( void )
+void FuncBlink_LED ( void )
 {
- while(1){
-  delay_ms(1000);
-  Driver_Can_TxTest();
- }
- TerminateTask();
+
+  toggleLED1();
+  delay_ms(500);
+# 241 "C:\\TC275_~2\\main.c"
+  TerminateTask();
 }
 
 void FuncUART_Echo ( void )
@@ -172814,10 +173037,10 @@ void FuncUltrasonic_Example ( void )
   dist = (int)ReadUltrasonic_noFilt();
   if (dist >= 20&&dist<=30) {
 
-   ActivateTask((6U));
+   ActivateTask((7U));
   } else if(dist>=10&&dist<20) {
 
-   ActivateTask((6U));
+   ActivateTask((7U));
   }
   else if(dist<10){
    stopChB();
@@ -172872,16 +173095,44 @@ void FuncADC_Example ( void )
 
 void FuncOS_EE_Task_Init ( void )
 {
+ while(1){
+
+ }
  TerminateTask();
 }
+
 int main(void)
 {
  SYSTEM_Init();
  InterruptInit();
 
- Init_GPIO();
+
+
+
+ int iniHLamp = 0;
+ int iniInAir = 0;
+ int iniWindow = 0;
+ int inAirDuty = 20;
+ int windowDuty = 60;
+ Init_GPIO(iniHLamp);
+
  Driver_Can_Init();
-# 201 "C:\\TC275_~2\\main.c"
+
+ _init_uart3();
+ Init_DCMotorPWM();
+ Init_Ultrasonics();
+ init_VADC();
+
+ InitChA(iniInAir, inAirDuty);
+
+ status.hLamp = iniHLamp;
+ status.inAir = iniInAir;
+ status.window = iniWindow;
+ status.dist = (int)ReadUltrasonic_noFilt();
+ status.dist = 1;
+ status.iDuty = inAirDuty;
+ status.wDuty = windowDuty;
+
  StartOS(((AppModeType)0U));
 
  return 0;

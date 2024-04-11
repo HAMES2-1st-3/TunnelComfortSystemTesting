@@ -306,12 +306,12 @@
 #define OSEE_HAS_RESOURCES 
 #define OSEE_HAS_STARTUPHOOK 
 #define OSEE_HAS_SYSTEM_TIMER 
-#define OSEE_ISR2_MAX_HW_ASM_PRIO 1
-#define OSEE_ISR2_MAX_PRIO (128U)
+#define OSEE_ISR2_MAX_HW_ASM_PRIO 3
+#define OSEE_ISR2_MAX_PRIO (130U)
 #define OSEE_MULTI_STACK 
 #define OSEE_OC_ECC1 
 #define OSEE_SINGLE_ACTIVATION 
-#define OSEE_TC_CORE0_ISR_MAX_PRIO (1U)
+#define OSEE_TC_CORE0_ISR_MAX_PRIO (3U)
 #define OSEE_TC_TC27X 
 #define OS_EE_GCC 
 #define OS_EE_KERNEL_OSEK 
@@ -321,11 +321,23 @@
 #define OSTICKSPERBASE (1U)
 #define OSMINCYCLE (1U)
 #define OSTICKDURATION (1000000U)
-# 107 "C:\\TC275_~2\\erika\\inc/ee_oscfg.h"
+# 103 "C:\\TC275_~2\\erika\\inc/ee_oscfg.h"
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 1
+
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_TID (1U)
+#define OSEE_TC_CORE0_CAN_RX_HND_ISR_PRIO (3U)
+
+
+
+
+
+
+
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 29 "C:\\TC275_~2\\out/ee_applcfg.h" 2
 # 39 "C:\\TC275_~2\\out/ee_applcfg.h"
 #define OS_EE_RTD_GEN_VERSION 12345
@@ -335,8 +347,8 @@
 
 
 
-#define OSEE_TASK_ARRAY_SIZE (12U)
-#define OSEE_SN_ARRAY_SIZE (12U)
+#define OSEE_TASK_ARRAY_SIZE (19U)
+#define OSEE_SN_ARRAY_SIZE (19U)
 #define OSEE_STACK_ARRAY_SIZE (11U)
 #define OSEE_RESOURCE_ARRAY_SIZE (1U)
 #define OSEE_COUNTERS_ARRAY_SIZE (1U)
@@ -347,17 +359,23 @@
 
 
 
-#define CAN_Tx (1U)
-#define UART_Echo (2U)
-#define DCMotor_Example (3U)
-#define Timer_Example (4U)
-#define Ultrasonic_Example (5U)
-#define Buzzer_Example (6U)
-#define TOF_Example (7U)
-#define ADC_Example (8U)
-#define OS_EE_Task_Init (9U)
-#define Task_Motor (10U)
-#define Task_AEB (11U)
+#define Blink_LED (2U)
+#define UART_Echo (3U)
+#define DCMotor_Example (4U)
+#define Timer_Example (5U)
+#define Ultrasonic_Example (6U)
+#define Buzzer_Example (7U)
+#define TOF_Example (8U)
+#define ADC_Example (9U)
+#define OS_EE_Task_Init (10U)
+#define Task_Motor (11U)
+#define Task_AEB (12U)
+#define LCD_TEST (13U)
+#define LED_KING (14U)
+#define Ctrl_Window (15U)
+#define Ctrl_InAir (16U)
+#define Ctrl_HLamp (17U)
+#define Ctrl_Btn (18U)
 
 
 
@@ -7659,7 +7677,7 @@ typedef OsEE_SN * OsEE_RQ;
 # 21 "C:\\TC275_~2\\out/ee_declcfg.h"
 #define OSEE_RTD_DECLCFG_H 
 # 35 "C:\\TC275_~2\\out/ee_declcfg.h"
-extern void FuncCAN_Tx ( void );
+extern void FuncBlink_LED ( void );
 extern void FuncUART_Echo ( void );
 extern void FuncDCMotor_Example ( void );
 extern void FuncTimer_Example ( void );
@@ -7670,6 +7688,15 @@ extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
+extern void FuncLCD_TEST ( void );
+extern void FuncLED_KING ( void );
+extern void FuncCtrl_Window ( void );
+extern void FuncCtrl_InAir ( void );
+extern void FuncCtrl_HLamp ( void );
+extern void FuncCtrl_Btn ( void );
+
+
+void CAN_RX_HND(void);
 # 71 "C:\\TC275_~2\\erika\\inc/ee.h" 2
 # 56 "C:\\TC275_~2\\erika\\inc/ee_conf.h" 2
 
@@ -8391,11 +8418,20 @@ static OsEE_SDB osEE_sdb_array[(11U)] =
 };
 # 152 "ee_applcfg.c"
 static OsEE_TCB
-  osEE_tcb_array[13] =
+  osEE_tcb_array[20] =
 {
   {
                                 0U,
-                                128U,
+                                130U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                130U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
                                 0U,
@@ -8486,6 +8522,60 @@ static OsEE_TCB
   {
                                 0U,
                                 1U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                1U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                2U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                3U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                2U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                3U,
+                                OSEE_TASK_SUSPENDED,
+                                ((void *)0),
+                                0U,
+                                0U,
+                                ((void *)0)
+  },
+  {
+                                0U,
+                                4U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
                                 0U,
@@ -8510,9 +8600,9 @@ static OsEE_TCB
                                 0U,
                                 ((void *)0)}
 };
-# 280 "ee_applcfg.c"
+# 343 "ee_applcfg.c"
 static OsEE_TDB
-  osEE_tdb_array[13] =
+  osEE_tdb_array[20] =
 {
   {
                  {
@@ -8524,8 +8614,22 @@ static OsEE_TDB
                             0U,
                             OSEE_TASK_TYPE_ISR2,
                             osEE_tricore_system_timer_handler,
-                            128U,
+                            130U,
                             ((TaskPrio)-1),
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((0x0900U))
+    },
+                            &osEE_tcb_array[1U],
+                            1U,
+                            OSEE_TASK_TYPE_ISR2,
+                            CAN_RX_HND,
+                            130U,
+                            130U,
                             1U
   },
   {
@@ -8534,10 +8638,10 @@ static OsEE_TDB
                           &osEE_scb_array[0U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[1U],
-                            1U,
+                            &osEE_tcb_array[2U],
+                            2U,
                             OSEE_TASK_TYPE_BASIC,
-                            FuncCAN_Tx,
+                            FuncBlink_LED,
                             1U,
                             1U,
                             1U
@@ -8548,8 +8652,8 @@ static OsEE_TDB
                           &osEE_scb_array[1U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[2U],
-                            2U,
+                            &osEE_tcb_array[3U],
+                            3U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncUART_Echo,
                             1U,
@@ -8562,8 +8666,8 @@ static OsEE_TDB
                           &osEE_scb_array[2U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[3U],
-                            3U,
+                            &osEE_tcb_array[4U],
+                            4U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncDCMotor_Example,
                             1U,
@@ -8576,8 +8680,8 @@ static OsEE_TDB
                           &osEE_scb_array[3U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[4U],
-                            4U,
+                            &osEE_tcb_array[5U],
+                            5U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncTimer_Example,
                             1U,
@@ -8590,8 +8694,8 @@ static OsEE_TDB
                           &osEE_scb_array[4U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[5U],
-                            5U,
+                            &osEE_tcb_array[6U],
+                            6U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncUltrasonic_Example,
                             1U,
@@ -8604,8 +8708,8 @@ static OsEE_TDB
                           &osEE_scb_array[5U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[6U],
-                            6U,
+                            &osEE_tcb_array[7U],
+                            7U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncBuzzer_Example,
                             1U,
@@ -8618,8 +8722,8 @@ static OsEE_TDB
                           &osEE_scb_array[6U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[7U],
-                            7U,
+                            &osEE_tcb_array[8U],
+                            8U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncTOF_Example,
                             1U,
@@ -8632,8 +8736,8 @@ static OsEE_TDB
                           &osEE_scb_array[7U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[8U],
-                            8U,
+                            &osEE_tcb_array[9U],
+                            9U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncADC_Example,
                             1U,
@@ -8646,12 +8750,12 @@ static OsEE_TDB
                           &osEE_scb_array[8U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[9U],
-                            9U,
+                            &osEE_tcb_array[10U],
+                            10U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncOS_EE_Task_Init,
                             1U,
-                            127U,
+                            1U,
                             1U
   },
   {
@@ -8660,8 +8764,8 @@ static OsEE_TDB
                           &osEE_scb_array[10U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[10U],
-                            10U,
+                            &osEE_tcb_array[11U],
+                            11U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncTask_Motor,
                             1U,
@@ -8674,8 +8778,8 @@ static OsEE_TDB
                           &osEE_scb_array[9U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[11U],
-                            11U,
+                            &osEE_tcb_array[12U],
+                            12U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncTask_AEB,
                             1U,
@@ -8688,8 +8792,92 @@ static OsEE_TDB
                           &osEE_scb_array[10U],
                           ((OsEE_isr_src_id)-1)
     },
-                            &osEE_tcb_array[12U],
-                            12U,
+                            &osEE_tcb_array[13U],
+                            13U,
+                            OSEE_TASK_TYPE_BASIC,
+                            FuncLCD_TEST,
+                            2U,
+                            2U,
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((OsEE_isr_src_id)-1)
+    },
+                            &osEE_tcb_array[14U],
+                            14U,
+                            OSEE_TASK_TYPE_BASIC,
+                            FuncLED_KING,
+                            3U,
+                            3U,
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((OsEE_isr_src_id)-1)
+    },
+                            &osEE_tcb_array[15U],
+                            15U,
+                            OSEE_TASK_TYPE_BASIC,
+                            FuncCtrl_Window,
+                            2U,
+                            2U,
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((OsEE_isr_src_id)-1)
+    },
+                            &osEE_tcb_array[16U],
+                            16U,
+                            OSEE_TASK_TYPE_BASIC,
+                            FuncCtrl_InAir,
+                            3U,
+                            3U,
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((OsEE_isr_src_id)-1)
+    },
+                            &osEE_tcb_array[17U],
+                            17U,
+                            OSEE_TASK_TYPE_BASIC,
+                            FuncCtrl_HLamp,
+                            4U,
+                            4U,
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((OsEE_isr_src_id)-1)
+    },
+                            &osEE_tcb_array[18U],
+                            18U,
+                            OSEE_TASK_TYPE_BASIC,
+                            FuncCtrl_Btn,
+                            1U,
+                            1U,
+                            1U
+  },
+  {
+                 {
+                          &osEE_sdb_array[10U],
+                          &osEE_scb_array[10U],
+                          ((OsEE_isr_src_id)-1)
+    },
+                            &osEE_tcb_array[19U],
+                            19U,
                             OSEE_TASK_TYPE_IDLE,
                             osEE_idle_hook_wrapper,
                             0U,
@@ -8701,7 +8889,7 @@ static OsEE_TDB
 
 
 static OsEE_TDB * const
-  osEE_tdb_ptr_array[(12U) + (1U)] =
+  osEE_tdb_ptr_array[(19U) + (1U)] =
 {
   &osEE_tdb_array[0U],
   &osEE_tdb_array[1U],
@@ -8715,12 +8903,19 @@ static OsEE_TDB * const
   &osEE_tdb_array[9U],
   &osEE_tdb_array[10U],
   &osEE_tdb_array[11U],
-  &osEE_tdb_array[12U]
+  &osEE_tdb_array[12U],
+  &osEE_tdb_array[13U],
+  &osEE_tdb_array[14U],
+  &osEE_tdb_array[15U],
+  &osEE_tdb_array[16U],
+  &osEE_tdb_array[17U],
+  &osEE_tdb_array[18U],
+  &osEE_tdb_array[19U]
 };
 
 
 
-static OsEE_SN osEE_sn_array[12] = {
+static OsEE_SN osEE_sn_array[19] = {
   {
                     &osEE_sn_array[1U],
                     ((void *)0)
@@ -8766,6 +8961,34 @@ static OsEE_SN osEE_sn_array[12] = {
                     ((void *)0)
   },
   {
+                    &osEE_sn_array[12U],
+                    ((void *)0)
+  },
+  {
+                    &osEE_sn_array[13U],
+                    ((void *)0)
+  },
+  {
+                    &osEE_sn_array[14U],
+                    ((void *)0)
+  },
+  {
+                    &osEE_sn_array[15U],
+                    ((void *)0)
+  },
+  {
+                    &osEE_sn_array[16U],
+                    ((void *)0)
+  },
+  {
+                    &osEE_sn_array[17U],
+                    ((void *)0)
+  },
+  {
+                    &osEE_sn_array[18U],
+                    ((void *)0)
+  },
+  {
                     ((void *)0),
                     ((void *)0)
   }
@@ -8780,7 +9003,7 @@ static OsEE_ResourceCB osEE_res_cb_array[1];
 static OsEE_ResourceDB osEE_res_db_array[1] = {
   {
                                &osEE_res_cb_array[0U],
-                               1U
+                               4U
   }
 };
 
@@ -8791,7 +9014,7 @@ static OsEE_ResourceDB * const
 {
   &osEE_res_db_array[0U]
 };
-# 569 "ee_applcfg.c"
+# 765 "ee_applcfg.c"
 static OsEE_CounterCB
   osEE_counter_cb_array[1];
 
@@ -8814,7 +9037,7 @@ static OsEE_CounterDB * const
 {
   &osEE_counter_db_array[0U]
 };
-# 599 "ee_applcfg.c"
+# 795 "ee_applcfg.c"
 static OsEE_AlarmCB
   osEE_alarm_cb_array[1];
 
@@ -8828,7 +9051,7 @@ static OsEE_AlarmDB
                           {
                             {
                               ((void *)0),
-                              &osEE_tdb_array[5U],
+                              &osEE_tdb_array[2U],
                               ((void *)0),
                               0U},
                           OSEE_ACTION_TASK
@@ -8843,9 +9066,9 @@ static OsEE_AlarmDB * const
 {
   &osEE_alarm_db_array[0]
 };
-# 636 "ee_applcfg.c"
+# 832 "ee_applcfg.c"
 OsEE_CCB osEE_ccb_var = {
-                        &osEE_tdb_array[12U],
+                        &osEE_tdb_array[19U],
                         ((void *)0),
                         &osEE_sn_array[0U],
                         ((void *)0),
@@ -8858,10 +9081,10 @@ OsEE_CCB osEE_ccb_var = {
                                  0U,
                                  0U
 };
-# 658 "ee_applcfg.c"
+# 854 "ee_applcfg.c"
 OsEE_CDB osEE_cdb_var = {
                                          &osEE_ccb_var,
-                                         &osEE_tdb_array[12U],
+                                         &osEE_tdb_array[19U],
                                          &osEE_counter_db_array[0U]
 };
 

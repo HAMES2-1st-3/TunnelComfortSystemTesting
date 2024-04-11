@@ -141082,12 +141082,12 @@ void init_VADC(void)
     (*(Ifx_VADC*)0xF0020000u).G[4].ARBCFG.B.ANONC = 0x3;
 
     (*(Ifx_VADC*)0xF0020000u).G[4].ICLASS[0].B.CMS = 0x0;
-
-
-
+# 33 "C:\\TC275_~2\\bsw\\drivers\\vadc.c"
     (*(Ifx_VADC*)0xF0020000u).G[4].CHCTR[7].B.RESPOS = 0x1;
     (*(Ifx_VADC*)0xF0020000u).G[4].CHCTR[7].B.RESREG = 0x1;
     (*(Ifx_VADC*)0xF0020000u).G[4].CHCTR[7].B.ICLSEL = 0x0;
+
+    (*(Ifx_P*)0xF003A000u).IOCR4.B.PC4 = 0b00010;
 }
 
 void VADC_startConversion(void)

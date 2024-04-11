@@ -330,8 +330,8 @@
 
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 57 "C:\\TC275_~2\\erika\\inc/ee_cfg.h" 2
 # 56 "C:\\TC275_~2\\erika\\inc/ee.h" 2
 # 1 "C:\\TC275_~2\\erika\\inc/ee_arch_override.h" 1

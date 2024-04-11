@@ -164071,33 +164071,14 @@ static inline __attribute__ ((always_inline)) void IfxMultican_Can_deinit(IfxMul
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_typesgnuc.h" 1 3
 # 22 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
-
-# 1 "C:\\TC275_~2/bsw/io/GPIO.h" 1
-
-#define BSW_IO_GPIO_H_ 
-
-
-
-void Init_GPIO(void);
-
-void setLED1(int onoff);
-void setLED2(int onoff);
-void toggleLED1(void);
-void toggleLED2(void);
-
-int getSW1(void);
-int getSW2(void);
-int getSW1_Debounce(void);
-int getSW2_Debounce(void);
-# 25 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 # 1 "C:\\TC275_~2/bsw/system/interrupts.h" 1
-# 26 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
+# 24 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 2
 
 
 
 #define ECU1_TX_OBJ_NUM 10u
 #define ECU1_RX_OBJ_NUM 10u
-# 43 "C:\\TC275_~2/bsw/drivers/Driver_Can.h"
+# 41 "C:\\TC275_~2/bsw/drivers/Driver_Can.h"
 typedef struct
 {
     IfxMultican_Can CanEcu1;
@@ -164117,26 +164098,65 @@ extern Ecu1Can stEcu1Can;
 
 
 extern void Driver_Can_Init(void);
-extern void Driver_Can_TxTest(void);
-void CAN_RxInt0Handler(void);
+extern void Driver_Can_TxTest(uint32 data);
+extern void CAN_RxInt0Handler(void);
+extern void CAN_RX_HND(void);
+
+extern char getLEDKing(void);
+extern char getTunnelStatus(void);
 # 16 "C:\\TC275_~2/main.h" 2
+
+# 1 "C:\\TC275_~2/bsw/drivers/com.h" 1
+# 9 "C:\\TC275_~2/bsw/drivers/com.h"
+#define BSW_DRIVERS_COM_H_ 
+
+# 1 "C:\\TC275_~2/bsw/drivers/Driver_Can.h" 1
+# 12 "C:\\TC275_~2/bsw/drivers/com.h" 2
+typedef struct {
+ uint32 dataHighs;
+ uint32 dataLows;
+}signalname;
+
+void can_send(signalname s1,int toecu);
+# 18 "C:\\TC275_~2/main.h" 2
+
 
 # 1 "C:\\TC275_~2/bsw/etc/etc.h" 1
 
 #define BSW_ETC_ETC_H_ 
 
 void delay_ms(unsigned int delay_time);
-# 18 "C:\\TC275_~2/main.h" 2
+# 21 "C:\\TC275_~2/main.h" 2
 
 
 # 1 "C:\\TC275_~2/bsw/io/Buzzer.h" 1
-# 21 "C:\\TC275_~2/main.h" 2
+# 24 "C:\\TC275_~2/main.h" 2
 # 1 "C:\\TC275_~2/bsw/io/GPIO.h" 1
-# 22 "C:\\TC275_~2/main.h" 2
+
+#define BSW_IO_GPIO_H_ 
+
+
+
+void Init_GPIO(int iniHLamp);
+
+void setLED1(int onoff);
+void setLED2(int onoff);
+void toggleLED1(void);
+void toggleLED2(void);
+
+int getSW1(void);
+int getSW2(void);
+int getSW3(void);
+int getSW1_Debounce(void);
+int getSW2_Debounce(void);
+
+void setHeadlampLED(int onoff);
+# 25 "C:\\TC275_~2/main.h" 2
 # 1 "C:\\TC275_~2/bsw/io/Motor.h" 1
 
 #define BSW_IO_MOTOR_H_ 
 
+void InitChA(int iniInAir, int iniDuty);
 void Init_DCMotor(void);
 void Init_DCMotorPWM(void);
 
@@ -164148,7 +164168,7 @@ void stopChB(void);
 
 void movChA_PWM(int duty, int dir);
 void movChB_PWM(int duty, int dir);
-# 23 "C:\\TC275_~2/main.h" 2
+# 26 "C:\\TC275_~2/main.h" 2
 # 1 "C:\\TC275_~2/bsw/io/ToF.h" 1
 
 #define BSW_IO_TOF_H_ 
@@ -164156,7 +164176,7 @@ void movChB_PWM(int duty, int dir);
 void Init_ToF(void);
 void IsrUart1RxHandler_tof(void);
 int getTofDistance(void);
-# 24 "C:\\TC275_~2/main.h" 2
+# 27 "C:\\TC275_~2/main.h" 2
 # 1 "C:\\TC275_~2/bsw/io/Ultrasonic.h" 1
 
 #define BSW_IO_ULTRASONIC_H_ 
@@ -164166,8 +164186,19 @@ double ReadUltrasonic_noFilt(void);
 double ReadUltrasonic_Filt(void);
 
 #define FILT_SIZE 5
-# 25 "C:\\TC275_~2/main.h" 2
+# 28 "C:\\TC275_~2/main.h" 2
+# 1 "C:\\TC275_~2/bsw/io/LCD.h" 1
+# 9 "C:\\TC275_~2/bsw/io/LCD.h"
+#define BSW_IO_LCD_H_ 
 
+
+
+void init_lcd(void);
+void write_instruction(unsigned char i);
+void write_data(char d);
+void delay_us(unsigned int m);
+void lcdprint_data(char *str);
+# 29 "C:\\TC275_~2/main.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3
 # 27 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 3
@@ -165379,7 +165410,7 @@ int __swbuf_r (struct _reent *, int, FILE *);
 #define putchar(x) putc(x, stdout)
 
 
-# 28 "C:\\TC275_~2/main.h" 2
+# 31 "C:\\TC275_~2/main.h" 2
 
 
 extern unsigned char cmd_clr_scr[8];
@@ -165390,6 +165421,20 @@ extern unsigned char cmd;
 #define CLR_SCR() my_printf("%s", cmd_clr_scr)
 #define CLR_LINE() my_printf("%s", cmd_clr_line)
 #define MOV_CUR_UP() my_printf("%s", cmd_mov_cur_up)
+
+
+
+
+
+
+typedef struct{
+ unsigned char hLamp;
+ unsigned char window;
+ unsigned char inAir;
+ uint32 dist;
+ uint32 iDuty;
+ uint32 wDuty;
+} bodyStatus;
 # 8 "C:\\TC275_~2\\bsw\\io\\Buzzer.c" 2
 
 int beepCnt = 0;

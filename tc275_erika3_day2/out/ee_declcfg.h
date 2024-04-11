@@ -32,7 +32,7 @@ extern "C" {
  * Declare tasks
  *
  **************************************************************************/
-DeclareTask(CAN_Tx);
+DeclareTask(Blink_LED);
 DeclareTask(UART_Echo);
 DeclareTask(DCMotor_Example);
 DeclareTask(Timer_Example);
@@ -43,6 +43,8 @@ DeclareTask(ADC_Example);
 DeclareTask(OS_EE_Task_Init);
 DeclareTask(Task_Motor);
 DeclareTask(Task_AEB);
+DeclareTask(LCD_TEST);
+DeclareTask(LED_KING);
 DeclareTask(Ctrl_Window);
 DeclareTask(Ctrl_InAir);
 DeclareTask(Ctrl_HLamp);

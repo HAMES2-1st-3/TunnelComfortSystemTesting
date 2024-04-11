@@ -330,8 +330,8 @@
 
 #define OSEE_SYSTEM_TIMER (0U)
 #define OSEE_SYSTEM_TIMER_DEVICE OSEE_TC_STM_SR0
-#define OSEE_TC_CORE0_1_ISR_CAT (2U)
-#define OSEE_TC_CORE0_1_ISR_TID 0
+#define OSEE_TC_CORE0_3_ISR_CAT (2U)
+#define OSEE_TC_CORE0_3_ISR_TID 0
 # 57 "C:\\TC275_~2\\erika\\inc/ee_cfg.h" 2
 # 56 "C:\\TC275_~2\\erika\\inc/ee.h" 2
 # 1 "C:\\TC275_~2\\erika\\inc/ee_arch_override.h" 1
@@ -9230,20 +9230,14 @@ __asm__ ("\n  .section .inttab_cpu0, \"ax\", @progbits\n  .globl __INTTAB0\n__IN
 
 __asm__(
 "  .skip 0x20");
-
-
-
-
-
-
-
-__asm__ (".globl osEE_tc" "_" "isr2_entry_" "1"); __asm__ ("osEE_tc" "_" "isr2_entry_" "1" ":"); __asm__ ("svlcx"); __asm__ ("mov %d4, " "0"); __asm__ ("j osEE_tc_isr2_wrapper"); __asm__ (".align 5");
+# 148 "C:\\TC275_~2\\erika\\src\\ee_tc_intvec.c"
+__asm__ (".globl osEE_tc" "_" "isr_dummy_entry_" "1"); __asm__ ("osEE_tc" "_" "isr_dummy_entry_" "1" ":"); __asm__ ("j ."); __asm__ (".align  5");
 # 159 "C:\\TC275_~2\\erika\\src\\ee_tc_intvec.c"
 __asm__ (".globl osEE_tc" "_" "isr_dummy_entry_" "2"); __asm__ ("osEE_tc" "_" "isr_dummy_entry_" "2" ":"); __asm__ ("j ."); __asm__ (".align  5");
 
 
 
-__asm__ (".globl osEE_tc" "_" "isr2_entry_" "3"); __asm__ ("osEE_tc" "_" "isr2_entry_" "3" ":"); __asm__ ("svlcx"); __asm__ ("mov %d4, " "1"); __asm__ ("j osEE_tc_isr2_wrapper"); __asm__ (".align 5");
+__asm__ (".globl osEE_tc" "_" "isr2_entry_" "3"); __asm__ ("osEE_tc" "_" "isr2_entry_" "3" ":"); __asm__ ("svlcx"); __asm__ ("mov %d4, " "0"); __asm__ ("j osEE_tc_isr2_wrapper"); __asm__ (".align 5");
 # 181 "C:\\TC275_~2\\erika\\src\\ee_tc_intvec.c"
 __asm__ (".globl osEE_tc" "_" "isr_dummy_entry_" "4"); __asm__ ("osEE_tc" "_" "isr_dummy_entry_" "4" ":"); __asm__ ("j ."); __asm__ (".align  5");
 # 192 "C:\\TC275_~2\\erika\\src\\ee_tc_intvec.c"
