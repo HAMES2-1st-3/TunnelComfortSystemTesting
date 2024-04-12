@@ -66,8 +66,8 @@ extern "C" {
 #define OS_EE_Task_Init (10U)
 #define Task_Motor (11U)
 #define Task_AEB (12U)
-#define LCD_TEST (13U)
-#define LED_KING (14U)
+#define LCD_IsIntunnel (13U)
+#define Display_BodyStatus (14U)
 
 /***************************************************************************
  *

@@ -8,19 +8,19 @@ init_lcd:
 .LFB181:
 	.file 1 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\LCD.c"
 	.loc 1 11 0
-.LBB24:
-.LBB25:
+.LBB30:
+.LBB31:
 	.loc 1 37 0
 	movh.a	%a15, 61444
 	lea	%a15, [%a15] -20224
-.LBE25:
-.LBE24:
+.LBE31:
+.LBE30:
 	.loc 1 13 0
 	mov	%d4, 300
 	call	delay_ms
 .LVL0:
-.LBB28:
-.LBB26:
+.LBB34:
+.LBB32:
 	.loc 1 37 0
 	ld.w	%d15, [%a15]0
 	.loc 1 42 0
@@ -34,12 +34,12 @@ init_lcd:
 	lea	%a12, [%a12] -24576
 	.loc 1 38 0
 	insert	%d15, %d15, 0, 11, 1
-.LBE26:
-.LBE28:
+.LBE32:
+.LBE34:
 	.loc 1 15 0
 	mov	%d4, 100
-.LBB29:
-.LBB27:
+.LBB35:
+.LBB33:
 	.loc 1 38 0
 	st.w	[%a15]0, %d15
 	.loc 1 39 0
@@ -64,21 +64,21 @@ init_lcd:
 	insert	%d15, %d15, 0, 9, 1
 	st.w	[%a15]0, %d15
 .LVL3:
-.LBE27:
-.LBE29:
+.LBE33:
+.LBE35:
 	.loc 1 15 0
 	call	delay_ms
 .LVL4:
-.LBB30:
-.LBB31:
+.LBB36:
+.LBB37:
 	.loc 1 37 0
 	ld.w	%d15, [%a15]0
-.LBE31:
-.LBE30:
+.LBE37:
+.LBE36:
 	.loc 1 18 0
 	mov	%d4, 100
-.LBB33:
-.LBB32:
+.LBB39:
+.LBB38:
 	.loc 1 37 0
 	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
@@ -105,21 +105,21 @@ init_lcd:
 	ld.w	%d15, [%a15]0
 	insert	%d15, %d15, 0, 9, 1
 	st.w	[%a15]0, %d15
-.LBE32:
-.LBE33:
+.LBE38:
+.LBE39:
 	.loc 1 18 0
 	call	delay_ms
 .LVL5:
-.LBB34:
-.LBB35:
+.LBB40:
+.LBB41:
 	.loc 1 37 0
 	ld.w	%d15, [%a15]0
-.LBE35:
-.LBE34:
+.LBE41:
+.LBE40:
 	.loc 1 23 0
 	mov	%d4, 100
-.LBB37:
-.LBB36:
+.LBB43:
+.LBB42:
 	.loc 1 37 0
 	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
@@ -146,21 +146,21 @@ init_lcd:
 	ld.w	%d15, [%a15]0
 	insert	%d15, %d15, 0, 9, 1
 	st.w	[%a15]0, %d15
-.LBE36:
-.LBE37:
+.LBE42:
+.LBE43:
 	.loc 1 23 0
 	call	delay_ms
 .LVL6:
-.LBB38:
-.LBB39:
+.LBB44:
+.LBB45:
 	.loc 1 37 0
 	ld.w	%d15, [%a15]0
-.LBE39:
-.LBE38:
+.LBE45:
+.LBE44:
 	.loc 1 27 0
 	mov	%d4, 100
-.LBB41:
-.LBB40:
+.LBB47:
+.LBB46:
 	.loc 1 37 0
 	or	%d15, %d15, 4
 	st.w	[%a15]0, %d15
@@ -187,8 +187,8 @@ init_lcd:
 	ld.w	%d15, [%a15]0
 	insert	%d15, %d15, 0, 9, 1
 	st.w	[%a15]0, %d15
-.LBE40:
-.LBE41:
+.LBE46:
+.LBE47:
 	.loc 1 27 0
 	j	delay_ms
 .LVL7:
@@ -297,40 +297,40 @@ lcdprint_data:
 .LVL16:
 	.loc 1 74 0
 	ld.b	%d15, [%a4]0
-.LBB42:
-.LBB43:
+.LBB48:
+.LBB49:
 	.loc 1 54 0
 	movh.a	%a15, 61444
 	.loc 1 59 0
 	movh.a	%a12, 61444
-.LBE43:
-.LBE42:
+.LBE49:
+.LBE48:
 	.loc 1 69 0
 	mov.aa	%a13, %a4
 	.loc 1 74 0
 	mov	%d8, 0
-.LBB47:
-.LBB44:
+.LBB53:
+.LBB50:
 	.loc 1 54 0
 	lea	%a15, [%a15] -20224
 	.loc 1 59 0
 	lea	%a12, [%a12] -24576
-.LBE44:
-.LBE47:
+.LBE50:
+.LBE53:
 	.loc 1 74 0
 	jz	%d15, .L4
 .LVL17:
 .L8:
-.LBB48:
-.LBB45:
+.LBB54:
+.LBB51:
 	.loc 1 54 0
 	ld.w	%d2, [%a15]0
-.LBE45:
-.LBE48:
+.LBE51:
+.LBE54:
 	.loc 1 76 0
-	mov	%d4, 10
-.LBB49:
-.LBB46:
+	mov	%d4, 20
+.LBB55:
+.LBB52:
 	.loc 1 54 0
 	or	%d2, %d2, 4
 	st.w	[%a15]0, %d2
@@ -361,8 +361,8 @@ lcdprint_data:
 	insert	%d15, %d15, 15, 9, 1
 	st.w	[%a15]0, %d15
 .LVL22:
-.LBE46:
-.LBE49:
+.LBE52:
+.LBE55:
 	.loc 1 76 0
 	call	delay_ms
 .LVL23:
@@ -380,14 +380,410 @@ lcdprint_data:
 .LFE184:
 	.size	lcdprint_data, .-lcdprint_data
 	.align 1
-	.global	delay_us
-	.type	delay_us, @function
-delay_us:
+	.global	clear_lcdprint
+	.type	clear_lcdprint, @function
+clear_lcdprint:
 .LFB185:
 	.loc 1 80 0
 .LVL26:
+.LBB58:
+.LBB59:
+	.loc 1 54 0
+	movh.a	%a15, 61444
+	.loc 1 59 0
+	movh.a	%a12, 61444
+.LBE59:
+.LBE58:
+	.loc 1 80 0
+	mov	%d15, 0
+.LBB62:
+.LBB60:
+	.loc 1 54 0
+	lea	%a15, [%a15] -20224
+	.loc 1 59 0
+	lea	%a12, [%a12] -24576
+	mov	%d8, 32
+.LVL27:
+.L12:
+	.loc 1 54 0
+	ld.w	%d2, [%a15]0
+.LBE60:
+.LBE62:
+	.loc 1 84 0
+	mov	%d4, 30
+.LBB63:
+.LBB61:
+	.loc 1 54 0
+	or	%d2, %d2, 4
+	st.w	[%a15]0, %d2
+	.loc 1 55 0
+	ld.w	%d2, [%a15]0
+	add	%d15, 1
+	insert	%d2, %d2, 0, 11, 1
+	st.w	[%a15]0, %d2
+	.loc 1 56 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 15, 9, 1
+	st.w	[%a15]0, %d2
+.LVL28:
+	.loc 1 59 0
+	st.w	[%a12]0, %d8
+.LVL29:
+	.loc 1 63 0
+	ld.w	%d2, [%a15]0
+	andn	%d2, %d2, ~(-5)
+	st.w	[%a15]0, %d2
+	.loc 1 64 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 0, 11, 1
+	st.w	[%a15]0, %d2
+	.loc 1 65 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 15, 9, 1
+	st.w	[%a15]0, %d2
+.LVL30:
+.LBE61:
+.LBE63:
+	.loc 1 84 0
+	call	delay_ms
+.LVL31:
+	.loc 1 82 0
+	ne	%d2, %d15, 16
+	jnz	%d2, .L12
+	.loc 1 86 0
 	ret
 .LFE185:
+	.size	clear_lcdprint, .-clear_lcdprint
+	.align 1
+	.global	clear_two_lines
+	.type	clear_two_lines, @function
+clear_two_lines:
+.LFB186:
+	.loc 1 87 0
+.LBB76:
+.LBB77:
+	.loc 1 37 0
+	movh.a	%a15, 61444
+	lea	%a15, [%a15] -20224
+.LBE77:
+.LBE76:
+	.loc 1 88 0
+	mov	%d4, 100
+	call	delay_ms
+.LVL32:
+.LBB83:
+.LBB78:
+	.loc 1 37 0
+	ld.w	%d15, [%a15]0
+	.loc 1 42 0
+	movh.a	%a2, 61444
+	.loc 1 37 0
+	or	%d15, %d15, 4
+	st.w	[%a15]0, %d15
+	.loc 1 38 0
+	ld.w	%d15, [%a15]0
+	.loc 1 42 0
+	lea	%a2, [%a2] -24576
+	.loc 1 38 0
+	insert	%d15, %d15, 0, 11, 1
+.LBE78:
+.LBE83:
+	.loc 1 90 0
+	mov	%d4, 100
+.LBB84:
+.LBB79:
+	.loc 1 38 0
+	st.w	[%a15]0, %d15
+	.loc 1 39 0
+	ld.w	%d15, [%a15]0
+.LBE79:
+.LBE84:
+.LBB85:
+.LBB86:
+.LBB87:
+.LBB88:
+	.loc 1 59 0
+	movh.a	%a13, 61444
+.LBE88:
+.LBE87:
+.LBE86:
+.LBE85:
+.LBB100:
+.LBB80:
+	.loc 1 39 0
+	insert	%d15, %d15, 0, 9, 1
+.LBE80:
+.LBE100:
+.LBB101:
+.LBB97:
+.LBB93:
+.LBB89:
+	.loc 1 59 0
+	lea	%a13, [%a13] -24576
+.LBE89:
+.LBE93:
+.LBE97:
+.LBE101:
+.LBB102:
+.LBB81:
+	.loc 1 39 0
+	st.w	[%a15]0, %d15
+.LVL33:
+	.loc 1 42 0
+	mov	%d15, 128
+	st.w	[%a2]0, %d15
+.LVL34:
+	.loc 1 46 0
+	ld.w	%d15, [%a15]0
+.LBE81:
+.LBE102:
+.LBB103:
+.LBB98:
+.LBB94:
+.LBB90:
+	.loc 1 59 0
+	mov	%d8, 32
+.LBE90:
+.LBE94:
+.LBE98:
+.LBE103:
+.LBB104:
+.LBB82:
+	.loc 1 46 0
+	andn	%d15, %d15, ~(-5)
+	st.w	[%a15]0, %d15
+	.loc 1 47 0
+	ld.w	%d15, [%a15]0
+	insert	%d15, %d15, 0, 11, 1
+	st.w	[%a15]0, %d15
+	.loc 1 48 0
+	ld.w	%d15, [%a15]0
+	insert	%d15, %d15, 0, 9, 1
+	st.w	[%a15]0, %d15
+.LVL35:
+.LBE82:
+.LBE104:
+	.loc 1 90 0
+	call	delay_ms
+.LVL36:
+	mov	%d15, 0
+.LVL37:
+.L15:
+.LBB105:
+.LBB99:
+.LBB95:
+.LBB91:
+	.loc 1 54 0
+	ld.w	%d2, [%a15]0
+.LBE91:
+.LBE95:
+	.loc 1 84 0
+	mov	%d4, 30
+.LBB96:
+.LBB92:
+	.loc 1 54 0
+	or	%d2, %d2, 4
+	st.w	[%a15]0, %d2
+	.loc 1 55 0
+	ld.w	%d2, [%a15]0
+	add	%d15, 1
+	insert	%d2, %d2, 0, 11, 1
+	.loc 1 54 0
+	movh.a	%a12, 61444
+	.loc 1 55 0
+	st.w	[%a15]0, %d2
+	.loc 1 56 0
+	ld.w	%d2, [%a15]0
+	.loc 1 54 0
+	lea	%a12, [%a12] -20224
+	.loc 1 56 0
+	insert	%d2, %d2, 15, 9, 1
+	st.w	[%a15]0, %d2
+.LVL38:
+	.loc 1 59 0
+	st.w	[%a13]0, %d8
+.LVL39:
+	.loc 1 63 0
+	ld.w	%d2, [%a15]0
+	andn	%d2, %d2, ~(-5)
+	st.w	[%a15]0, %d2
+	.loc 1 64 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 0, 11, 1
+	st.w	[%a15]0, %d2
+	.loc 1 65 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 15, 9, 1
+	st.w	[%a15]0, %d2
+.LVL40:
+.LBE92:
+.LBE96:
+	.loc 1 84 0
+	call	delay_ms
+.LVL41:
+	.loc 1 82 0
+	ne	%d2, %d15, 16
+	jnz	%d2, .L15
+.LBE99:
+.LBE105:
+	.loc 1 93 0
+	mov	%d4, 100
+	call	delay_ms
+.LVL42:
+.LBB106:
+.LBB107:
+	.loc 1 37 0
+	ld.w	%d15, [%a12]0
+	.loc 1 42 0
+	movh.a	%a15, 61444
+	.loc 1 37 0
+	or	%d15, %d15, 4
+	st.w	[%a12]0, %d15
+	.loc 1 38 0
+	ld.w	%d15, [%a12]0
+	.loc 1 42 0
+	lea	%a15, [%a15] -24576
+	.loc 1 38 0
+	insert	%d15, %d15, 0, 11, 1
+.LBE107:
+.LBE106:
+	.loc 1 95 0
+	mov	%d4, 100
+.LBB111:
+.LBB108:
+	.loc 1 38 0
+	st.w	[%a12]0, %d15
+	.loc 1 39 0
+	ld.w	%d15, [%a12]0
+.LBE108:
+.LBE111:
+.LBB112:
+.LBB113:
+.LBB114:
+.LBB115:
+	.loc 1 59 0
+	mov	%d8, 32
+.LBE115:
+.LBE114:
+.LBE113:
+.LBE112:
+.LBB127:
+.LBB109:
+	.loc 1 39 0
+	insert	%d15, %d15, 0, 9, 1
+	st.w	[%a12]0, %d15
+	.loc 1 42 0
+	mov	%d15, 192
+	st.w	[%a15]0, %d15
+	.loc 1 46 0
+	ld.w	%d15, [%a12]0
+.LBE109:
+.LBE127:
+.LBB128:
+.LBB124:
+.LBB120:
+.LBB116:
+	.loc 1 54 0
+	mov.aa	%a15, %a12
+.LBE116:
+.LBE120:
+.LBE124:
+.LBE128:
+.LBB129:
+.LBB110:
+	.loc 1 46 0
+	andn	%d15, %d15, ~(-5)
+	st.w	[%a12]0, %d15
+	.loc 1 47 0
+	ld.w	%d15, [%a12]0
+	insert	%d15, %d15, 0, 11, 1
+	st.w	[%a12]0, %d15
+	.loc 1 48 0
+	ld.w	%d15, [%a12]0
+	insert	%d15, %d15, 0, 9, 1
+	st.w	[%a12]0, %d15
+.LBE110:
+.LBE129:
+	.loc 1 95 0
+	call	delay_ms
+.LVL43:
+.LBB130:
+.LBB125:
+.LBB121:
+.LBB117:
+	.loc 1 59 0
+	movh.a	%a12, 61444
+.LBE117:
+.LBE121:
+.LBE125:
+.LBE130:
+	.loc 1 95 0
+	mov	%d15, 0
+.LBB131:
+.LBB126:
+.LBB122:
+.LBB118:
+	.loc 1 59 0
+	lea	%a12, [%a12] -24576
+.LVL44:
+.L16:
+	.loc 1 54 0
+	ld.w	%d2, [%a15]0
+.LBE118:
+.LBE122:
+	.loc 1 84 0
+	mov	%d4, 30
+.LBB123:
+.LBB119:
+	.loc 1 54 0
+	or	%d2, %d2, 4
+	st.w	[%a15]0, %d2
+	.loc 1 55 0
+	ld.w	%d2, [%a15]0
+	add	%d15, 1
+	insert	%d2, %d2, 0, 11, 1
+	st.w	[%a15]0, %d2
+	.loc 1 56 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 15, 9, 1
+	st.w	[%a15]0, %d2
+	.loc 1 59 0
+	st.w	[%a12]0, %d8
+	.loc 1 63 0
+	ld.w	%d2, [%a15]0
+	andn	%d2, %d2, ~(-5)
+	st.w	[%a15]0, %d2
+	.loc 1 64 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 0, 11, 1
+	st.w	[%a15]0, %d2
+	.loc 1 65 0
+	ld.w	%d2, [%a15]0
+	insert	%d2, %d2, 15, 9, 1
+	st.w	[%a15]0, %d2
+.LBE119:
+.LBE123:
+	.loc 1 84 0
+	call	delay_ms
+.LVL45:
+	.loc 1 82 0
+	ne	%d2, %d15, 16
+	jnz	%d2, .L16
+.LBE126:
+.LBE131:
+	.loc 1 97 0
+	ret
+.LFE186:
+	.size	clear_two_lines, .-clear_two_lines
+	.align 1
+	.global	delay_us
+	.type	delay_us, @function
+delay_us:
+.LFB187:
+	.loc 1 98 0
+.LVL46:
+	ret
+.LFE187:
 	.size	delay_us, .-delay_us
 .section .debug_frame,"",@progbits
 .Lframe0:
@@ -444,13 +840,29 @@ delay_us:
 	.uaword	.LFE185-.LFB185
 	.align 2
 .LEFDE8:
+.LSFDE10:
+	.uaword	.LEFDE10-.LASFDE10
+.LASFDE10:
+	.uaword	.Lframe0
+	.uaword	.LFB186
+	.uaword	.LFE186-.LFB186
+	.align 2
+.LEFDE10:
+.LSFDE12:
+	.uaword	.LEFDE12-.LASFDE12
+.LASFDE12:
+	.uaword	.Lframe0
+	.uaword	.LFB187
+	.uaword	.LFE187-.LFB187
+	.align 2
+.LEFDE12:
 .section .text,"ax",@progbits
 .Letext0:
 	.file 2 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\IfxPort_regdef.h"
 	.file 3 "C:\\Users\\user\\ECLIPS~1\\TC275_~1/bsw/etc/etc.h"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x283b
+	.uaword	0x29e3
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -4681,24 +5093,24 @@ delay_us:
 	.byte	0x1
 	.string	"delay_us"
 	.byte	0x1
-	.byte	0x50
+	.byte	0x62
 	.byte	0x1
 	.byte	0x1
 	.uaword	0x262c
 	.uleb128 0x14
 	.string	"m"
 	.byte	0x1
-	.byte	0x50
+	.byte	0x62
 	.uaword	0x50c
 	.uleb128 0x15
 	.string	"i"
 	.byte	0x1
-	.byte	0x51
+	.byte	0x63
 	.uaword	0x50c
 	.uleb128 0x15
 	.string	"j"
 	.byte	0x1
-	.byte	0x51
+	.byte	0x63
 	.uaword	0x50c
 	.byte	0
 	.uleb128 0x13
@@ -4743,7 +5155,7 @@ delay_us:
 	.uaword	0x2759
 	.uleb128 0x17
 	.uaword	0x262c
-	.uaword	.LBB24
+	.uaword	.LBB30
 	.uaword	.Ldebug_ranges0+0
 	.byte	0x1
 	.byte	0xe
@@ -4754,7 +5166,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x17
 	.uaword	0x262c
-	.uaword	.LBB30
+	.uaword	.LBB36
 	.uaword	.Ldebug_ranges0+0x20
 	.byte	0x1
 	.byte	0x11
@@ -4765,7 +5177,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x17
 	.uaword	0x262c
-	.uaword	.LBB34
+	.uaword	.LBB40
 	.uaword	.Ldebug_ranges0+0x38
 	.byte	0x1
 	.byte	0x16
@@ -4776,7 +5188,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x17
 	.uaword	0x262c
-	.uaword	.LBB38
+	.uaword	.LBB44
 	.uaword	.Ldebug_ranges0+0x50
 	.byte	0x1
 	.byte	0x1a
@@ -4787,7 +5199,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x19
 	.uaword	.LVL0
-	.uaword	0x2829
+	.uaword	0x29d1
 	.uaword	0x270b
 	.uleb128 0x1a
 	.byte	0x1
@@ -4798,7 +5210,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x19
 	.uaword	.LVL4
-	.uaword	0x2829
+	.uaword	0x29d1
 	.uaword	0x271f
 	.uleb128 0x1a
 	.byte	0x1
@@ -4809,7 +5221,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x19
 	.uaword	.LVL5
-	.uaword	0x2829
+	.uaword	0x29d1
 	.uaword	0x2733
 	.uleb128 0x1a
 	.byte	0x1
@@ -4820,7 +5232,7 @@ delay_us:
 	.byte	0
 	.uleb128 0x19
 	.uaword	.LVL6
-	.uaword	0x2829
+	.uaword	0x29d1
 	.uaword	0x2747
 	.uleb128 0x1a
 	.byte	0x1
@@ -4832,7 +5244,7 @@ delay_us:
 	.uleb128 0x1b
 	.uaword	.LVL7
 	.byte	0x1
-	.uaword	0x2829
+	.uaword	0x29d1
 	.uleb128 0x1a
 	.byte	0x1
 	.byte	0x54
@@ -4893,7 +5305,7 @@ delay_us:
 	.uaword	.LLST1
 	.uleb128 0x17
 	.uaword	0x2652
-	.uaword	.LBB42
+	.uaword	.LBB48
 	.uaword	.Ldebug_ranges0+0x68
 	.byte	0x1
 	.byte	0x4b
@@ -4904,43 +5316,235 @@ delay_us:
 	.byte	0
 	.uleb128 0x21
 	.uaword	.LVL23
-	.uaword	0x2829
+	.uaword	0x29d1
 	.uleb128 0x1a
 	.byte	0x1
 	.byte	0x54
 	.byte	0x1
-	.byte	0x3a
+	.byte	0x44
 	.byte	0
 	.byte	0
 	.uleb128 0x22
 	.byte	0x4
 	.uaword	0x2f2
+	.uleb128 0x13
+	.byte	0x1
+	.string	"clear_lcdprint"
+	.byte	0x1
+	.byte	0x50
+	.byte	0x1
+	.byte	0x1
+	.uaword	0x2825
+	.uleb128 0x15
+	.string	"i"
+	.byte	0x1
+	.byte	0x51
+	.uaword	0x280
+	.byte	0
 	.uleb128 0x1c
-	.uaword	0x25fd
+	.uaword	0x2802
 	.uaword	.LFB185
 	.uaword	.LFE185
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x2829
+	.uaword	0x286c
+	.uleb128 0x23
+	.uaword	0x281b
+	.uaword	.LLST3
+	.uleb128 0x17
+	.uaword	0x2652
+	.uaword	.LBB58
+	.uaword	.Ldebug_ranges0+0x90
+	.byte	0x1
+	.byte	0x53
+	.uaword	0x285c
+	.uleb128 0x18
+	.uaword	0x2667
+	.byte	0x20
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL31
+	.uaword	0x29d1
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x1
+	.byte	0x4e
+	.byte	0
+	.byte	0
+	.uleb128 0x16
+	.byte	0x1
+	.string	"clear_two_lines"
+	.byte	0x1
+	.byte	0x57
+	.byte	0x1
+	.uaword	.LFB186
+	.uaword	.LFE186
+	.byte	0x1
+	.byte	0x9c
+	.byte	0x1
+	.uaword	0x29aa
+	.uleb128 0x17
+	.uaword	0x262c
+	.uaword	.LBB76
+	.uaword	.Ldebug_ranges0+0xb0
+	.byte	0x1
+	.byte	0x59
+	.uaword	0x28ab
+	.uleb128 0x24
+	.uaword	0x2648
+	.sleb128 -128
+	.byte	0
+	.uleb128 0x17
+	.uaword	0x2802
+	.uaword	.LBB85
+	.uaword	.Ldebug_ranges0+0xe8
+	.byte	0x1
+	.byte	0x5b
+	.uaword	0x28f7
+	.uleb128 0x25
+	.uaword	.Ldebug_ranges0+0xe8
+	.uleb128 0x23
+	.uaword	0x281b
+	.uaword	.LLST4
+	.uleb128 0x17
+	.uaword	0x2652
+	.uaword	.LBB87
+	.uaword	.Ldebug_ranges0+0x110
+	.byte	0x1
+	.byte	0x53
+	.uaword	0x28e6
+	.uleb128 0x18
+	.uaword	0x2667
+	.byte	0x20
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL41
+	.uaword	0x29d1
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x1
+	.byte	0x4e
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x17
+	.uaword	0x262c
+	.uaword	.LBB106
+	.uaword	.Ldebug_ranges0+0x140
+	.byte	0x1
+	.byte	0x5e
+	.uaword	0x2911
+	.uleb128 0x24
+	.uaword	0x2648
+	.sleb128 -64
+	.byte	0
+	.uleb128 0x17
+	.uaword	0x2802
+	.uaword	.LBB112
+	.uaword	.Ldebug_ranges0+0x168
+	.byte	0x1
+	.byte	0x60
+	.uaword	0x295d
+	.uleb128 0x25
+	.uaword	.Ldebug_ranges0+0x168
+	.uleb128 0x23
+	.uaword	0x281b
+	.uaword	.LLST5
+	.uleb128 0x17
+	.uaword	0x2652
+	.uaword	.LBB114
+	.uaword	.Ldebug_ranges0+0x190
+	.byte	0x1
+	.byte	0x53
+	.uaword	0x294c
+	.uleb128 0x18
+	.uaword	0x2667
+	.byte	0x20
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL45
+	.uaword	0x29d1
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x1
+	.byte	0x4e
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x19
+	.uaword	.LVL32
+	.uaword	0x29d1
+	.uaword	0x2971
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x2
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.uleb128 0x19
+	.uaword	.LVL36
+	.uaword	0x29d1
+	.uaword	0x2985
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x2
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.uleb128 0x19
+	.uaword	.LVL42
+	.uaword	0x29d1
+	.uaword	0x2999
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x2
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL43
+	.uaword	0x29d1
+	.uleb128 0x1a
+	.byte	0x1
+	.byte	0x54
+	.byte	0x2
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.byte	0
+	.uleb128 0x1c
+	.uaword	0x25fd
+	.uaword	.LFB187
+	.uaword	.LFE187
+	.byte	0x1
+	.byte	0x9c
+	.byte	0x1
+	.uaword	0x29d1
 	.uleb128 0x1d
 	.uaword	0x2610
 	.byte	0x1
 	.byte	0x54
-	.uleb128 0x23
+	.uleb128 0x26
 	.uaword	0x2619
 	.byte	0
-	.uleb128 0x24
+	.uleb128 0x27
 	.uaword	0x2622
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x28
 	.byte	0x1
 	.string	"delay_ms"
 	.byte	0x3
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x26
+	.uleb128 0x29
 	.uaword	0x50c
 	.byte	0
 	.byte	0
@@ -5427,18 +6031,43 @@ delay_us:
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x6
+	.byte	0
+	.byte	0
+	.uleb128 0x24
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x1c
+	.uleb128 0xd
+	.byte	0
+	.byte	0
+	.uleb128 0x25
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x55
+	.uleb128 0x6
+	.byte	0
+	.byte	0
+	.uleb128 0x26
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
 	.uleb128 0x1c
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x24
+	.uleb128 0x27
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x28
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -5455,7 +6084,7 @@ delay_us:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x26
+	.uleb128 0x29
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
@@ -5510,6 +6139,30 @@ delay_us:
 	.byte	0x9f
 	.uaword	0
 	.uaword	0
+.LLST3:
+	.uaword	.LVL26-.Ltext0
+	.uaword	.LVL27-.Ltext0
+	.uahalf	0x2
+	.byte	0x30
+	.byte	0x9f
+	.uaword	0
+	.uaword	0
+.LLST4:
+	.uaword	.LVL36-.Ltext0
+	.uaword	.LVL37-.Ltext0
+	.uahalf	0x2
+	.byte	0x30
+	.byte	0x9f
+	.uaword	0
+	.uaword	0
+.LLST5:
+	.uaword	.LVL43-.Ltext0
+	.uaword	.LVL44-.Ltext0
+	.uahalf	0x2
+	.byte	0x30
+	.byte	0x9f
+	.uaword	0
+	.uaword	0
 .section .debug_aranges,"",@progbits
 	.uaword	0x1c
 	.uahalf	0x2
@@ -5524,40 +6177,116 @@ delay_us:
 	.uaword	0
 .section .debug_ranges,"",@progbits
 .Ldebug_ranges0:
-	.uaword	.LBB24-.Ltext0
-	.uaword	.LBE24-.Ltext0
-	.uaword	.LBB28-.Ltext0
-	.uaword	.LBE28-.Ltext0
-	.uaword	.LBB29-.Ltext0
-	.uaword	.LBE29-.Ltext0
-	.uaword	0
-	.uaword	0
 	.uaword	.LBB30-.Ltext0
 	.uaword	.LBE30-.Ltext0
-	.uaword	.LBB33-.Ltext0
-	.uaword	.LBE33-.Ltext0
-	.uaword	0
-	.uaword	0
 	.uaword	.LBB34-.Ltext0
 	.uaword	.LBE34-.Ltext0
-	.uaword	.LBB37-.Ltext0
-	.uaword	.LBE37-.Ltext0
+	.uaword	.LBB35-.Ltext0
+	.uaword	.LBE35-.Ltext0
 	.uaword	0
 	.uaword	0
-	.uaword	.LBB38-.Ltext0
-	.uaword	.LBE38-.Ltext0
-	.uaword	.LBB41-.Ltext0
-	.uaword	.LBE41-.Ltext0
+	.uaword	.LBB36-.Ltext0
+	.uaword	.LBE36-.Ltext0
+	.uaword	.LBB39-.Ltext0
+	.uaword	.LBE39-.Ltext0
 	.uaword	0
 	.uaword	0
-	.uaword	.LBB42-.Ltext0
-	.uaword	.LBE42-.Ltext0
+	.uaword	.LBB40-.Ltext0
+	.uaword	.LBE40-.Ltext0
+	.uaword	.LBB43-.Ltext0
+	.uaword	.LBE43-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB44-.Ltext0
+	.uaword	.LBE44-.Ltext0
 	.uaword	.LBB47-.Ltext0
 	.uaword	.LBE47-.Ltext0
+	.uaword	0
+	.uaword	0
 	.uaword	.LBB48-.Ltext0
 	.uaword	.LBE48-.Ltext0
-	.uaword	.LBB49-.Ltext0
-	.uaword	.LBE49-.Ltext0
+	.uaword	.LBB53-.Ltext0
+	.uaword	.LBE53-.Ltext0
+	.uaword	.LBB54-.Ltext0
+	.uaword	.LBE54-.Ltext0
+	.uaword	.LBB55-.Ltext0
+	.uaword	.LBE55-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB58-.Ltext0
+	.uaword	.LBE58-.Ltext0
+	.uaword	.LBB62-.Ltext0
+	.uaword	.LBE62-.Ltext0
+	.uaword	.LBB63-.Ltext0
+	.uaword	.LBE63-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB76-.Ltext0
+	.uaword	.LBE76-.Ltext0
+	.uaword	.LBB83-.Ltext0
+	.uaword	.LBE83-.Ltext0
+	.uaword	.LBB84-.Ltext0
+	.uaword	.LBE84-.Ltext0
+	.uaword	.LBB100-.Ltext0
+	.uaword	.LBE100-.Ltext0
+	.uaword	.LBB102-.Ltext0
+	.uaword	.LBE102-.Ltext0
+	.uaword	.LBB104-.Ltext0
+	.uaword	.LBE104-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB85-.Ltext0
+	.uaword	.LBE85-.Ltext0
+	.uaword	.LBB101-.Ltext0
+	.uaword	.LBE101-.Ltext0
+	.uaword	.LBB103-.Ltext0
+	.uaword	.LBE103-.Ltext0
+	.uaword	.LBB105-.Ltext0
+	.uaword	.LBE105-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB87-.Ltext0
+	.uaword	.LBE87-.Ltext0
+	.uaword	.LBB93-.Ltext0
+	.uaword	.LBE93-.Ltext0
+	.uaword	.LBB94-.Ltext0
+	.uaword	.LBE94-.Ltext0
+	.uaword	.LBB95-.Ltext0
+	.uaword	.LBE95-.Ltext0
+	.uaword	.LBB96-.Ltext0
+	.uaword	.LBE96-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB106-.Ltext0
+	.uaword	.LBE106-.Ltext0
+	.uaword	.LBB111-.Ltext0
+	.uaword	.LBE111-.Ltext0
+	.uaword	.LBB127-.Ltext0
+	.uaword	.LBE127-.Ltext0
+	.uaword	.LBB129-.Ltext0
+	.uaword	.LBE129-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB112-.Ltext0
+	.uaword	.LBE112-.Ltext0
+	.uaword	.LBB128-.Ltext0
+	.uaword	.LBE128-.Ltext0
+	.uaword	.LBB130-.Ltext0
+	.uaword	.LBE130-.Ltext0
+	.uaword	.LBB131-.Ltext0
+	.uaword	.LBE131-.Ltext0
+	.uaword	0
+	.uaword	0
+	.uaword	.LBB114-.Ltext0
+	.uaword	.LBE114-.Ltext0
+	.uaword	.LBB120-.Ltext0
+	.uaword	.LBE120-.Ltext0
+	.uaword	.LBB121-.Ltext0
+	.uaword	.LBE121-.Ltext0
+	.uaword	.LBB122-.Ltext0
+	.uaword	.LBE122-.Ltext0
+	.uaword	.LBB123-.Ltext0
+	.uaword	.LBE123-.Ltext0
 	.uaword	0
 	.uaword	0
 .section .debug_macro,"",@progbits

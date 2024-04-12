@@ -271,7 +271,7 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
   },
   {
     /* .current_num_of_act = */ 0U,
-    /* .current_prio       = */ 2U,
+    /* .current_prio       = */ 3U,
     /* .status             = */ SUSPENDED,
     /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
@@ -280,7 +280,7 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
   },
   {
     /* .current_num_of_act = */ 0U,
-    /* .current_prio       = */ 3U,
+    /* .current_prio       = */ 2U,
     /* .status             = */ SUSPENDED,
     /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
@@ -498,9 +498,9 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .p_tcb          = */ &osEE_tcb_array[13U],
     /* .tid            = */ 13U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
-    /* .task_func      = */ TASK_FUNC(LCD_TEST),
-    /* .ready_prio     = */ 2U,
-    /* .dispatch_prio  = */ 2U,
+    /* .task_func      = */ TASK_FUNC(LCD_IsIntunnel),
+    /* .ready_prio     = */ 3U,
+    /* .dispatch_prio  = */ 3U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -512,9 +512,9 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .p_tcb          = */ &osEE_tcb_array[14U],
     /* .tid            = */ 14U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
-    /* .task_func      = */ TASK_FUNC(LED_KING),
-    /* .ready_prio     = */ 3U,
-    /* .dispatch_prio  = */ 3U,
+    /* .task_func      = */ TASK_FUNC(Display_BodyStatus),
+    /* .ready_prio     = */ 2U,
+    /* .dispatch_prio  = */ 2U,
     /* .max_num_of_act = */ 1U
   },
   {

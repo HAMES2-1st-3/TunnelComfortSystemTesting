@@ -28,8 +28,8 @@ IsrUart1RxHandler_tof:
 	.loc 1 23 0
 	ld.w	%d15, [%a15] lo:rxBufIdx
 	.loc 1 22 0
-	movh.a	%a3, hi:rxBuf.37691
-	lea	%a3, [%a3] lo:rxBuf.37691
+	movh.a	%a3, hi:rxBuf.37695
+	lea	%a3, [%a3] lo:rxBuf.37695
 	.loc 1 23 0
 	add	%d15, 1
 	.loc 1 22 0
@@ -189,12 +189,12 @@ getTofDistance:
 	ret
 .LFE330:
 	.size	getTofDistance, .-getTofDistance
-	.local	rxBuf.37691
+	.local	rxBuf.37695
 .section .bss,"aw",@nobits
 	.align 0
-	.type		 rxBuf.37691,@object
-	.size		 rxBuf.37691,16
-rxBuf.37691:
+	.type		 rxBuf.37695,@object
+	.size		 rxBuf.37695,16
+rxBuf.37695:
 	.space	16
 	.local	gBuf_tof
 	.align 0
@@ -3812,7 +3812,7 @@ rxBufIdx:
 	.uaword	0x21ac
 	.byte	0x5
 	.byte	0x3
-	.uaword	rxBuf.37691
+	.uaword	rxBuf.37695
 	.uleb128 0x1c
 	.string	"c"
 	.byte	0x1

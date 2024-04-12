@@ -354,9 +354,9 @@ osEE_tdb_array:
 	.word	13
 	.byte	0
 	.zero	3
-	.word	FuncLCD_TEST
-	.byte	2
-	.byte	2
+	.word	FuncLCD_IsIntunnel
+	.byte	3
+	.byte	3
 	.byte	1
 	.zero	1
 	.word	osEE_sdb_array+80
@@ -367,9 +367,9 @@ osEE_tdb_array:
 	.word	14
 	.byte	0
 	.zero	3
-	.word	FuncLED_KING
-	.byte	3
-	.byte	3
+	.word	FuncDisplay_BodyStatus
+	.byte	2
+	.byte	2
 	.byte	1
 	.zero	1
 	.word	osEE_sdb_array+80
@@ -495,7 +495,7 @@ osEE_tcb_array:
 	.word	0
 	.word	0
 	.byte	0
-	.byte	2
+	.byte	3
 	.byte	0
 	.zero	1
 	.word	0
@@ -503,7 +503,7 @@ osEE_tcb_array:
 	.word	0
 	.word	0
 	.byte	0
-	.byte	3
+	.byte	2
 	.byte	0
 	.zero	1
 	.word	0
@@ -3854,7 +3854,7 @@ osEE_task_stack_1:
 	.uleb128 0x76
 	.string	"OSEE_TC_CORE0_3_ISR_TID 0"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.fe91f59c3746c5a35c29ee7ef240125a,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.d44cbe7760c67535463e6f8ad88ce699,comdat
 .Ldebug_macro2:
 	.uahalf	0x4
 	.byte	0
@@ -3914,10 +3914,10 @@ osEE_task_stack_1:
 	.string	"Task_AEB (12U)"
 	.byte	0x1
 	.uleb128 0x45
-	.string	"LCD_TEST (13U)"
+	.string	"LCD_IsIntunnel (13U)"
 	.byte	0x1
 	.uleb128 0x46
-	.string	"LED_KING (14U)"
+	.string	"Display_BodyStatus (14U)"
 	.byte	0x1
 	.uleb128 0x4d
 	.string	"osEE_task_stack_1_StackSize (1024U)"
@@ -9386,8 +9386,8 @@ osEE_task_stack_1:
 	.string	"p_counter_db"
 	.extern	__USTACK0_END,STT_OBJECT,-1
 	.extern	osEE_idle_hook_wrapper,STT_FUNC,0
-	.extern	FuncLED_KING,STT_FUNC,0
-	.extern	FuncLCD_TEST,STT_FUNC,0
+	.extern	FuncDisplay_BodyStatus,STT_FUNC,0
+	.extern	FuncLCD_IsIntunnel,STT_FUNC,0
 	.extern	FuncTask_AEB,STT_FUNC,0
 	.extern	FuncTask_Motor,STT_FUNC,0
 	.extern	FuncOS_EE_Task_Init,STT_FUNC,0

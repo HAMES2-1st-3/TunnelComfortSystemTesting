@@ -24,65 +24,157 @@ DeclareTask(ADC_Example);
 DeclareTask(OS_EE_Task_Init);
 DeclareTask(Task_Motor);
 DeclareTask(Task_AEB);
-DeclareTask(LCD_TEST);
-DeclareTask(LED_KING);
+DeclareTask(LCD_IsIntunnel);
+DeclareTask(Display_BodyStatus);
 int duty=0;
 unsigned char ch;
 unsigned char dir;
 int flag=0;
 int pwm=0;
 
-TASK(LCD_TEST){
+TASK(LCD_IsIntunnel){
 
-	//while(1){
-		//setLED1(1);
-		char TunnelStatus=getTunnelStatus(); //can에서 받아와
+	char TunnelStatus=getTunnelStatus(); //can에서 받아와
 
-		if(TunnelStatus){ //01 01 01 받았으면 터널 진입모드로
-			delay_ms(1000);
-			write_instruction(0x80); //첫번째 줄 이동
-			delay_ms(1000);
-		  //  write_data('a'); //0x61
-		  //  delay_ms(1000);
-		   // write_data('b');//0x62
-			lcdprint_data("Tunnel In");
-			delay_ms(2000);
+	if(TunnelStatus){ //01 01 01 받았으면 터널 진입모드로
 
-		}
-		else{
-			write_instruction(0xc0); //두번째 줄 이동
-			delay_ms(1000);
-			//write_data('c');//0x63
-			//delay_ms(1000);
-			//write_data('d');//0x64
-			lcdprint_data("Tunnel OFF");
-			delay_ms(2000);
-			//setLED1(0);
-			//delay_ms(1000);
-		}
+		clear_two_lines();
+		/*											*/
+		delay_ms(200);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(200);
+		lcdprint_data("THE CARS ENTER");
 
-	//}
+		delay_ms(200);
+		write_instruction(0xc0); //2번째 줄 이동
+		delay_ms(200);
+		lcdprint_data("TUNNEL MODE!!");
+
+		delay_ms(1000);
+		/*											*/
+	}
+	else{
+
+		clear_two_lines();	//클리어해
+
+		delay_ms(200);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(200);
+
+		lcdprint_data("Tunnel MODE OFF!");
+		delay_ms(1000);
+		clear_lcdprint();
+
+	}
+
+
 	TerminateTask();
 }
 
-TASK(LED_KING){
-	//while(1){
-	int HeadLampStatus=getLEDKing(); //can에서 받아와
+TASK(Display_BodyStatus){
+
+	char HeadLampStatus=getLEDKing(); //can에서 받아와
 
 	if(HeadLampStatus){ //01 받았으면 터널 진입으로 헤드램프 on으로 왕눈이도 불들어와
-		setHeadlampLED(HeadLampStatus);
-		//delay_ms(1000);
+
+		setHeadlampLED(1);
+		clear_two_lines();
+
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("TUNNEL MODE: ON");
+
+		delay_ms(1500);
+		clear_two_lines();
+
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("SWITCH TO");
+
+		delay_ms(100);
+		write_instruction(0xc0); //2번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("INSIDE AIR MODE");
+		delay_ms(1500);
+		clear_two_lines();
+		//
+		delay_ms(100);
+		write_instruction(0x80);
+		delay_ms(100);
+		lcdprint_data("ROLLS UP");
+
+		delay_ms(100);
+		write_instruction(0xc0); //2번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("THE WINDOW!");
+		delay_ms(1500);
+		clear_two_lines();
+
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		//
+		lcdprint_data("HEADLAMPS ON!");
+		delay_ms(2000);
+		clear_two_lines();
+
 	}
 	else{ //00 받아 탈출
-		setHeadlampLED(HeadLampStatus);
-		//delay_ms(1000);
+		setHeadlampLED(0);
+		clear_two_lines();
+		//클리어해
+
+		//규칙
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("SWITCH TO");
+
+		delay_ms(100);
+		write_instruction(0xc0); //2번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("OUTSIDE AIR MODE");
+		delay_ms(1500);
+		clear_two_lines();
+
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		//
+
+		delay_ms(300);
+		lcdprint_data("RETURN TO");
+		delay_ms(100);
+		write_instruction(0xc0); //2번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("PREVIOUS WINDOW");
+		delay_ms(1500);
+		clear_lcdprint();
+
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		//
+		delay_ms(200);
+		lcdprint_data("HEADLAMPS OFF!");
+		delay_ms(1500);
+		clear_two_lines();
+
+		delay_ms(100);
+		write_instruction(0x80); //첫번째 줄 이동
+		delay_ms(100);
+		lcdprint_data("TUNNEL MODE: OFF");
+		delay_ms(1000);
+		clear_two_lines();
+
 	}
-	//}
+
 	TerminateTask();
 }
 
 TASK(Task_Motor){
-	//toggleLED1();
 
 	while(1){
 			ch=_in_uart3();
@@ -113,19 +205,12 @@ TASK(Task_AEB){
 }
 TASK(Blink_LED)
 {
-	//while(1){
+
 		toggleLED1();
 		delay_ms(500);
-		//unsigned int i = 0; while (i++ < 1000);
-
-		//setLED2(0);
-		//i = 0; while (i++ < 1000);
-		//toggleLED2();
-		//delay_ms(1000);
-		//unsigned int i = 0; while (i++ < 1000);
 		//Driver_Can_TxTest();
 		//can_Send(signal_type, wheretoecu);
-	//}
+
 		TerminateTask();
 }
 
@@ -240,6 +325,35 @@ TASK(OS_EE_Task_Init)
 {
 	while(1){
 
+		if(getTunnelStatus()==1){ //터널 in
+			//clear_two_lines();
+			delay_ms(100);
+			write_instruction(0x80); //첫번째 줄 이동
+			delay_ms(100);
+			lcdprint_data("TUNNEL MODE: ON");
+
+			delay_ms(100);
+			write_instruction(0xc0); //2번째 줄 이동
+			delay_ms(100);
+			clear_lcdprint();
+			delay_ms(100);
+		}
+		else {
+			//clear_two_lines();
+			delay_ms(100);
+			delay_ms(100);
+			write_instruction(0x80); //첫번째 줄 이동
+			delay_ms(100);
+			//lcdprint_data("HYUNDAI AUTOEVER");
+			lcdprint_data("TUNNEL MODE_ OFF");
+			delay_ms(100);
+
+			delay_ms(100);
+			write_instruction(0xc0); //2번째 줄 이동
+			delay_ms(100);
+			clear_lcdprint();
+			delay_ms(100);
+		}
 	}
 	TerminateTask();
 }
@@ -249,8 +363,7 @@ int main(void)
 	SYSTEM_Init();
 	InterruptInit();
 	//EnableAllInterrupts();
-	/* enable external interrupts */
-//	_enable();
+
 
 
 	Init_GPIO();
@@ -260,7 +373,7 @@ int main(void)
 	_init_uart3();
 	//init_gpt2();
 //	Init_DCMotor();
-//	Init_DCMotorPWM();
+	//Init_DCMotorPWM();
 	//init_gpt2();
 //	Init_Ultrasonics();
 //	Init_Buzzer();

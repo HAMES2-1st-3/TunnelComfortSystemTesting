@@ -370,8 +370,8 @@
 #define OS_EE_Task_Init (10U)
 #define Task_Motor (11U)
 #define Task_AEB (12U)
-#define LCD_TEST (13U)
-#define LED_KING (14U)
+#define LCD_IsIntunnel (13U)
+#define Display_BodyStatus (14U)
 
 
 
@@ -7684,8 +7684,8 @@ extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
-extern void FuncLCD_TEST ( void );
-extern void FuncLED_KING ( void );
+extern void FuncLCD_IsIntunnel ( void );
+extern void FuncDisplay_BodyStatus ( void );
 
 
 void CAN_RX_HND(void);
@@ -8531,7 +8531,7 @@ static OsEE_TCB
   },
   {
                                 0U,
-                                2U,
+                                3U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
                                 0U,
@@ -8540,7 +8540,7 @@ static OsEE_TCB
   },
   {
                                 0U,
-                                3U,
+                                2U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
                                 0U,
@@ -8751,9 +8751,9 @@ static OsEE_TDB
                             &osEE_tcb_array[13U],
                             13U,
                             OSEE_TASK_TYPE_BASIC,
-                            FuncLCD_TEST,
-                            2U,
-                            2U,
+                            FuncLCD_IsIntunnel,
+                            3U,
+                            3U,
                             1U
   },
   {
@@ -8765,9 +8765,9 @@ static OsEE_TDB
                             &osEE_tcb_array[14U],
                             14U,
                             OSEE_TASK_TYPE_BASIC,
-                            FuncLED_KING,
-                            3U,
-                            3U,
+                            FuncDisplay_BodyStatus,
+                            2U,
+                            2U,
                             1U
   },
   {

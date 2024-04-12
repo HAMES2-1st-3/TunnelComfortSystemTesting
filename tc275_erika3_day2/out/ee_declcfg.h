@@ -43,8 +43,8 @@ DeclareTask(ADC_Example);
 DeclareTask(OS_EE_Task_Init);
 DeclareTask(Task_Motor);
 DeclareTask(Task_AEB);
-DeclareTask(LCD_TEST);
-DeclareTask(LED_KING);
+DeclareTask(LCD_IsIntunnel);
+DeclareTask(Display_BodyStatus);
 
 
 ISR2(CAN_RX_HND);

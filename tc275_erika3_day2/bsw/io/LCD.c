@@ -73,10 +73,28 @@ void lcdprint_data(char *str){//문자열 출력
 
 	while(str[i]!='\0'){
 		write_data(str[i++]);
-		delay_ms(10);
+		delay_ms(20);
 	}
 }
 
+void clear_lcdprint(void){
+	unsigned char i=0;
+	for(i=0;i<16;i++){
+		write_data(' ');
+		delay_ms(30);
+	}
+}
+void clear_two_lines(void){
+	delay_ms(100);
+	write_instruction(0x80);
+	delay_ms(100);
+	clear_lcdprint();
+
+	delay_ms(100);
+	write_instruction(0xc0);
+	delay_ms(100);
+	clear_lcdprint();
+}
 void delay_us(unsigned int m){
 	unsigned int i,j;
 	for(i=0;i<m;i++){

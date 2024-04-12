@@ -15,5 +15,6 @@ void write_instruction(unsigned char i);
 void write_data(char d);
 void delay_us(unsigned int m);
 void lcdprint_data(char *str);
-
+void clear_lcdprint(void);
+void clear_two_lines(void);
 #endif /* BSW_IO_LCD_H_ */

@@ -92,6 +92,42 @@ CPU tc275_shieldbuddy
 	
 	
 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 ALARM alarm1 {
 		ACTION = ACTIVATETASK {
 			TASK = Blink_LED;
@@ -271,14 +307,14 @@ ALARM alarm1 {
 			SIZE = 1024;
 		};
 	};
-	TASK LCD_TEST {
-		PRIORITY = 2;
+	TASK LCD_IsIntunnel {
+		PRIORITY = 3;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = SHARED;
 	};
-	TASK LED_KING {
-		PRIORITY = 3;
+	TASK Display_BodyStatus {
+		PRIORITY = 2;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = SHARED;

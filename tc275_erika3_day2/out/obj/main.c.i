@@ -365,8 +365,8 @@
 #define OS_EE_Task_Init (10U)
 #define Task_Motor (11U)
 #define Task_AEB (12U)
-#define LCD_TEST (13U)
-#define LED_KING (14U)
+#define LCD_IsIntunnel (13U)
+#define Display_BodyStatus (14U)
 
 
 
@@ -7679,8 +7679,8 @@ extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
-extern void FuncLCD_TEST ( void );
-extern void FuncLED_KING ( void );
+extern void FuncLCD_IsIntunnel ( void );
+extern void FuncDisplay_BodyStatus ( void );
 
 
 void CAN_RX_HND(void);
@@ -171519,6 +171519,8 @@ void write_instruction(unsigned char i);
 void write_data(char d);
 void delay_us(unsigned int m);
 void lcdprint_data(char *str);
+void clear_lcdprint(void);
+void clear_two_lines(void);
 # 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3
@@ -172765,57 +172767,150 @@ extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
-extern void FuncLCD_TEST ( void );
-extern void FuncLED_KING ( void );
+extern void FuncLCD_IsIntunnel ( void );
+extern void FuncDisplay_BodyStatus ( void );
 int duty=0;
 unsigned char ch;
 unsigned char dir;
 int flag=0;
 int pwm=0;
 
-void FuncLCD_TEST ( void ){
+void FuncLCD_IsIntunnel ( void ){
 
+ char TunnelStatus=getTunnelStatus();
 
+ if(TunnelStatus){
 
-  char TunnelStatus=getTunnelStatus();
+  clear_two_lines();
 
-  if(TunnelStatus){
-   delay_ms(1000);
-   write_instruction(0x80);
-   delay_ms(1000);
+  delay_ms(200);
+  write_instruction(0x80);
+  delay_ms(200);
+  lcdprint_data("THE CARS ENTER");
 
+  delay_ms(200);
+  write_instruction(0xc0);
+  delay_ms(200);
+  lcdprint_data("TUNNEL MODE!!");
 
+  delay_ms(1000);
 
-   lcdprint_data("Tunnel In");
-   delay_ms(2000);
+ }
+ else{
 
-  }
-  else{
-   write_instruction(0xc0);
-   delay_ms(1000);
+  clear_two_lines();
 
+  delay_ms(200);
+  write_instruction(0x80);
+  delay_ms(200);
 
+  lcdprint_data("Tunnel MODE OFF!");
+  delay_ms(1000);
+  clear_lcdprint();
 
-   lcdprint_data("Tunnel OFF");
-   delay_ms(2000);
-
-
-  }
+ }
 
 
  TerminateTask();
 }
 
-void FuncLED_KING ( void ){
+void FuncDisplay_BodyStatus ( void ){
 
- int HeadLampStatus=getLEDKing();
+ char HeadLampStatus=getLEDKing();
 
  if(HeadLampStatus){
-  setHeadlampLED(HeadLampStatus);
+
+  setHeadlampLED(1);
+  clear_two_lines();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+  lcdprint_data("TUNNEL MODE: ON");
+
+  delay_ms(1500);
+  clear_two_lines();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+  lcdprint_data("SWITCH TO");
+
+  delay_ms(100);
+  write_instruction(0xc0);
+  delay_ms(100);
+  lcdprint_data("INSIDE AIR MODE");
+  delay_ms(1500);
+  clear_two_lines();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+  lcdprint_data("ROLLS UP");
+
+  delay_ms(100);
+  write_instruction(0xc0);
+  delay_ms(100);
+  lcdprint_data("THE WINDOW!");
+  delay_ms(1500);
+  clear_two_lines();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+
+  lcdprint_data("HEADLAMPS ON!");
+  delay_ms(2000);
+  clear_two_lines();
 
  }
  else{
-  setHeadlampLED(HeadLampStatus);
+  setHeadlampLED(0);
+  clear_two_lines();
+
+
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+  lcdprint_data("SWITCH TO");
+
+  delay_ms(100);
+  write_instruction(0xc0);
+  delay_ms(100);
+  lcdprint_data("OUTSIDE AIR MODE");
+  delay_ms(1500);
+  clear_two_lines();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+
+
+  delay_ms(300);
+  lcdprint_data("RETURN TO");
+  delay_ms(100);
+  write_instruction(0xc0);
+  delay_ms(100);
+  lcdprint_data("PREVIOUS WINDOW");
+  delay_ms(1500);
+  clear_lcdprint();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+
+  delay_ms(200);
+  lcdprint_data("HEADLAMPS OFF!");
+  delay_ms(1500);
+  clear_two_lines();
+
+  delay_ms(100);
+  write_instruction(0x80);
+  delay_ms(100);
+  lcdprint_data("TUNNEL MODE: OFF");
+  delay_ms(1000);
+  clear_two_lines();
 
  }
 
@@ -172823,7 +172918,6 @@ void FuncLED_KING ( void ){
 }
 
 void FuncTask_Motor ( void ){
-
 
  while(1){
    ch=_in_uart3();
@@ -172857,7 +172951,9 @@ void FuncBlink_LED ( void )
 
   toggleLED1();
   delay_ms(500);
-# 129 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+
+
+
   TerminateTask();
 }
 
@@ -172972,6 +173068,35 @@ void FuncOS_EE_Task_Init ( void )
 {
  while(1){
 
+  if(getTunnelStatus()==1){
+
+   delay_ms(100);
+   write_instruction(0x80);
+   delay_ms(100);
+   lcdprint_data("TUNNEL MODE: ON");
+
+   delay_ms(100);
+   write_instruction(0xc0);
+   delay_ms(100);
+   clear_lcdprint();
+   delay_ms(100);
+  }
+  else {
+
+   delay_ms(100);
+   delay_ms(100);
+   write_instruction(0x80);
+   delay_ms(100);
+
+   lcdprint_data("TUNNEL MODE_ OFF");
+   delay_ms(100);
+
+   delay_ms(100);
+   write_instruction(0xc0);
+   delay_ms(100);
+   clear_lcdprint();
+   delay_ms(100);
+  }
  }
  TerminateTask();
 }
@@ -172984,13 +173109,12 @@ int main(void)
 
 
 
-
  Init_GPIO();
  init_lcd();
  Driver_Can_Init();
 
  _init_uart3();
-# 270 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
+# 383 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\main.c"
  StartOS(((AppModeType)0U));
 
  return 0;

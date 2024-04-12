@@ -164179,6 +164179,8 @@ void write_instruction(unsigned char i);
 void write_data(char d);
 void delay_us(unsigned int m);
 void lcdprint_data(char *str);
+void clear_lcdprint(void);
+void clear_two_lines(void);
 # 29 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\../../main.h" 2
 
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\stdio.h" 1 3

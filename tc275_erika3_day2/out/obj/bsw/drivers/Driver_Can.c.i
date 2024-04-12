@@ -368,8 +368,8 @@
 #define OS_EE_Task_Init (10U)
 #define Task_Motor (11U)
 #define Task_AEB (12U)
-#define LCD_TEST (13U)
-#define LED_KING (14U)
+#define LCD_IsIntunnel (13U)
+#define Display_BodyStatus (14U)
 
 
 
@@ -7682,8 +7682,8 @@ extern void FuncADC_Example ( void );
 extern void FuncOS_EE_Task_Init ( void );
 extern void FuncTask_Motor ( void );
 extern void FuncTask_AEB ( void );
-extern void FuncLCD_TEST ( void );
-extern void FuncLED_KING ( void );
+extern void FuncLCD_IsIntunnel ( void );
+extern void FuncDisplay_BodyStatus ( void );
 
 
 void CAN_RX_HND(void);
@@ -75972,11 +75972,13 @@ char tunnel_ok=0;
 
 
 void CAN_RX_HND(void){
- IfxMultican_Status readStatusfromsensor;
+  IfxMultican_Status readStatusfromsensor;
      IfxMultican_Status readStatusfrombody;
 
      static uint32_t u32nuTemp1=0u;
-     static uint32_t u32nuTemp2=0u;
+
+
+     static uint32_t u32nuTemp3=0u;
 
      IfxCpu_enableInterrupts();
 
@@ -75985,40 +75987,51 @@ void CAN_RX_HND(void){
 
      if(readStatusfromsensor==IfxMultican_Status_newData){
          u32nuTemp1=stRxMsgData[0].data[0];
-         u32nuTemp2=stRxMsgData[0].data[1];
 
 
-         if(u32nuTemp1==0x1){
-          led_king=1;
+
+         if(u32nuTemp1==0x00000001){
+
+          tunnel_ok=1;
+          ActivateTask((13U));
          }
          else if(u32nuTemp1==0x0){
-          led_king=0;
+
+          tunnel_ok=0;
+          ActivateTask((13U));
          }
          else {
           ;
          }
-         toggleLED1();
-         ActivateTask((14U));
 
-      }
+     }
 
 
      readStatusfrombody=IfxMultican_Can_MsgObj_readMessage(&stEcu1Can.CanEcu1MsgRxObj[1], &stRxMsgData[1]);
 
      if(readStatusfrombody==IfxMultican_Status_newData){
-             u32nuTemp1=stRxMsgData[1].data[0];
-             u32nuTemp2=stRxMsgData[1].data[1];
-          if(u32nuTemp1==0x15){
-           tunnel_ok=1;
+             u32nuTemp3=stRxMsgData[1].data[0];
+
+          if(u32nuTemp3==0x00010101){
+
+           led_king=1;
+           ActivateTask((14U));
             }
+          else if(u32nuTemp3==0x00000000){
+
+           led_king=0;
+           ActivateTask((14U));
+          }
           else{
-           tunnel_ok=0;
+           ;
           }
 
-          ActivateTask((13U));
-         }
+
+
+       }
 }
-# 142 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\drivers\\Driver_Can.c"
+
+
 char getLEDKing(void){
  return led_king;
 }
@@ -76058,7 +76071,7 @@ void Driver_Can_Init(void)
 
 
 
-       Driver_Can_EnrollObject(0u, 0x101, IfxMultican_Frame_transmit, IfxMultican_DataLengthCode_8, (0u), &stEcu1Can.CanEcu1MsgTxObj[0]);
+       Driver_Can_EnrollObject(0u, 0x300, IfxMultican_Frame_transmit, IfxMultican_DataLengthCode_8, (0u), &stEcu1Can.CanEcu1MsgTxObj[0]);
 
 
        Driver_Can_EnrollObject(10u, 0x100, IfxMultican_Frame_receive, IfxMultican_DataLengthCode_8, (0u), &stEcu1Can.CanEcu1MsgRxObj[0]);
@@ -76106,7 +76119,7 @@ void Driver_Can_TxTest(void)
 
 
         IfxMultican_Message msg;
-        IfxMultican_Message_init(&msg, 0x101, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
+        IfxMultican_Message_init(&msg, 0x300, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
 
 
         while (IfxMultican_Can_MsgObj_sendMessage(&stEcu1Can.CanEcu1MsgTxObj[0], &msg) == IfxMultican_Status_notSentBusy)

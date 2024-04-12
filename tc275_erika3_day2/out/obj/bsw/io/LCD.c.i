@@ -153087,6 +153087,8 @@ void write_instruction(unsigned char i);
 void write_data(char d);
 void delay_us(unsigned int m);
 void lcdprint_data(char *str);
+void clear_lcdprint(void);
+void clear_two_lines(void);
 # 10 "C:\\Users\\user\\ECLIPS~1\\TC275_~1\\bsw\\io\\LCD.c" 2
 
 void init_lcd(void){
@@ -153154,10 +153156,28 @@ void lcdprint_data(char *str){
 
  while(str[i]!='\0'){
   write_data(str[i++]);
-  delay_ms(10);
+  delay_ms(20);
  }
 }
 
+void clear_lcdprint(void){
+ unsigned char i=0;
+ for(i=0;i<16;i++){
+  write_data(' ');
+  delay_ms(30);
+ }
+}
+void clear_two_lines(void){
+ delay_ms(100);
+ write_instruction(0x80);
+ delay_ms(100);
+ clear_lcdprint();
+
+ delay_ms(100);
+ write_instruction(0xc0);
+ delay_ms(100);
+ clear_lcdprint();
+}
 void delay_us(unsigned int m){
  unsigned int i,j;
  for(i=0;i<m;i++){
