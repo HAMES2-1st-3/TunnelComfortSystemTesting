@@ -3,13 +3,13 @@
 #include "ee_api_types.h"
 #include "main.h"
 
-#define MAX_DIST 16
+#define MAX_DIST 101
 void StartupHook(void)
 {
 	//my_printf("Hello aaaorld!\n");
 	//ActivateTask(Task_Motor);
 	//ActivateTask(Blink_LED);
-//	ActivateTask(Ctrl_Btn);
+	ActivateTask(Ctrl_Btn);
 //	ActivateTask(Ctrl_Window);
 
 }
@@ -68,40 +68,40 @@ TASK(Ctrl_Btn){
 }
 TASK(Ctrl_Window){
 //	uint16 internal = getisInternal();
-	uint16 internal = getisDark();
-	static unsigned char backupDir ;	// 0: open / 1: close
+	uint16 internal = getisInternal();
+	static unsigned char backupDir ;	// 0: close / 1: open
 	static uint32 backupDist;
 	if(internal){
 		backupDir = status.window;	// save current status to backup
 		backupDist = status.dist;
-		status.window = 1;		// close
+		status.window = 0;		// close
 	}
 	else{
 		status.window = backupDir;
 	}
 
-//	uint32 data = status.hLamp << 16 || status.window << 8 || status.inAir;
-	uint32 data = 0x00010101;
+	uint32 data = status.hLamp << 16 | (1-status.window) << 8 | status.inAir;
+//	uint32 data = 0x00010101;
 	Driver_Can_TxTest(data);
-	if(status.window){ // close
+	if(!status.window){ // close
 		while(status.dist < MAX_DIST){ // close window (max window distance: 16cm)
 			status.dist = (int)ReadUltrasonic_noFilt();
 			my_printf("[CLOSE] Distance: %dcm /  MAX: %dcm\n", status.dist, MAX_DIST);
-			movChA_PWM(status.wDuty, 1);
+			movChB_PWM(status.wDuty, 0); //close
 		}
 	}else{ // open
 		while(status.dist > backupDist){
 			status.dist = (int)ReadUltrasonic_noFilt();
 			my_printf("[OPEN] Distance: %dcm /  backupDist: %dcm\n", status.dist, backupDist);
-			movChA_PWM(status.wDuty, 0); // open
+			movChB_PWM(status.wDuty, 1); // open
 		}
 	}
-	stopChA();
+	stopChB();
 	TerminateTask();
 }
 
 TASK(Ctrl_HLamp){
-	uint16 dark = getisInternal();
+	uint16 dark = getisDark();
 	/* [START] Temporary INPUT PROCESS
 	uint16 dark = 0;
 	unsigned char ch;
@@ -126,7 +126,7 @@ TASK(Ctrl_HLamp){
 	TerminateTask();
 }
 TASK(Ctrl_InAir){
-	volatile uint16 internal = getisInternal();
+	uint16 internal = getisInternal();
 //	int cur = status.inAir;		// 0: off / 1: on
 	static unsigned char backup;
 //	int duty = 20;
@@ -366,8 +366,8 @@ int main(void)
 
 	int iniHLamp = 0;	// 0: off  / 1: on
 	int iniInAir = 0;	// 0: off  / 1: on
-	int iniWindow = 0; 	// 0: open / 1: close
-	int inAirDuty = 20;
+	int iniWindow = 1; 	// 0: close / 1: open
+	int inAirDuty = 40;
 	int windowDuty = 60;
 	Init_GPIO(iniHLamp);
 //	init_lcd();

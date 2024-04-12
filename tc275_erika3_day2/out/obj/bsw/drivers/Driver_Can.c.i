@@ -76001,9 +76001,9 @@ void CAN_RX_HND(void){
 
  if(readInternal==IfxMultican_Status_newData){
   isInternal = stRxMsgData[0].data[0];
+  ActivateTask((16U));
 
-
-
+  ActivateTask((15U));
  }
 
 
@@ -76011,7 +76011,7 @@ void CAN_RX_HND(void){
 
  if(readDark==IfxMultican_Status_newData){
   isDark = stRxMsgData[1].data[0];
-  ActivateTask((15U));
+  ActivateTask((17U));
  }
 }
 # 130 "C:\\TC275_~2\\bsw\\drivers\\Driver_Can.c"

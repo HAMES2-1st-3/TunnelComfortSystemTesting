@@ -64,9 +64,9 @@ ISR(CAN_RX_HND){
 
 	if(readInternal==IfxMultican_Status_newData){
 		isInternal = stRxMsgData[0].data[0];
-//		ActivateTask(Ctrl_InAir);
+		ActivateTask(Ctrl_InAir);
 //		ActivateTask(Ctrl_HLamp);
-//		ActivateTask(Ctrl_Window);
+		ActivateTask(Ctrl_Window);
 	}
 
 	//frmBodyStatus 메세지 0x200
@@ -74,7 +74,7 @@ ISR(CAN_RX_HND){
 
 	if(readDark==IfxMultican_Status_newData){
 		isDark = stRxMsgData[1].data[0];
-		ActivateTask(Ctrl_Window);
+		ActivateTask(Ctrl_HLamp);
 	}
 }
 

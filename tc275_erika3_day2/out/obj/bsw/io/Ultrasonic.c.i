@@ -165451,7 +165451,8 @@ double ReadUltrasonic_noFilt(void)
  timer_end = getGpt12_T4();
  duration = (timer_end - 0) * 10.24;
 
- distance = 0.0343 * duration / 2.0;
+
+ distance = 0.343 * duration / 2.0;
  return distance;
 }
 

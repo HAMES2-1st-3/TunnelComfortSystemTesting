@@ -81,13 +81,13 @@ ReadUltrasonic_noFilt:
 	.loc 1 35 0
 	call	getGpt12_T4
 .LVL4:
-	.loc 1 40 0
-	movh	%d15, 15924
+	.loc 1 41 0
+	movh	%d15, 16353
 	.loc 1 36 0
 	utof	%d2, %d2
 .LVL5:
-	.loc 1 40 0
-	addi	%d15, %d15, -11090
+	.loc 1 41 0
+	addi	%d15, %d15, -13863
 	mul.f	%d2, %d2, %d15
 	ret
 .L9:
@@ -111,7 +111,7 @@ ReadUltrasonic_noFilt:
 	.type	ReadUltrasonic_Filt, @function
 ReadUltrasonic_Filt:
 .LFB328:
-	.loc 1 43 0 is_stmt 1
+	.loc 1 44 0 is_stmt 1
 	sub.a	%SP, 8
 .LCFI1:
 .LBB6:
@@ -164,50 +164,50 @@ ReadUltrasonic_Filt:
 	.loc 1 35 0
 	call	getGpt12_T4
 .LVL9:
-	.loc 1 38 0
-	movh	%d15, 15924
+	.loc 1 39 0
+	movh	%d15, 16353
 	.loc 1 36 0
 	utof	%d2, %d2
 .LVL10:
 .LBE7:
 .LBE6:
-	.loc 1 52 0
+	.loc 1 53 0
 	movh.a	%a15, hi:old_index.37647
 .LBB10:
 .LBB8:
-	.loc 1 38 0
-	addi	%d15, %d15, -11090
+	.loc 1 39 0
+	addi	%d15, %d15, -13863
 	mul.f	%d2, %d2, %d15
 .LVL11:
 .LBE8:
 .LBE10:
-	.loc 1 52 0
+	.loc 1 53 0
 	ld.w	%d15, [%a15] lo:old_index.37647
-	.loc 1 53 0
+	.loc 1 54 0
 	mov	%d4, 5
-	.loc 1 52 0
+	.loc 1 53 0
 	add	%d15, 1
-	.loc 1 53 0
+	.loc 1 54 0
 	div	%e4, %d15, %d4
-	.loc 1 54 0
+	.loc 1 55 0
 	movh.a	%a3, hi:avg_filt_buf.37646
-	.loc 1 53 0
-	st.w	[%a15] lo:old_index.37647, %d5
 	.loc 1 54 0
+	st.w	[%a15] lo:old_index.37647, %d5
+	.loc 1 55 0
 	lea	%a15, [%a3] lo:avg_filt_buf.37646
 	addsc.a	%a2, %a15, %d5, 2
 	st.w	[%a2]0, %d2
-	.loc 1 55 0
+	.loc 1 56 0
 	movh.a	%a2, hi:sensorRxCnt.37649
 	ld.w	%d15, [%a2] lo:sensorRxCnt.37649
 	add	%d15, 1
 	st.w	[%a2] lo:sensorRxCnt.37649, %d15
-	.loc 1 58 0
+	.loc 1 59 0
 	jlt	%d15, 5, .L20
 .LVL12:
 .LBB11:
 .LBB12:
-	.loc 1 60 0
+	.loc 1 61 0
 	ld.w	%d15, [%a15] 4
 	ld.w	%d2, [%a3] lo:avg_filt_buf.37646
 .LVL13:
@@ -223,14 +223,14 @@ ReadUltrasonic_Filt:
 	add.f	%d2, %d2, %d15
 .LVL17:
 .LBE12:
-	.loc 1 61 0
+	.loc 1 62 0
 	movh	%d15, 15949
 	addi	%d15, %d15, -13107
 	mul.f	%d2, %d2, %d15
 .LVL18:
 .L20:
 .LBE11:
-	.loc 1 67 0
+	.loc 1 68 0
 	ret
 .LVL19:
 .L23:
@@ -8060,7 +8060,7 @@ old_index.37647:
 	.byte	0x1
 	.string	"ReadUltrasonic_Filt"
 	.byte	0x1
-	.byte	0x2a
+	.byte	0x2b
 	.byte	0x1
 	.uaword	0x4499
 	.uaword	.LFB328
@@ -8072,12 +8072,12 @@ old_index.37647:
 	.uleb128 0x1a
 	.string	"distance_nofilt"
 	.byte	0x1
-	.byte	0x2c
+	.byte	0x2d
 	.uaword	0x4499
 	.uleb128 0x22
 	.string	"avg_filt_buf"
 	.byte	0x1
-	.byte	0x2d
+	.byte	0x2e
 	.uaword	0x4767
 	.byte	0x5
 	.byte	0x3
@@ -8085,7 +8085,7 @@ old_index.37647:
 	.uleb128 0x22
 	.string	"old_index"
 	.byte	0x1
-	.byte	0x2e
+	.byte	0x2f
 	.uaword	0x255
 	.byte	0x5
 	.byte	0x3
@@ -8093,13 +8093,13 @@ old_index.37647:
 	.uleb128 0x23
 	.string	"distance_filt"
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x30
 	.uaword	0x4499
 	.uaword	.LLST3
 	.uleb128 0x22
 	.string	"sensorRxCnt"
 	.byte	0x1
-	.byte	0x30
+	.byte	0x31
 	.uaword	0x255
 	.byte	0x5
 	.byte	0x3
@@ -8109,7 +8109,7 @@ old_index.37647:
 	.uaword	.LBB6
 	.uaword	.Ldebug_ranges0+0
 	.byte	0x1
-	.byte	0x32
+	.byte	0x33
 	.uaword	0x4736
 	.uleb128 0x25
 	.uaword	.Ldebug_ranges0+0
@@ -8154,7 +8154,7 @@ old_index.37647:
 	.uleb128 0x23
 	.string	"sum"
 	.byte	0x1
-	.byte	0x3b
+	.byte	0x3c
 	.uaword	0x4499
 	.uaword	.LLST7
 	.uleb128 0x26
@@ -8163,7 +8163,7 @@ old_index.37647:
 	.uleb128 0x23
 	.string	"i"
 	.byte	0x1
-	.byte	0x3c
+	.byte	0x3d
 	.uaword	0x255
 	.uaword	.LLST8
 	.byte	0
@@ -8920,7 +8920,7 @@ old_index.37647:
 	.byte	0xf4
 	.uleb128 0x23c
 	.byte	0x4
-	.uaword	0x3e33d4ae
+	.uaword	0x3fe0c9d9
 	.byte	0x1e
 	.byte	0x9f
 	.uaword	0

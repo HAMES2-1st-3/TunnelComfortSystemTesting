@@ -172768,13 +172768,13 @@ typedef struct{
 } bodyStatus;
 # 5 "C:\\TC275_~2\\main.c" 2
 
-#define MAX_DIST 16
+#define MAX_DIST 101
 void StartupHook(void)
 {
 
 
 
-
+ ActivateTask((18U));
 
 
 }
@@ -172833,40 +172833,40 @@ void FuncCtrl_Btn ( void ){
 }
 void FuncCtrl_Window ( void ){
 
- uint16 internal = getisDark();
+ uint16 internal = getisInternal();
  static unsigned char backupDir ;
  static uint32 backupDist;
  if(internal){
   backupDir = status.window;
   backupDist = status.dist;
-  status.window = 1;
+  status.window = 0;
  }
  else{
   status.window = backupDir;
  }
 
+ uint32 data = status.hLamp << 16 | (1-status.window) << 8 | status.inAir;
 
- uint32 data = 0x00010101;
  Driver_Can_TxTest(data);
- if(status.window){
-  while(status.dist < 16){
+ if(!status.window){
+  while(status.dist < 101){
    status.dist = (int)ReadUltrasonic_noFilt();
-   my_printf("[CLOSE] Distance: %dcm /  MAX: %dcm\n", status.dist, 16);
-   movChA_PWM(status.wDuty, 1);
+   my_printf("[CLOSE] Distance: %dcm /  MAX: %dcm\n", status.dist, 101);
+   movChB_PWM(status.wDuty, 0);
   }
  }else{
   while(status.dist > backupDist){
    status.dist = (int)ReadUltrasonic_noFilt();
    my_printf("[OPEN] Distance: %dcm /  backupDist: %dcm\n", status.dist, backupDist);
-   movChA_PWM(status.wDuty, 0);
+   movChB_PWM(status.wDuty, 1);
   }
  }
- stopChA();
+ stopChB();
  TerminateTask();
 }
 
 void FuncCtrl_HLamp ( void ){
- uint16 dark = getisInternal();
+ uint16 dark = getisDark();
 # 117 "C:\\TC275_~2\\main.c"
  static unsigned char backup;
 
@@ -172880,7 +172880,7 @@ void FuncCtrl_HLamp ( void ){
  TerminateTask();
 }
 void FuncCtrl_InAir ( void ){
- volatile uint16 internal = getisInternal();
+ uint16 internal = getisInternal();
 
  static unsigned char backup;
 
@@ -173111,8 +173111,8 @@ int main(void)
 
  int iniHLamp = 0;
  int iniInAir = 0;
- int iniWindow = 0;
- int inAirDuty = 20;
+ int iniWindow = 1;
+ int inAirDuty = 40;
  int windowDuty = 60;
  Init_GPIO(iniHLamp);
 
