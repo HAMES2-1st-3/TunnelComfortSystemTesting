@@ -41,18 +41,18 @@ ALARM Alarm_20ms_tunnel_detect {
 			TASK = DETECT_Tunnel_Mode;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 1000;
-			CYCLETIME = 1000;
+			ALARMTIME = 1010;
+			CYCLETIME = 20;
 		};
 		COUNTER = SystemTimer;
 	};
-	ALARM Alarm_30ms_headlamp {
+	ALARM Alarm_20ms_headlamp {
 		ACTION = ACTIVATETASK {
 			TASK = HeadLamp;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 1030;
-			CYCLETIME = 1000;
+			ALARMTIME = 1000;
+			CYCLETIME = 20;
 		};
 		COUNTER = SystemTimer;
 	};
@@ -228,7 +228,7 @@ ALARM Alarm_20ms_tunnel_detect {
 		};
 	};
 	TASK DETECT_Tunnel_Mode {
-		PRIORITY = 1;
+		PRIORITY = 3;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {
@@ -236,7 +236,7 @@ ALARM Alarm_20ms_tunnel_detect {
 		};
 	};
 	TASK HeadLamp {
-		PRIORITY = 2;
+		PRIORITY = 1;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
 		STACK = PRIVATE {

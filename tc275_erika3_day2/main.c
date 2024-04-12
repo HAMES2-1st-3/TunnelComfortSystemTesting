@@ -27,6 +27,12 @@ DeclareTask(DETECT_Tunnel_Mode);
 DeclareTask(HeadLamp);
 
 TASK(HeadLamp){ //isdark 프레임 보내는 태스크
+
+	volatile unsigned int adcResult = 0;
+
+	static unsigned int past_dark_mode = 0;
+	static unsigned int cur_dark_mode = 0;
+
 	volatile unsigned int adcResult = 0;
 	VADC_startConversion();
 	adcResult = VADC_readResult();
@@ -34,13 +40,24 @@ TASK(HeadLamp){ //isdark 프레임 보내는 태스크
 	my_printf("%d\n", adcResult);
 
 
+	past_dark_mode = cur_dark_mode;
 	if(adcResult > 1000){
-		//cur_tunnel_mode = 1;
-		Driver_Can_TX_HeadLamp(0x00000001, 0x00000000);
-		}
+		//If dark
+		cur_dark_mode = 1;
+	}
 	else{
+		//If not dark
+		cur_dark_mode = 0;
+	}
+
+	if(past_dark_mode == 0 && cur_dark_mode == 1){
+		my_printf("It's dark!!\n");
+		//if car is in tunnel
+		Driver_Can_TX_HeadLamp(0x00000001, 0x00000000);
+	} else if(past_dark_mode == 1 && cur_dark_mode == 0){
+		my_printf("It's not dark!!\n");
 		Driver_Can_TX_HeadLamp(0x00000000, 0x00000000);
-		}
+	}
 
 	TerminateTask();
 }

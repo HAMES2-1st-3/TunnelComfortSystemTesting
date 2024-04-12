@@ -68,11 +68,11 @@ osEE_autostart_trigger_db:
 	.size	osEE_trigger_autostart_info_OSDEFAULTAPPMODE, 24
 osEE_trigger_autostart_info_OSDEFAULTAPPMODE:
 	.word	osEE_alarm_db_array
-	.word	1000
-	.word	1000
+	.word	1010
+	.word	20
 	.word	osEE_alarm_db_array+28
-	.word	1030
 	.word	1000
+	.word	20
 	.align 2
 	.type	osEE_alarm_db_ptr_array, @object
 	.size	osEE_alarm_db_ptr_array, 8
@@ -395,8 +395,8 @@ osEE_tdb_array:
 	.byte	0
 	.zero	3
 	.word	FuncDETECT_Tunnel_Mode
-	.byte	1
-	.byte	1
+	.byte	2
+	.byte	2
 	.byte	1
 	.zero	1
 	.word	osEE_sdb_array+88
@@ -408,8 +408,8 @@ osEE_tdb_array:
 	.byte	0
 	.zero	3
 	.word	FuncHeadLamp
-	.byte	2
-	.byte	2
+	.byte	1
+	.byte	1
 	.byte	1
 	.zero	1
 	.word	osEE_sdb_array+96
@@ -535,7 +535,7 @@ osEE_tcb_array:
 	.word	0
 	.word	0
 	.byte	0
-	.byte	1
+	.byte	2
 	.byte	0
 	.zero	1
 	.word	0
@@ -543,7 +543,7 @@ osEE_tcb_array:
 	.word	0
 	.word	0
 	.byte	0
-	.byte	2
+	.byte	1
 	.byte	0
 	.zero	1
 	.word	0
@@ -4135,7 +4135,7 @@ osEE_task_stack_1:
 	.uleb128 0x78
 	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.f881cc1502be57b51797009238c98445,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.e8863eb8fa510eed5b2e3c59fadb5bbe,comdat
 .Ldebug_macro2:
 	.uahalf	0x4
 	.byte	0
@@ -4246,7 +4246,7 @@ osEE_task_stack_1:
 	.string	"Alarm_20ms_tunnel_detect (0U)"
 	.byte	0x1
 	.uleb128 0x6e
-	.string	"Alarm_30ms_headlamp (1U)"
+	.string	"Alarm_20ms_headlamp (1U)"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat
 .Ldebug_macro3:

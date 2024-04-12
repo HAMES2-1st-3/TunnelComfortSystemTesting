@@ -159701,6 +159701,7 @@ void CAN_RxInt0Handler(void);
 Ecu1Can stEcu1Can;
 uint32_t u32nuCanRxCnt=0;
 
+uint32_t cnt = 0;
 
 
 
@@ -159714,7 +159715,6 @@ IfxMultican_Message stRxMsgData[10];
 
 
 void CAN_RxInt0Handler(void){
-
     IfxMultican_Status readStatus;
     static uint32_t u32nuTemp1=0u;
     static uint32_t u32nuTemp2=0u;
@@ -159724,6 +159724,8 @@ void CAN_RxInt0Handler(void){
 
     if(readStatus==IfxMultican_Status_newData){
 
+     my_printf("\n");
+     my_printf(cnt++);
      toggleLED2();
         u32nuTemp1=stRxMsgData[0].data[0];
         u32nuTemp2=stRxMsgData[0].data[1];
@@ -159768,7 +159770,7 @@ void Driver_Can_Init(void)
        Driver_Can_EnrollObject(0u, 0x100, IfxMultican_Frame_transmit, IfxMultican_DataLengthCode_8, (0u), &stEcu1Can.CanEcu1MsgTxObj[0]);
 
 
-
+       Driver_Can_EnrollObject(10u, 0x300, IfxMultican_Frame_receive, IfxMultican_DataLengthCode_8, (0u), &stEcu1Can.CanEcu1MsgRxObj[0]);
 
        Driver_Can_EnrollObject(10u, 0x200, IfxMultican_Frame_transmit, IfxMultican_DataLengthCode_8, (0u), &stEcu1Can.CanEcu1MsgTxObj[1]);
 }
@@ -159820,9 +159822,9 @@ void Driver_Can_TX_HeadLamp(uint32 dataLow,uint32 dataHigh){
  IfxMultican_Message msg;
  IfxMultican_Message_init(&msg, 0x200, dataLow, dataHigh, IfxMultican_DataLengthCode_8);
 
-   toggleLED2();
-         while (IfxMultican_Can_MsgObj_sendMessage(&stEcu1Can.CanEcu1MsgTxObj[1], &msg) == IfxMultican_Status_notSentBusy)
-         {
+ toggleLED2();
+ while (IfxMultican_Can_MsgObj_sendMessage(&stEcu1Can.CanEcu1MsgTxObj[1], &msg) == IfxMultican_Status_notSentBusy)
+ {
 
-         }
+ }
 }

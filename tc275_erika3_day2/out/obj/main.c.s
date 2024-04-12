@@ -21,9 +21,13 @@ StartupHook:
 	.size	StartupHook, .-StartupHook
 .section .rodata,"a",@progbits
 .LC1:
-	.string	"adcResult for HeadLamp : "
+	.string	"adcResult for dark: "
 .LC2:
 	.string	"%d\n"
+.LC3:
+	.string	"it's dark!!!\n"
+.LC4:
+	.string	"It's not dark!!\n"
 .section .text,"ax",@progbits
 	.align 1
 	.global	FuncHeadLamp
@@ -33,63 +37,98 @@ FuncHeadLamp:
 	.loc 1 29 0
 	sub.a	%SP, 16
 .LCFI0:
-	.loc 1 30 0
+	.loc 1 31 0
 	mov	%d15, 0
 	st.w	[%SP] 12, %d15
-	.loc 1 31 0
+	.loc 1 36 0
 	call	VADC_startConversion
 .LVL1:
-	.loc 1 32 0
+	.loc 1 37 0
 	call	VADC_readResult
 .LVL2:
-	.loc 1 33 0
+	.loc 1 38 0
 	movh.a	%a4, hi:.LC1
 	lea	%a4, [%a4] lo:.LC1
-	.loc 1 32 0
+	.loc 1 37 0
 	st.w	[%SP] 12, %d2
-	.loc 1 33 0
+	.loc 1 38 0
 	call	my_printf
 .LVL3:
-	.loc 1 34 0
+	.loc 1 39 0
 	ld.w	%d15, [%SP] 12
 	movh.a	%a4, hi:.LC2
 	st.w	[%SP]0, %d15
 	lea	%a4, [%a4] lo:.LC2
 	call	my_printf
 .LVL4:
-	.loc 1 37 0
-	ld.w	%d2, [%SP] 12
-	mov	%d15, 1001
-	jge.u	%d2, %d15, .L6
+	.loc 1 41 0
+	movh.a	%a15, hi:cur_dark_mode.38436
 	.loc 1 42 0
+	ld.w	%d15, [%SP] 12
+	.loc 1 41 0
+	ld.w	%d2, [%a15] lo:cur_dark_mode.38436
+	.loc 1 42 0
+	mov	%d3, 1001
+	.loc 1 41 0
+	movh.a	%a2, hi:past_dark_mode.38435
+	.loc 1 42 0
+	ge.u	%d15, %d15, %d3
+	.loc 1 41 0
+	st.w	[%a2] lo:past_dark_mode.38435, %d2
+	.loc 1 43 0
+	st.w	[%a15] lo:cur_dark_mode.38436, %d15
+	.loc 1 49 0
+	jnz	%d2, .L3
+	.loc 1 49 0 is_stmt 0 discriminator 1
+	jnz	%d15, .L9
+.L4:
+	.loc 1 58 0 is_stmt 1
+	j	TerminateTask
+.LVL5:
+.L3:
+	.loc 1 53 0
+	jne	%d2, 1, .L4
+	.loc 1 53 0 is_stmt 0 discriminator 1
+	jnz	%d15, .L4
+	.loc 1 54 0 is_stmt 1
+	movh.a	%a4, hi:.LC4
+	lea	%a4, [%a4] lo:.LC4
+	call	my_printf
+.LVL6:
+	.loc 1 55 0
 	mov	%e4, 0
 	call	Driver_Can_TX_HeadLamp
-.LVL5:
-	.loc 1 45 0
-	j	TerminateTask
-.LVL6:
-.L6:
-	.loc 1 39 0
-	mov	%e4, 1
-	call	Driver_Can_TX_HeadLamp
 .LVL7:
-	.loc 1 45 0
+	.loc 1 58 0
 	j	TerminateTask
 .LVL8:
+.L9:
+	.loc 1 50 0
+	movh.a	%a4, hi:.LC3
+	lea	%a4, [%a4] lo:.LC3
+	call	my_printf
+.LVL9:
+	.loc 1 52 0
+	mov	%e4, 1
+	call	Driver_Can_TX_HeadLamp
+.LVL10:
+	.loc 1 58 0
+	j	TerminateTask
+.LVL11:
 .LFE363:
 	.size	FuncHeadLamp, .-FuncHeadLamp
 .section .rodata,"a",@progbits
-.LC3:
-	.string	"adcResult: "
-.LC4:
-	.string	"tof_distance: "
 .LC5:
-	.string	"Invalid checksum error!\n"
+	.string	"adcResult for tunnel: "
 .LC6:
-	.string	"Out of Range!\n"
+	.string	"tof_distance: "
 .LC7:
-	.string	"I'm in tunnel!!\n"
+	.string	"Invalid checksum error!\n"
 .LC8:
+	.string	"Out of Range!\n"
+.LC9:
+	.string	"I'm in tunnel!!\n"
+.LC10:
 	.string	"I'm not in tunnel!!\n"
 .section .text,"ax",@progbits
 	.align 1
@@ -97,139 +136,139 @@ FuncHeadLamp:
 	.type	FuncDETECT_Tunnel_Mode, @function
 FuncDETECT_Tunnel_Mode:
 .LFB364:
-	.loc 1 47 0
+	.loc 1 60 0
 	sub.a	%SP, 16
 .LCFI1:
-	.loc 1 49 0
+	.loc 1 62 0
 	mov	%d15, 0
 	st.w	[%SP] 12, %d15
-	.loc 1 56 0
+	.loc 1 69 0
 	call	VADC_startConversion
-.LVL9:
-	.loc 1 57 0
-	call	getTofDistance
-.LVL10:
-	mov	%d15, %d2
-.LVL11:
-	.loc 1 58 0
-	call	VADC_readResult
 .LVL12:
-	.loc 1 59 0
-	movh.a	%a4, hi:.LC3
-	lea	%a4, [%a4] lo:.LC3
-	.loc 1 58 0
-	st.w	[%SP] 12, %d2
-	.loc 1 59 0
-	call	my_printf
+	.loc 1 70 0
+	call	getTofDistance
 .LVL13:
-	.loc 1 60 0
+	mov	%d15, %d2
+.LVL14:
+	.loc 1 71 0
+	call	VADC_readResult
+.LVL15:
+	.loc 1 72 0
+	movh.a	%a4, hi:.LC5
+	lea	%a4, [%a4] lo:.LC5
+	.loc 1 71 0
+	st.w	[%SP] 12, %d2
+	.loc 1 72 0
+	call	my_printf
+.LVL16:
+	.loc 1 73 0
 	movh.a	%a15, hi:.LC2
 	ld.w	%d2, [%SP] 12
 	lea	%a15, [%a15] lo:.LC2
 	st.w	[%SP]0, %d2
 	mov.aa	%a4, %a15
 	call	my_printf
-.LVL14:
-	.loc 1 62 0
-	movh.a	%a4, hi:.LC4
-	lea	%a4, [%a4] lo:.LC4
-	call	my_printf
-.LVL15:
-	.loc 1 63 0
-	st.w	[%SP]0, %d15
-	mov.aa	%a4, %a15
-	call	my_printf
-.LVL16:
-	.loc 1 65 0
-	jeq	%d15, -1, .L17
-	.loc 1 67 0
-	jz	%d15, .L18
-	.loc 1 71 0
-	movh.a	%a15, hi:cur_tunnel_mode.38441
-	ld.w	%d2, [%a15] lo:cur_tunnel_mode.38441
-	movh.a	%a2, hi:past_tunnel_mode.38440
-	st.w	[%a2] lo:past_tunnel_mode.38440, %d2
-	.loc 1 72 0
-	mov	%d3, 500
-	.loc 1 76 0
-	mov	%d8, 0
-	.loc 1 72 0
-	jge	%d15, %d3, .L11
-	.loc 1 72 0 is_stmt 0 discriminator 1
-	ld.w	%d8, [%SP] 12
-	mov	%d15, 1001
 .LVL17:
-	ge.u	%d8, %d8, %d15
-.L11:
-	st.w	[%a15] lo:cur_tunnel_mode.38441, %d8
-	.loc 1 79 0 is_stmt 1
-	movh.a	%a15, hi:is_tunnel_mode.38442
-	ld.w	%d15, [%a15] lo:is_tunnel_mode.38442
-	jnz	%d15, .L12
-	.loc 1 79 0 is_stmt 0 discriminator 1
-	jnz	%d2, .L9
-	.loc 1 79 0 discriminator 2
-	jeq	%d8, 1, .L19
-.L9:
-	.loc 1 93 0 is_stmt 1
-	j	TerminateTask
-.LVL18:
-.L12:
-	.loc 1 84 0 discriminator 1
-	eq	%d3, %d2, 1
-	and.eq	%d3, %d15, 1
-	jz	%d3, .L9
-	.loc 1 84 0 is_stmt 0 discriminator 2
-	jnz	%d8, .L9
-	.loc 1 85 0 is_stmt 1
-	movh.a	%a4, hi:.LC8
-	lea	%a4, [%a4] lo:.LC8
-	call	my_printf
-.LVL19:
-	.loc 1 87 0
-	mov	%e4, 0
-	.loc 1 86 0
-	st.w	[%a15] lo:is_tunnel_mode.38442, %d8
-	.loc 1 87 0
-	call	Driver_Can_TxTest
-.LVL20:
-	.loc 1 93 0
-	j	TerminateTask
-.LVL21:
-.L18:
-	.loc 1 68 0
+	.loc 1 75 0
 	movh.a	%a4, hi:.LC6
 	lea	%a4, [%a4] lo:.LC6
 	call	my_printf
-.LVL22:
-	.loc 1 93 0
-	j	TerminateTask
-.LVL23:
-.L17:
-	.loc 1 66 0
-	movh.a	%a4, hi:.LC5
-	lea	%a4, [%a4] lo:.LC5
+.LVL18:
+	.loc 1 76 0
+	st.w	[%SP]0, %d15
+	mov.aa	%a4, %a15
 	call	my_printf
-.LVL24:
-	.loc 1 93 0
-	j	TerminateTask
-.LVL25:
-.L19:
+.LVL19:
+	.loc 1 78 0
+	jeq	%d15, -1, .L20
 	.loc 1 80 0
+	jz	%d15, .L21
+	.loc 1 84 0
+	movh.a	%a15, hi:cur_tunnel_mode.38443
+	ld.w	%d2, [%a15] lo:cur_tunnel_mode.38443
+	movh.a	%a2, hi:past_tunnel_mode.38442
+	st.w	[%a2] lo:past_tunnel_mode.38442, %d2
+	.loc 1 85 0
+	mov	%d3, 500
+	.loc 1 89 0
+	mov	%d8, 0
+	.loc 1 85 0
+	jge	%d15, %d3, .L14
+	.loc 1 85 0 is_stmt 0 discriminator 1
+	ld.w	%d8, [%SP] 12
+	mov	%d15, 1001
+.LVL20:
+	ge.u	%d8, %d8, %d15
+.L14:
+	st.w	[%a15] lo:cur_tunnel_mode.38443, %d8
+	.loc 1 92 0 is_stmt 1
+	movh.a	%a15, hi:is_tunnel_mode.38444
+	ld.w	%d15, [%a15] lo:is_tunnel_mode.38444
+	jnz	%d15, .L15
+	.loc 1 92 0 is_stmt 0 discriminator 1
+	jnz	%d2, .L12
+	.loc 1 92 0 discriminator 2
+	jeq	%d8, 1, .L22
+.L12:
+	.loc 1 106 0 is_stmt 1
+	j	TerminateTask
+.LVL21:
+.L15:
+	.loc 1 97 0 discriminator 1
+	eq	%d3, %d2, 1
+	and.eq	%d3, %d15, 1
+	jz	%d3, .L12
+	.loc 1 97 0 is_stmt 0 discriminator 2
+	jnz	%d8, .L12
+	.loc 1 98 0 is_stmt 1
+	movh.a	%a4, hi:.LC10
+	lea	%a4, [%a4] lo:.LC10
+	call	my_printf
+.LVL22:
+	.loc 1 100 0
+	mov	%e4, 0
+	.loc 1 99 0
+	st.w	[%a15] lo:is_tunnel_mode.38444, %d8
+	.loc 1 100 0
+	call	Driver_Can_TxTest
+.LVL23:
+	.loc 1 106 0
+	j	TerminateTask
+.LVL24:
+.L21:
+	.loc 1 81 0
+	movh.a	%a4, hi:.LC8
+	lea	%a4, [%a4] lo:.LC8
+	call	my_printf
+.LVL25:
+	.loc 1 106 0
+	j	TerminateTask
+.LVL26:
+.L20:
+	.loc 1 79 0
 	movh.a	%a4, hi:.LC7
 	lea	%a4, [%a4] lo:.LC7
 	call	my_printf
-.LVL26:
-	.loc 1 83 0
-	mov	%e4, 1
-	.loc 1 81 0
-	st.w	[%a15] lo:is_tunnel_mode.38442, %d8
-	.loc 1 83 0
-	call	Driver_Can_TxTest
 .LVL27:
-	.loc 1 93 0
+	.loc 1 106 0
 	j	TerminateTask
 .LVL28:
+.L22:
+	.loc 1 93 0
+	movh.a	%a4, hi:.LC9
+	lea	%a4, [%a4] lo:.LC9
+	call	my_printf
+.LVL29:
+	.loc 1 96 0
+	mov	%e4, 1
+	.loc 1 94 0
+	st.w	[%a15] lo:is_tunnel_mode.38444, %d8
+	.loc 1 96 0
+	call	Driver_Can_TxTest
+.LVL30:
+	.loc 1 106 0
+	j	TerminateTask
+.LVL31:
 .LFE364:
 	.size	FuncDETECT_Tunnel_Mode, .-FuncDETECT_Tunnel_Mode
 	.align 1
@@ -237,70 +276,70 @@ FuncDETECT_Tunnel_Mode:
 	.type	FuncTask_Motor, @function
 FuncTask_Motor:
 .LFB365:
-	.loc 1 96 0
-.LVL29:
-	.loc 1 99 0
+	.loc 1 109 0
+.LVL32:
+	.loc 1 112 0
 	mov	%d8, 0
-	j	.L25
-.LVL30:
-.L30:
+	j	.L28
+.LVL33:
+.L33:
 .LBB2:
-	.loc 1 106 0
+	.loc 1 119 0
 	addi	%d8, %d8, 10
-.LVL31:
+.LVL34:
 	lt	%d15, %d8, 1
 	cmovn	%d10, %d15, 1
-.LVL32:
+.LVL35:
 	mov	%d9, %d10
-.L22:
-.LVL33:
+.L25:
+.LVL36:
 .LBB3:
-	.loc 1 117 0
+	.loc 1 130 0
 	abs	%d15, %d8
 	ge	%d2, %d15, 101
 	seln	%d15, %d2, %d15, 100
 .LBE3:
-	.loc 1 119 0
+	.loc 1 132 0
 	mov	%e4, %d9, %d15
 .LBB4:
 	seln	%d8, %d2, %d8, 100
-.LVL34:
+.LVL37:
 .LBE4:
 	call	movChA_PWM
-.LVL35:
-	.loc 1 120 0
+.LVL38:
+	.loc 1 133 0
 	mov	%e4, %d9, %d15
 	call	movChB_PWM
-.LVL36:
-.L25:
-	.loc 1 103 0
-	call	_in_uart3
-.LVL37:
-	.loc 1 104 0
-	mov	%d4, %d2
-	.loc 1 103 0
-	mov	%d15, %d2
-.LVL38:
-	.loc 1 104 0
-	call	_out_uart3
 .LVL39:
-	.loc 1 105 0
-	and	%d15, %d15, 223
+.L28:
+	.loc 1 116 0
+	call	_in_uart3
 .LVL40:
-	ne	%d2, %d15, 87
-	jz	%d2, .L30
-	.loc 1 110 0
-	eq	%d15, %d15, 83
-	jz	%d15, .L29
-	.loc 1 112 0
-	addi	%d8, %d8, -10
+	.loc 1 117 0
+	mov	%d4, %d2
+	.loc 1 116 0
+	mov	%d15, %d2
 .LVL41:
+	.loc 1 117 0
+	call	_out_uart3
+.LVL42:
+	.loc 1 118 0
+	and	%d15, %d15, 223
+.LVL43:
+	ne	%d2, %d15, 87
+	jz	%d2, .L33
+	.loc 1 123 0
+	eq	%d15, %d15, 83
+	jz	%d15, .L32
+	.loc 1 125 0
+	addi	%d8, %d8, -10
+.LVL44:
 	ge	%d15, %d8, 0
 	cmovn	%d10, %d15, 0
-.LVL42:
-.L29:
+.LVL45:
+.L32:
 	mov	%d9, %d10
-	j	.L22
+	j	.L25
 .LBE2:
 .LFE365:
 	.size	FuncTask_Motor, .-FuncTask_Motor
@@ -309,14 +348,14 @@ FuncTask_Motor:
 	.type	FuncTask_AEB, @function
 FuncTask_AEB:
 .LFB366:
-	.loc 1 126 0
-.L32:
-	.loc 1 128 0 discriminator 1
+	.loc 1 139 0
+.L35:
+	.loc 1 141 0 discriminator 1
 	mov	%d4, 1
 	call	setLED1
-.LVL43:
-	.loc 1 130 0 discriminator 1
-	j	.L32
+.LVL46:
+	.loc 1 143 0 discriminator 1
+	j	.L35
 .LFE366:
 	.size	FuncTask_AEB, .-FuncTask_AEB
 	.align 1
@@ -324,14 +363,14 @@ FuncTask_AEB:
 	.type	FuncCAN_Tx, @function
 FuncCAN_Tx:
 .LFB367:
-	.loc 1 135 0
-.L34:
-	.loc 1 137 0 discriminator 1
+	.loc 1 148 0
+.L37:
+	.loc 1 150 0 discriminator 1
 	mov	%d4, 1000
 	call	delay_ms
-.LVL44:
-	.loc 1 139 0 discriminator 1
-	j	.L34
+.LVL47:
+	.loc 1 152 0 discriminator 1
+	j	.L37
 .LFE367:
 	.size	FuncCAN_Tx, .-FuncCAN_Tx
 	.align 1
@@ -339,27 +378,27 @@ FuncCAN_Tx:
 	.type	FuncUART_Echo, @function
 FuncUART_Echo:
 .LFB368:
-	.loc 1 144 0
-.L36:
-	.loc 1 147 0
+	.loc 1 157 0
+.L39:
+	.loc 1 160 0
 	call	_in_uart3
-.LVL45:
+.LVL48:
 	mov	%d15, %d2
-.LVL46:
-	.loc 1 148 0
+.LVL49:
+	.loc 1 161 0
 	mov	%d4, %d2
-	.loc 1 149 0
+	.loc 1 162 0
 	ne	%d15, %d15, 13
-	.loc 1 148 0
+	.loc 1 161 0
 	call	_out_uart3
-.LVL47:
-	.loc 1 149 0
-	jnz	%d15, .L36
-	.loc 1 149 0 is_stmt 0 discriminator 1
+.LVL50:
+	.loc 1 162 0
+	jnz	%d15, .L39
+	.loc 1 162 0 is_stmt 0 discriminator 1
 	mov	%d4, 10
 	call	_out_uart3
-.LVL48:
-	j	.L36
+.LVL51:
+	j	.L39
 .LFE368:
 	.size	FuncUART_Echo, .-FuncUART_Echo
 	.align 1
@@ -367,63 +406,63 @@ FuncUART_Echo:
 	.type	FuncDCMotor_Example, @function
 FuncDCMotor_Example:
 .LFB369:
-	.loc 1 155 0 is_stmt 1
-.LVL49:
-	.loc 1 156 0
+	.loc 1 168 0 is_stmt 1
+.LVL52:
+	.loc 1 169 0
 	mov	%d15, 0
-	j	.L45
-.LVL50:
-.L50:
-	.loc 1 162 0
+	j	.L48
+.LVL53:
+.L53:
+	.loc 1 175 0
 	addi	%d15, %d15, 10
-.LVL51:
-.L41:
-	.loc 1 170 0
+.LVL54:
+.L44:
+	.loc 1 183 0
 	lt	%d2, %d15, 101
 	sel	%d15, %d2, %d15, 100
-.LVL52:
-.L43:
-	.loc 1 174 0
+.LVL55:
+.L46:
+	.loc 1 187 0
 	mov	%e4, %d8, %d15
 	call	movChA_PWM
-.LVL53:
-	.loc 1 175 0
+.LVL56:
+	.loc 1 188 0
 	mov	%e4, %d8, %d15
 	call	movChB_PWM
-.LVL54:
-.L45:
-	.loc 1 160 0
-	call	_in_uart3
-.LVL55:
-	.loc 1 161 0
-	and	%d2, %d2, 223
-.LVL56:
-	ne	%d3, %d2, 85
-	jz	%d3, .L50
-	.loc 1 163 0
-	ne	%d3, %d2, 68
-	jnz	%d3, .L42
-	.loc 1 164 0
-	addi	%d15, %d15, -10
 .LVL57:
-	.loc 1 172 0
-	max	%d15, %d15, 0
+.L48:
+	.loc 1 173 0
+	call	_in_uart3
 .LVL58:
-	min.u	%d15, %d15, 100
-	j	.L43
+	.loc 1 174 0
+	and	%d2, %d2, 223
 .LVL59:
-.L42:
-	.loc 1 166 0
+	ne	%d3, %d2, 85
+	jz	%d3, .L53
+	.loc 1 176 0
+	ne	%d3, %d2, 68
+	jnz	%d3, .L45
+	.loc 1 177 0
+	addi	%d15, %d15, -10
+.LVL60:
+	.loc 1 185 0
+	max	%d15, %d15, 0
+.LVL61:
+	min.u	%d15, %d15, 100
+	j	.L46
+.LVL62:
+.L45:
+	.loc 1 179 0
 	ne	%d2, %d2, 82
-	.loc 1 167 0
+	.loc 1 180 0
 	rsub	%d3, %d8, 1
 	seln	%d8, %d2, %d3, %d8
-.LVL60:
-	j	.L41
+.LVL63:
+	j	.L44
 .LFE369:
 	.size	FuncDCMotor_Example, .-FuncDCMotor_Example
 .section .rodata,"a",@progbits
-.LC9:
+.LC11:
 	.string	"Execution Time: %dus\n"
 .section .text,"ax",@progbits
 	.align 1
@@ -431,75 +470,75 @@ FuncDCMotor_Example:
 	.type	FuncTimer_Example, @function
 FuncTimer_Example:
 .LFB370:
-	.loc 1 181 0
+	.loc 1 194 0
 	sub.a	%SP, 16
 .LCFI2:
-	.loc 1 186 0
+	.loc 1 199 0
 	mov	%d4, 0
 	call	setGpt12_T4
-.LVL61:
-	.loc 1 187 0
+.LVL64:
+	.loc 1 200 0
 	call	runGpt12_T4
-.LVL62:
-	.loc 1 188 0
+.LVL65:
+	.loc 1 201 0
 	mov	%d15, 0
 	st.w	[%SP] 8, %d15
 	ld.w	%d2, [%SP] 8
-	.loc 1 189 0
+	.loc 1 202 0
 	mov	%d3, 0
 	mov	%d15, 18200
-	.loc 1 188 0
-	jlez	%d2, .L56
-	j	.L54
-.L55:
+	.loc 1 201 0
+	jlez	%d2, .L59
+	j	.L57
+.L58:
 	ld.w	%d2, [%SP] 8
 	add	%d2, 1
 	st.w	[%SP] 8, %d2
 	ld.w	%d2, [%SP] 8
-	jgtz	%d2, .L54
-.L56:
-	.loc 1 189 0
+	jgtz	%d2, .L57
+.L59:
+	.loc 1 202 0
 	st.w	[%SP] 12, %d3
 	ld.w	%d2, [%SP] 12
-	jge	%d2, %d15, .L55
+	jge	%d2, %d15, .L58
+.L60:
+	ld.w	%d2, [%SP] 12
+	add	%d2, 1
+	st.w	[%SP] 12, %d2
+	ld.w	%d2, [%SP] 12
+	jge	%d2, %d15, .L58
+	ld.w	%d2, [%SP] 12
+	add	%d2, 1
+	st.w	[%SP] 12, %d2
+	ld.w	%d2, [%SP] 12
+	jlt	%d2, %d15, .L60
+	j	.L58
 .L57:
-	ld.w	%d2, [%SP] 12
-	add	%d2, 1
-	st.w	[%SP] 12, %d2
-	ld.w	%d2, [%SP] 12
-	jge	%d2, %d15, .L55
-	ld.w	%d2, [%SP] 12
-	add	%d2, 1
-	st.w	[%SP] 12, %d2
-	ld.w	%d2, [%SP] 12
-	jlt	%d2, %d15, .L57
-	j	.L55
-.L54:
-	.loc 1 191 0
+	.loc 1 204 0
 	call	stopGpt12_T4
-.LVL63:
-	.loc 1 192 0
+.LVL66:
+	.loc 1 205 0
 	call	getGpt12_T4
-.LVL64:
-	.loc 1 193 0
+.LVL67:
+	.loc 1 206 0
 	movh	%d15, 16676
 	utof	%d2, %d2
-.LVL65:
+.LVL68:
 	addi	%d15, %d15, -10486
 	mul.f	%d2, %d2, %d15
-	.loc 1 194 0
-	movh.a	%a4, hi:.LC9
+	.loc 1 207 0
+	movh.a	%a4, hi:.LC11
 	ftoiz	%d2, %d2
-	lea	%a4, [%a4] lo:.LC9
+	lea	%a4, [%a4] lo:.LC11
 	st.w	[%SP]0, %d2
 	call	my_printf
-.LVL66:
+.LVL69:
 	j	TerminateTask
-.LVL67:
+.LVL70:
 .LFE370:
 	.size	FuncTimer_Example, .-FuncTimer_Example
 .section .rodata,"a",@progbits
-.LC10:
+.LC12:
 	.string	"Distance: %dcm\n"
 .section .text,"ax",@progbits
 	.align 1
@@ -507,61 +546,61 @@ FuncTimer_Example:
 	.type	FuncUltrasonic_Example, @function
 FuncUltrasonic_Example:
 .LFB371:
-	.loc 1 200 0
-	movh.a	%a15, hi:.LC10
+	.loc 1 213 0
+	movh.a	%a15, hi:.LC12
 	sub.a	%SP, 16
 .LCFI3:
-	lea	%a15, [%a15] lo:.LC10
-	j	.L67
-.L64:
-	.loc 1 217 0
+	lea	%a15, [%a15] lo:.LC12
+	j	.L70
+.L67:
+	.loc 1 230 0
 	ld.w	%d15, [%SP] 12
 	mov.aa	%a4, %a15
 	st.w	[%SP]0, %d15
 	call	my_printf
-.LVL68:
-	.loc 1 218 0
+.LVL71:
+	.loc 1 231 0
 	mov	%d4, 100
 	call	delay_ms
-.LVL69:
-.L67:
-	.loc 1 203 0
+.LVL72:
+.L70:
+	.loc 1 216 0
 	call	ReadUltrasonic_noFilt
-.LVL70:
+.LVL73:
 	ftoiz	%d2, %d2
 	st.w	[%SP] 12, %d2
-	.loc 1 204 0
-	ld.w	%d15, [%SP] 12
-	lt	%d15, %d15, 20
-	jnz	%d15, .L63
-	.loc 1 204 0 is_stmt 0 discriminator 1
-	ld.w	%d15, [%SP] 12
-	ge	%d15, %d15, 31
-	jz	%d15, .L66
-.L63:
-	.loc 1 207 0 is_stmt 1
-	ld.w	%d15, [%SP] 12
-	lt	%d15, %d15, 10
-	jnz	%d15, .L65
-	.loc 1 207 0 is_stmt 0 discriminator 1
+	.loc 1 217 0
 	ld.w	%d15, [%SP] 12
 	lt	%d15, %d15, 20
 	jnz	%d15, .L66
-.L65:
-	.loc 1 211 0 is_stmt 1
+	.loc 1 217 0 is_stmt 0 discriminator 1
+	ld.w	%d15, [%SP] 12
+	ge	%d15, %d15, 31
+	jz	%d15, .L69
+.L66:
+	.loc 1 220 0 is_stmt 1
+	ld.w	%d15, [%SP] 12
+	lt	%d15, %d15, 10
+	jnz	%d15, .L68
+	.loc 1 220 0 is_stmt 0 discriminator 1
+	ld.w	%d15, [%SP] 12
+	lt	%d15, %d15, 20
+	jnz	%d15, .L69
+.L68:
+	.loc 1 224 0 is_stmt 1
 	ld.w	%d15, [%SP] 12
 	ge	%d15, %d15, 10
-	jnz	%d15, .L64
-	.loc 1 212 0
+	jnz	%d15, .L67
+	.loc 1 225 0
 	call	stopChB
-.LVL71:
-	j	.L64
-.L66:
-	.loc 1 206 0
+.LVL74:
+	j	.L67
+.L69:
+	.loc 1 219 0
 	mov	%d4, 7
 	call	ActivateTask
-.LVL72:
-	j	.L64
+.LVL75:
+	j	.L67
 .LFE371:
 	.size	FuncUltrasonic_Example, .-FuncUltrasonic_Example
 	.align 1
@@ -569,58 +608,58 @@ FuncUltrasonic_Example:
 	.type	FuncBuzzer_Example, @function
 FuncBuzzer_Example:
 .LFB372:
-	.loc 1 224 0
+	.loc 1 237 0
 	sub.a	%SP, 8
 .LCFI4:
-	.loc 1 225 0
+	.loc 1 238 0
 	mov	%d15, 0
 	st.w	[%SP] 4, %d15
-	.loc 1 226 0
+	.loc 1 239 0
 	ld.w	%d2, [%SP] 4
-	.loc 1 227 0
+	.loc 1 240 0
 	movh.a	%a15, 61444
-	.loc 1 226 0
+	.loc 1 239 0
 	add	%d15, %d2, 1
 	st.w	[%SP] 4, %d15
 	mov	%d15, 1000
-	.loc 1 227 0
+	.loc 1 240 0
 	lea	%a15, [%a15] -24064
-	.loc 1 226 0
+	.loc 1 239 0
 	mov	%d8, %d15
-	jge.u	%d2, %d15, .L70
-.L71:
-	.loc 1 227 0
+	jge.u	%d2, %d15, .L73
+.L74:
+	.loc 1 240 0
 	ld.w	%d15, [%a15]0
-	.loc 1 228 0
+	.loc 1 241 0
 	mov	%d4, 130
-	.loc 1 227 0
+	.loc 1 240 0
 	or	%d15, %d15, 8
 	st.w	[%a15]0, %d15
-	.loc 1 228 0
+	.loc 1 241 0
 	call	Beep
-.LVL73:
-	.loc 1 229 0
+.LVL76:
+	.loc 1 242 0
 	ld.w	%d15, [%a15]0
-	.loc 1 230 0
+	.loc 1 243 0
 	mov	%d4, 130
-	.loc 1 229 0
+	.loc 1 242 0
 	andn	%d15, %d15, ~(-9)
 	st.w	[%a15]0, %d15
-	.loc 1 230 0
+	.loc 1 243 0
 	call	Beep
-.LVL74:
-	.loc 1 226 0
+.LVL77:
+	.loc 1 239 0
 	ld.w	%d15, [%SP] 4
 	add	%d2, %d15, 1
 	st.w	[%SP] 4, %d2
-	jlt.u	%d15, %d8, .L71
-.L70:
+	jlt.u	%d15, %d8, .L74
+.L73:
 	j	TerminateTask
-.LVL75:
+.LVL78:
 .LFE372:
 	.size	FuncBuzzer_Example, .-FuncBuzzer_Example
 .section .rodata,"a",@progbits
-.LC11:
+.LC13:
 	.string	"Distance: %dmm\n"
 .section .text,"ax",@progbits
 	.align 1
@@ -628,47 +667,47 @@ FuncBuzzer_Example:
 	.type	FuncTOF_Example, @function
 FuncTOF_Example:
 .LFB373:
-	.loc 1 236 0
-	movh.a	%a13, hi:.LC5
-	movh.a	%a12, hi:.LC6
-	movh.a	%a15, hi:.LC11
+	.loc 1 249 0
+	movh.a	%a13, hi:.LC7
+	movh.a	%a12, hi:.LC8
+	movh.a	%a15, hi:.LC13
 	sub.a	%SP, 8
 .LCFI5:
-	lea	%a13, [%a13] lo:.LC5
-	lea	%a12, [%a12] lo:.LC6
-	lea	%a15, [%a15] lo:.LC11
-.L75:
-	.loc 1 239 0
+	lea	%a13, [%a13] lo:.LC7
+	lea	%a12, [%a12] lo:.LC8
+	lea	%a15, [%a15] lo:.LC13
+.L78:
+	.loc 1 252 0
 	call	getTofDistance
-.LVL76:
-	.loc 1 240 0
-	jeq	%d2, -1, .L79
-.L76:
-	.loc 1 242 0
-	jnz	%d2, .L78
-	.loc 1 243 0
+.LVL79:
+	.loc 1 253 0
+	jeq	%d2, -1, .L82
+.L79:
+	.loc 1 255 0
+	jnz	%d2, .L81
+	.loc 1 256 0
 	mov.aa	%a4, %a12
 	call	my_printf
-.LVL77:
-	.loc 1 239 0
+.LVL80:
+	.loc 1 252 0
 	call	getTofDistance
-.LVL78:
-	.loc 1 240 0
-	jne	%d2, -1, .L76
-.L79:
-	.loc 1 241 0
+.LVL81:
+	.loc 1 253 0
+	jne	%d2, -1, .L79
+.L82:
+	.loc 1 254 0
 	mov.aa	%a4, %a13
 	call	my_printf
-.LVL79:
-	j	.L75
-.LVL80:
-.L78:
-	.loc 1 245 0
+.LVL82:
+	j	.L78
+.LVL83:
+.L81:
+	.loc 1 258 0
 	st.w	[%SP]0, %d2
 	mov.aa	%a4, %a15
 	call	my_printf
-.LVL81:
-	j	.L75
+.LVL84:
+	j	.L78
 .LFE373:
 	.size	FuncTOF_Example, .-FuncTOF_Example
 	.align 1
@@ -676,30 +715,30 @@ FuncTOF_Example:
 	.type	FuncADC_Example, @function
 FuncADC_Example:
 .LFB374:
-	.loc 1 252 0
+	.loc 1 265 0
 	sub.a	%SP, 16
 .LCFI6:
-	.loc 1 253 0
+	.loc 1 266 0
 	mov	%d15, 0
 	movh.a	%a15, hi:.LC2
 	st.w	[%SP] 12, %d15
 	lea	%a15, [%a15] lo:.LC2
-.L81:
-	.loc 1 255 0 discriminator 1
+.L84:
+	.loc 1 268 0 discriminator 1
 	call	VADC_startConversion
-.LVL82:
-	.loc 1 256 0 discriminator 1
+.LVL85:
+	.loc 1 269 0 discriminator 1
 	call	VADC_readResult
-.LVL83:
+.LVL86:
 	st.w	[%SP] 12, %d2
-	.loc 1 257 0 discriminator 1
+	.loc 1 270 0 discriminator 1
 	ld.w	%d15, [%SP] 12
 	mov.aa	%a4, %a15
 	st.w	[%SP]0, %d15
 	call	my_printf
-.LVL84:
-	.loc 1 258 0 discriminator 1
-	j	.L81
+.LVL87:
+	.loc 1 271 0 discriminator 1
+	j	.L84
 .LFE374:
 	.size	FuncADC_Example, .-FuncADC_Example
 	.align 1
@@ -707,13 +746,13 @@ FuncADC_Example:
 	.type	FuncOS_EE_Task_Init, @function
 FuncOS_EE_Task_Init:
 .LFB375:
-	.loc 1 263 0
-	.loc 1 264 0
+	.loc 1 276 0
+	.loc 1 277 0
 	call	EnableAllInterrupts
-.LVL85:
-	.loc 1 266 0
+.LVL88:
+	.loc 1 279 0
 	j	TerminateTask
-.LVL86:
+.LVL89:
 .LFE375:
 	.size	FuncOS_EE_Task_Init, .-FuncOS_EE_Task_Init
 	.align 1
@@ -721,10 +760,10 @@ FuncOS_EE_Task_Init:
 	.type	TOF_ISR_HND, @function
 TOF_ISR_HND:
 .LFB376:
-	.loc 1 269 0
-	.loc 1 270 0
+	.loc 1 282 0
+	.loc 1 283 0
 	j	IsrUart1RxHandler_tof
-.LVL87:
+.LVL90:
 .LFE376:
 	.size	TOF_ISR_HND, .-TOF_ISR_HND
 	.align 1
@@ -732,52 +771,65 @@ TOF_ISR_HND:
 	.type	main, @function
 main:
 .LFB377:
-	.loc 1 274 0
-	.loc 1 275 0
-	call	SYSTEM_Init
-.LVL88:
-	.loc 1 278 0
-	call	Init_GPIO
-.LVL89:
-	.loc 1 279 0
-	call	Driver_Can_Init
-.LVL90:
-	.loc 1 281 0
-	call	_init_uart3
-.LVL91:
+	.loc 1 287 0
 	.loc 1 288 0
-	call	Init_ToF
+	call	SYSTEM_Init
+.LVL91:
+	.loc 1 291 0
+	call	Init_GPIO
 .LVL92:
-	.loc 1 289 0
-	call	init_VADC
+	.loc 1 292 0
+	call	Driver_Can_Init
 .LVL93:
-	.loc 1 290 0
+	.loc 1 294 0
+	call	_init_uart3
+.LVL94:
+	.loc 1 301 0
+	call	Init_ToF
+.LVL95:
+	.loc 1 302 0
+	call	init_VADC
+.LVL96:
+	.loc 1 303 0
 	mov	%d4, 0
 	call	StartOS
-.LVL94:
-	.loc 1 293 0
+.LVL97:
+	.loc 1 306 0
 	mov	%d2, 0
 	ret
 .LFE377:
 	.size	main, .-main
-	.local	is_tunnel_mode.38442
+	.local	is_tunnel_mode.38444
 .section .bss,"aw",@nobits
 	.align 2
-	.type		 is_tunnel_mode.38442,@object
-	.size		 is_tunnel_mode.38442,4
-is_tunnel_mode.38442:
+	.type		 is_tunnel_mode.38444,@object
+	.size		 is_tunnel_mode.38444,4
+is_tunnel_mode.38444:
 	.space	4
-	.local	past_tunnel_mode.38440
+	.local	past_tunnel_mode.38442
 	.align 2
-	.type		 past_tunnel_mode.38440,@object
-	.size		 past_tunnel_mode.38440,4
-past_tunnel_mode.38440:
+	.type		 past_tunnel_mode.38442,@object
+	.size		 past_tunnel_mode.38442,4
+past_tunnel_mode.38442:
 	.space	4
 .section .data,"aw",@progbits
 	.align 2
-	.type	cur_tunnel_mode.38441, @object
-	.size	cur_tunnel_mode.38441, 4
-cur_tunnel_mode.38441:
+	.type	cur_tunnel_mode.38443, @object
+	.size	cur_tunnel_mode.38443, 4
+cur_tunnel_mode.38443:
+	.word	1
+	.local	past_dark_mode.38435
+.section .bss,"aw",@nobits
+	.align 2
+	.type		 past_dark_mode.38435,@object
+	.size		 past_dark_mode.38435,4
+past_dark_mode.38435:
+	.space	4
+.section .data,"aw",@progbits
+	.align 2
+	.type	cur_dark_mode.38436, @object
+	.size	cur_dark_mode.38436, 4
+cur_dark_mode.38436:
 	.word	1
 .section .debug_frame,"",@progbits
 .Lframe0:
@@ -961,9 +1013,9 @@ cur_tunnel_mode.38441:
 	.file 8 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifx_types.h"
 	.file 9 "C:\\RTDRUI~1\\TC275_~1\\bsw/drivers/asclin.h"
 	.file 10 "<built-in>"
-	.file 11 "C:\\RTDRUI~1\\TC275_~1\\bsw/drivers/Driver_Can.h"
-	.file 12 "C:\\RTDRUI~1\\TC275_~1\\bsw/drivers/vadc.h"
-	.file 13 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee_oo_api_osek.h"
+	.file 11 "C:\\RTDRUI~1\\TC275_~1\\bsw/drivers/vadc.h"
+	.file 12 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee_oo_api_osek.h"
+	.file 13 "C:\\RTDRUI~1\\TC275_~1\\bsw/drivers/Driver_Can.h"
 	.file 14 "C:\\RTDRUI~1\\TC275_~1\\bsw/io/ToF.h"
 	.file 15 "C:\\RTDRUI~1\\TC275_~1\\bsw/io/Motor.h"
 	.file 16 "C:\\RTDRUI~1\\TC275_~1/bsw/io/GPIO.h"
@@ -975,7 +1027,7 @@ cur_tunnel_mode.38441:
 	.file 22 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\tc27xd\\ifxcpu_cfg.h"
 .section .debug_info,"",@progbits
 .Ldebug_info0:
-	.uaword	0x537e
+	.uaword	0x53ef
 	.uahalf	0x3
 	.uaword	.Ldebug_abbrev0
 	.byte	0x4
@@ -8767,7 +8819,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0x1b
 	.uaword	.LVL0
 	.byte	0x1
-	.uaword	0x5093
+	.uaword	0x5104
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -8787,25 +8839,41 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x48fe
+	.uaword	0x496d
 	.uleb128 0x1d
 	.uaword	.LASF18
 	.byte	0x1
-	.byte	0x1e
+	.byte	0x1f
 	.uaword	0x24f6
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -4
 	.uleb128 0x1e
-	.uaword	.LVL1
-	.uaword	0x50ae
+	.string	"past_dark_mode"
+	.byte	0x1
+	.byte	0x21
+	.uaword	0x269
+	.byte	0x5
+	.byte	0x3
+	.uaword	past_dark_mode.38435
 	.uleb128 0x1e
-	.uaword	.LVL2
-	.uaword	0x50c9
+	.string	"cur_dark_mode"
+	.byte	0x1
+	.byte	0x22
+	.uaword	0x269
+	.byte	0x5
+	.byte	0x3
+	.uaword	cur_dark_mode.38436
 	.uleb128 0x1f
+	.uaword	.LVL1
+	.uaword	0x511f
+	.uleb128 0x1f
+	.uaword	.LVL2
+	.uaword	0x513a
+	.uleb128 0x20
 	.uaword	.LVL3
-	.uaword	0x5093
-	.uaword	0x489b
+	.uaword	0x5104
+	.uaword	0x48d2
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -8813,10 +8881,10 @@ cur_tunnel_mode.38441:
 	.byte	0x3
 	.uaword	.LC1
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x20
 	.uaword	.LVL4
-	.uaword	0x5093
-	.uaword	0x48b9
+	.uaword	0x5104
+	.uaword	0x48f0
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -8831,130 +8899,14 @@ cur_tunnel_mode.38441:
 	.byte	0x7f
 	.sleb128 0
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x21
 	.uaword	.LVL5
-	.uaword	0x50e3
-	.uaword	0x48d1
-	.uleb128 0x1c
 	.byte	0x1
-	.byte	0x55
-	.byte	0x1
-	.byte	0x30
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x54
-	.byte	0x1
-	.byte	0x30
-	.byte	0
+	.uaword	0x5154
 	.uleb128 0x20
 	.uaword	.LVL6
-	.byte	0x1
-	.uaword	0x510f
-	.uleb128 0x1f
-	.uaword	.LVL7
-	.uaword	0x50e3
-	.uaword	0x48f3
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x55
-	.byte	0x1
-	.byte	0x30
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x54
-	.byte	0x1
-	.byte	0x31
-	.byte	0
-	.uleb128 0x20
-	.uaword	.LVL8
-	.byte	0x1
-	.uaword	0x510f
-	.byte	0
-	.uleb128 0x1a
-	.byte	0x1
-	.string	"FuncDETECT_Tunnel_Mode"
-	.byte	0x1
-	.byte	0x2f
-	.byte	0x1
-	.uaword	.LFB364
-	.uaword	.LFE364
-	.byte	0x1
-	.byte	0x9c
-	.byte	0x1
-	.uaword	0x4ad4
-	.uleb128 0x1d
-	.uaword	.LASF18
-	.byte	0x1
-	.byte	0x31
-	.uaword	0x24f6
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -4
-	.uleb128 0x21
-	.uaword	.LASF19
-	.byte	0x1
-	.byte	0x32
-	.uaword	0x29a
-	.uaword	.LLST0
-	.uleb128 0x22
-	.string	"past_tunnel_mode"
-	.byte	0x1
-	.byte	0x34
-	.uaword	0x269
-	.byte	0x5
-	.byte	0x3
-	.uaword	past_tunnel_mode.38440
-	.uleb128 0x22
-	.string	"cur_tunnel_mode"
-	.byte	0x1
-	.byte	0x35
-	.uaword	0x269
-	.byte	0x5
-	.byte	0x3
-	.uaword	cur_tunnel_mode.38441
-	.uleb128 0x22
-	.string	"is_tunnel_mode"
-	.byte	0x1
-	.byte	0x36
-	.uaword	0x269
-	.byte	0x5
-	.byte	0x3
-	.uaword	is_tunnel_mode.38442
-	.uleb128 0x1e
-	.uaword	.LVL9
-	.uaword	0x50ae
-	.uleb128 0x1e
-	.uaword	.LVL10
-	.uaword	0x5128
-	.uleb128 0x1e
-	.uaword	.LVL12
-	.uaword	0x50c9
-	.uleb128 0x1f
-	.uaword	.LVL13
-	.uaword	0x5093
-	.uaword	0x49cf
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x64
-	.byte	0x5
-	.byte	0x3
-	.uaword	.LC3
-	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL14
-	.uaword	0x5093
-	.uaword	0x49e3
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x64
-	.byte	0x2
-	.byte	0x8f
-	.sleb128 0
-	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL15
-	.uaword	0x5093
-	.uaword	0x49fa
+	.uaword	0x5104
+	.uaword	0x4911
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -8962,10 +8914,152 @@ cur_tunnel_mode.38441:
 	.byte	0x3
 	.uaword	.LC4
 	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL7
+	.uaword	0x516d
+	.uaword	0x4929
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x55
+	.byte	0x1
+	.byte	0x30
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x54
+	.byte	0x1
+	.byte	0x30
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL8
+	.byte	0x1
+	.uaword	0x5154
+	.uleb128 0x20
+	.uaword	.LVL9
+	.uaword	0x5104
+	.uaword	0x494a
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x64
+	.byte	0x5
+	.byte	0x3
+	.uaword	.LC3
+	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL10
+	.uaword	0x516d
+	.uaword	0x4962
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x55
+	.byte	0x1
+	.byte	0x30
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x54
+	.byte	0x1
+	.byte	0x31
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL11
+	.byte	0x1
+	.uaword	0x5154
+	.byte	0
+	.uleb128 0x1a
+	.byte	0x1
+	.string	"FuncDETECT_Tunnel_Mode"
+	.byte	0x1
+	.byte	0x3c
+	.byte	0x1
+	.uaword	.LFB364
+	.uaword	.LFE364
+	.byte	0x1
+	.byte	0x9c
+	.byte	0x1
+	.uaword	0x4b43
+	.uleb128 0x1d
+	.uaword	.LASF18
+	.byte	0x1
+	.byte	0x3e
+	.uaword	0x24f6
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.uleb128 0x22
+	.uaword	.LASF19
+	.byte	0x1
+	.byte	0x3f
+	.uaword	0x29a
+	.uaword	.LLST0
+	.uleb128 0x1e
+	.string	"past_tunnel_mode"
+	.byte	0x1
+	.byte	0x41
+	.uaword	0x269
+	.byte	0x5
+	.byte	0x3
+	.uaword	past_tunnel_mode.38442
+	.uleb128 0x1e
+	.string	"cur_tunnel_mode"
+	.byte	0x1
+	.byte	0x42
+	.uaword	0x269
+	.byte	0x5
+	.byte	0x3
+	.uaword	cur_tunnel_mode.38443
+	.uleb128 0x1e
+	.string	"is_tunnel_mode"
+	.byte	0x1
+	.byte	0x43
+	.uaword	0x269
+	.byte	0x5
+	.byte	0x3
+	.uaword	is_tunnel_mode.38444
 	.uleb128 0x1f
+	.uaword	.LVL12
+	.uaword	0x511f
+	.uleb128 0x1f
+	.uaword	.LVL13
+	.uaword	0x5199
+	.uleb128 0x1f
+	.uaword	.LVL15
+	.uaword	0x513a
+	.uleb128 0x20
 	.uaword	.LVL16
-	.uaword	0x5093
-	.uaword	0x4a15
+	.uaword	0x5104
+	.uaword	0x4a3e
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x64
+	.byte	0x5
+	.byte	0x3
+	.uaword	.LC5
+	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL17
+	.uaword	0x5104
+	.uaword	0x4a52
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x64
+	.byte	0x2
+	.byte	0x8f
+	.sleb128 0
+	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL18
+	.uaword	0x5104
+	.uaword	0x4a69
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x64
+	.byte	0x5
+	.byte	0x3
+	.uaword	.LC6
+	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL19
+	.uaword	0x5104
+	.uaword	0x4a84
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -8980,25 +9074,25 @@ cur_tunnel_mode.38441:
 	.byte	0x7f
 	.sleb128 0
 	.byte	0
-	.uleb128 0x20
-	.uaword	.LVL18
+	.uleb128 0x21
+	.uaword	.LVL21
 	.byte	0x1
-	.uaword	0x510f
-	.uleb128 0x1f
-	.uaword	.LVL19
-	.uaword	0x5093
-	.uaword	0x4a36
+	.uaword	0x5154
+	.uleb128 0x20
+	.uaword	.LVL22
+	.uaword	0x5104
+	.uaword	0x4aa5
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
 	.byte	0x5
 	.byte	0x3
-	.uaword	.LC8
+	.uaword	.LC10
 	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL20
-	.uaword	0x5141
-	.uaword	0x4a4e
+	.uleb128 0x20
+	.uaword	.LVL23
+	.uaword	0x51b2
+	.uaword	0x4abd
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x55
@@ -9010,44 +9104,29 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.byte	0x30
 	.byte	0
-	.uleb128 0x20
-	.uaword	.LVL21
-	.byte	0x1
-	.uaword	0x510f
-	.uleb128 0x1f
-	.uaword	.LVL22
-	.uaword	0x5093
-	.uaword	0x4a6f
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x64
-	.byte	0x5
-	.byte	0x3
-	.uaword	.LC6
-	.byte	0
-	.uleb128 0x20
-	.uaword	.LVL23
-	.byte	0x1
-	.uaword	0x510f
-	.uleb128 0x1f
+	.uleb128 0x21
 	.uaword	.LVL24
-	.uaword	0x5093
-	.uaword	0x4a90
-	.uleb128 0x1c
 	.byte	0x1
-	.byte	0x64
-	.byte	0x5
-	.byte	0x3
-	.uaword	.LC5
-	.byte	0
+	.uaword	0x5154
 	.uleb128 0x20
 	.uaword	.LVL25
+	.uaword	0x5104
+	.uaword	0x4ade
+	.uleb128 0x1c
 	.byte	0x1
-	.uaword	0x510f
-	.uleb128 0x1f
+	.byte	0x64
+	.byte	0x5
+	.byte	0x3
+	.uaword	.LC8
+	.byte	0
+	.uleb128 0x21
 	.uaword	.LVL26
-	.uaword	0x5093
-	.uaword	0x4ab1
+	.byte	0x1
+	.uaword	0x5154
+	.uleb128 0x20
+	.uaword	.LVL27
+	.uaword	0x5104
+	.uaword	0x4aff
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -9055,10 +9134,25 @@ cur_tunnel_mode.38441:
 	.byte	0x3
 	.uaword	.LC7
 	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL27
-	.uaword	0x5141
-	.uaword	0x4ac9
+	.uleb128 0x21
+	.uaword	.LVL28
+	.byte	0x1
+	.uaword	0x5154
+	.uleb128 0x20
+	.uaword	.LVL29
+	.uaword	0x5104
+	.uaword	0x4b20
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x64
+	.byte	0x5
+	.byte	0x3
+	.uaword	.LC9
+	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL30
+	.uaword	0x51b2
+	.uaword	0x4b38
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x55
@@ -9070,39 +9164,39 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.byte	0x31
 	.byte	0
-	.uleb128 0x20
-	.uaword	.LVL28
+	.uleb128 0x21
+	.uaword	.LVL31
 	.byte	0x1
-	.uaword	0x510f
+	.uaword	0x5154
 	.byte	0
 	.uleb128 0x1a
 	.byte	0x1
 	.string	"FuncTask_Motor"
 	.byte	0x1
-	.byte	0x60
+	.byte	0x6d
 	.byte	0x1
 	.uaword	.LFB365
 	.uaword	.LFE365
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4ba8
+	.uaword	0x4c17
 	.uleb128 0x23
 	.string	"duty"
 	.byte	0x1
-	.byte	0x63
+	.byte	0x70
 	.uaword	0x29a
 	.uaword	.LLST1
 	.uleb128 0x23
 	.string	"ch"
 	.byte	0x1
-	.byte	0x64
+	.byte	0x71
 	.uaword	0x2bf
 	.uaword	.LLST2
 	.uleb128 0x23
 	.string	"dir"
 	.byte	0x1
-	.byte	0x65
+	.byte	0x72
 	.uaword	0x2bf
 	.uaword	.LLST3
 	.uleb128 0x24
@@ -9115,12 +9209,12 @@ cur_tunnel_mode.38441:
 	.byte	0
 	.uaword	0x29a
 	.byte	0x1
-	.uaword	0x4b40
+	.uaword	0x4baf
 	.uleb128 0x26
 	.byte	0
 	.uleb128 0x27
 	.uaword	.Ldebug_ranges0+0
-	.uaword	0x4b59
+	.uaword	0x4bc8
 	.uleb128 0x28
 	.byte	0x1
 	.string	"abs"
@@ -9131,10 +9225,10 @@ cur_tunnel_mode.38441:
 	.uleb128 0x26
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL35
-	.uaword	0x5168
-	.uaword	0x4b73
+	.uleb128 0x20
+	.uaword	.LVL38
+	.uaword	0x51d9
+	.uaword	0x4be2
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x55
@@ -9148,29 +9242,29 @@ cur_tunnel_mode.38441:
 	.byte	0x7f
 	.sleb128 0
 	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL36
-	.uaword	0x5188
-	.uaword	0x4b8d
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x55
-	.byte	0x2
-	.byte	0x79
-	.sleb128 0
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x54
-	.byte	0x2
-	.byte	0x7f
-	.sleb128 0
-	.byte	0
-	.uleb128 0x1e
-	.uaword	.LVL37
-	.uaword	0x51a8
-	.uleb128 0x29
+	.uleb128 0x20
 	.uaword	.LVL39
-	.uaword	0x51bc
+	.uaword	0x51f9
+	.uaword	0x4bfc
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x55
+	.byte	0x2
+	.byte	0x79
+	.sleb128 0
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x54
+	.byte	0x2
+	.byte	0x7f
+	.sleb128 0
+	.byte	0
+	.uleb128 0x1f
+	.uaword	.LVL40
+	.uaword	0x5219
+	.uleb128 0x29
+	.uaword	.LVL42
+	.uaword	0x522d
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9184,17 +9278,17 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncTask_AEB"
 	.byte	0x1
-	.byte	0x7e
+	.byte	0x8b
 	.byte	0x1
 	.uaword	.LFB366
 	.uaword	.LFE366
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4bd9
+	.uaword	0x4c48
 	.uleb128 0x29
-	.uaword	.LVL43
-	.uaword	0x51dc
+	.uaword	.LVL46
+	.uaword	0x524d
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9206,17 +9300,17 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncCAN_Tx"
 	.byte	0x1
-	.byte	0x86
+	.byte	0x93
 	.byte	0x1
 	.uaword	.LFB367
 	.uaword	.LFE367
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4c0a
+	.uaword	0x4c79
 	.uleb128 0x29
-	.uaword	.LVL44
-	.uaword	0x51f4
+	.uaword	.LVL47
+	.uaword	0x5265
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9229,29 +9323,29 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncUART_Echo"
 	.byte	0x1
-	.byte	0x8f
+	.byte	0x9c
 	.byte	0x1
 	.uaword	.LFB368
 	.uaword	.LFE368
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4c5b
+	.uaword	0x4cca
 	.uleb128 0x23
 	.string	"c"
 	.byte	0x1
-	.byte	0x91
+	.byte	0x9e
 	.uaword	0x2bf
 	.uaword	.LLST4
-	.uleb128 0x1e
-	.uaword	.LVL45
-	.uaword	0x51a8
-	.uleb128 0x1e
-	.uaword	.LVL47
-	.uaword	0x51bc
-	.uleb128 0x29
+	.uleb128 0x1f
 	.uaword	.LVL48
-	.uaword	0x51bc
+	.uaword	0x5219
+	.uleb128 0x1f
+	.uaword	.LVL50
+	.uaword	0x522d
+	.uleb128 0x29
+	.uaword	.LVL51
+	.uaword	0x522d
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9263,36 +9357,53 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncDCMotor_Example"
 	.byte	0x1
-	.byte	0x9a
+	.byte	0xa7
 	.byte	0x1
 	.uaword	.LFB369
 	.uaword	.LFE369
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4cee
+	.uaword	0x4d5d
 	.uleb128 0x23
 	.string	"duty"
 	.byte	0x1
-	.byte	0x9c
+	.byte	0xa9
 	.uaword	0x29a
 	.uaword	.LLST5
 	.uleb128 0x23
 	.string	"ch"
 	.byte	0x1
-	.byte	0x9d
+	.byte	0xaa
 	.uaword	0x2bf
 	.uaword	.LLST6
 	.uleb128 0x23
 	.string	"dir"
 	.byte	0x1
-	.byte	0x9e
+	.byte	0xab
 	.uaword	0x269
 	.uaword	.LLST7
-	.uleb128 0x1f
-	.uaword	.LVL53
-	.uaword	0x5168
-	.uaword	0x4cca
+	.uleb128 0x20
+	.uaword	.LVL56
+	.uaword	0x51d9
+	.uaword	0x4d39
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x55
+	.byte	0x2
+	.byte	0x78
+	.sleb128 0
+	.uleb128 0x1c
+	.byte	0x1
+	.byte	0x54
+	.byte	0x2
+	.byte	0x7f
+	.sleb128 0
+	.byte	0
+	.uleb128 0x20
+	.uaword	.LVL57
+	.uaword	0x51f9
+	.uaword	0x4d53
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x55
@@ -9307,100 +9418,83 @@ cur_tunnel_mode.38441:
 	.sleb128 0
 	.byte	0
 	.uleb128 0x1f
-	.uaword	.LVL54
-	.uaword	0x5188
-	.uaword	0x4ce4
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x55
-	.byte	0x2
-	.byte	0x78
-	.sleb128 0
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x54
-	.byte	0x2
-	.byte	0x7f
-	.sleb128 0
-	.byte	0
-	.uleb128 0x1e
-	.uaword	.LVL55
-	.uaword	0x51a8
+	.uaword	.LVL58
+	.uaword	0x5219
 	.byte	0
 	.uleb128 0x1a
 	.byte	0x1
 	.string	"FuncTimer_Example"
 	.byte	0x1
-	.byte	0xb4
+	.byte	0xc1
 	.byte	0x1
 	.uaword	.LFB370
 	.uaword	.LFE370
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4da5
-	.uleb128 0x22
+	.uaword	0x4e14
+	.uleb128 0x1e
 	.string	"i"
 	.byte	0x1
-	.byte	0xb6
-	.uaword	0x4da5
+	.byte	0xc3
+	.uaword	0x4e14
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x22
+	.uleb128 0x1e
 	.string	"j"
 	.byte	0x1
-	.byte	0xb6
-	.uaword	0x4da5
+	.byte	0xc3
+	.uaword	0x4e14
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -4
 	.uleb128 0x23
 	.string	"timer_end"
 	.byte	0x1
-	.byte	0xb7
+	.byte	0xc4
 	.uaword	0x269
 	.uaword	.LLST8
 	.uleb128 0x23
 	.string	"execTime"
 	.byte	0x1
-	.byte	0xb8
+	.byte	0xc5
 	.uaword	0x260
 	.uaword	.LLST9
-	.uleb128 0x1f
-	.uaword	.LVL61
-	.uaword	0x520d
-	.uaword	0x4d68
+	.uleb128 0x20
+	.uaword	.LVL64
+	.uaword	0x527e
+	.uaword	0x4dd7
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
 	.byte	0x1
 	.byte	0x30
 	.byte	0
-	.uleb128 0x1e
-	.uaword	.LVL62
-	.uaword	0x5229
-	.uleb128 0x1e
-	.uaword	.LVL63
-	.uaword	0x523b
-	.uleb128 0x1e
-	.uaword	.LVL64
-	.uaword	0x524e
+	.uleb128 0x1f
+	.uaword	.LVL65
+	.uaword	0x529a
 	.uleb128 0x1f
 	.uaword	.LVL66
-	.uaword	0x5093
-	.uaword	0x4d9a
+	.uaword	0x52ac
+	.uleb128 0x1f
+	.uaword	.LVL67
+	.uaword	0x52bf
+	.uleb128 0x20
+	.uaword	.LVL69
+	.uaword	0x5104
+	.uaword	0x4e09
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
 	.byte	0x5
 	.byte	0x3
-	.uaword	.LC9
+	.uaword	.LC11
 	.byte	0
-	.uleb128 0x20
-	.uaword	.LVL67
+	.uleb128 0x21
+	.uaword	.LVL70
 	.byte	0x1
-	.uaword	0x510f
+	.uaword	0x5154
 	.byte	0
 	.uleb128 0x10
 	.uaword	0x29a
@@ -9408,26 +9502,26 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncUltrasonic_Example"
 	.byte	0x1
-	.byte	0xc7
+	.byte	0xd4
 	.byte	0x1
 	.uaword	.LFB371
 	.uaword	.LFE371
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4e35
-	.uleb128 0x22
+	.uaword	0x4ea4
+	.uleb128 0x1e
 	.string	"dist"
 	.byte	0x1
-	.byte	0xc9
-	.uaword	0x4da5
+	.byte	0xd6
+	.uaword	0x4e14
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -4
-	.uleb128 0x1f
-	.uaword	.LVL68
-	.uaword	0x5093
-	.uaword	0x4dff
+	.uleb128 0x20
+	.uaword	.LVL71
+	.uaword	0x5104
+	.uaword	0x4e6e
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -9442,10 +9536,10 @@ cur_tunnel_mode.38441:
 	.byte	0x7f
 	.sleb128 0
 	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL69
-	.uaword	0x51f4
-	.uaword	0x4e13
+	.uleb128 0x20
+	.uaword	.LVL72
+	.uaword	0x5265
+	.uaword	0x4e82
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9453,15 +9547,15 @@ cur_tunnel_mode.38441:
 	.byte	0x8
 	.byte	0x64
 	.byte	0
-	.uleb128 0x1e
-	.uaword	.LVL70
-	.uaword	0x5264
-	.uleb128 0x1e
-	.uaword	.LVL71
-	.uaword	0x5284
+	.uleb128 0x1f
+	.uaword	.LVL73
+	.uaword	0x52d5
+	.uleb128 0x1f
+	.uaword	.LVL74
+	.uaword	0x52f5
 	.uleb128 0x29
-	.uaword	.LVL72
-	.uaword	0x5292
+	.uaword	.LVL75
+	.uaword	0x5303
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9473,37 +9567,26 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncBuzzer_Example"
 	.byte	0x1
-	.byte	0xdf
+	.byte	0xec
 	.byte	0x1
 	.uaword	.LFB372
 	.uaword	.LFE372
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4e9b
-	.uleb128 0x22
+	.uaword	0x4f0a
+	.uleb128 0x1e
 	.string	"j"
 	.byte	0x1
-	.byte	0xe1
+	.byte	0xee
 	.uaword	0x24f6
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -4
-	.uleb128 0x1f
-	.uaword	.LVL73
-	.uaword	0x52b4
-	.uaword	0x4e7c
-	.uleb128 0x1c
-	.byte	0x1
-	.byte	0x54
-	.byte	0x2
-	.byte	0x8
-	.byte	0x82
-	.byte	0
-	.uleb128 0x1f
-	.uaword	.LVL74
-	.uaword	0x52b4
-	.uaword	0x4e90
+	.uleb128 0x20
+	.uaword	.LVL76
+	.uaword	0x5325
+	.uaword	0x4eeb
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9512,35 +9595,46 @@ cur_tunnel_mode.38441:
 	.byte	0x82
 	.byte	0
 	.uleb128 0x20
-	.uaword	.LVL75
+	.uaword	.LVL77
+	.uaword	0x5325
+	.uaword	0x4eff
+	.uleb128 0x1c
 	.byte	0x1
-	.uaword	0x510f
+	.byte	0x54
+	.byte	0x2
+	.byte	0x8
+	.byte	0x82
+	.byte	0
+	.uleb128 0x21
+	.uaword	.LVL78
+	.byte	0x1
+	.uaword	0x5154
 	.byte	0
 	.uleb128 0x1a
 	.byte	0x1
 	.string	"FuncTOF_Example"
 	.byte	0x1
-	.byte	0xeb
+	.byte	0xf8
 	.byte	0x1
 	.uaword	.LFB373
 	.uaword	.LFE373
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4f19
-	.uleb128 0x21
+	.uaword	0x4f88
+	.uleb128 0x22
 	.uaword	.LASF19
 	.byte	0x1
-	.byte	0xed
+	.byte	0xfa
 	.uaword	0x29a
 	.uaword	.LLST10
-	.uleb128 0x1e
-	.uaword	.LVL76
-	.uaword	0x5128
 	.uleb128 0x1f
-	.uaword	.LVL77
-	.uaword	0x5093
-	.uaword	0x4eeb
+	.uaword	.LVL79
+	.uaword	0x5199
+	.uleb128 0x20
+	.uaword	.LVL80
+	.uaword	0x5104
+	.uaword	0x4f5a
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -9548,13 +9642,13 @@ cur_tunnel_mode.38441:
 	.byte	0x8c
 	.sleb128 0
 	.byte	0
-	.uleb128 0x1e
-	.uaword	.LVL78
-	.uaword	0x5128
 	.uleb128 0x1f
-	.uaword	.LVL79
-	.uaword	0x5093
-	.uaword	0x4f08
+	.uaword	.LVL81
+	.uaword	0x5199
+	.uleb128 0x20
+	.uaword	.LVL82
+	.uaword	0x5104
+	.uaword	0x4f77
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -9563,8 +9657,8 @@ cur_tunnel_mode.38441:
 	.sleb128 0
 	.byte	0
 	.uleb128 0x29
-	.uaword	.LVL81
-	.uaword	0x5093
+	.uaword	.LVL84
+	.uaword	0x5104
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -9573,35 +9667,35 @@ cur_tunnel_mode.38441:
 	.sleb128 0
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x2a
 	.byte	0x1
 	.string	"FuncADC_Example"
 	.byte	0x1
-	.byte	0xfb
+	.uahalf	0x108
 	.byte	0x1
 	.uaword	.LFB374
 	.uaword	.LFE374
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4f75
-	.uleb128 0x1d
+	.uaword	0x4fe6
+	.uleb128 0x2b
 	.uaword	.LASF18
 	.byte	0x1
-	.byte	0xfd
+	.uahalf	0x10a
 	.uaword	0x24f6
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -4
-	.uleb128 0x1e
-	.uaword	.LVL82
-	.uaword	0x50ae
-	.uleb128 0x1e
-	.uaword	.LVL83
-	.uaword	0x50c9
+	.uleb128 0x1f
+	.uaword	.LVL85
+	.uaword	0x511f
+	.uleb128 0x1f
+	.uaword	.LVL86
+	.uaword	0x513a
 	.uleb128 0x29
-	.uaword	.LVL84
-	.uaword	0x5093
+	.uaword	.LVL87
+	.uaword	0x5104
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x64
@@ -9621,44 +9715,44 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.string	"FuncOS_EE_Task_Init"
 	.byte	0x1
-	.uahalf	0x106
+	.uahalf	0x113
 	.byte	0x1
 	.uaword	.LFB375
 	.uaword	.LFE375
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4fb2
-	.uleb128 0x1e
-	.uaword	.LVL85
-	.uaword	0x52c9
-	.uleb128 0x20
-	.uaword	.LVL86
+	.uaword	0x5023
+	.uleb128 0x1f
+	.uaword	.LVL88
+	.uaword	0x533a
+	.uleb128 0x21
+	.uaword	.LVL89
 	.byte	0x1
-	.uaword	0x510f
+	.uaword	0x5154
 	.byte	0
 	.uleb128 0x2a
 	.byte	0x1
 	.string	"TOF_ISR_HND"
 	.byte	0x1
-	.uahalf	0x10d
+	.uahalf	0x11a
 	.byte	0x1
 	.uaword	.LFB376
 	.uaword	.LFE376
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x4fde
-	.uleb128 0x20
-	.uaword	.LVL87
+	.uaword	0x504f
+	.uleb128 0x21
+	.uaword	.LVL90
 	.byte	0x1
-	.uaword	0x52e3
+	.uaword	0x5354
 	.byte	0
-	.uleb128 0x2b
+	.uleb128 0x2c
 	.byte	0x1
 	.string	"main"
 	.byte	0x1
-	.uahalf	0x111
+	.uahalf	0x11e
 	.byte	0x1
 	.uaword	0x29a
 	.uaword	.LFB377
@@ -9666,28 +9760,28 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.byte	0x9c
 	.byte	0x1
-	.uaword	0x5042
-	.uleb128 0x1e
-	.uaword	.LVL88
-	.uaword	0x52ff
-	.uleb128 0x1e
-	.uaword	.LVL89
-	.uaword	0x5311
-	.uleb128 0x1e
-	.uaword	.LVL90
-	.uaword	0x5321
-	.uleb128 0x1e
+	.uaword	0x50b3
+	.uleb128 0x1f
 	.uaword	.LVL91
-	.uaword	0x5337
-	.uleb128 0x1e
+	.uaword	0x5370
+	.uleb128 0x1f
 	.uaword	.LVL92
-	.uaword	0x5349
-	.uleb128 0x1e
+	.uaword	0x5382
+	.uleb128 0x1f
 	.uaword	.LVL93
-	.uaword	0x5358
-	.uleb128 0x29
+	.uaword	0x5392
+	.uleb128 0x1f
 	.uaword	.LVL94
-	.uaword	0x5368
+	.uaword	0x53a8
+	.uleb128 0x1f
+	.uaword	.LVL95
+	.uaword	0x53ba
+	.uleb128 0x1f
+	.uaword	.LVL96
+	.uaword	0x53c9
+	.uleb128 0x29
+	.uaword	.LVL97
+	.uaword	0x53d9
 	.uleb128 0x1c
 	.byte	0x1
 	.byte	0x54
@@ -9695,82 +9789,82 @@ cur_tunnel_mode.38441:
 	.byte	0x30
 	.byte	0
 	.byte	0
-	.uleb128 0x2c
+	.uleb128 0x2d
 	.string	"asclin3"
 	.byte	0x9
 	.byte	0xf
-	.uaword	0x5056
+	.uaword	0x50c7
 	.sleb128 -268433152
 	.uleb128 0x16
-	.uaword	0x505b
+	.uaword	0x50cc
 	.uleb128 0x15
 	.byte	0x4
 	.uaword	0x24ae
 	.uleb128 0x13
 	.uaword	0x47f4
-	.uaword	0x5071
+	.uaword	0x50e2
 	.uleb128 0x14
 	.uaword	0x24a2
 	.byte	0x2
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2e
 	.string	"IfxCpu_cfg_indexMap"
 	.byte	0x16
 	.byte	0xa7
-	.uaword	0x508e
+	.uaword	0x50ff
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0x16
-	.uaword	0x5061
-	.uleb128 0x2e
+	.uaword	0x50d2
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"my_printf"
 	.byte	0x9
 	.byte	0x58
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x50ae
-	.uleb128 0x2f
+	.uaword	0x511f
+	.uleb128 0x30
 	.uaword	0x47b4
 	.uleb128 0x26
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"VADC_startConversion"
-	.byte	0xc
+	.byte	0xb
 	.byte	0x5
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x32
 	.byte	0x1
 	.string	"VADC_readResult"
-	.byte	0xc
+	.byte	0xb
 	.byte	0x6
 	.byte	0x1
 	.uaword	0x269
 	.byte	0x1
-	.uleb128 0x2e
-	.byte	0x1
-	.string	"Driver_Can_TX_HeadLamp"
-	.byte	0xb
-	.byte	0x3f
-	.byte	0x1
-	.byte	0x1
-	.uaword	0x510f
-	.uleb128 0x2f
-	.uaword	0x4798
-	.uleb128 0x2f
-	.uaword	0x4798
-	.byte	0
-	.uleb128 0x32
+	.uleb128 0x33
 	.byte	0x1
 	.string	"TerminateTask"
-	.byte	0xd
+	.byte	0xc
 	.uahalf	0x1c9
 	.byte	0x1
 	.uaword	0x59d
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x2f
+	.byte	0x1
+	.string	"Driver_Can_TX_HeadLamp"
+	.byte	0xd
+	.byte	0x3f
+	.byte	0x1
+	.byte	0x1
+	.uaword	0x5199
+	.uleb128 0x30
+	.uaword	0x4798
+	.uleb128 0x30
+	.uaword	0x4798
+	.byte	0
+	.uleb128 0x32
 	.byte	0x1
 	.string	"getTofDistance"
 	.byte	0xe
@@ -9778,46 +9872,46 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.uaword	0x29a
 	.byte	0x1
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"Driver_Can_TxTest"
-	.byte	0xb
+	.byte	0xd
 	.byte	0x3e
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x5168
-	.uleb128 0x2f
+	.uaword	0x51d9
+	.uleb128 0x30
 	.uaword	0x4798
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uaword	0x4798
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"movChA_PWM"
 	.byte	0xf
 	.byte	0xd
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x5188
-	.uleb128 0x2f
+	.uaword	0x51f9
+	.uleb128 0x30
 	.uaword	0x29a
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uaword	0x29a
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"movChB_PWM"
 	.byte	0xf
 	.byte	0xe
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x51a8
-	.uleb128 0x2f
+	.uaword	0x5219
+	.uleb128 0x30
 	.uaword	0x29a
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uaword	0x29a
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x32
 	.byte	0x1
 	.string	"_in_uart3"
 	.byte	0x9
@@ -9825,67 +9919,67 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.uaword	0x2bf
 	.byte	0x1
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"_out_uart3"
 	.byte	0x9
 	.byte	0x4b
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x51d7
-	.uleb128 0x2f
-	.uaword	0x51d7
+	.uaword	0x5248
+	.uleb128 0x30
+	.uaword	0x5248
 	.byte	0
 	.uleb128 0x16
 	.uaword	0x2bf
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"setLED1"
 	.byte	0x10
 	.byte	0x8
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x51f4
-	.uleb128 0x2f
+	.uaword	0x5265
+	.uleb128 0x30
 	.uaword	0x29a
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"delay_ms"
 	.byte	0x11
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x520d
-	.uleb128 0x2f
+	.uaword	0x527e
+	.uleb128 0x30
 	.uaword	0x269
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"setGpt12_T4"
 	.byte	0x12
 	.byte	0x17
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x5229
-	.uleb128 0x2f
+	.uaword	0x529a
+	.uleb128 0x30
 	.uaword	0x2dd
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"runGpt12_T4"
 	.byte	0x12
 	.byte	0x15
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"stopGpt12_T4"
 	.byte	0x12
 	.byte	0x16
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x32
 	.byte	0x1
 	.string	"getGpt12_T4"
 	.byte	0x12
@@ -9893,7 +9987,7 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.uaword	0x269
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x32
 	.byte	0x1
 	.string	"ReadUltrasonic_noFilt"
 	.byte	0x13
@@ -9901,101 +9995,101 @@ cur_tunnel_mode.38441:
 	.byte	0x1
 	.uaword	0x478e
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"stopChB"
 	.byte	0xf
 	.byte	0xb
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x33
+	.uleb128 0x34
 	.byte	0x1
 	.string	"ActivateTask"
-	.byte	0xd
+	.byte	0xc
 	.uahalf	0x178
 	.byte	0x1
 	.uaword	0x59d
 	.byte	0x1
-	.uaword	0x52b4
-	.uleb128 0x2f
+	.uaword	0x5325
+	.uleb128 0x30
 	.uaword	0x351
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.string	"Beep"
 	.byte	0x14
 	.byte	0x7
 	.byte	0x1
 	.byte	0x1
-	.uaword	0x52c9
-	.uleb128 0x2f
+	.uaword	0x533a
+	.uleb128 0x30
 	.uaword	0x269
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"EnableAllInterrupts"
-	.byte	0xd
+	.byte	0xc
 	.byte	0x8a
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"IsrUart1RxHandler_tof"
 	.byte	0xe
 	.byte	0x5
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"SYSTEM_Init"
 	.byte	0x15
 	.byte	0x1b
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"Init_GPIO"
 	.byte	0x10
 	.byte	0x6
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"Driver_Can_Init"
-	.byte	0xb
+	.byte	0xd
 	.byte	0x3d
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"_init_uart3"
 	.byte	0x9
 	.byte	0x48
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"Init_ToF"
 	.byte	0xe
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.string	"init_VADC"
-	.byte	0xc
+	.byte	0xb
 	.byte	0x4
 	.byte	0x1
 	.byte	0x1
-	.uleb128 0x34
+	.uleb128 0x35
 	.byte	0x1
 	.string	"StartOS"
-	.byte	0xd
+	.byte	0xc
 	.uahalf	0x121
 	.byte	0x1
 	.uaword	0x59d
 	.byte	0x1
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uaword	0x33e
 	.byte	0
 	.byte	0
@@ -10401,52 +10495,6 @@ cur_tunnel_mode.38441:
 	.byte	0
 	.byte	0
 	.uleb128 0x1e
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x2115
-	.uleb128 0xc
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x21
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x22
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -10459,6 +10507,52 @@ cur_tunnel_mode.38441:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
+	.uleb128 0x4109
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.uleb128 0x4109
+	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x21
+	.uleb128 0x4109
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x2115
+	.uleb128 0xc
+	.uleb128 0x31
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x22
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x6
 	.byte	0
 	.byte	0
 	.uleb128 0x23
@@ -10570,6 +10664,21 @@ cur_tunnel_mode.38441:
 	.byte	0
 	.byte	0
 	.uleb128 0x2b
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x2c
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -10596,7 +10705,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2c
+	.uleb128 0x2d
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -10611,7 +10720,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0xd
 	.byte	0
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2e
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -10628,7 +10737,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -10647,28 +10756,11 @@ cur_tunnel_mode.38441:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x30
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0xc
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0xc
-	.uleb128 0x3c
-	.uleb128 0xc
 	.byte	0
 	.byte	0
 	.uleb128 0x31
@@ -10684,13 +10776,30 @@ cur_tunnel_mode.38441:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0xc
+	.uleb128 0x3c
+	.uleb128 0xc
+	.byte	0
+	.byte	0
+	.uleb128 0x32
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0xc
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0xc
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x3c
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x32
+	.uleb128 0x33
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -10709,7 +10818,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0xc
 	.byte	0
 	.byte	0
-	.uleb128 0x33
+	.uleb128 0x34
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -10730,7 +10839,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x34
+	.uleb128 0x35
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -10753,101 +10862,101 @@ cur_tunnel_mode.38441:
 .section .debug_loc,"",@progbits
 .Ldebug_loc0:
 .LLST0:
-	.uaword	.LVL11-.Ltext0
-	.uaword	.LVL12-1-.Ltext0
+	.uaword	.LVL14-.Ltext0
+	.uaword	.LVL15-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
-	.uaword	.LVL12-1-.Ltext0
-	.uaword	.LVL17-.Ltext0
+	.uaword	.LVL15-1-.Ltext0
+	.uaword	.LVL20-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
-	.uaword	.LVL21-.Ltext0
-	.uaword	.LVL25-.Ltext0
+	.uaword	.LVL24-.Ltext0
+	.uaword	.LVL28-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
 	.uaword	0
 	.uaword	0
 .LLST1:
-	.uaword	.LVL29-.Ltext0
-	.uaword	.LVL30-.Ltext0
+	.uaword	.LVL32-.Ltext0
+	.uaword	.LVL33-.Ltext0
 	.uahalf	0x2
 	.byte	0x30
 	.byte	0x9f
-	.uaword	.LVL30-.Ltext0
+	.uaword	.LVL33-.Ltext0
 	.uaword	.LFE365-.Ltext0
 	.uahalf	0x1
 	.byte	0x58
 	.uaword	0
 	.uaword	0
 .LLST2:
-	.uaword	.LVL38-.Ltext0
-	.uaword	.LVL39-1-.Ltext0
+	.uaword	.LVL41-.Ltext0
+	.uaword	.LVL42-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
-	.uaword	.LVL39-1-.Ltext0
-	.uaword	.LVL40-.Ltext0
+	.uaword	.LVL42-1-.Ltext0
+	.uaword	.LVL43-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
 	.uaword	0
 	.uaword	0
 .LLST3:
-	.uaword	.LVL30-.Ltext0
-	.uaword	.LVL32-.Ltext0
+	.uaword	.LVL33-.Ltext0
+	.uaword	.LVL35-.Ltext0
 	.uahalf	0x1
 	.byte	0x5a
-	.uaword	.LVL33-.Ltext0
-	.uaword	.LVL42-.Ltext0
+	.uaword	.LVL36-.Ltext0
+	.uaword	.LVL45-.Ltext0
 	.uahalf	0x1
 	.byte	0x5a
 	.uaword	0
 	.uaword	0
 .LLST4:
-	.uaword	.LVL46-.Ltext0
-	.uaword	.LVL47-1-.Ltext0
+	.uaword	.LVL49-.Ltext0
+	.uaword	.LVL50-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
 	.uaword	0
 	.uaword	0
 .LLST5:
-	.uaword	.LVL49-.Ltext0
-	.uaword	.LVL50-.Ltext0
+	.uaword	.LVL52-.Ltext0
+	.uaword	.LVL53-.Ltext0
 	.uahalf	0x2
 	.byte	0x30
 	.byte	0x9f
-	.uaword	.LVL50-.Ltext0
-	.uaword	.LVL58-.Ltext0
+	.uaword	.LVL53-.Ltext0
+	.uaword	.LVL61-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
-	.uaword	.LVL59-.Ltext0
+	.uaword	.LVL62-.Ltext0
 	.uaword	.LFE369-.Ltext0
 	.uahalf	0x1
 	.byte	0x5f
 	.uaword	0
 	.uaword	0
 .LLST6:
-	.uaword	.LVL55-.Ltext0
-	.uaword	.LVL56-.Ltext0
+	.uaword	.LVL58-.Ltext0
+	.uaword	.LVL59-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
 	.uaword	0
 	.uaword	0
 .LLST7:
-	.uaword	.LVL50-.Ltext0
-	.uaword	.LVL60-.Ltext0
+	.uaword	.LVL53-.Ltext0
+	.uaword	.LVL63-.Ltext0
 	.uahalf	0x1
 	.byte	0x58
 	.uaword	0
 	.uaword	0
 .LLST8:
-	.uaword	.LVL64-.Ltext0
-	.uaword	.LVL65-.Ltext0
+	.uaword	.LVL67-.Ltext0
+	.uaword	.LVL68-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
 	.uaword	0
 	.uaword	0
 .LLST9:
-	.uaword	.LVL64-.Ltext0
-	.uaword	.LVL65-.Ltext0
+	.uaword	.LVL67-.Ltext0
+	.uaword	.LVL68-.Ltext0
 	.uahalf	0x12
 	.byte	0x72
 	.sleb128 0
@@ -10864,16 +10973,16 @@ cur_tunnel_mode.38441:
 	.uaword	0
 	.uaword	0
 .LLST10:
-	.uaword	.LVL76-.Ltext0
-	.uaword	.LVL77-1-.Ltext0
+	.uaword	.LVL79-.Ltext0
+	.uaword	.LVL80-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
-	.uaword	.LVL78-.Ltext0
-	.uaword	.LVL79-1-.Ltext0
+	.uaword	.LVL81-.Ltext0
+	.uaword	.LVL82-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
-	.uaword	.LVL80-.Ltext0
-	.uaword	.LVL81-1-.Ltext0
+	.uaword	.LVL83-.Ltext0
+	.uaword	.LVL84-1-.Ltext0
 	.uahalf	0x1
 	.byte	0x52
 	.uaword	0
@@ -11814,7 +11923,7 @@ cur_tunnel_mode.38441:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x3c
-	.uleb128 0xd
+	.uleb128 0xc
 	.byte	0x7
 	.uaword	.Ldebug_macro20
 	.byte	0x4
@@ -11853,7 +11962,7 @@ cur_tunnel_mode.38441:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0xd
+	.uleb128 0xc
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x3
@@ -12659,14 +12768,14 @@ cur_tunnel_mode.38441:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0xc
+	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x2
 	.string	"BSW_DRIVERS_VADC_INT_H_ "
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0xb
+	.uleb128 0xd
 	.byte	0x1
 	.uleb128 0x2
 	.string	"DRIVER_CAN "
@@ -13312,7 +13421,7 @@ cur_tunnel_mode.38441:
 	.uleb128 0x78
 	.string	"OSEE_TC_CORE0_1_ISR_TID 0"
 	.byte	0
-.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.f881cc1502be57b51797009238c98445,comdat
+.section .debug_macro,"G",@progbits,wm4.ee_applcfg.h.39.e8863eb8fa510eed5b2e3c59fadb5bbe,comdat
 .Ldebug_macro2:
 	.uahalf	0x4
 	.byte	0
@@ -13423,7 +13532,7 @@ cur_tunnel_mode.38441:
 	.string	"Alarm_20ms_tunnel_detect (0U)"
 	.byte	0x1
 	.uleb128 0x6e
-	.string	"Alarm_30ms_headlamp (1U)"
+	.string	"Alarm_20ms_headlamp (1U)"
 	.byte	0
 .section .debug_macro,"G",@progbits,wm4.ee_arch_override.h.52.27977248034d7dba2968def3f4cf49b2,comdat
 .Ldebug_macro3:
@@ -117300,8 +117409,8 @@ cur_tunnel_mode.38441:
 	.extern	movChA_PWM,STT_FUNC,0
 	.extern	Driver_Can_TxTest,STT_FUNC,0
 	.extern	getTofDistance,STT_FUNC,0
-	.extern	TerminateTask,STT_FUNC,0
 	.extern	Driver_Can_TX_HeadLamp,STT_FUNC,0
+	.extern	TerminateTask,STT_FUNC,0
 	.extern	VADC_readResult,STT_FUNC,0
 	.extern	VADC_startConversion,STT_FUNC,0
 	.extern	my_printf,STT_FUNC,0

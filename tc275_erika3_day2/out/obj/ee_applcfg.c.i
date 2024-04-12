@@ -413,7 +413,7 @@
 
 
 #define Alarm_20ms_tunnel_detect (0U)
-#define Alarm_30ms_headlamp (1U)
+#define Alarm_20ms_headlamp (1U)
 # 59 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee_cfg.h" 2
 # 56 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 1 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee_arch_override.h" 1
@@ -8607,7 +8607,7 @@ static OsEE_TCB
   },
   {
                                 0U,
-                                1U,
+                                2U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
                                 0U,
@@ -8616,7 +8616,7 @@ static OsEE_TCB
   },
   {
                                 0U,
-                                2U,
+                                1U,
                                 OSEE_TASK_SUSPENDED,
                                 ((void *)0),
                                 0U,
@@ -8828,8 +8828,8 @@ static OsEE_TDB
                             13U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncDETECT_Tunnel_Mode,
-                            1U,
-                            1U,
+                            2U,
+                            2U,
                             1U
   },
   {
@@ -8842,8 +8842,8 @@ static OsEE_TDB
                             14U,
                             OSEE_TASK_TYPE_BASIC,
                             FuncHeadLamp,
-                            2U,
-                            2U,
+                            1U,
+                            1U,
                             1U
   },
   {
@@ -9053,13 +9053,13 @@ static OsEE_autostart_trigger_info
 {
   {
                                     &osEE_alarm_db_array[0U],
-                                    (1000U),
-                                    (1000U)
+                                    (1010U),
+                                    (20U)
   },
   {
                                     &osEE_alarm_db_array[1U],
-                                    (1030U),
-                                    (1000U)
+                                    (1000U),
+                                    (20U)
   }
 };
 

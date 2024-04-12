@@ -289,7 +289,7 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
   },
   {
     /* .current_num_of_act = */ 0U,
-    /* .current_prio       = */ 1U,
+    /* .current_prio       = */ 2U,
     /* .status             = */ SUSPENDED,
     /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
@@ -298,7 +298,7 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
   },
   {
     /* .current_num_of_act = */ 0U,
-    /* .current_prio       = */ 2U,
+    /* .current_prio       = */ 1U,
     /* .status             = */ SUSPENDED,
     /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
@@ -517,8 +517,8 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .tid            = */ 13U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
     /* .task_func      = */ TASK_FUNC(DETECT_Tunnel_Mode),
-    /* .ready_prio     = */ 1U,
-    /* .dispatch_prio  = */ 1U,
+    /* .ready_prio     = */ 2U,
+    /* .dispatch_prio  = */ 2U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -531,8 +531,8 @@ static VAR(OsEE_TDB, OS_CONST)
     /* .tid            = */ 14U,
     /* .task_type      = */ OSEE_TASK_TYPE_BASIC,
     /* .task_func      = */ TASK_FUNC(HeadLamp),
-    /* .ready_prio     = */ 2U,
-    /* .dispatch_prio  = */ 2U,
+    /* .ready_prio     = */ 1U,
+    /* .dispatch_prio  = */ 1U,
     /* .max_num_of_act = */ 1U
   },
   {
@@ -770,13 +770,13 @@ static VAR(OsEE_autostart_trigger_info, OS_CONST)
 {
   {
     /* .p_trigger_db          = */  &osEE_alarm_db_array[0U],
-    /* .first_tick_parameter  = */  (1000U),
-    /* .first_tick_parameter  = */  (1000U)
+    /* .first_tick_parameter  = */  (1010U),
+    /* .first_tick_parameter  = */  (20U)
   },
   {
     /* .p_trigger_db          = */  &osEE_alarm_db_array[1U],
-    /* .first_tick_parameter  = */  (1030U),
-    /* .first_tick_parameter  = */  (1000U)
+    /* .first_tick_parameter  = */  (1000U),
+    /* .first_tick_parameter  = */  (20U)
   }
 };
 

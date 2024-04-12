@@ -408,7 +408,7 @@
 
 
 #define Alarm_20ms_tunnel_detect (0U)
-#define Alarm_30ms_headlamp (1U)
+#define Alarm_20ms_headlamp (1U)
 # 59 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee_cfg.h" 2
 # 56 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee.h" 2
 # 1 "C:\\RTDRUI~1\\TC275_~1\\erika\\inc/ee_arch_override.h" 1
@@ -172745,20 +172745,33 @@ extern void FuncDETECT_Tunnel_Mode ( void );
 extern void FuncHeadLamp ( void );
 
 void FuncHeadLamp ( void ){
+
  volatile unsigned int adcResult = 0;
+
+ static unsigned int past_dark_mode = 0;
+ static unsigned int cur_dark_mode = 1;
+
  VADC_startConversion();
  adcResult = VADC_readResult();
- my_printf("adcResult for HeadLamp : ");
+ my_printf("adcResult for dark: ");
  my_printf("%d\n", adcResult);
 
-
+ past_dark_mode = cur_dark_mode;
  if(adcResult > 1000){
+  cur_dark_mode = 1;
+
+ } else{
+  cur_dark_mode = 0;
+ }
+
+ if(past_dark_mode == 0 && cur_dark_mode == 1){
+  my_printf("it's dark!!!\n");
 
   Driver_Can_TX_HeadLamp(0x00000001, 0x00000000);
-  }
- else{
+ } else if(past_dark_mode == 1 && cur_dark_mode == 0){
+  my_printf("It's not dark!!\n");
   Driver_Can_TX_HeadLamp(0x00000000, 0x00000000);
-  }
+ }
 
  TerminateTask();
 }
@@ -172774,7 +172787,7 @@ void FuncDETECT_Tunnel_Mode ( void ){
  VADC_startConversion();
  tof_distance = getTofDistance();
  adcResult = VADC_readResult();
- my_printf("adcResult: ");
+ my_printf("adcResult for tunnel: ");
  my_printf("%d\n", adcResult);
 
  my_printf("tof_distance: ");
