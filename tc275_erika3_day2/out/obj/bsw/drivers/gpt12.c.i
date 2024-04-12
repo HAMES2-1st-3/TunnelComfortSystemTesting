@@ -165417,6 +165417,7 @@ typedef struct{
  uint32 dist;
  uint32 iDuty;
  uint32 wDuty;
+
 } bodyStatus;
 # 5 "C:\\TC275_~2\\bsw\\drivers\\gpt12.c" 2
 

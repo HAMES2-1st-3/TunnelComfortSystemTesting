@@ -33,13 +33,13 @@ void Init_GPIO(int iniHLamp)
 //	MODULE_P11.IOCR8.B.PC9=0x10;
 
 	/*P02_3,4,5  ¿Õ´«ÀÌ LED Output*/
-	MODULE_P02.IOCR0.B.PC3=0x10;
-	MODULE_P02.IOCR4.B.PC4=0x10;
-	MODULE_P02.IOCR4.B.PC5=0x10;
+	MODULE_P33.IOCR0.B.PC2=0x10; // r
+	MODULE_P33.IOCR0.B.PC1=0x10;	//g
+	MODULE_P33.IOCR0.B.PC0=0x10;	//b
 
-	MODULE_P00.IOCR8.B.PC8 = 0x10;
-	MODULE_P00.IOCR8.B.PC9 = 0x10;
-	MODULE_P00.IOCR8.B.PC10 = 0x10;
+	MODULE_P00.IOCR8.B.PC8 = 0x10;	// r
+	MODULE_P00.IOCR8.B.PC9 = 0x10;	// g
+	MODULE_P00.IOCR8.B.PC10 = 0x10;	// b
 
 	//Set P0.4(External SW1)
 //	MODULE_P00.IOCR4.B.PC4 = 0b00010;
@@ -62,8 +62,8 @@ void setLED1(int onoff)	// on if true, off if false
 		{
 			//HEADLAMP COLOR RED+GREEN
 			//LED1_SET
-			MODULE_P02.OUT.B.P3 = 1; // RED
-			MODULE_P02.OUT.B.P4 = 1; // GREEN
+			MODULE_P33.OUT.B.P2 = 1; // RED
+			MODULE_P33.OUT.B.P1 = 1; // GREEN
 			//MODULE_P02.OUT.B.P5 = 1; //BLUE
 
 			//LED2_SET
@@ -76,8 +76,8 @@ void setLED1(int onoff)	// on if true, off if false
 		{
 
 			//LED1_OFF
-			MODULE_P02.OUT.B.P3 = 0; //RED
-			MODULE_P02.OUT.B.P4 = 0; //GREEN
+			MODULE_P33.OUT.B.P2 = 0; //RED
+			MODULE_P33.OUT.B.P1 = 0; //GREEN
 			//MODULE_P02.OUT.B.P5 = 0; //BLUE
 
 			//LED2_OFF

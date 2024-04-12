@@ -92,6 +92,28 @@ CPU tc275_shieldbuddy
 	
 	
 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 ALARM alarm1 {
 		ACTION = ACTIVATETASK {
 			TASK = Blink_LED;

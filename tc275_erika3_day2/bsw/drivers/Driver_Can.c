@@ -65,7 +65,6 @@ ISR(CAN_RX_HND){
 	if(readInternal==IfxMultican_Status_newData){
 		isInternal = stRxMsgData[0].data[0];
 		ActivateTask(Ctrl_InAir);
-//		ActivateTask(Ctrl_HLamp);
 		ActivateTask(Ctrl_Window);
 	}
 

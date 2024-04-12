@@ -165415,6 +165415,7 @@ typedef struct{
  uint32 dist;
  uint32 iDuty;
  uint32 wDuty;
+
 } bodyStatus;
 # 4 "C:\\TC275_~2\\bsw\\io\\Ultrasonic.c" 2
 

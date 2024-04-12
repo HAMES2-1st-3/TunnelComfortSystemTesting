@@ -165434,6 +165434,7 @@ typedef struct{
  uint32 dist;
  uint32 iDuty;
  uint32 wDuty;
+
 } bodyStatus;
 # 8 "C:\\TC275_~2\\bsw\\io\\Buzzer.c" 2
 

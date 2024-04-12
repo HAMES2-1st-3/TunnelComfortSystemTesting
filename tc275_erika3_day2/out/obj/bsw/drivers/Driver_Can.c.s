@@ -32,28 +32,28 @@ CAN_RX_HND:
 	jeq	%d2, %d15, .L5
 .LVL1:
 .L2:
-	.loc 1 73 0
+	.loc 1 72 0
 	movh.a	%a4, hi:stEcu1Can+192
 	movh.a	%a5, hi:stRxMsgData+20
 	lea	%a4, [%a4] lo:stEcu1Can+192
 	lea	%a5, [%a5] lo:stRxMsgData+20
 	call	IfxMultican_Can_MsgObj_readMessage
 .LVL2:
-	.loc 1 75 0
+	.loc 1 74 0
 	mov	%d15, 256
 	jeq	%d2, %d15, .L6
 	ret
 .L6:
 .LBB17:
 .LBB18:
-	.loc 1 76 0
+	.loc 1 75 0
 	ld.w	%d15, [%a15] 28
-	.loc 1 77 0
-	mov	%d4, 17
 	.loc 1 76 0
+	mov	%d4, 17
+	.loc 1 75 0
 	movh.a	%a15, hi:isDark
 	st.h	[%a15] lo:isDark, %d15
-	.loc 1 77 0
+	.loc 1 76 0
 	j	ActivateTask
 .LVL3:
 .L5:
@@ -69,7 +69,7 @@ CAN_RX_HND:
 	.loc 1 67 0
 	call	ActivateTask
 .LVL4:
-	.loc 1 69 0
+	.loc 1 68 0
 	mov	%d4, 15
 	call	ActivateTask
 .LVL5:
@@ -105,8 +105,8 @@ getisInternal:
 	.type	getLEDKing, @function
 getLEDKing:
 .LFB365:
-	.loc 1 130 0
-	.loc 1 132 0
+	.loc 1 129 0
+	.loc 1 131 0
 	movh.a	%a15, hi:led_king
 	ld.b	%d2, [%a15] lo:led_king
 	ret
@@ -117,8 +117,8 @@ getLEDKing:
 	.type	getTunnelStatus, @function
 getTunnelStatus:
 .LFB366:
-	.loc 1 133 0
-	.loc 1 135 0
+	.loc 1 132 0
+	.loc 1 134 0
 	movh.a	%a15, hi:tunnel_ok
 	ld.b	%d2, [%a15] lo:tunnel_ok
 	ret
@@ -129,189 +129,189 @@ getTunnelStatus:
 	.type	Driver_Can_Init, @function
 Driver_Can_Init:
 .LFB367:
+	.loc 1 137 0
 	.loc 1 138 0
-	.loc 1 139 0
 	movh.a	%a4, hi:CAN_RX_HND
-	.loc 1 138 0
+	.loc 1 137 0
 	sub.a	%SP, 208
 .LCFI0:
-	.loc 1 139 0
+	.loc 1 138 0
 	mov	%d4, 576
 	mov	%d5, 3
 	mov	%d6, 0
 	lea	%a4, [%a4] lo:CAN_RX_HND
 	call	InterruptInstall
 .LVL6:
-	.loc 1 142 0
+	.loc 1 141 0
 	movh.a	%a5, 61442
 	lea	%a4, [%SP] 132
 	lea	%a5, [%a5] -32768
 	call	IfxMultican_Can_initModuleConfig
 .LVL7:
-	.loc 1 145 0
+	.loc 1 144 0
 	movh.a	%a12, hi:stEcu1Can
 	lea	%a12, [%a12] lo:stEcu1Can
 	mov.aa	%a4, %a12
 	lea	%a5, [%SP] 132
 	call	IfxMultican_Can_initModule
 .LVL8:
-	.loc 1 151 0
+	.loc 1 150 0
 	movh	%d15, 8
-	.loc 1 149 0
+	.loc 1 148 0
 	lea	%a4, [%SP] 64
 	mov.aa	%a5, %a12
-	.loc 1 151 0
+	.loc 1 150 0
 	addi	%d15, %d15, -24288
-	.loc 1 149 0
+	.loc 1 148 0
 	call	IfxMultican_Can_Node_initConfig
 .LVL9:
-	.loc 1 151 0
+	.loc 1 150 0
 	st.w	[%SP] 72, %d15
-	.loc 1 154 0
+	.loc 1 153 0
 	mov	%d15, 0
 	st.b	[%SP] 68, %d15
-	.loc 1 155 0
+	.loc 1 154 0
 	movh	%d15, hi:IfxMultican_RXD0B_P20_7_IN
 	addi	%d15, %d15, lo:IfxMultican_RXD0B_P20_7_IN
 	st.w	[%SP] 104, %d15
-	.loc 1 156 0
+	.loc 1 155 0
 	mov	%d15, 16
 	st.b	[%SP] 108, %d15
-	.loc 1 157 0
+	.loc 1 156 0
 	movh	%d15, hi:IfxMultican_TXD0_P20_8_OUT
-	.loc 1 160 0
+	.loc 1 159 0
 	lea	%a15, [%a12] 4
-	.loc 1 157 0
+	.loc 1 156 0
 	addi	%d15, %d15, lo:IfxMultican_TXD0_P20_8_OUT
 	st.w	[%SP] 112, %d15
-	.loc 1 160 0
+	.loc 1 159 0
 	mov.aa	%a4, %a15
-	.loc 1 158 0
+	.loc 1 157 0
 	mov	%d15, -128
-	.loc 1 160 0
+	.loc 1 159 0
 	lea	%a5, [%SP] 64
-	.loc 1 158 0
+	.loc 1 157 0
 	st.b	[%SP] 116, %d15
-	.loc 1 160 0
+	.loc 1 159 0
 	call	IfxMultican_Can_Node_init
 .LVL10:
 .LBB25:
 .LBB26:
-	.loc 1 183 0
+	.loc 1 182 0
 	lea	%a4, [%SP] 4
 	mov.aa	%a5, %a15
 	call	IfxMultican_Can_MsgObj_initConfig
 .LVL11:
-	.loc 1 186 0
+	.loc 1 185 0
 	mov	%d2, 768
 	st.w	[%SP] 40, %d2
-	.loc 1 189 0
+	.loc 1 188 0
 	ld.bu	%d2, [%SP] 18
-	.loc 1 190 0
+	.loc 1 189 0
 	mov	%d8, -1
-	.loc 1 191 0
+	.loc 1 190 0
 	and	%d2, %d2, 254
 	insert	%d2, %d2, 1, 1, 1
-	.loc 1 185 0
+	.loc 1 184 0
 	mov	%d15, 0
-	.loc 1 187 0
+	.loc 1 186 0
 	mov	%d9, 1
-	.loc 1 188 0
+	.loc 1 187 0
 	mov	%d10, 8
-	.loc 1 190 0
+	.loc 1 189 0
 	sh	%d8, -1
-	.loc 1 203 0
+	.loc 1 202 0
 	lea	%a4, [%a12] 16
 	lea	%a5, [%SP] 4
-	.loc 1 185 0
+	.loc 1 184 0
 	st.w	[%SP] 8, %d15
-	.loc 1 187 0
+	.loc 1 186 0
 	st.b	[%SP] 32, %d9
-	.loc 1 188 0
+	.loc 1 187 0
 	st.b	[%SP] 17, %d10
-	.loc 1 190 0
+	.loc 1 189 0
 	st.w	[%SP] 36, %d8
-	.loc 1 191 0
+	.loc 1 190 0
 	st.b	[%SP] 18, %d2
-	.loc 1 203 0
+	.loc 1 202 0
 	call	IfxMultican_Can_MsgObj_init
 .LVL12:
 .LBE26:
 .LBE25:
 .LBB27:
 .LBB28:
-	.loc 1 183 0
+	.loc 1 182 0
 	lea	%a4, [%SP] 4
 	mov.aa	%a5, %a15
 	call	IfxMultican_Can_MsgObj_initConfig
 .LVL13:
-	.loc 1 185 0
+	.loc 1 184 0
 	mov	%d2, 10
 	st.w	[%SP] 8, %d2
-	.loc 1 186 0
+	.loc 1 185 0
 	mov	%d2, 256
 	st.w	[%SP] 40, %d2
-	.loc 1 189 0
+	.loc 1 188 0
 	ld.bu	%d2, [%SP] 18
-	.loc 1 203 0
+	.loc 1 202 0
 	lea	%a4, [%a12] 176
-	.loc 1 191 0
+	.loc 1 190 0
 	and	%d2, %d2, 254
 	insert	%d2, %d2, 1, 1, 1
-	.loc 1 203 0
+	.loc 1 202 0
 	lea	%a5, [%SP] 4
-	.loc 1 187 0
+	.loc 1 186 0
 	st.b	[%SP] 32, %d15
-	.loc 1 188 0
+	.loc 1 187 0
 	st.b	[%SP] 17, %d10
-	.loc 1 190 0
+	.loc 1 189 0
 	st.w	[%SP] 36, %d8
-	.loc 1 191 0
+	.loc 1 190 0
 	st.b	[%SP] 18, %d2
-	.loc 1 195 0
+	.loc 1 194 0
 	st.b	[%SP] 46, %d9
-	.loc 1 196 0
+	.loc 1 195 0
 	st.b	[%SP] 47, %d15
-	.loc 1 203 0
+	.loc 1 202 0
 	call	IfxMultican_Can_MsgObj_init
 .LVL14:
 .LBE28:
 .LBE27:
 .LBB29:
 .LBB30:
-	.loc 1 183 0
+	.loc 1 182 0
 	lea	%a4, [%SP] 4
 	mov.aa	%a5, %a15
 	call	IfxMultican_Can_MsgObj_initConfig
 .LVL15:
-	.loc 1 185 0
+	.loc 1 184 0
 	mov	%d2, 11
 	st.w	[%SP] 8, %d2
-	.loc 1 186 0
+	.loc 1 185 0
 	mov	%d2, 512
 	st.w	[%SP] 40, %d2
-	.loc 1 189 0
+	.loc 1 188 0
 	ld.bu	%d2, [%SP] 18
-	.loc 1 203 0
+	.loc 1 202 0
 	lea	%a4, [%a12] 192
-	.loc 1 191 0
+	.loc 1 190 0
 	and	%d2, %d2, 254
 	insert	%d2, %d2, 1, 1, 1
-	.loc 1 203 0
+	.loc 1 202 0
 	lea	%a5, [%SP] 4
-	.loc 1 187 0
+	.loc 1 186 0
 	st.b	[%SP] 32, %d15
-	.loc 1 188 0
+	.loc 1 187 0
 	st.b	[%SP] 17, %d10
-	.loc 1 190 0
+	.loc 1 189 0
 	st.w	[%SP] 36, %d8
-	.loc 1 191 0
+	.loc 1 190 0
 	st.b	[%SP] 18, %d2
-	.loc 1 195 0
+	.loc 1 194 0
 	st.b	[%SP] 46, %d9
-	.loc 1 196 0
+	.loc 1 195 0
 	st.b	[%SP] 47, %d15
-	.loc 1 203 0
+	.loc 1 202 0
 	j	IfxMultican_Can_MsgObj_init
 .LVL16:
 .LBE30:
@@ -323,7 +323,7 @@ Driver_Can_Init:
 	.type	Driver_Can_TxTest, @function
 Driver_Can_TxTest:
 .LFB369:
-	.loc 1 207 0
+	.loc 1 206 0
 .LVL17:
 	sub.a	%SP, 24
 .LCFI1:
@@ -353,7 +353,7 @@ Driver_Can_TxTest:
 .L13:
 .LBE33:
 .LBE32:
-	.loc 1 220 0 discriminator 1
+	.loc 1 219 0 discriminator 1
 	mov.aa	%a4, %a15
 	lea	%a5, [%SP] 4
 .LVL20:
@@ -362,7 +362,7 @@ Driver_Can_TxTest:
 	eq	%d2, %d2, 32
 	jnz	%d2, .L13
 .LBE31:
-	.loc 1 226 0
+	.loc 1 225 0
 	ret
 .LFE369:
 	.size	Driver_Can_TxTest, .-Driver_Can_TxTest
@@ -11204,44 +11204,44 @@ stEcu1Can:
 	.uleb128 0x29
 	.string	"Driver_Can_EnrollObject"
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.byte	0x1
 	.byte	0x1
 	.uaword	0x6f67
 	.uleb128 0x2a
 	.uaword	.LASF25
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.uaword	0x241
 	.uleb128 0x2b
 	.string	"msgId"
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.uaword	0x24d
 	.uleb128 0x2b
 	.string	"frameType"
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.uaword	0x278
 	.uleb128 0x2b
 	.string	"msgDlc"
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.uaword	0x278
 	.uleb128 0x2a
 	.uaword	.LASF24
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.uaword	0x24d
 	.uleb128 0x2b
 	.string	"pArrObjNum"
 	.byte	0x1
-	.byte	0xb3
+	.byte	0xb2
 	.uaword	0x6f67
 	.uleb128 0x25
 	.string	"canMsgObjConfig"
 	.byte	0x1
-	.byte	0xb6
+	.byte	0xb5
 	.uaword	0x6b4e
 	.byte	0
 	.uleb128 0x7
@@ -11380,7 +11380,7 @@ stEcu1Can:
 	.byte	0x1
 	.string	"getLEDKing"
 	.byte	0x1
-	.byte	0x82
+	.byte	0x81
 	.byte	0x1
 	.uaword	0x5ce
 	.uaword	.LFB365
@@ -11392,7 +11392,7 @@ stEcu1Can:
 	.byte	0x1
 	.string	"getTunnelStatus"
 	.byte	0x1
-	.byte	0x85
+	.byte	0x84
 	.byte	0x1
 	.uaword	0x5ce
 	.uaword	.LFB366
@@ -11404,7 +11404,7 @@ stEcu1Can:
 	.byte	0x1
 	.string	"Driver_Can_Init"
 	.byte	0x1
-	.byte	0x89
+	.byte	0x88
 	.byte	0x1
 	.uaword	.LFB367
 	.uaword	.LFE367
@@ -11415,7 +11415,7 @@ stEcu1Can:
 	.uleb128 0x38
 	.string	"canConfig"
 	.byte	0x1
-	.byte	0x8d
+	.byte	0x8c
 	.uaword	0x69c2
 	.byte	0x3
 	.byte	0x91
@@ -11423,7 +11423,7 @@ stEcu1Can:
 	.uleb128 0x38
 	.string	"canNodeConfig"
 	.byte	0x1
-	.byte	0x94
+	.byte	0x93
 	.uaword	0x6d36
 	.byte	0x3
 	.byte	0x91
@@ -11433,7 +11433,7 @@ stEcu1Can:
 	.uaword	.LBB25
 	.uaword	.LBE25
 	.byte	0x1
-	.byte	0xa9
+	.byte	0xa8
 	.uaword	0x719b
 	.uleb128 0x3a
 	.uaword	0x6f24
@@ -11504,7 +11504,7 @@ stEcu1Can:
 	.uaword	.LBB27
 	.uaword	.LBE27
 	.byte	0x1
-	.byte	0xac
+	.byte	0xab
 	.uaword	0x7220
 	.uleb128 0x3a
 	.uaword	0x6f24
@@ -11575,7 +11575,7 @@ stEcu1Can:
 	.uaword	.LBB29
 	.uaword	.LBE29
 	.byte	0x1
-	.byte	0xad
+	.byte	0xac
 	.uaword	0x72a6
 	.uleb128 0x3a
 	.uaword	0x6f24
@@ -11741,7 +11741,7 @@ stEcu1Can:
 	.byte	0x1
 	.string	"Driver_Can_TxTest"
 	.byte	0x1
-	.byte	0xce
+	.byte	0xcd
 	.byte	0x1
 	.uaword	.LFB369
 	.uaword	.LFE369
@@ -11752,19 +11752,19 @@ stEcu1Can:
 	.uleb128 0x3f
 	.string	"data"
 	.byte	0x1
-	.byte	0xce
+	.byte	0xcd
 	.uaword	0x5a3
 	.uaword	.LLST2
 	.uleb128 0x40
 	.uaword	.LASF27
 	.byte	0x1
-	.byte	0xd0
+	.byte	0xcf
 	.uaword	0x73f4
 	.uaword	.LLST2
 	.uleb128 0x41
 	.uaword	.LASF28
 	.byte	0x1
-	.byte	0xd1
+	.byte	0xd0
 	.uaword	0x73f4
 	.byte	0
 	.uleb128 0x3d
@@ -11773,7 +11773,7 @@ stEcu1Can:
 	.uleb128 0x38
 	.string	"msg"
 	.byte	0x1
-	.byte	0xd8
+	.byte	0xd7
 	.uaword	0x658d
 	.byte	0x2
 	.byte	0x91
@@ -11783,7 +11783,7 @@ stEcu1Can:
 	.uaword	.LBB32
 	.uaword	.LBE32
 	.byte	0x1
-	.byte	0xd9
+	.byte	0xd8
 	.uaword	0x73dc
 	.uleb128 0x3a
 	.uaword	0x6ec7

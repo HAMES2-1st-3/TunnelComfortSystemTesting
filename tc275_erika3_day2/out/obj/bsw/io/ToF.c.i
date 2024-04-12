@@ -165415,6 +165415,7 @@ typedef struct{
  uint32 dist;
  uint32 iDuty;
  uint32 wDuty;
+
 } bodyStatus;
 # 4 "C:\\TC275_~2\\bsw\\io\\ToF.c" 2
 # 1 "c:\\hightec\\toolchains\\tricore\\v4.9.3.0-infineon-1.0\\tricore\\include\\string.h" 1 3

@@ -51,5 +51,6 @@ typedef struct{
 	uint32		  dist;
 	uint32	 	  iDuty; // inAir mode's duty
 	uint32		  wDuty; // window's duty
+//	uint16		  backupDir;
 } bodyStatus;
 #endif /* MAIN_H_ */

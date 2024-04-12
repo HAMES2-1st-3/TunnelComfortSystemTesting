@@ -153109,9 +153109,9 @@ void Init_GPIO(int iniHLamp)
  IfxPort_setPinModeOutput(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
  IfxPort_setPinLow(IfxPort_P20_6.port, IfxPort_P20_6.pinIndex);
 # 36 "C:\\TC275_~2\\bsw\\io\\GPIO.c"
- (*(Ifx_P*)0xF003A200u).IOCR0.B.PC3=0x10;
- (*(Ifx_P*)0xF003A200u).IOCR4.B.PC4=0x10;
- (*(Ifx_P*)0xF003A200u).IOCR4.B.PC5=0x10;
+ (*(Ifx_P*)0xF003D300u).IOCR0.B.PC2=0x10;
+ (*(Ifx_P*)0xF003D300u).IOCR0.B.PC1=0x10;
+ (*(Ifx_P*)0xF003D300u).IOCR0.B.PC0=0x10;
 
  (*(Ifx_P*)0xF003A000u).IOCR8.B.PC8 = 0x10;
  (*(Ifx_P*)0xF003A000u).IOCR8.B.PC9 = 0x10;
@@ -153138,8 +153138,8 @@ void setLED1(int onoff)
   {
 
 
-   (*(Ifx_P*)0xF003A200u).OUT.B.P3 = 1;
-   (*(Ifx_P*)0xF003A200u).OUT.B.P4 = 1;
+   (*(Ifx_P*)0xF003D300u).OUT.B.P2 = 1;
+   (*(Ifx_P*)0xF003D300u).OUT.B.P1 = 1;
 
 
 
@@ -153152,8 +153152,8 @@ void setLED1(int onoff)
   {
 
 
-   (*(Ifx_P*)0xF003A200u).OUT.B.P3 = 0;
-   (*(Ifx_P*)0xF003A200u).OUT.B.P4 = 0;
+   (*(Ifx_P*)0xF003D300u).OUT.B.P2 = 0;
+   (*(Ifx_P*)0xF003D300u).OUT.B.P1 = 0;
 
 
 

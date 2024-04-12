@@ -76002,7 +76002,6 @@ void CAN_RX_HND(void){
  if(readInternal==IfxMultican_Status_newData){
   isInternal = stRxMsgData[0].data[0];
   ActivateTask((16U));
-
   ActivateTask((15U));
  }
 
@@ -76014,7 +76013,7 @@ void CAN_RX_HND(void){
   ActivateTask((17U));
  }
 }
-# 130 "C:\\TC275_~2\\bsw\\drivers\\Driver_Can.c"
+# 129 "C:\\TC275_~2\\bsw\\drivers\\Driver_Can.c"
 char getLEDKing(void){
  return led_king;
 }

@@ -42,26 +42,33 @@ int distance = 3;
 
 TASK(Ctrl_Btn){
 	volatile unsigned int adcResultX = 0;
-	volatile int dist = 0;
-	while(getSW3()) {
+	volatile int dist = (int)ReadUltrasonic_noFilt();;
+//	while(getSW3()) {
+	while(1) {
 		VADC_startConversion(); // X
 		adcResultX = VADC_readResult();
 		dist = (int)ReadUltrasonic_noFilt();
+		if(abs(dist - status.dist) > 10){
+			my_printf("dist: %d , prev dist: %d\n", dist, status.dist);
+			status.dist = dist;
+			continue;
+		}
 //		my_printf("%d\n", adcResultX);
-		my_printf("Distance: %dcm\n", dist);
-		if(adcResultX <= 10){
-//			my_printf("DOWN\n");
+//		my_printf("Distance: %dcm\n", dist);
+		if(adcResultX < 10){
+			my_printf("DOWN %dmm\n", dist);
 			movChB_PWM(status.wDuty, 1); // window down (open)
 		}
 		else if(adcResultX >= 2000){
-//			my_printf("UP\n");
+			my_printf("UP  %dmm\n", dist);
 			movChB_PWM(status.wDuty, 0); // window up (close)
 		}
 		else{
 //			my_printf("NORMAL\n");
-			status.dist = dist;
+//			status.dist = dist;
 			stopChB();
 		}
+		status.dist = dist;
 	}
 	my_printf("SW TEst\n");
 	TerminateTask();
@@ -69,19 +76,22 @@ TASK(Ctrl_Btn){
 TASK(Ctrl_Window){
 //	uint16 internal = getisInternal();
 	uint16 internal = getisInternal();
-	static unsigned char backupDir ;	// 0: close / 1: open
+	static uint16 backupDir ;	// 0: close / 1: open
 	static uint32 backupDist;
 	if(internal){
+//		status.backupDir = status.window;	// save current status to backup
 		backupDir = status.window;	// save current status to backup
 		backupDist = status.dist;
 		status.window = 0;		// close
 	}
 	else{
+//		status.window = status.backupDir;
 		status.window = backupDir;
 	}
 
-	uint32 data = status.hLamp << 16 | (1-status.window) << 8 | status.inAir;
-//	uint32 data = 0x00010101;
+	uint32 data = ((status.hLamp << 16) | ((1-status.window) << 8) | status.inAir);
+	my_printf("backupDist: %dmm / backupDir : %d(1:open) / status.window %d(1:open)\n", backupDist, backupDir, status.window);
+	my_printf("Window Data %d, / hLAmp(0:off): %d / Window(1:close) %d / inAir(0:off): %d\n", data, status.hLamp, 1-status.window, status.inAir);
 	Driver_Can_TxTest(data);
 	if(!status.window){ // close
 		while(status.dist < MAX_DIST){ // close window (max window distance: 16cm)
@@ -102,19 +112,7 @@ TASK(Ctrl_Window){
 
 TASK(Ctrl_HLamp){
 	uint16 dark = getisDark();
-	/* [START] Temporary INPUT PROCESS
-	uint16 dark = 0;
-	unsigned char ch;
-	ch = _in_uart3();
-	if(ch == '1'){
-		internal = 1;
-	}
-	else if(ch == '0'){
-		internal = 0;
-	}
-	dark = internal;
-	[END] Temporary INPUT PROCESS */
-	static unsigned char backup;
+	static uint16 backup;
 
 	if(dark == 1){
 		backup = status.hLamp; 		// save cur status to backup
@@ -122,13 +120,17 @@ TASK(Ctrl_HLamp){
 	}else{ // �ͳ� ��� ��� ���� state�� ���ƿ��� temp state����
 		status.hLamp = backup;
 	}
+
+	uint32 data = ((status.hLamp << 16) | ((1-status.window) << 8) | status.inAir);
+//	Driver_Can_TxTest(data);
+	my_printf("HLamp Data %d / hLAmp(0:off): %d / Window(1:close) %d / inAir(0:off): %d\n", data, status.hLamp, 1-status.window, status.inAir);
 	setLED1(status.hLamp);
 	TerminateTask();
 }
 TASK(Ctrl_InAir){
 	uint16 internal = getisInternal();
 //	int cur = status.inAir;		// 0: off / 1: on
-	static unsigned char backup;
+	static uint16 backup;
 //	int duty = 20;
 	if(internal){
 		backup = status.inAir;
@@ -136,6 +138,8 @@ TASK(Ctrl_InAir){
 	}else{
 		status.inAir = backup;
 	}
+	uint32 data = ((status.hLamp << 16) | ((1-status.window) << 8) | status.inAir);
+	my_printf("InAir Data %d / hLAmp(0:off): %d / Window(1:close) %d / inAir(0:off): %d\n", data, status.hLamp, 1-status.window, status.inAir);
 	if(status.inAir){
 		movChA_PWM(status.iDuty, 1);
 	}else{
@@ -384,9 +388,9 @@ int main(void)
 	status.inAir = iniInAir;
 	status.window = iniWindow;
 	status.dist = (int)ReadUltrasonic_noFilt();
-	status.dist = 1;
 	status.iDuty = inAirDuty;
 	status.wDuty = windowDuty;
+//	status.backupDir = iniWindow;
 	//Init_ToF();
 	StartOS(OSDEFAULTAPPMODE);
 
