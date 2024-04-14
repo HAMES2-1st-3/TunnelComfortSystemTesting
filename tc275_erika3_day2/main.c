@@ -37,30 +37,39 @@ unsigned char ch;
 unsigned char dir;
 int flag=0;
 int pwm=0;
+int control_flag = 1;
 bodyStatus status;
 int distance = 3;
 
 TASK(Ctrl_Btn){
 	volatile unsigned int adcResultX = 0;
-	volatile int dist = (int)ReadUltrasonic_noFilt();;
-//	while(getSW3()) {
-	while(1) {
+	//volatile int dist = (int)ReadUltrasonic_noFilt();;
+	uint32 dist=0; //위  45번째 Line 주석처리하고 추가했음
+
+	while(control_flag) {
+//	while(1) {
 		VADC_startConversion(); // X
 		adcResultX = VADC_readResult();
 		dist = (int)ReadUltrasonic_noFilt();
-		if(abs(dist - status.dist) > 10){
-			my_printf("dist: %d , prev dist: %d\n", dist, status.dist);
-			status.dist = dist;
-			continue;
-		}
+		//아래 문제의 라인
+
+		//if(abs(dist - status.dist) > 10){
+		//	my_printf("dist: %d , prev dist: %d\n", dist, status.dist);
+		//	status.dist = dist;
+		//	continue;
+		//}
 //		my_printf("%d\n", adcResultX);
 //		my_printf("Distance: %dcm\n", dist);
+		my_printf("dist: %d  ", dist);
+		my_printf("adcResultX: %d\n", adcResultX);
 		if(adcResultX < 10){
 			my_printf("DOWN %dmm\n", dist);
+			my_printf("status.dist: %dmm\n",status.dist);
 			movChB_PWM(status.wDuty, 1); // window down (open)
 		}
 		else if(adcResultX >= 2000){
 			my_printf("UP  %dmm\n", dist);
+			my_printf("status.dist: %dmm\n",status.dist);
 			movChB_PWM(status.wDuty, 0); // window up (close)
 		}
 		else{
@@ -69,6 +78,9 @@ TASK(Ctrl_Btn){
 			stopChB();
 		}
 		status.dist = dist;
+
+		if(getSW3() == 0) control_flag = 0;
+		delay_ms(100);
 	}
 	my_printf("SW TEst\n");
 	TerminateTask();
@@ -107,7 +119,9 @@ TASK(Ctrl_Window){
 		}
 	}
 	stopChB();
-	TerminateTask();
+	control_flag = 1;
+	ChainTask(Ctrl_Btn);
+	//TerminateTask();
 }
 
 TASK(Ctrl_HLamp){

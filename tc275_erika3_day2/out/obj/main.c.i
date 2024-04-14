@@ -172803,30 +172803,31 @@ unsigned char ch;
 unsigned char dir;
 int flag=0;
 int pwm=0;
+int control_flag = 1;
 bodyStatus status;
 int distance = 3;
 
 void FuncCtrl_Btn ( void ){
  volatile unsigned int adcResultX = 0;
- volatile int dist = (int)ReadUltrasonic_noFilt();;
 
- while(1) {
+ uint32 dist=0;
+
+ while(control_flag) {
+
   VADC_startConversion();
   adcResultX = VADC_readResult();
   dist = (int)ReadUltrasonic_noFilt();
-  if(abs(dist - status.dist) > 10){
-   my_printf("dist: %d , prev dist: %d\n", dist, status.dist);
-   status.dist = dist;
-   continue;
-  }
-
-
+# 63 "C:\\TC275_~2\\main.c"
+  my_printf("dist: %d  ", dist);
+  my_printf("adcResultX: %d\n", adcResultX);
   if(adcResultX < 10){
    my_printf("DOWN %dmm\n", dist);
+   my_printf("status.dist: %dmm\n",status.dist);
    movChB_PWM(status.wDuty, 1);
   }
   else if(adcResultX >= 2000){
    my_printf("UP  %dmm\n", dist);
+   my_printf("status.dist: %dmm\n",status.dist);
    movChB_PWM(status.wDuty, 0);
   }
   else{
@@ -172835,6 +172836,9 @@ void FuncCtrl_Btn ( void ){
    stopChB();
   }
   status.dist = dist;
+
+  if(getSW3() == 0) control_flag = 0;
+  delay_ms(100);
  }
  my_printf("SW TEst\n");
  TerminateTask();
@@ -172873,7 +172877,9 @@ void FuncCtrl_Window ( void ){
   }
  }
  stopChB();
- TerminateTask();
+ control_flag = 1;
+ ChainTask((18U));
+
 }
 
 void FuncCtrl_HLamp ( void ){
@@ -172998,7 +173004,7 @@ void FuncBlink_LED ( void )
 
   toggleLED1();
   delay_ms(500);
-# 245 "C:\\TC275_~2\\main.c"
+# 259 "C:\\TC275_~2\\main.c"
   TerminateTask();
 }
 
